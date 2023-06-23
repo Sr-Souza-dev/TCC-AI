@@ -1,0 +1,35 @@
+%------------------------------Estilo dos capítulos ------------------------------------
+
+\providecommand{\larguracap}{2.5cm}
+\titleformat{\chapter}[display]
+{\vspace{-2.7cm}\normalfont\Huge\sffamily\bfseries}%
+{%
+\begin{minipage}{\linewidth-\larguracap}%
+\titlerule[2pt]%
+\vspace{2pt}%
+\titlerule%
+\begin{flushright}%
+\begin{minipage}{\linewidth-1cm}%
+\end{minipage}%
+\end{flushright}%
+\end{minipage}%
+\begin{minipage}{\larguracap}%
+\begin{flushleft} \sf\large\bfseries%
+\begin{tabular}{|c|}%
+\rowcolor{black}{\color{white}\parbox{\larguracap}{\centering \chaptertitlename}}\\%
+{\parbox[c][{\larguracap-0.8cm}][c]{\larguracap}{\centering \fontsize{30pt}{40pt} \selectfont \thechapter}}\\%
+\hline%
+\end{tabular}%
+\end{flushleft}%
+\end{minipage}%
+}
+{-20pt}%
+{\centering}%
+[%
+\vspace{1.3ex}%
+{\titlerule}%
+\vspace{2pt}%
+{\titlerule[2pt]}%
+\vspace{1ex}%
+]
+%---------------------------------------------------------------------------------------------------------

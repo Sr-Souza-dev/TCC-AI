@@ -1,0 +1,648 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Agrawal et al. 2022]{agrawal2022stock}
+\abntrefinfo{Agrawal et al.}{AGRAWAL et al.}{2022}
+{AGRAWAL, M. et al. Stock prediction based on technical indicators using deep
+  learning model.
+\emph{Computers, Materials \& Continua}, v.~70, n.~1, p. 287--304, 2022.}
+
+\bibitem[Almeida, Reynoso-Meza e Steiner 2016]{de2016multi}
+\abntrefinfo{Almeida, Reynoso-Meza e Steiner}{ALMEIDA; REYNOSO-MEZA;
+  STEINER}{2016}
+{ALMEIDA, R. de; REYNOSO-MEZA, G.; STEINER, M. T.~A. Multi-objective
+  optimization approach to stock market technical indicators. In:  IEEE.
+  \emph{2016 IEEE congress on evolutionary computation (CEC)}. [S.l.], 2016. p.
+  3670--3677.}
+
+\bibitem[Altan e Karasu 2019]{altan2019effect}
+\abntrefinfo{Altan e Karasu}{ALTAN; KARASU}{2019}
+{ALTAN, A.; KARASU, S. The effect of kernel values in support vector machine to
+  forecasting performance of financial time series.
+\emph{The Journal of Cognitive Systems}, v.~4, n.~1, p. 17--21, 2019.}
+
+\bibitem[Amaral 2021]{Vinicius_Sistemas}
+\abntrefinfo{Amaral}{AMARAL}{2021}
+{AMARAL, V.~L. do.
+\emph{Sistemas Fuzzy Evolutivos na Previsão e Recomendação de Investimentos
+  em Criptomoedas}.
+128~p. Disserta\c{c}\~{a}o (Mestrado) --- Centro Federal de Educação
+  Tecnológica de Minas Gerais, Belo Horizonte - MG, 2021.}
+
+\bibitem[Amini e Hu 2021]{amini2021two}
+\abntrefinfo{Amini e Hu}{AMINI; HU}{2021}
+{AMINI, F.; HU, G. A two-layer feature selection method using genetic algorithm
+  and elastic net.
+\emph{Expert Systems with Applications}, Elsevier, v.~166, p. 114072, 2021.}
+
+\bibitem[Aminimehr et al. 2022]{Amin_Aminimehr_Comprehensive}
+\abntrefinfo{Aminimehr et al.}{AMINIMEHR et al.}{2022}
+{AMINIMEHR, A. et al. A comprehensive study of market prediction from efficient
+  market hypothesis up to late intelligent market prediction approaches.
+\emph{Computational Economics}, Springer, v.~60, n.~2, p. 781--815, 2022.}
+
+\bibitem[Ampomah, Qin e Nyame 2020]{ampomah2020evaluation}
+\abntrefinfo{Ampomah, Qin e Nyame}{AMPOMAH; QIN; NYAME}{2020}
+{AMPOMAH, E.~K.; QIN, Z.; NYAME, G. Evaluation of tree-based ensemble machine
+  learning models in predicting stock price direction of movement.
+\emph{Information}, MDPI, v.~11, n.~6, p.~332, 2020.}
+
+\bibitem[Anand 2021]{Anand_Comparison}
+\abntrefinfo{Anand}{ANAND}{2021}
+{ANAND, C. Comparison of stock price prediction models using pre-trained neural
+  networks.
+\emph{Journal of Ubiquitous Computing and Communication Technologies (UCCT)},
+  v.~3, n.~02, p. 122--134, 2021.}
+
+\bibitem[Ananthi e Vijayakumar 2021]{ananthi2021retracted}
+\abntrefinfo{Ananthi e Vijayakumar}{ANANTHI; VIJAYAKUMAR}{2021}
+{ANANTHI, M.; VIJAYAKUMAR, K. Retracted article: stock market analysis using
+  candlestick regression and market trend prediction (ckrm).
+\emph{Journal of Ambient Intelligence and Humanized Computing}, Springer,
+  v.~12, n.~5, p. 4819--4826, 2021.}
+
+\bibitem[Anbalagan e Maheswari 2015]{ANBALAGAN2015214}
+\abntrefinfo{Anbalagan e Maheswari}{ANBALAGAN; MAHESWARI}{2015}
+{ANBALAGAN, T.; MAHESWARI, S.~U. Classification and prediction of stock market
+  index based on fuzzy metagraph.
+\emph{Procedia Computer Science}, v.~47, p. 214--221, 2015.
+ISSN 1877-0509.}
+
+\bibitem[Anwar e Rahman 2019]{anwar2019forecasting}
+\abntrefinfo{Anwar e Rahman}{ANWAR; RAHMAN}{2019}
+{ANWAR, M.~T.; RAHMAN, S.
+\emph{Forecasting stock market prices using advanced tools of machine
+  learning}.
+Tese (Doutorado) --- Brac University, 2019.}
+
+\bibitem[Ben-David, Franzoni e Moussawi 2017]{ben2017exchange}
+\abntrefinfo{Ben-David, Franzoni e Moussawi}{BEN-DAVID; FRANZONI;
+  MOUSSAWI}{2017}
+{BEN-DAVID, I.; FRANZONI, F.; MOUSSAWI, R. Exchange-traded funds.
+\emph{Annual Review of Financial Economics}, Annual Reviews, v.~9, p. 169--189,
+  2017.}
+
+\bibitem[Bogle 1999]{John2000}
+\abntrefinfo{Bogle}{BOGLE}{1999}
+{BOGLE, J.~C. \emph{Common sense on mutual funds: New imperatives for the
+  intelligent investor}. [S.l.]: John Wiley \& Sons, 1999.}
+
+\bibitem[Bollen, Mao e Zeng 2011]{SENTIMENTAL2}
+\abntrefinfo{Bollen, Mao e Zeng}{BOLLEN; MAO; ZENG}{2011}
+{BOLLEN, J.; MAO, H.; ZENG, X. Twitter mood predicts the stock market.
+\emph{Journal of computational science}, Elsevier, v.~2, n.~1, p.~1--8, 2011.}
+
+\bibitem[Bolsa de Valores Brasileira (B3) 2023]{B3H:2023}
+\abntrefinfo{B3}{B3}{2023a}
+{BOLSA DE VALORES BRASILEIRA (B3). \emph{Horários de negociação no mercado
+  de ações (mercado de Bolsa)}. 2023.
+  \url{https://www.b3.com.br/pt_br/solucoes/plataformas/puma-trading-system/para-participantes-e-traders/horario-de-negociacao/acoes/}.}
+
+\bibitem[Bolsa de Valores Brasileira (B3) 2023]{B3:2023}
+\abntrefinfo{B3}{B3}{2023b}
+{BOLSA DE VALORES BRASILEIRA (B3). \emph{Número de investidores na B3 cresce
+  mesmo em cenário de alta volatilidade}. 2023.
+  \url{https://www.b3.com.br/pt_br/noticias/numero-de-investidores-na-b3-cresce-mesmo-em-cenario-de-alta-volatilidade}.}
+
+\bibitem[Breiman 2001]{breiman2001random}
+\abntrefinfo{Breiman}{BREIMAN}{2001}
+{BREIMAN, L. Random forests.
+\emph{Machine learning}, Springer, v.~45, p. 5--32, 2001.}
+
+\bibitem[Brito 2019]{mercado}
+\abntrefinfo{Brito}{BRITO}{2019}
+{BRITO, O.~S. de. \emph{Mercado financeiro}. [S.l.]: Saraiva Educa{\c{c}}{\~a}o
+  SA, 2019.}
+
+\bibitem[Bulkowski 2012]{bulkowski2012encyclopedia}
+\abntrefinfo{Bulkowski}{BULKOWSKI}{2012}
+{BULKOWSKI, T.~N. \emph{Encyclopedia of candlestick charts}. [S.l.]: John Wiley
+  \& Sons, 2012.}
+
+\bibitem[Cajueiro e Tabak 2004]{CAJUEIRO2004521}
+\abntrefinfo{Cajueiro e Tabak}{CAJUEIRO; TABAK}{2004}
+{CAJUEIRO, D.~O.; TABAK, B.~M. The hurst exponent over time: testing the
+  assertion that emerging markets are becoming more efficient.
+\emph{Physica A: statistical mechanics and its applications}, Elsevier, v.~336,
+  n.~3-4, p. 521--537, 2004.}
+
+\bibitem[Cavalcante, Misumi e Rudge 2005]{CAVALCANTE2005}
+\abntrefinfo{Cavalcante, Misumi e Rudge}{CAVALCANTE; MISUMI; RUDGE}{2005}
+{CAVALCANTE, F.; MISUMI, J.~Y.; RUDGE, L.~F. \emph{Mercado de capitais: o que
+  {\'e}, como funciona}. [S.l.]: Elsevier, 2005.}
+
+\bibitem[Chantarakasemchit, Nuchitprasitchai e Nilsiam
+  2020]{chantarakasemchit2020forex}
+\abntrefinfo{Chantarakasemchit, Nuchitprasitchai e Nilsiam}{CHANTARAKASEMCHIT;
+  NUCHITPRASITCHAI; NILSIAM}{2020}
+{CHANTARAKASEMCHIT, O.; NUCHITPRASITCHAI, S.; NILSIAM, Y. Forex rates
+  prediction on eur/usd with simple moving average technique and financial
+  factors. In:  IEEE. \emph{2020 17th International Conference on Electrical
+  Engineering/Electronics, Computer, Telecommunications and Information
+  Technology (ECTI-CON)}. [S.l.], 2020. p. 771--774.}
+
+\bibitem[Diego Nogari 2020]{Diego:2020}
+\abntrefinfo{Diego Nogari}{DIEGO NOGARI}{2020}
+{DIEGO NOGARI. \emph{Performance de Machine Learning – Matriz de Confusão}.
+  2020.
+  \url{https://diegonogare.net/2020/04/performance-de-machine-learning-matriz-de-confusao/}.}
+
+\bibitem[Dietterich et al. 2002]{dietterich2002ensemble}
+\abntrefinfo{Dietterich et al.}{DIETTERICH et al.}{2002}
+{DIETTERICH, T.~G. et al. Ensemble learning.
+\emph{The handbook of brain theory and neural networks}, MIT press Cambridge,
+  MA, USA, v.~2, n.~1, p. 110--125, 2002.}
+
+\bibitem[Dwivedi et al. 2021]{dwivedi2021artificial}
+\abntrefinfo{Dwivedi et al.}{DWIVEDI et al.}{2021}
+{DWIVEDI, Y.~K. et al. Artificial intelligence (ai): Multidisciplinary
+  perspectives on emerging challenges, opportunities, and agenda for research,
+  practice and policy.
+\emph{International Journal of Information Management}, Elsevier, v.~57, p.
+  101994, 2021.}
+
+\bibitem[Ellis e Parbery 2005]{ELLIS2005399}
+\abntrefinfo{Ellis e Parbery}{ELLIS; PARBERY}{2005}
+{ELLIS, C.~A.; PARBERY, S.~A. Is smarter better? a comparison of adaptive, and
+  simple moving average trading strategies.
+\emph{Research in International Business and Finance}, v.~19, n.~3, p.
+  399--411, 2005.
+ISSN 0275-5319.}
+
+\bibitem[Expert XP 2023]{XP:2023}
+\abntrefinfo{XP}{XP}{2023}
+{EXPERT XP. \emph{Pessoas físicas na Bolsa: Mercado de ações brasileiro em
+  contínua evolução}. 2023.
+  \url{https://conteudos.xpi.com.br/acoes/relatorios/pessoas-fisicas-na-bolsa-mercado-de-acoes-brasileiro-em-continua-evolucao/}.}
+
+\bibitem[Fama 1970]{Fama_EFFICIENT}
+\abntrefinfo{Fama}{FAMA}{1970}
+{FAMA, E.~F. Efficient capital markets: A review of theory and empirical work.
+\emph{The journal of Finance}, JSTOR, v.~25, n.~2, p. 383--417, 1970.}
+
+\bibitem[Felizardo et al. 2019]{Leonardo_Comparative}
+\abntrefinfo{Felizardo et al.}{FELIZARDO et al.}{2019}
+{FELIZARDO, L. et al. Comparative study of bitcoin price prediction using
+  wavenets, recurrent neural networks and other machine learning methods. In:
+  IEEE. \emph{2019 6th International Conference on Behavioral, Economic and
+  Socio-Cultural Computing (BESC)}. [S.l.], 2019. p.~1--6.}
+
+\bibitem[Fisher 1936]{fisher1936use}
+\abntrefinfo{Fisher}{FISHER}{1936}
+{FISHER, R.~A. The use of multiple measurements in taxonomic problems.
+\emph{Annals of eugenics}, Wiley Online Library, v.~7, n.~2, p. 179--188,
+  1936.}
+
+\bibitem[French 2006]{french2006dutch}
+\abntrefinfo{French}{FRENCH}{2006}
+{FRENCH, D. The dutch monetary environment during tulipmania.
+\emph{Quarterly Journal of Austrian Economics}, SPRINGER SCIENCE+ BUSINESS
+  MEDIA, v.~9, n.~1, p.~3, 2006.}
+
+\bibitem[Gad e Andrikopoulos 2019]{gad2019diversification}
+\abntrefinfo{Gad e Andrikopoulos}{GAD; ANDRIKOPOULOS}{2019}
+{GAD, S.; ANDRIKOPOULOS, P. Diversification benefits of shari'ah compliant
+  equity etfs in emerging markets.
+\emph{Pacific-Basin Finance Journal}, Elsevier, v.~53, p. 133--144, 2019.}
+
+\bibitem[Gao 2021]{gao2021stock}
+\abntrefinfo{Gao}{GAO}{2021}
+{GAO, Z. Stock price prediction with arima and deep learning models. In:  IEEE.
+  \emph{2021 IEEE 6th International Conference on Big Data Analytics (ICBDA)}.
+  [S.l.], 2021. p. 61--68.}
+
+\bibitem[Gini 1921]{gini1921measurement}
+\abntrefinfo{Gini}{GINI}{1921}
+{GINI, C. Measurement of inequality of incomes.
+\emph{The economic journal}, Oxford University Press Oxford, UK, v.~31, n.~121,
+  p. 124--125, 1921.}
+
+\bibitem[Gonzalo 2010]{Gonzalo_Estimation2}
+\abntrefinfo{Gonzalo}{GONZALO}{2010}
+{GONZALO, J. The making of “estimation of common long-memory components in
+  cointegrated systems”.
+\emph{Journal of Financial Econometrics}, Oxford University Press, v.~8, n.~2,
+  p. 174--176, 2010.}
+
+\bibitem[Gonzalo e Granger 1995]{Gonzalo_Estimation1}
+\abntrefinfo{Gonzalo e Granger}{GONZALO; GRANGER}{1995}
+{GONZALO, J.; GRANGER, C. Estimation of common long-memory components in
+  cointegrated systems.
+\emph{Journal of Business \& Economic Statistics}, Taylor \& Francis, v.~13,
+  n.~1, p. 27--35, 1995.}
+
+\bibitem[Graham et al. 1934]{GRAHAM1934}
+\abntrefinfo{Graham et al.}{GRAHAM et al.}{1934}
+{GRAHAM et al. \emph{Security Analysis: The Classic 1934 Edition}. [S.l.]:
+  McGraw-Hill Education, 1934.
+ISBN 9780070244962.}
+
+\bibitem[Halil e Demirci 2019]{halil2019predicting}
+\abntrefinfo{Halil e Demirci}{HALIL; DEMIRCI}{2019}
+{HALIL, R.; DEMIRCI, M. Predicting the turkish stock market bist 30 index using
+  deep learning.
+\emph{International Journal of Engineering Research and Development}, v.~11,
+  n.~1, p. 253--265, 2019.}
+
+\bibitem[Handayani et al. 2019]{handayani2019longer}
+\abntrefinfo{Handayani et al.}{HANDAYANI et al.}{2019}
+{HANDAYANI, I. et al. Longer time frame concept for foreign exchange trading
+  indicator using matrix correlation technique. In:  IEEE. \emph{2019 Fourth
+  International Conference on Informatics and Computing (ICIC)}. [S.l.], 2019.
+  p.~1--5.}
+
+\bibitem[Igarashi, Valdevieso e Igarashi 2021]{igarashi2021analise}
+\abntrefinfo{Igarashi, Valdevieso e Igarashi}{IGARASHI; VALDEVIESO;
+  IGARASHI}{2021}
+{IGARASHI, W.; VALDEVIESO, G.~S.; IGARASHI, D. C.~C. An{\'a}lise de sentimentos
+  e indicadores t{\'e}cnicos: uma an{\'a}lise da correla{\c{c}}{\~a}o dos
+  pre{\c{c}}os de ativos com a polaridade de not{\'\i}cias do mercado de
+  a{\c{c}}{\~o}es.
+\emph{Brazilian Journal of Business}, v.~3, n.~1, p. 470--486, 2021.}
+
+\bibitem[Ijegwa et al. 2014]{ijegwa2014predictive}
+\abntrefinfo{Ijegwa et al.}{IJEGWA et al.}{2014}
+{IJEGWA, A.~D. et al. A predictive stock market technical analysis using fuzzy
+  logic.
+\emph{Comput. Inf. Sci.}, v.~7, n.~3, p. 1--17, 2014.}
+
+\bibitem[Ji et al. 2022]{ji2022adaptive}
+\abntrefinfo{Ji et al.}{JI et al.}{2022}
+{JI, G. et al. An adaptive feature selection schema using improved technical
+  indicators for predicting stock price movements.
+\emph{Expert Systems with Applications}, Elsevier, v.~200, p. 116941, 2022.}
+
+\bibitem[Jiang et al. 2022]{Manrui_two-stage}
+\abntrefinfo{Jiang et al.}{JIANG et al.}{2022}
+{JIANG, M. et al. The two-stage machine learning ensemble models for stock
+  price prediction by combining mode decomposition, extreme learning machine
+  and improved harmony search algorithm.
+\emph{Annals of Operations Research}, Springer, p. 1--33, 2022.}
+
+\bibitem[Jiang et al. 2020]{jiang2020improved}
+\abntrefinfo{Jiang et al.}{JIANG et al.}{2020}
+{JIANG, M. et al. An improved stacking framework for stock index prediction by
+  leveraging tree-based ensemble models and deep learning algorithms.
+\emph{Physica A: Statistical Mechanics and its Applications}, Elsevier, v.~541,
+  p. 122--272, 2020.}
+
+\bibitem[Kang 2021]{kang2021improving}
+\abntrefinfo{Kang}{KANG}{2021}
+{KANG, B.-K. Improving macd technical analysis by optimizing parameters and
+  modifying trading rules: evidence from the japanese nikkei 225 futures
+  market.
+\emph{Journal of Risk and Financial Management}, MDPI, v.~14, n.~1, p.~37,
+  2021.}
+
+\bibitem[Kaniel, Saar e Titman 2008]{KANIEL_Individual}
+\abntrefinfo{Kaniel, Saar e Titman}{KANIEL; SAAR; TITMAN}{2008}
+{KANIEL, R.; SAAR, G.; TITMAN, S. Individual investor trading and stock
+  returns.
+\emph{The Journal of finance}, Wiley Online Library, v.~63, n.~1, p. 273--310,
+  2008.}
+
+\bibitem[Karasu e Altan 2022]{karasu2022crude}
+\abntrefinfo{Karasu e Altan}{KARASU; ALTAN}{2022}
+{KARASU, S.; ALTAN, A. Crude oil time series prediction model based on lstm
+  network with chaotic henry gas solubility optimization.
+\emph{Energy}, Elsevier, v.~242, p. 122964, 2022.}
+
+\bibitem[Kaur, Pannu e Malhi 2019]{kaur2019systematic}
+\abntrefinfo{Kaur, Pannu e Malhi}{KAUR; PANNU; MALHI}{2019}
+{KAUR, H.; PANNU, H.~S.; MALHI, A.~K. A systematic review on imbalanced data
+  challenges in machine learning: Applications and solutions.
+\emph{ACM Computing Surveys (CSUR)}, ACM New York, NY, USA, v.~52, n.~4, p.
+  1--36, 2019.}
+
+\bibitem[Kelotra e Pandey 2020]{kelotra2020stock}
+\abntrefinfo{Kelotra e Pandey}{KELOTRA; PANDEY}{2020}
+{KELOTRA, A.; PANDEY, P. Stock market prediction using optimized deep-convlstm
+  model.
+\emph{Big Data}, Mary Ann Liebert, Inc., publishers 140 Huguenot Street, 3rd
+  Floor New~…, v.~8, n.~1, p. 5--24, 2020.}
+
+\bibitem[Korczak e Hemes 2017]{Jerzy_Deep}
+\abntrefinfo{Korczak e Hemes}{KORCZAK; HEMES}{2017}
+{KORCZAK, J.; HEMES, M. Deep learning for financial time series forecasting in
+  a-trader system. In:  IEEE. \emph{2017 Federated Conference on Computer
+  Science and Information Systems (FedCSIS)}. [S.l.], 2017. p. 905--912.}
+
+\bibitem[Kraskov, St{\"o}gbauer e Grassberger 2004]{kraskov2004estimating}
+\abntrefinfo{Kraskov, St{\"o}gbauer e Grassberger}{KRASKOV; ST{\"O}GBAUER;
+  GRASSBERGER}{2004}
+{KRASKOV, A.; ST{\"O}GBAUER, H.; GRASSBERGER, P. Estimating mutual information.
+\emph{Physical review E}, APS, v.~69, n.~6, p. 066138, 2004.}
+
+\bibitem[Kruskal e Wallis 1952]{kruskal1952use}
+\abntrefinfo{Kruskal e Wallis}{KRUSKAL; WALLIS}{1952}
+{KRUSKAL, W.~H.; WALLIS, W.~A. Use of ranks in one-criterion variance analysis.
+\emph{Journal of the American statistical Association}, Taylor \& Francis,
+  v.~47, n.~260, p. 583--621, 1952.}
+
+\bibitem[Kumar, Singh e Jain 2022]{Gourav_Swarm}
+\abntrefinfo{Kumar, Singh e Jain}{KUMAR; SINGH; JAIN}{2022}
+{KUMAR, G.; SINGH, U.~P.; JAIN, S. Swarm intelligence based hybrid neural
+  network approach for stock price forecasting.
+\emph{Computational Economics}, Springer, p. 1--49, 2022.}
+
+\bibitem[Kumar 2020]{kumar2020data}
+\abntrefinfo{Kumar}{KUMAR}{2020}
+{KUMAR, T.~S. Data mining based marketing decision support system using hybrid
+  machine learning algorithm.
+\emph{Journal of Artificial Intelligence}, v.~2, n.~03, p. 185--193, 2020.}
+
+\bibitem[Lee et al. 2021]{lee2021exploring}
+\abntrefinfo{Lee et al.}{LEE et al.}{2021}
+{LEE, M.-C. et al. Exploring the effectiveness of deep neural networks with
+  technical analysis applied to stock market prediction.
+\emph{Computer Science and Information Systems}, v.~18, n.~2, p. 401--418,
+  2021.}
+
+\bibitem[MALKIEL 2003]{MALKIEL2003}
+\abntrefinfo{MALKIEL}{MALKIEL}{2003}
+{MALKIEL, B.~G. \emph{A random walk down Wall Street : the time-tested strategy
+  for successful investing}. [S.l.]: New York: W.W. Norton \& Company, 2019.,
+  2003.}
+
+\bibitem[MATSURA 2017]{matsura2017comprar}
+\abntrefinfo{MATSURA}{MATSURA}{2017}
+{MATSURA, E.~K. \emph{Comprar ou vender?: como investir na bolsa utilizando
+  an{\'a}lise gr{\'a}fica}. [S.l.]: Saraiva Educa{\c{c}}{\~a}o SA, 2017.}
+
+\bibitem[Meyer et al. 2019]{meyer2019importance}
+\abntrefinfo{Meyer et al.}{MEYER et al.}{2019}
+{MEYER, H. et al. Importance of spatial predictor variable selection in machine
+  learning applications--moving from data reproduction to spatial prediction.
+\emph{Ecological Modelling}, Elsevier, v.~411, p. 108815, 2019.}
+
+\bibitem[Morris 1994]{MORRIS1994}
+\abntrefinfo{Morris}{MORRIS}{1994}
+{MORRIS, G.~L. \emph{Candlestick Charting Explained: Timeless Techniques for
+  Trading Stocks and Futures: Timeless Techniques for Trading Stocks and
+  Sutures}. [S.l.]: McGraw-Hill Companies, 1994.
+ISBN 978-0071461542.}
+
+\bibitem[Mussa et al. 2010]{mussa2010hipotese}
+\abntrefinfo{Mussa et al.}{MUSSA et al.}{2010}
+{MUSSA, A. et al. Hip{\'o}tese de mercados eficientes e finan{\c{c}}as
+  comportamentais: as discuss{\~o}es persistem.
+\emph{FACEF Pesquisa-Desenvolvimento e Gest{\~a}o}, v.~11, n.~1, 2010.}
+
+\bibitem[Muthukrishnan e Rohini 2016]{muthukrishnan2016lasso}
+\abntrefinfo{Muthukrishnan e Rohini}{MUTHUKRISHNAN; ROHINI}{2016}
+{MUTHUKRISHNAN, R.; ROHINI, R. Lasso: A feature selection technique in
+  predictive modeling for machine learning. In:  IEEE. \emph{2016 IEEE
+  international conference on advances in computer applications (ICACA)}.
+  [S.l.], 2016. p. 18--20.}
+
+\bibitem[Nametala et al. 2023]{Ciniro_Econometric}
+\abntrefinfo{Nametala et al.}{NAMETALA et al.}{2023}
+{NAMETALA, C.~A. et al. Use of econometric predictors and artificial neural
+  networks for the construction of stock market investment bots.
+\emph{Computational Economics}, Springer, v.~61, n.~2, p. 743--773, 2023.}
+
+\bibitem[Nayak, Mishra e Rath 2015]{nayak2015naive}
+\abntrefinfo{Nayak, Mishra e Rath}{NAYAK; MISHRA; RATH}{2015}
+{NAYAK, R.~K.; MISHRA, D.; RATH, A.~K. A na{\"\i}ve svm-knn based stock market
+  trend reversal analysis for indian benchmark indices.
+\emph{Applied Soft Computing}, Elsevier, v.~35, p. 670--680, 2015.}
+
+\bibitem[Nguyen e Shirai 2015]{SENTIMENTAL3}
+\abntrefinfo{Nguyen e Shirai}{NGUYEN; SHIRAI}{2015}
+{NGUYEN, T.~H.; SHIRAI, K. Topic modeling based sentiment analysis on social
+  media for stock market prediction. In:  \emph{Proceedings of the 53rd Annual
+  Meeting of the Association for Computational Linguistics and the 7th
+  International Joint Conference on Natural Language Processing (Volume 1: Long
+  Papers)}. [S.l.: s.n.], 2015. p. 1354--1364.}
+
+\bibitem[Ni e Xu 2021]{Jian_Forecasting}
+\abntrefinfo{Ni e Xu}{NI; XU}{2021}
+{NI, J.; XU, Y. Forecasting the dynamic correlation of stock indices based on
+  deep learning method.
+\emph{Computational Economics}, Springer, p. 1--21, 2021.}
+
+\bibitem[Ni et al. 2022]{ni2022does}
+\abntrefinfo{Ni et al.}{NI et al.}{2022}
+{NI, Y. et al. Does board structure affect stock price overshooting
+  informativeness measured by stochastic oscillator indicators?
+\emph{International Journal of Finance \& Economics}, Wiley Online Library,
+  v.~27, n.~2, p. 2290--2302, 2022.}
+
+\bibitem[Nicholas, Andrei e Robert 1998]{BARBERIS1998307}
+\abntrefinfo{Nicholas, Andrei e Robert}{NICHOLAS; ANDREI; ROBERT}{1998}
+{NICHOLAS, B.; ANDREI, S.; ROBERT, V. A model of investor sentiment1we are
+  grateful to the nsf for financial support, and to oliver blanchard, alon
+  brav, john campbell (a referee), john cochrane, edward glaeser, jb heaton,
+  danny kahneman, david laibson, owen lamont, drazen prelec, jay ritter (a
+  referee), ken singleton, dick thaler, an anonymous referee, and the editor,
+  bill schwert, for comments. 1.
+\emph{Journal of Financial Economics}, Elsevier BV, v.~49, n.~3, p. 307--343,
+  1998.}
+
+\bibitem[Pabu{\c{c}}cu, Ongan e Ongan 2023]{pabucccu2023forecasting}
+\abntrefinfo{Pabu{\c{c}}cu, Ongan e Ongan}{PABU{\c{C}}CU; ONGAN; ONGAN}{2023}
+{PABU{\c{C}}CU, H.; ONGAN, S.; ONGAN, A. Forecasting the movements of bitcoin
+  prices: an application of machine learning algorithms.
+\emph{arXiv preprint arXiv:2303.04642}, 2023.}
+
+\bibitem[Pearson 1900]{pearson1900x}
+\abntrefinfo{Pearson}{PEARSON}{1900}
+{PEARSON, K. X. on the criterion that a given system of deviations from the
+  probable in the case of a correlated system of variables is such that it can
+  be reasonably supposed to have arisen from random sampling.
+\emph{The London, Edinburgh, and Dublin Philosophical Magazine and Journal of
+  Science}, Taylor \& Francis, v.~50, n.~302, p. 157--175, 1900.}
+
+\bibitem[Peng et al. 2021]{peng2021feature}
+\abntrefinfo{Peng et al.}{PENG et al.}{2021}
+{PENG, Y. et al. Feature selection and deep neural networks for stock price
+  direction forecasting using technical analysis indicators.
+\emph{Machine Learning with Applications}, Elsevier, v.~5, p. 100060, 2021.}
+
+\bibitem[Pino, Morettin e Mentz 1987]{Morettin_Modelling}
+\abntrefinfo{Pino, Morettin e Mentz}{PINO; MORETTIN; MENTZ}{1987}
+{PINO, F.~A.; MORETTIN, P.~A.; MENTZ, R.~P. Modelling and forecasting linear
+  combinations of time series.
+\emph{International Statistical Review/Revue Internationale de Statistique},
+  JSTOR, p. 295--313, 1987.}
+
+\bibitem[Pinto 2009]{Waldir}
+\abntrefinfo{Pinto}{PINTO}{2009}
+{PINTO, W. D.~O.
+\emph{Previsão de séries temporais com redes neurais artificiais aplicada à
+  demanda}.
+Monografia (Bacharel em Sistemas de Informação --- Centro Universitário do
+  Leste de Minas Gerais, Coronel Fabriciano, 2009.}
+
+\bibitem[Rao e Srivastava 2012]{SENTIMENTAL1}
+\abntrefinfo{Rao e Srivastava}{RAO; SRIVASTAVA}{2012}
+{RAO, T.; SRIVASTAVA, S. Analyzing stock market movements using twitter
+  sentiment analysis.
+IEEE Computer Society, 2012.}
+
+\bibitem[Resende 2021]{Charlene}
+\abntrefinfo{Resende}{RESENDE}{2021}
+{RESENDE, C.~C. de.
+\emph{Modelos Matemático-computacional Para Previsão de Tendência de
+  Preços: Abordagem com Múltiplos Ativos Buscando Oportunidades em Desvios da
+  Hipótese de Mercado Eficiente}.
+138~p. Tese (Doutorado) --- Centro Federal de Educação Tecnológica de Minas
+  Gerais, Belo Horizonte - MG, 2021.}
+
+\bibitem[Rosa 2023]{gabriel2023neo}
+\abntrefinfo{Rosa}{ROSA}{2023}
+{ROSA, G. Buying and selling decision in the brazilian stock exchange financial
+  market by a neo fuzzy neuron (nfn) applied to the hurwicz criterion. In:
+  \emph{CSBC 2023 - BWAIF 2023}. João Pessoa, Paraiba: [s.n.], 2023.}
+
+\bibitem[Saghi e Rezaee 2021]{Faramarz_Integrating}
+\abntrefinfo{Saghi e Rezaee}{SAGHI; REZAEE}{2021}
+{SAGHI, F.; REZAEE, M. J. Integrating wavelet decomposition and fuzzy
+  transformation for improving the accuracy of forecasting crude oil price.
+\emph{Computational Economics}, Springer, p. 1--33, 2021.}
+
+\bibitem[Sagi e Rokach 2018]{sagi2018ensemble}
+\abntrefinfo{Sagi e Rokach}{SAGI; ROKACH}{2018}
+{SAGI, O.; ROKACH, L. Ensemble learning: A survey.
+\emph{Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery},
+  Wiley Online Library, v.~8, n.~4, p. e1249, 2018.}
+
+\bibitem[Salman e Kecman 2012]{SALMAN2012regression}
+\abntrefinfo{Salman e Kecman}{SALMAN; KECMAN}{2012}
+{SALMAN, R.; KECMAN, V. Regression as classification. In:  IEEE. \emph{2012
+  Proceedings of IEEE Southeastcon}. [S.l.], 2012. p.~1--6.}
+
+\bibitem[Samuelson 2016]{Paul_Proof}
+\abntrefinfo{Samuelson}{SAMUELSON}{2016}
+{SAMUELSON, P.~A. Proof that properly anticipated prices fluctuate randomly.
+  In:  \emph{The world scientific handbook of futures markets}. [S.l.]: World
+  Scientific, 2016. p. 25--38.}
+
+\bibitem[Sermpinis, Tsoukas e Zhang 2018]{sermpinis2018modelling}
+\abntrefinfo{Sermpinis, Tsoukas e Zhang}{SERMPINIS; TSOUKAS; ZHANG}{2018}
+{SERMPINIS, G.; TSOUKAS, S.; ZHANG, P. Modelling market implied ratings using
+  lasso variable selection techniques.
+\emph{Journal of Empirical Finance}, Elsevier, v.~48, p. 19--35, 2018.}
+
+\bibitem[Shamseddin e Elmeski 2022]{shamseddin2022mapping}
+\abntrefinfo{Shamseddin e Elmeski}{SHAMSEDDIN; ELMESKI}{2022}
+{SHAMSEDDIN, M.~A.; ELMESKI, H.~A. Mapping dynamic changes in hydrological time
+  series using the average directional index.
+\emph{International Journal of River Basin Management}, Taylor \& Francis,
+  v.~20, n.~1, p. 67--78, 2022.}
+
+\bibitem[Shiller 2000]{Shiller2000}
+\abntrefinfo{Shiller}{SHILLER}{2000}
+{SHILLER, R.~J. \emph{Irrational Exuberance}. [S.l.]: Princeton: Princeton
+  University Press, 2000.}
+
+\bibitem[Shoven e Sialm 2000]{John_Dow}
+\abntrefinfo{Shoven e Sialm}{SHOVEN; SIALM}{2000}
+{SHOVEN, J.~B.; SIALM, C. The dow jones industrial average: the impact of
+  fixing its flaws.
+\emph{Journal of Wealth Management}, Citeseer, v.~3, n.~3, p. 9--18, 2000.}
+
+\bibitem[Stillman 1986]{Richard1986}
+\abntrefinfo{Stillman}{STILLMAN}{1986}
+{STILLMAN, R.~J. \emph{Dow Jones industrial average : history and role in an
+  investment strategy}. [S.l.]: Homewood, Ill. : Dow Jones-Irwin, 1986.}
+
+\bibitem[Ting 2015]{TING2015}
+\abntrefinfo{Ting}{TING}{2015}
+{TING, C. \emph{Introduction To Quantitative Finance, An: A Three-principle
+  Approach}. [S.l.]: World Scientific Publishing Company, 2015.
+ISBN 9789814704328.}
+
+\bibitem[Tomasevic, Gvozdenovic e Vranes 2020]{tomasevic2020overview}
+\abntrefinfo{Tomasevic, Gvozdenovic e Vranes}{TOMASEVIC; GVOZDENOVIC;
+  VRANES}{2020}
+{TOMASEVIC, N.; GVOZDENOVIC, N.; VRANES, S. An overview and comparison of
+  supervised data mining techniques for student exam performance prediction.
+\emph{Computers \& education}, Elsevier, v.~143, p. 103676, 2020.}
+
+\bibitem[Trade Mental 2022]{trade_mental:2022}
+\abntrefinfo{Trade Mental}{TRADE MENTAL}{2022}
+{TRADE MENTAL. \emph{Padrões de Candlesticks – Os 10 Mais Importantes}.
+  2022. \url{https://trademental.com/padroes-candlesticks/}.}
+
+\bibitem[UNCTAD 2020]{UNCTAD2020}
+\abntrefinfo{UNCTAD}{UNCTAD}{2020}
+{UNCTAD. \emph{International Production Beyond the Pandemic}. [S.l.]: World
+  Investment Report 2020, 2020.
+ISBN 978-92-1-112985-4.}
+
+\bibitem[Vadlamudi 2017]{vadlamudi2017stock}
+\abntrefinfo{Vadlamudi}{VADLAMUDI}{2017}
+{VADLAMUDI, S. Stock market prediction using machine learning: A systematic
+  literature review.
+\emph{American Journal of Trade and Policy}, v.~4, n.~3, p. 123--128, 2017.}
+
+\bibitem[Vaidya 2018]{vaidya2018stochastic}
+\abntrefinfo{Vaidya}{VAIDYA}{2018}
+{VAIDYA, R. Stochastic and momentum analysis of nepalese stock market.
+\emph{Journal of Nepalese Business Studies}, v.~11, n.~1, p. 14--22, 2018.}
+
+\bibitem[Veeramani, Venugopal e Muruganandan 2022]{C_Veeramani_Exploration}
+\abntrefinfo{Veeramani, Venugopal e Muruganandan}{VEERAMANI; VENUGOPAL;
+  MURUGANANDAN}{2022}
+{VEERAMANI, C.; VENUGOPAL, R.; MURUGANANDAN, S. An exploration of the fuzzy
+  inference system for the daily trading decision and its performance analysis
+  based on fuzzy mcdm methods.
+\emph{Computational Economics}, Springer, p. 1--28, 2022.}
+
+\bibitem[Wang et al. 2022]{Chaojie_Stock}
+\abntrefinfo{Wang et al.}{WANG et al.}{2022}
+{WANG, C. et al. Stock market index prediction using deep transformer model.
+\emph{Expert Systems with Applications}, Elsevier, v.~208, p. 118128, 2022.}
+
+\bibitem[Wang et al. 2013]{wang2013soft}
+\abntrefinfo{Wang et al.}{WANG et al.}{2013}
+{WANG, H. et al. Soft-voting clustering ensemble. In:  SPRINGER. \emph{Multiple
+  Classifier Systems: 11th International Workshop, MCS 2013, Nanjing, China,
+  May 15-17, 2013. Proceedings 11}. [S.l.], 2013. p. 307--318.}
+
+\bibitem[Wang 2019]{Li-Xin_Fast}
+\abntrefinfo{Wang}{WANG}{2019}
+{WANG, L.-X. Fast training algorithms for deep convolutional fuzzy systems with
+  application to stock index prediction.
+\emph{IEEE Transactions on fuzzy systems}, IEEE, v.~28, n.~7, p. 1301--1314,
+  2019.}
+
+\bibitem[Wilson, Wiebe e Hoffmann 2009]{SENTIMENTALWILLSON}
+\abntrefinfo{Wilson, Wiebe e Hoffmann}{WILSON; WIEBE; HOFFMANN}{2009}
+{WILSON, T.; WIEBE, J.; HOFFMANN, P. Recognizing contextual polarity: An
+  exploration of features for phrase-level sentiment analysis.
+\emph{Computational linguistics}, MIT Press One Rogers Street, Cambridge, MA
+  02142-1209, USA, v.~35, n.~3, p. 399--433, 2009.}
+
+\bibitem[Yilmaz e Yildiztepe 2022]{Firat}
+\abntrefinfo{Yilmaz e Yildiztepe}{YILMAZ; YILDIZTEPE}{2022}
+{YILMAZ, F.~M.; YILDIZTEPE, E. Statistical evaluation of deep learning models
+  for stock return forecasting.
+\emph{Computational Economics}, Springer, p. 1--24, 2022.}
+
+\bibitem[Zhang et al. 2021]{Xiaoci_Predicting}
+\abntrefinfo{Zhang et al.}{ZHANG et al.}{2021}
+{ZHANG, X. et al. Predicting stock price movement using a dbn-rnn.
+\emph{Applied Artificial Intelligence}, Taylor \& Francis, v.~35, n.~12, p.
+  876--892, 2021.}
+
+\bibitem[Zhang, Wahab e Wang 2023]{zhang2023forecasting}
+\abntrefinfo{Zhang, Wahab e Wang}{ZHANG; WAHAB; WANG}{2023}
+{ZHANG, Y.; WAHAB, M.; WANG, Y. Forecasting crude oil market volatility using
+  variable selection and common factor.
+\emph{International Journal of Forecasting}, Elsevier, v.~39, n.~1, p.
+  486--502, 2023.}
+
+\bibitem[Zhao, Anand e Wang 2019]{zhao2019maximum}
+\abntrefinfo{Zhao, Anand e Wang}{ZHAO; ANAND; WANG}{2019}
+{ZHAO, Z.; ANAND, R.; WANG, M. Maximum relevance and minimum redundancy feature
+  selection methods for a marketing machine learning platform. In:  IEEE.
+  \emph{2019 IEEE international conference on data science and advanced
+  analytics (DSAA)}. [S.l.], 2019. p. 442--452.}
+
+\end{thebibliography}
