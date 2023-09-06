@@ -98,7 +98,7 @@ def GetModelsClassificationOptimized(dataName, size):
     kernels = ['linear', 'poly', 'rbf', 'sigmoid']
     regularizations = np.arange(0.01, 100, 0.5)
     gammas = np.arange(0.01, 10, 0.2)               # para kernels rbf, poly e sigmoid
-    degrees = np.arange(1, 10, 1)                   # para kernel poly
+    degrees = np.arange(1, 5, 1)                    # para kernel poly
     coef0s = np.arange(-1, 5, 1)                    # para kernel poly e sigmoid
 
     for kernel in kernels:
@@ -129,7 +129,7 @@ def GetModelsClassificationOptimized(dataName, size):
     print(bestSVM)
     svmLogs.loc[0] = [bestSVM['kernel'], bestSVM['regularization'], bestSVM['gamma'], bestSVM['degree'], bestSVM['coef0'], bestSVM['accuracy'], bestSVM['f1_score'], bestSVM['True Positive'], bestSVM['False Positive'], bestSVM['False Negative'], bestSVM['True Negative']]
     svmLogs.to_csv(f'../Results/optimization/classifications/SVM/{dataName}_Logs.csv', sep=';', index=False)
-    svmLogs = None
+    
     
     # ----------------------------- Otimizando KNN ----------------------------------
     print('----------------------------- KNN ----------------------------------')
@@ -148,7 +148,6 @@ def GetModelsClassificationOptimized(dataName, size):
     print(bestKNN)
     knnLogs.loc[0] = [bestKNN['neighbors'], bestKNN['weights'], bestKNN['algorithm'], bestKNN['distance'], bestKNN['accuracy'], bestKNN['f1_score'], bestKNN['True Positive'], bestKNN['False Positive'], bestKNN['False Negative'], bestKNN['True Negative']]
     knnLogs.to_csv(f'../Results/optimization/classifications/KNN/{dataName}_Logs.csv', sep=';', index=False)
-    knnLogs = None
 
     # ----------------------------- Otimizando LR ----------------------------------
     print('----------------------------- LR ----------------------------------')
@@ -175,7 +174,6 @@ def GetModelsClassificationOptimized(dataName, size):
     print(bestLR)
     lrLogs.loc[0] = [bestLR['penalty'], bestLR['solver'], bestLR['regularization'], bestLR['max_iter'], bestLR['fit_intercept'], bestLR['class_weight'], bestLR['warm_start'], bestLR['accuracy'], bestLR['f1_score'], bestLR['True Positive'], bestLR['False Positive'], bestLR['False Negative'], bestLR['True Negative']]
     lrLogs.to_csv(f'../Results/optimization/classifications/LR/{dataName}_Logs.csv', sep=';', index=False)
-    lrLogs = None
 
     return bestSVM, bestKNN, bestLR
 
