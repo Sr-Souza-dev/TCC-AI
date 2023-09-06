@@ -85,21 +85,21 @@ def saveBestModelLR(accuracy, f1, model, values, confMatrix):
         bestLR['True Negative'] = confMatrix[1][1]
         bestLR['model'] = model
 
-def GetModelsClassificationOptimized(dataName, size):
+def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
     X = pd.read_csv(f'../Data/Cut/dataset1/X/Optmz_{size}{dataName}.csv', sep=";")
     Y = pd.read_csv(f'../Data/Cut/dataset1/Y/Optmz_{size}{dataName}.csv', sep=";")
-    X_train, X_test, Y_train, Y_test = ms.train_test_split(X, Y, test_size = 0.4, random_state = None, shuffle = False)
+    X_train, X_test, Y_train, Y_test = ms.train_test_split(X, Y, test_size = test_size, random_state = None, shuffle = False)
 
-    print("Inicio da otimização dos modelos")
+    print("******************** Inicio da otimização dos modelos de Classificação ********************")
     print(f'X_train: {X_train.shape} | X_test: {X_test.shape} | Y_train: {Y_train.shape} | Y_test: {Y_test.shape}')
 
     # ----------------------------- Otimizando SVM ----------------------------------
     print('----------------------------- SVM ----------------------------------')
     kernels = ['linear', 'poly', 'rbf', 'sigmoid']
-    regularizations = np.arange(0.01, 100, 0.5)
-    gammas = np.arange(0.01, 10, 0.2)               # para kernels rbf, poly e sigmoid
+    regularizations = np.arange(0.01, 50, 1)
+    gammas = np.arange(0.01, 10, 1)               # para kernels rbf, poly e sigmoid
     degrees = np.arange(1, 5, 1)                    # para kernel poly
-    coef0s = np.arange(-1, 5, 1)                    # para kernel poly e sigmoid
+    coef0s = np.arange(1, 5, 1)                    # para kernel poly e sigmoid
 
     for kernel in kernels:
         for regularization in regularizations:
