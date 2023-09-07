@@ -96,9 +96,9 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
     # ----------------------------- Otimizando SVM ----------------------------------
     print('----------------------------- SVM ----------------------------------')
     kernels = ['linear', 'poly', 'rbf', 'sigmoid']
-    regularizations = np.arange(0.01, 50, 1)
-    gammas = np.arange(0.01, 10, 1)               # para kernels rbf, poly e sigmoid
-    degrees = np.arange(1, 5, 1)                    # para kernel poly
+    regularizations = np.arange(0.01, 40, 1)
+    gammas = np.arange(0.01, 5, 1)                 # para kernels rbf, poly e sigmoid
+    degrees = np.arange(1, 5, 1)                   # para kernel poly
     coef0s = np.arange(1, 5, 1)                    # para kernel poly e sigmoid
 
     for kernel in kernels:
@@ -153,7 +153,7 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
     print('----------------------------- LR ----------------------------------')
     penalty = ['l1', 'l2', 'elasticnet', 'none']
     solvers = ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga']
-    regularizations = np.arange(0.01, 100, 0.5)
+    regularizations = np.arange(0.01, 50, 0.5)
     max_iterations = np.arange(100, 1500, 100)
     fit_intercepts = [True, False]
     class_weights = ['balanced', None]
