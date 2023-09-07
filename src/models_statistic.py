@@ -7,6 +7,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 import arch
 from arch.__future__ import reindexing
 
+np.seterr(warn='ignore', message='Series.__getitem__ treating keys as positions is deprecated.')
 
 
 arimaLogs = pd.DataFrame(columns=['autoregressive(p)', 'diferencial(d)', 'media(q)', 'MAE', 'MSE', 'RMSE'])
