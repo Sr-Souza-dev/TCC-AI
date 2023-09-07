@@ -117,11 +117,9 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
 
     print("-------------------- ARIMA --------------------")
     for i in p:
-        print(f'P: {i}', end='  |  ')
         for j in d:
-            print(f'D: {j}', end='  |  ')
             for k in q:
-                print(f'Q: {k}')
+                print(f'------ p: {i} | d: {j} | q: {k}')
                 saveModelsChanges(None, 'ARIMA', [i, j, k], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
 
     print(bestArima)
@@ -140,19 +138,13 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
 
     print("-------------------- SARIMA --------------------")
     for i in p:
-        print(f'p: {i}', end='  |  ')
         for j in d:
-            print(f'd: {j}', end='  |  ')
             for k in q:
-                print(f'q: {k}', end='  |  ')
                 for l in P:
-                    print(f'P: {l}', end='  |  ')
                     for m in D:
-                        print(f'D: {m}', end='  |  ')
                         for n in Q:
-                            print(f'Q: {n}', end='  |  ')
                             for o in S:
-                                print(f'S: {o}')
+                                print(f'------ p: {i} | d: {j} | q: {k} | P: {l} | D: {m} | Q: {n} | S: {o}')
                                 saveModelsChanges(None, 'SARIMA', [i, j, k, l, m, n, o], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
 
     print(bestSarima)
@@ -165,9 +157,8 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
 
     print("-------------------- GARCH --------------------")
     for i in p:
-        print(f'p: {i}', end='  |  ')
         for j in q:
-            print(f'q: {j}')
+            print(f'------ p: {i} | q: {j}')
             saveModelsChanges(None, 'GARCH', [i, j], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
 
 

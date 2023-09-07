@@ -16,17 +16,15 @@ bestCNN = {'Loss': '', 'Optimizer': '', 'Epochs': 0, 'Batch Size': 0, 'MSE': 100
 rnnLogs = pd.DataFrame(columns=['Loss', 'Optimizer', 'Epochs', 'Batch Size', 'MSE', 'MAE', 'RMSE', 'R2_Score'])
 bestRNN = {'Loss': '', 'Optimizer': '', 'Epochs': 0, 'Batch Size': 0, 'MSE': 100000, 'MAE': 100000, 'RMSE': 100000, 'R2_Score': -10000000, 'model': None}
 
-# loss = ['mae', 'mse', 'binary_crossentropy', 'categorical_crossentropy', 'hinge', 'logcosh']
-# optimizer = ['adam', 'sgd', 'rmsprop', 'adagrad', 'adadelta', 'adamax', 'nadam']
-# epochs = np.arange(10, 100, 20)
-# batch_size = np.arange(10, 100, 20)
+loss = ['mae', 'mse', 'binary_crossentropy', 'categorical_crossentropy', 'hinge', 'logcosh']
+optimizer = ['adam', 'sgd', 'rmsprop', 'adagrad', 'adadelta', 'adamax', 'nadam']
+epochs = np.arange(10, 100, 20)
+batch_size = np.arange(10, 100, 20)
 
-
-
-loss = ['mae']
-optimizer = ['adam']
-epochs = np.arange(10, 40, 20)
-batch_size = np.arange(10, 40, 20)
+# loss = ['mae']
+# optimizer = ['adam']
+# epochs = np.arange(10, 40, 20)
+# batch_size = np.arange(10, 40, 20)
 
 
 
