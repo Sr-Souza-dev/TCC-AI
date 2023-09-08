@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import sklearn.model_selection as ms
 from tensorflow.keras import Sequential
+from tensorflow.keras.models import load_model
 from tensorflow.keras.layers import LSTM, Dense, Conv2D, MaxPooling2D, Flatten, Embedding, SimpleRNN
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
@@ -164,7 +165,18 @@ def GetModelsRegressionOptimized(dataName, size, test_size=0.4):
     X_train, X_test, Y_train, Y_test = ms.train_test_split(X, Y, test_size = test_size, random_state = None, shuffle = False)
 
     getLSTMModelOptimized(dataName, X_train, Y_train, X_test, Y_test)
+    bestLSTM['model'].save(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')
+
     getCNNModelOptimized(dataName, X_train, Y_train, X_test, Y_test)
+    bestCNN['model'].save(f'../Results/optimization/regression/CNN/{dataName}_model.h5')
+
     getRNNModelOptimized(dataName, X_train, Y_train, X_test, Y_test)
+    bestRNN['model'].save(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
 
     return bestLSTM, bestCNN, bestRNN
+
+def GetModelsRegression(dataName):
+    LSTM = load_model(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')
+    CNN = load_model(f'../Results/optimization/regression/CNN/{dataName}_model.h5')
+    RNN = load_model(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
+    return LSTM, CNN, RNN

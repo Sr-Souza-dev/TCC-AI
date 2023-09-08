@@ -6,6 +6,7 @@ import sklearn.model_selection as ms
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import arch
 from arch.__future__ import reindexing
+import pickle
 
 np.seterr(warn='ignore', message='Series.__getitem__ treating keys as positions is deprecated.')
 
@@ -121,9 +122,10 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
             for k in q:
                 print(f'------ p: {i} | d: {j} | q: {k}')
                 saveModelsChanges(None, 'ARIMA', [i, j, k], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
-
     print(bestArima)
     arimaLogs.to_csv(f'../Results/optimization/statistics/ARIMA/{dataName}_Logs.csv', sep=';', index=False)
+    with open(f'../Results/optimization/statistics/ARIMA/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestArima['model'], f)
 
 
     # Modelo SARIMA
@@ -146,9 +148,10 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
                             for o in S:
                                 print(f'------ p: {i} | d: {j} | q: {k} | P: {l} | D: {m} | Q: {n} | S: {o}')
                                 saveModelsChanges(None, 'SARIMA', [i, j, k, l, m, n, o], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
-
     print(bestSarima)
     sarimaLogs.to_csv(f'../Results/optimization/statistics/SARIMA/{dataName}_Logs.csv', sep=';', index=False)
+    with open(f'../Results/optimization/statistics/SARIMA/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestSarima['model'], f)
 
 
     # Modelo GARCH
@@ -160,9 +163,19 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
         for j in q:
             print(f'------ p: {i} | q: {j}')
             saveModelsChanges(None, 'GARCH', [i, j], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
-
-
     print(bestGarch)
     garchLogs.to_csv(f'../Results/optimization/statistics/GARCH/{dataName}_Logs.csv', sep=';', index=False)
+    with open(f'../Results/optimization/statistics/GARCH/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestGarch['model'], f)
 
     return bestArima, bestSarima, bestGarch
+
+def GetModelsStatistics(dataName):
+    with open(f'../Results/optimization/statistics/ARIMA/{dataName}_model.pkl', 'rb') as f:
+        ARIMA = pickle.load(f)
+    with open(f'../Results/optimization/statistics/SARIMA/{dataName}_model.pkl', 'rb') as f:
+        SARIMA = pickle.load(f)
+    with open(f'../Results/optimization/statistics/GARCH/{dataName}_model.pkl', 'rb') as f:
+        GARCH = pickle.load(f)
+    
+    return ARIMA, SARIMA, GARCH

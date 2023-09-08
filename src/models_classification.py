@@ -3,6 +3,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
 import sklearn.model_selection as ms
+import pickle
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -133,6 +134,8 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
     print(bestSVM)
     svmLogs.loc[0] = [bestSVM['kernel'], bestSVM['regularization'], bestSVM['gamma'], bestSVM['degree'], bestSVM['coef0'], bestSVM['accuracy'], bestSVM['f1_score'], bestSVM['True Positive'], bestSVM['False Positive'], bestSVM['False Negative'], bestSVM['True Negative']]
     svmLogs.to_csv(f'../Results/optimization/classifications/SVM/{dataName}_Logs.csv', sep=';', index=False)
+    with open(f'../Results/optimization/classifications/SVM/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestSVM['model'], f)
     
     
     # ----------------------------- Otimizando KNN ----------------------------------
@@ -153,6 +156,8 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
     print(bestKNN)
     knnLogs.loc[0] = [bestKNN['neighbors'], bestKNN['weights'], bestKNN['algorithm'], bestKNN['distance'], bestKNN['accuracy'], bestKNN['f1_score'], bestKNN['True Positive'], bestKNN['False Positive'], bestKNN['False Negative'], bestKNN['True Negative']]
     knnLogs.to_csv(f'../Results/optimization/classifications/KNN/{dataName}_Logs.csv', sep=';', index=False)
+    with open(f'../Results/optimization/classifications/KNN/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestKNN['model'], f)
 
     # ----------------------------- Otimizando LR ----------------------------------
     print('------------------------------------- LR --------------------------------------------')
@@ -180,6 +185,18 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
     print(bestLR)
     lrLogs.loc[0] = [bestLR['penalty'], bestLR['solver'], bestLR['regularization'], bestLR['max_iter'], bestLR['fit_intercept'], bestLR['class_weight'], bestLR['warm_start'], bestLR['accuracy'], bestLR['f1_score'], bestLR['True Positive'], bestLR['False Positive'], bestLR['False Negative'], bestLR['True Negative']]
     lrLogs.to_csv(f'../Results/optimization/classifications/LR/{dataName}_Logs.csv', sep=';', index=False)
+    with open(f'../Results/optimization/classifications/LR/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestLR['model'], f)
 
     return bestSVM, bestKNN, bestLR
 
+
+def GetModelsClassification(dataName):
+    with open(f'../Results/optimization/classifications/SVM/{dataName}_model.pkl', 'rb') as f:
+        SVM = pickle.load(f)
+    with open(f'../Results/optimization/classifications/KNN/{dataName}_model.pkl', 'rb') as f:
+        KNN = pickle.load(f)
+    with open(f'../Results/optimization/classifications/LR/{dataName}_model.pkl', 'rb') as f:
+        LR = pickle.load(f)
+
+    return SVM, KNN, LR
