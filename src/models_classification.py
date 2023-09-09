@@ -9,6 +9,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy  as np
 
+import warnings
+warnings.filterwarnings("ignore")
+
 namesM = ['SVM', 'KNN', 'LR']
 
 svmLogs = pd.DataFrame(columns=['kernel', 'regularization', 'gamma', 'degree', 'coef0', 'accuracy', 'f1_score', 'True Positive', 'False Positive', 'False Negative', 'True Negative'])
@@ -104,32 +107,36 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
 
     for kernel in kernels:
         for regularization in regularizations:
-            if kernel == 'linear':
-                print(f'------- kernel: {kernel} | Regularization: {regularization}')
-                model = SVC(kernel=kernel, C=regularization)
-                values = [kernel, regularization, 'default', 'default', 'default']
-                saveModelChanges(model, namesM[0], values, X_train, X_test, Y_train, Y_test)
-            elif kernel == 'poly':
-                for gamma in gammas:
-                    for degree in degrees:
-                        for coef0 in coef0s:
-                            print(f'------- kernel: {kernel} | regularization: {regularization} | gamma: {gamma} | degree: {degree} | coef0: {coef0}')
-                            model = SVC(kernel=kernel, C=regularization, gamma=gamma, degree=degree, coef0=coef0)
-                            values = [kernel, regularization, gamma, degree, coef0]
-                            saveModelChanges(model, namesM[0], values, X_train, X_test, Y_train, Y_test)
-            elif kernel == 'rbf':
-                for gamma in gammas:
-                    print(f'------- kernel: {kernel} | regularization: {regularization} | gamma: {gamma}')
-                    model = SVC(kernel=kernel, C=regularization, gamma=gamma)
-                    values = [kernel, regularization, gamma, 'default', 'default']
+            try:
+                if kernel == 'linear':
+                    print(f'------- kernel: {kernel} | Regularization: {regularization}')
+                    model = SVC(kernel=kernel, C=regularization)
+                    values = [kernel, regularization, 'default', 'default', 'default']
                     saveModelChanges(model, namesM[0], values, X_train, X_test, Y_train, Y_test)
-            elif kernel == 'sigmoid':
-                for gamma in gammas:
-                    for coef0 in coef0s:
-                        print(f'------- kernel: {kernel} | regularization: {regularization} | gamma: {gamma} | coef0: {coef0}')
-                        model = SVC(kernel=kernel, C=regularization, gamma=gamma, coef0=coef0)
-                        values = [kernel, regularization, gamma, 'default', coef0]
+                elif kernel == 'poly':
+                    for gamma in gammas:
+                        for degree in degrees:
+                            for coef0 in coef0s:
+                                print(f'------- kernel: {kernel} | regularization: {regularization} | gamma: {gamma} | degree: {degree} | coef0: {coef0}')
+                                model = SVC(kernel=kernel, C=regularization, gamma=gamma, degree=degree, coef0=coef0)
+                                values = [kernel, regularization, gamma, degree, coef0]
+                                saveModelChanges(model, namesM[0], values, X_train, X_test, Y_train, Y_test)
+                elif kernel == 'rbf':
+                    for gamma in gammas:
+                        print(f'------- kernel: {kernel} | regularization: {regularization} | gamma: {gamma}')
+                        model = SVC(kernel=kernel, C=regularization, gamma=gamma)
+                        values = [kernel, regularization, gamma, 'default', 'default']
                         saveModelChanges(model, namesM[0], values, X_train, X_test, Y_train, Y_test)
+                elif kernel == 'sigmoid':
+                    for gamma in gammas:
+                        for coef0 in coef0s:
+                            print(f'------- kernel: {kernel} | regularization: {regularization} | gamma: {gamma} | coef0: {coef0}')
+                            model = SVC(kernel=kernel, C=regularization, gamma=gamma, coef0=coef0)
+                            values = [kernel, regularization, gamma, 'default', coef0]
+                            saveModelChanges(model, namesM[0], values, X_train, X_test, Y_train, Y_test)
+            except:
+                print("Erro ao Otimizar o Modelo SVM com os parametros informados")
+                continue
 
     print(bestSVM)
     svmLogs.loc[0] = [bestSVM['kernel'], bestSVM['regularization'], bestSVM['gamma'], bestSVM['degree'], bestSVM['coef0'], bestSVM['accuracy'], bestSVM['f1_score'], bestSVM['True Positive'], bestSVM['False Positive'], bestSVM['False Negative'], bestSVM['True Negative']]
@@ -149,10 +156,14 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
         for weight in weights:
             for algorithm in algorithms:
                 for distance in distances:
-                    print(f'------- neighbors: {neighbor} | weights: {weight} | algorithm: {algorithm} | distance: {distance}')
-                    model = KNeighborsClassifier(n_neighbors=neighbor, weights=weight, algorithm=algorithm, metric=distance)
-                    values = [neighbor, weight, algorithm, distance]
-                    saveModelChanges(model, namesM[1], values, X_train, X_test, Y_train, Y_test)
+                    try:
+                        print(f'------- neighbors: {neighbor} | weights: {weight} | algorithm: {algorithm} | distance: {distance}')
+                        model = KNeighborsClassifier(n_neighbors=neighbor, weights=weight, algorithm=algorithm, metric=distance)
+                        values = [neighbor, weight, algorithm, distance]
+                        saveModelChanges(model, namesM[1], values, X_train, X_test, Y_train, Y_test)
+                    except:
+                        print("Erro ao Otimizar o Modelo KNN com os parametros informados")
+                        continue
     print(bestKNN)
     knnLogs.loc[0] = [bestKNN['neighbors'], bestKNN['weights'], bestKNN['algorithm'], bestKNN['distance'], bestKNN['accuracy'], bestKNN['f1_score'], bestKNN['True Positive'], bestKNN['False Positive'], bestKNN['False Negative'], bestKNN['True Negative']]
     knnLogs.to_csv(f'../Results/optimization/classifications/KNN/{dataName}_Logs.csv', sep=';', index=False)
@@ -161,13 +172,14 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
 
     # ----------------------------- Otimizando LR ----------------------------------
     print('------------------------------------- LR --------------------------------------------')
-    penalty = ['l1', 'l2', 'elasticnet', 'none']
-    solvers = ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga']
+    penalty = ['l2']
+    solvers = ['lbfgs', 'liblinear', 'sag', 'saga', 'newton-cg']
     regularizations = np.arange(0.01, 50, 0.5)
     max_iterations = np.arange(100, 1500, 100)
     fit_intercepts = [True, False]
     class_weights = ['balanced', None]
     warm_starts = [True, False]
+
 
     for pen in penalty:
         for solver in solvers:
@@ -176,11 +188,14 @@ def GetModelsClassificationOptimized(dataName, size,  test_size = 0.4):
                     for fit_intercept in fit_intercepts:
                         for class_weight in class_weights:
                             for warm_start in warm_starts:
-                                print(f'------- penalty: {pen} | solver: {solver} | regularization: {regularization} | max_iter: {max_iter} | fit_intercept: {fit_intercept} | class_weight: {class_weight} | warm_start: {warm_start}')
-                                model = LogisticRegression(penalty=pen, solver=solver, C=regularization, max_iter=max_iter, fit_intercept=fit_intercept, class_weight=class_weight, warm_start=warm_start)
-                                values = [pen, solver, regularization, max_iter, fit_intercept, class_weight, warm_start]
-                                saveModelChanges(model, namesM[2], values, X_train, X_test, Y_train, Y_test)
-
+                                try:
+                                    print(f'------- penalty: {pen} | solver: {solver} | regularization: {regularization} | max_iter: {max_iter} | fit_intercept: {fit_intercept} | class_weight: {class_weight} | warm_start: {warm_start}')
+                                    model = LogisticRegression(penalty=pen, solver=solver, C=regularization, max_iter=max_iter, fit_intercept=fit_intercept, class_weight=class_weight, warm_start=warm_start)
+                                    values = [pen, solver, regularization, max_iter, fit_intercept, class_weight, warm_start]
+                                    saveModelChanges(model, namesM[2], values, X_train, X_test, Y_train, Y_test)
+                                except:
+                                    print("Erro ao Otimizar o Modelo LR com os parametros informados")
+                                    continue
     
     print(bestLR)
     lrLogs.loc[0] = [bestLR['penalty'], bestLR['solver'], bestLR['regularization'], bestLR['max_iter'], bestLR['fit_intercept'], bestLR['class_weight'], bestLR['warm_start'], bestLR['accuracy'], bestLR['f1_score'], bestLR['True Positive'], bestLR['False Positive'], bestLR['False Negative'], bestLR['True Negative']]

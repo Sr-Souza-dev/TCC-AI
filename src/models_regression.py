@@ -5,8 +5,11 @@ import pandas as pd
 import sklearn.model_selection as ms
 from tensorflow.keras import Sequential
 from tensorflow.keras.models import load_model
-from tensorflow.keras.layers import LSTM, Dense, Conv2D, MaxPooling2D, Flatten, Embedding, SimpleRNN
+from tensorflow.keras.layers import LSTM, Dense, Conv2D, MaxPooling2D, Flatten, SimpleRNN
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+import warnings
+warnings.filterwarnings("ignore")
 
 lstmLogs = pd.DataFrame(columns=['Loss', 'Optimizer', 'Epochs', 'Batch Size', 'MSE', 'MAE', 'RMSE', 'R2_Score'])
 bestLSTM = {'Loss': '', 'Optimizer': '', 'Epochs': 0, 'Batch Size': 0, 'MSE': 100000, 'MAE': 100000, 'RMSE': 100000, 'R2_Score': -10000000, 'model': None}
@@ -98,10 +101,14 @@ def getLSTMModelOptimized(dataName, X_train, Y_train, X_test, Y_test):
             model = getLSTMModel((X_train.shape[1], X_train.shape[2]), loss=l, optimizer=o)
             for e in epochs:
                 for b in batch_size:
-                    model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
-                    print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
-                    saveModelChanges(model, 'LSTM', [l, o, e, b], X_test, Y_test.ravel())
-
+                    try:
+                        model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
+                        print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
+                        saveModelChanges(model, 'LSTM', [l, o, e, b], X_test, Y_test.ravel())
+                    except:
+                        print("Erro ao tentar otimizar o Modelo LSTM com os parâmetros acima")
+                        continue
+    lstmLogs.loc[0] = [bestLSTM['Loss'], bestLSTM['Optimizer'], bestLSTM['Epochs'], bestLSTM['Batch Size'], bestLSTM['MSE'], bestLSTM['MAE'], bestLSTM['RMSE'], bestLSTM['R2_Score']]
     lstmLogs.to_csv(f'../Results/optimization/regression/LSTM/{dataName}_Logs.csv', sep=';', index=False)
     print(bestLSTM)
 
@@ -127,9 +134,14 @@ def getCNNModelOptimized(dataName, X_train, Y_train, X_test, Y_test):
             model = getCNNModel((X_train.shape[1], X_train.shape[2], X_train.shape[3]), loss=l, optimizer=o)
             for e in epochs:
                 for b in batch_size:
-                    model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
-                    print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
-                    saveModelChanges(model, 'CNN', [l, o, e, b], X_test, Y_test.ravel())
+                    try:
+                        model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
+                        print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
+                        saveModelChanges(model, 'CNN', [l, o, e, b], X_test, Y_test.ravel())
+                    except:
+                        print("Erro ao tentar otimizar o Modelo CNN com os parâmetros acima")
+                        continue
+    cnnLogs.loc[0] = [bestCNN['Loss'], bestCNN['Optimizer'], bestCNN['Epochs'], bestCNN['Batch Size'], bestCNN['MSE'], bestCNN['MAE'], bestCNN['RMSE'], bestCNN['R2_Score']]
     cnnLogs.to_csv(f'../Results/optimization/regression/CNN/{dataName}_Logs.csv', sep=';', index=False)
     print(bestCNN)
 
@@ -151,9 +163,14 @@ def getRNNModelOptimized(dataName, X_train, Y_train, X_test, Y_test):
             model = getRNNModel((X_train.shape[1], X_train.shape[2]), loss=l, optimizer=o)
             for e in epochs:
                 for b in batch_size:
-                    model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
-                    print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
-                    saveModelChanges(model, 'RNN', [l, o, e, b], X_test, Y_test.ravel())
+                    try:
+                        model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
+                        print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
+                        saveModelChanges(model, 'RNN', [l, o, e, b], X_test, Y_test.ravel())
+                    except:
+                        print("Erro ao tentar otimizar o Modelo RNN com os parâmetros acima")
+                        continue
+    rnnLogs.loc[0] = [bestRNN['Loss'], bestRNN['Optimizer'], bestRNN['Epochs'], bestRNN['Batch Size'], bestRNN['MSE'], bestRNN['MAE'], bestRNN['RMSE'], bestRNN['R2_Score']]
     rnnLogs.to_csv(f'../Results/optimization/regression/RNN/{dataName}_Logs.csv', sep=';', index=False)
     print(bestRNN)
 
