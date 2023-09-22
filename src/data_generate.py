@@ -290,7 +290,8 @@ def importExternalData(inputDataName, outputName):
     def converter_para_float(valor):
         value = valor.replace(".", "")
         return float(value.replace(",", "."))
-    data = data.map(converter_para_float)
+    
+    data = data.applymap(converter_para_float)
 
     # Define qual é a saída desejada
     rowq, _ = data.shape
