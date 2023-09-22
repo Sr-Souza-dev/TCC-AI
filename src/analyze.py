@@ -6,18 +6,18 @@ def MakeClassificationsLogs(dataName, size):
     classifications = pd.read_csv(f'../Results/test/classification/{dataName}_predictions.csv', sep=';')
     statistics      = pd.read_csv(f'../Results/test/statistic/{dataName}_predictions_class.csv', sep=';')
 
-    # ensambleReg     = pd.read_csv(f'../Results/test/regression/{dataName}_ensamble.csv', sep=';')['class']
-    # ensambleClass   = pd.read_csv(f'../Results/test/classification/{dataName}_ensamble.csv', sep=';')['class']
-    # ensambleStat    = pd.read_csv(f'../Results/test/statistic/{dataName}_ensamble.csv', sep=';')['class']
+    ensambleReg     = pd.read_csv(f'../Results/test/regression/{dataName}_ensamble.csv', sep=';')['class']
+    ensambleClass   = pd.read_csv(f'../Results/test/classification/{dataName}_ensamble.csv', sep=';')['class']
+    ensambleStat    = pd.read_csv(f'../Results/test/statistic/{dataName}_ensamble.csv', sep=';')['class']
 
-    # ensambleReg.name    = 'ensambleReg'
-    # ensambleClass.name  = 'ensambleClass'
-    # ensambleStat.name   = 'ensambleStat'
+    ensambleReg.name    = 'ensambleReg'
+    ensambleClass.name  = 'ensambleClass'
+    ensambleStat.name   = 'ensambleStat'
 
     outputs         = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{size}{dataName}.csv', sep=";")['OutPut_class |T+1|']
 
-    # datas = pd.concat([regressions, classifications, statistics, ensambleReg, ensambleClass, ensambleStat], axis=1)
-    datas = pd.concat([regressions, classifications, statistics], axis=1)
+    datas = pd.concat([regressions, classifications, statistics, ensambleReg, ensambleClass, ensambleStat], axis=1)
+    #datas = pd.concat([regressions, classifications, statistics], axis=1)
 
 
     logs = pd.DataFrame(columns=['model', 'accuracy', 'f1', 'truePositives', 'trueNegatives', 'falsePositives', 'falseNegatives'])
