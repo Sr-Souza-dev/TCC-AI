@@ -85,7 +85,11 @@ def saveModelChanges(model, modelName, values, X_test, Y_test):
 def getLSTMModel(input_shape, loss='mae', optimizer='adam'):
     model = Sequential()
     model.add(LSTM(100, input_shape=input_shape, return_sequences=True))
-    model.add(LSTM(100))
+    model.add(LSTM(80, return_sequences=True))
+    model.add(LSTM(60, return_sequences=True))
+    model.add(LSTM(40, return_sequences=True))
+    model.add(LSTM(20, return_sequences=True))
+    model.add(LSTM(5, return_sequences=True))
     model.add(Dense(1))
     model.compile(loss=loss, optimizer=optimizer)
     return model
@@ -118,8 +122,11 @@ def getCNNModel(input_shape, loss='mae', optimizer='adam'):
     model.add(MaxPooling2D((1, 1)))
     model.add(Conv2D(64, (1, 1), activation='relu'))
     model.add(MaxPooling2D((1, 1)))
+    model.add(Conv2D(24, (1, 1), activation='relu'))
+    model.add(MaxPooling2D((1, 1)))
     model.add(Flatten())
-    model.add(Dense(100, activation='relu'))
+    model.add(Dense(50, activation='relu'))
+    model.add(Dense(10, activation='relu'))
     model.add(Dense(1))
     model.compile(loss=loss, optimizer=optimizer)
     return model
@@ -197,3 +204,21 @@ def GetModelsRegression(dataName):
     CNN = load_model(f'../Results/optimization/regression/CNN/{dataName}_model.h5')
     RNN = load_model(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
     return LSTM, CNN, RNN
+
+def GetRegressionPredictions(dataName, Names, Models, Epochs, Batchs, X_test, Y_test, X_train, Y_train):
+    X_train = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1]))
+    X_test = X_test.values.reshape((X_test.shape[0], 1, X_test.shape[1]))
+
+    results = pd.DataFrame()
+    results_Class = pd.DataFrame()
+    for name, model, epoch, batch in zip(Names, Models, Epochs, Batchs):
+        print(name)
+        model.fit(X_train, Y_train.ravel(), epochs=epoch, batch_size=batch, verbose=0)
+        series = pd.Series(name=name, data=(model.predict(X_test)).ravel())
+        serie_last = series.shift(1)
+        series_class = (series > serie_last).astype(int)
+        results_Class = pd.concat([results_Class, series_class], axis=1)
+        results = pd.concat([results, series], axis=1)
+
+    results_Class.to_csv(f'../Results/test/regression/{dataName}_predictions_class.csv', sep=';', index=False)
+    results.to_csv(f'../Results/test/regression/{dataName}_predictions.csv', sep=';', index=False)
