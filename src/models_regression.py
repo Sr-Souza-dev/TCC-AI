@@ -212,13 +212,13 @@ def GetRegressionPredictions(dataName, Names, Models, Epochs, Batchs, X_test, Y_
     # Calcula o resultado no conjunto de teste
     results = pd.DataFrame()
     results_Class = pd.DataFrame()
-    trainedModel = []
+    trainedModel = Models
     for name, model, epoch, batch in zip(Names, Models, Epochs, Batchs):
         model.fit(X_train, Y_train.ravel(), epochs=epoch, batch_size=batch, verbose=0)
         trainedModel.append(model)
         series = pd.Series(name=name, data=(model.predict(X_test)).ravel())
         serie_last = Y_test.shift(1)
-        series_class = (series > serie_last).astype(int)
+        series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
         results_Class = pd.concat([results_Class, series_class], axis=1)
         results = pd.concat([results, series], axis=1)
 
@@ -227,7 +227,7 @@ def GetRegressionPredictions(dataName, Names, Models, Epochs, Batchs, X_test, Y_
     for name, model in zip(Names, trainedModel):
         series = pd.Series(name=name, data=(model.predict(X_train)).ravel())
         serie_last = Y_train.shift(1)
-        series_class = (series > serie_last).astype(int)
+        series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
         results_ClassTrain = pd.concat([results_ClassTrain, series_class], axis=1)
 
     results_ClassTrain.to_csv(f'../Results/train/regression/{dataName}_predictions_class.csv', sep=';', index=False)
