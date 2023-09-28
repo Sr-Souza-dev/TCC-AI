@@ -1,5 +1,4 @@
 from sklearn.feature_selection import SelectKBest, chi2, f_regression, mutual_info_regression
-from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import ElasticNet, Lasso
 from scipy.stats import kruskal

@@ -3,207 +3,117 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 import sklearn.model_selection as ms
-from tensorflow.keras import Sequential
-from tensorflow.keras.models import load_model
-from tensorflow.keras.layers import LSTM, Dense, Conv2D, MaxPooling2D, Flatten, SimpleRNN
+from kerastuner.tuners import RandomSearch
+from keras import Sequential
+from keras.models import load_model
+from keras.layers import LSTM, Dense, Conv2D, MaxPooling2D, Flatten, SimpleRNN
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 import warnings
 warnings.filterwarnings("ignore")
 
-lstmLogs = pd.DataFrame(columns=['Loss', 'Optimizer', 'Epochs', 'Batch Size', 'MSE', 'MAE', 'RMSE', 'R2_Score'])
-bestLSTM = {'Loss': '', 'Optimizer': '', 'Epochs': 0, 'Batch Size': 0, 'MSE': 100000, 'MAE': 100000, 'RMSE': 100000, 'R2_Score': -10000000, 'model': None}
+optz_size = 1
+data_name = 'dataset1'
 
-cnnLogs = pd.DataFrame(columns=['Loss', 'Optimizer', 'Epochs', 'Batch Size', 'MSE', 'MAE', 'RMSE', 'R2_Score'])
-bestCNN = {'Loss': '', 'Optimizer': '', 'Epochs': 0, 'Batch Size': 0, 'MSE': 100000, 'MAE': 100000, 'RMSE': 100000, 'R2_Score': -10000000, 'model': None}
+input_shape_lstm = (1, 1, 4)
+input_shape_mlp  = (1, 1, 6)
+input_shape_rnn  = (1, 1, 6)
 
-rnnLogs = pd.DataFrame(columns=['Loss', 'Optimizer', 'Epochs', 'Batch Size', 'MSE', 'MAE', 'RMSE', 'R2_Score'])
-bestRNN = {'Loss': '', 'Optimizer': '', 'Epochs': 0, 'Batch Size': 0, 'MSE': 100000, 'MAE': 100000, 'RMSE': 100000, 'R2_Score': -10000000, 'model': None}
-
-loss = ['mae', 'mse', 'binary_crossentropy', 'categorical_crossentropy', 'hinge', 'logcosh']
-optimizer = ['adam', 'sgd', 'rmsprop', 'adagrad', 'adadelta', 'adamax', 'nadam']
-epochs = np.arange(10, 100, 20)
-batch_size = np.arange(10, 100, 20)
-
-# loss = ['mae']
-# optimizer = ['adam']
-# epochs = np.arange(10, 40, 20)
-# batch_size = np.arange(10, 40, 20)
-
-
-
-def saveModelChanges(model, modelName, values, X_test, Y_test):
-    Y_pred = model.predict(X_test, verbose=0)
-    Y_pred = Y_pred.ravel()
-
-    mae = mean_absolute_error(Y_test, Y_pred)
-    mse = mean_squared_error(Y_test, Y_pred)
-    rmse = np.sqrt(mse)
-    r2 = r2_score(Y_test, Y_pred)
-
-    # print("Pred: ",Y_pred[1:10])
-    # print("Real: ",Y_test[1:10])
-    # print(f'MSE: {mse}, MAE: {mae}, RMSE: {rmse}, R2_Score: {r2}')
-
-    if(modelName == 'LSTM'):
-        lstmLogs.loc[len(lstmLogs)] = [values[0], values[1], values[2], values[3], mse, mae, rmse, r2]
-        if(bestLSTM['MSE'] > mse and bestLSTM['MAE'] > mae and bestLSTM['RMSE'] > rmse and bestLSTM['R2_Score'] < r2):
-            bestLSTM['Loss'] = values[0]
-            bestLSTM['Optimizer'] = values[1]
-            bestLSTM['Epochs'] = values[2]
-            bestLSTM['Batch Size'] = values[3]
-            bestLSTM['MSE'] = mse
-            bestLSTM['MAE'] = mae
-            bestLSTM['RMSE'] = rmse
-            bestLSTM['R2_Score'] = r2
-            bestLSTM['model'] = model
-    elif(modelName == 'CNN'):
-        cnnLogs.loc[len(cnnLogs)] = [values[0], values[1], values[2], values[3], mse, mae, rmse, r2]
-        if(bestCNN['MSE'] > mse and bestCNN['MAE'] > mae and bestCNN['RMSE'] > rmse and bestCNN['R2_Score'] < r2):
-            bestCNN['Loss'] = values[0]
-            bestCNN['Optimizer'] = values[1]
-            bestCNN['Epochs'] = values[2]
-            bestCNN['Batch Size'] = values[3]
-            bestCNN['MSE'] = mse
-            bestCNN['MAE'] = mae
-            bestCNN['RMSE'] = rmse
-            bestCNN['R2_Score'] = r2
-            bestCNN['model'] = model
-    elif(modelName == 'RNN'):
-        rnnLogs.loc[len(rnnLogs)] = [values[0], values[1], values[2], values[3], mse, mae, rmse, r2]
-        if(bestRNN['MSE'] > mse and bestRNN['MAE'] > mae and bestRNN['RMSE'] > rmse and bestRNN['R2_Score'] < r2):
-            bestRNN['Loss'] = values[0]
-            bestRNN['Optimizer'] = values[1]
-            bestRNN['Epochs'] = values[2]
-            bestRNN['Batch Size'] = values[3]
-            bestRNN['MSE'] = mse
-            bestRNN['MAE'] = mae
-            bestRNN['RMSE'] = rmse
-            bestRNN['R2_Score'] = r2
-            bestRNN['model'] = model
-
-def getLSTMModel(input_shape, loss='mae', optimizer='adam'):
+# Função para criar o modelo LSTM
+def build_lstm_model(hp):
     model = Sequential()
-    model.add(LSTM(100, input_shape=input_shape, return_sequences=True))
-    model.add(LSTM(80, return_sequences=True))
-    model.add(LSTM(60, return_sequences=True))
-    model.add(LSTM(40, return_sequences=True))
-    model.add(LSTM(20, return_sequences=True))
-    model.add(LSTM(5, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units', min_value=50, max_value=200, step=10),input_shape=input_shape_lstm, return_sequences=True))
     model.add(Dense(1))
-    model.compile(loss=loss, optimizer=optimizer)
+    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mae')
     return model
 
-def getLSTMModelOptimized(dataName, X_train, Y_train, X_test, Y_test):
-
-    X_train = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1]))
-    X_test = X_test.values.reshape((X_test.shape[0], 1, X_test.shape[1]))
-
-    print('-------------------------- LSTM --------------------------')
-    for l in loss:
-        for o in optimizer:
-            model = getLSTMModel((X_train.shape[1], X_train.shape[2]), loss=l, optimizer=o)
-            for e in epochs:
-                for b in batch_size:
-                    try:
-                        model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
-                        print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
-                        saveModelChanges(model, 'LSTM', [l, o, e, b], X_test, Y_test.ravel())
-                    except:
-                        print("Erro ao tentar otimizar o Modelo LSTM com os parâmetros acima")
-                        continue
-    lstmLogs.loc[0] = [bestLSTM['Loss'], bestLSTM['Optimizer'], bestLSTM['Epochs'], bestLSTM['Batch Size'], bestLSTM['MSE'], bestLSTM['MAE'], bestLSTM['RMSE'], bestLSTM['R2_Score']]
-    lstmLogs.to_csv(f'../Results/optimization/regression/LSTM/{dataName}_Logs.csv', sep=';', index=False)
-    print(bestLSTM)
-
-def getCNNModel(input_shape, loss='mae', optimizer='adam'):
+# Função para criar o modelo mlp
+def build_mlp_model(hp):
     model = Sequential()
-    model.add(Conv2D(64, (1, 1), activation='relu', input_shape=input_shape))
-    model.add(MaxPooling2D((1, 1)))
-    model.add(Conv2D(64, (1, 1), activation='relu'))
-    model.add(MaxPooling2D((1, 1)))
-    model.add(Conv2D(24, (1, 1), activation='relu'))
-    model.add(MaxPooling2D((1, 1)))
-    model.add(Flatten())
-    model.add(Dense(50, activation='relu'))
-    model.add(Dense(10, activation='relu'))
-    model.add(Dense(1))
-    model.compile(loss=loss, optimizer=optimizer)
+    model.add(Dense(units=hp.Int('units_1', min_value=16, max_value=64, step=16), input_shape=input_shape_rnn, activation='relu'))
+    model.add(Dense(units=hp.Int('units_1', min_value=16, max_value=64, step=16), activation='relu'))
+    model.add(Dense(units=hp.Int('units_2', min_value=16, max_value=64, step=16), activation='relu'))
+    model.add(Dense(units=hp.Int('units_3', min_value=16, max_value=64, step=16), activation='relu'))
+    model.add(Dense(1, activation='relu'))
+
+    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']), loss='mae')
     return model
 
-def getCNNModelOptimized(dataName, X_train, Y_train, X_test, Y_test):
-    X_train = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1], 1))
-    X_test = X_test.values.reshape((X_test.shape[0], 1, X_test.shape[1], 1))
 
-    print('-------------------------- CNN --------------------------')
-    for l in loss:
-        for o in optimizer:
-            model = getCNNModel((X_train.shape[1], X_train.shape[2], X_train.shape[3]), loss=l, optimizer=o)
-            for e in epochs:
-                for b in batch_size:
-                    try:
-                        model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
-                        print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
-                        saveModelChanges(model, 'CNN', [l, o, e, b], X_test, Y_test.ravel())
-                    except:
-                        print("Erro ao tentar otimizar o Modelo CNN com os parâmetros acima")
-                        continue
-    cnnLogs.loc[0] = [bestCNN['Loss'], bestCNN['Optimizer'], bestCNN['Epochs'], bestCNN['Batch Size'], bestCNN['MSE'], bestCNN['MAE'], bestCNN['RMSE'], bestCNN['R2_Score']]
-    cnnLogs.to_csv(f'../Results/optimization/regression/CNN/{dataName}_Logs.csv', sep=';', index=False)
-    print(bestCNN)
-
-def getRNNModel(input_shape, loss='mae', optimizer='adam'):
+def build_rnn_model(hp):
     model = Sequential()
-    model.add(SimpleRNN(100, return_sequences=True, input_shape=input_shape))
-    model.add(SimpleRNN(100))
+    model.add(SimpleRNN(units=hp.Int('rnn_units', min_value=32, max_value=128, step=16), return_sequences=True, input_shape=input_shape_rnn))
+    model.add(SimpleRNN(units=hp.Int('rnn_units', min_value=32, max_value=128, step=16)))
     model.add(Dense(1))
-    model.compile(loss=loss, optimizer=optimizer)
+    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mae')
     return model
-
-def getRNNModelOptimized(dataName, X_train, Y_train, X_test, Y_test):
-    X_train = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1]))
-    X_test = X_test.values.reshape((X_test.shape[0], 1, X_test.shape[1]))
-
-    print('-------------------------- RNN --------------------------')
-    for l in loss:
-        for o in optimizer:
-            model = getRNNModel((X_train.shape[1], X_train.shape[2]), loss=l, optimizer=o)
-            for e in epochs:
-                for b in batch_size:
-                    try:
-                        model.fit(X_train, Y_train.ravel(), epochs=e, batch_size=b, verbose=0)
-                        print(f'------ Loss: {l}, Optimizer: {o}, Epochs: {e}, Batch Size: {b}')
-                        saveModelChanges(model, 'RNN', [l, o, e, b], X_test, Y_test.ravel())
-                    except:
-                        print("Erro ao tentar otimizar o Modelo RNN com os parâmetros acima")
-                        continue
-    rnnLogs.loc[0] = [bestRNN['Loss'], bestRNN['Optimizer'], bestRNN['Epochs'], bestRNN['Batch Size'], bestRNN['MSE'], bestRNN['MAE'], bestRNN['RMSE'], bestRNN['R2_Score']]
-    rnnLogs.to_csv(f'../Results/optimization/regression/RNN/{dataName}_Logs.csv', sep=';', index=False)
-    print(bestRNN)
 
               
-def GetModelsRegressionOptimized(dataName, size, test_size=0.4):
-    X = pd.read_csv(f'../Data/Cut/dataset2/X/Optmz_{size}{dataName}.csv', sep=";")
-    Y = pd.read_csv(f'../Data/Cut/dataset2/Y/Optmz_{size}{dataName}.csv', sep=";")
-    Y = Y['OutPut |T+1|']
-    X_train, X_test, Y_train, Y_test = ms.train_test_split(X, Y, test_size = test_size, random_state = None, shuffle = False)
+def GetModelsRegressionOptimized(dataName, sizeTrain):
+    global input_shape_lstm, input_shape_mlp, input_shape_rnn, lstmTuner, mlpTuner, rnnTuner, data_name
+    data_name = dataName
 
-    getLSTMModelOptimized(dataName, X_train, Y_train, X_test, Y_test)
-    bestLSTM['model'].save(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')
+    X = pd.read_csv(f'../Data/Cut/dataset2/X/Train_{sizeTrain}{dataName}.csv', sep=";")
+    Y = pd.read_csv(f'../Data/Cut/dataset2/Y/Train_{sizeTrain}{dataName}.csv', sep=";")['OutPut |T+1|']
 
-    getCNNModelOptimized(dataName, X_train, Y_train, X_test, Y_test)
-    bestCNN['model'].save(f'../Results/optimization/regression/CNN/{dataName}_model.h5')
+    X_train, X_validation, Y_train, Y_validation = ms.train_test_split(X, Y, test_size = 0.15, random_state = None, shuffle = False)
 
-    getRNNModelOptimized(dataName, X_train, Y_train, X_test, Y_test)
-    bestRNN['model'].save(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
+    Y_train              = Y_train.ravel()
+    Y_validation         = Y_validation.ravel()
+    X_train_reshape      = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1]))
+    X_validation_reshape = X_validation.values.reshape((X_validation.shape[0], 1, X_validation.shape[1]))
 
-    return bestLSTM, bestCNN, bestRNN
+    shape = X_train_reshape.shape
+    print("Shape: ", shape)
+
+    input_shape_lstm = (shape[1], shape[2])
+    input_shape_rnn  = (shape[1], shape[2])
+    input_shape_mlp  = (shape[1], shape[2], 1)
+
+    lstmTuner = RandomSearch(
+        build_lstm_model,
+        objective='val_loss',
+        max_trials=optz_size,  # Escolha o número desejado de tentativas
+        directory=f'optmz/model{data_name}/regression',  # Diretório para salvar os resultados
+        project_name='lstm')
+
+    mlpTuner = RandomSearch(
+        build_mlp_model,
+        objective='val_loss',
+        max_trials=optz_size,  # Escolha o número desejado de tentativas
+        directory=f'optmz/model{data_name}/regression',  # Diretório para salvar os resultados
+        project_name='mlp')
+
+    rnnTuner = RandomSearch(
+        build_rnn_model,
+        objective='val_loss',
+        max_trials=optz_size,  # Escolha o número desejado de tentativas
+        directory=f'optmz/model{data_name}/regression',  # Diretório para salvar os resultados
+        project_name='rnn')
+
+    lstmTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
+    mlpTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
+    rnnTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
+
+    bestLSTM = lstmTuner.get_best_models(num_models=1)[0]
+    bestMLP  = mlpTuner.get_best_models(num_models=1)[0]
+    bestRNN  = rnnTuner.get_best_models(num_models=1)[0]
+
+    bestLSTM.save(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')
+    bestMLP.save(f'../Results/optimization/regression/MLP/{dataName}_model.h5')
+    bestRNN.save(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
+
+    print("LSTM: ", bestLSTM.summary())
+    print("mlp:  ", bestMLP.summary())
+    print("RNN:  ", bestRNN.summary())
+
+    return bestLSTM, bestMLP, bestRNN
 
 def GetModelsRegression(dataName):
     LSTM = load_model(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')
-    CNN = load_model(f'../Results/optimization/regression/CNN/{dataName}_model.h5')
+    MLP = load_model(f'../Results/optimization/regression/MLP/{dataName}_model.h5')
     RNN = load_model(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
-    return LSTM, CNN, RNN
+    return LSTM, MLP, RNN
 
 def GetRegressionPredictions(dataName, Names, Models, Epochs, Batchs, X_test, Y_test, X_train, Y_train):
     X_train = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1]))
@@ -212,10 +122,8 @@ def GetRegressionPredictions(dataName, Names, Models, Epochs, Batchs, X_test, Y_
     # Calcula o resultado no conjunto de teste
     results = pd.DataFrame()
     results_Class = pd.DataFrame()
-    trainedModel = Models
+
     for name, model, epoch, batch in zip(Names, Models, Epochs, Batchs):
-        model.fit(X_train, Y_train.ravel(), epochs=epoch, batch_size=batch, verbose=0)
-        trainedModel.append(model)
         series = pd.Series(name=name, data=(model.predict(X_test)).ravel())
         serie_last = Y_test.shift(1)
         series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
@@ -224,7 +132,7 @@ def GetRegressionPredictions(dataName, Names, Models, Epochs, Batchs, X_test, Y_
 
     # Calcula o resultado no conjunto de treinameito
     results_ClassTrain = pd.DataFrame()
-    for name, model in zip(Names, trainedModel):
+    for name, model in zip(Names, Models):
         series = pd.Series(name=name, data=(model.predict(X_train)).ravel())
         serie_last = Y_train.shift(1)
         series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
