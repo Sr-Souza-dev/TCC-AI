@@ -217,15 +217,17 @@ def GetModelsClassification(dataName):
     return SVM, KNN, LR
 
 def GetClassificationPredictions(dataName, Models, X_test, Y_test, X_train, Y_train):
-    results = pd.DataFrame();
+    results = pd.DataFrame()
+    resultsTrain = pd.DataFrame()
     for model in Models:
         print(type(model).__name__)
         model.fit(X_train.values, Y_train.ravel())
         series = pd.Series(name=type(model).__name__, data=model.predict(X_test.values))
         results = pd.concat([results, series], axis=1)
+
+        seriesTrain = pd.Series(name=type(model).__name__, data=model.predict(X_train.values))
+        resultsTrain = pd.concat([resultsTrain, seriesTrain], axis=1)
     
-    print(results)
+
     results.to_csv(f'../Results/test/classification/{dataName}_predictions.csv', sep=';', index=False)
-
-
-    print('classificarion prediction')
+    resultsTrain.to_csv(f'../Results/train/classification/{dataName}_predictions.csv', sep=';', index=False)

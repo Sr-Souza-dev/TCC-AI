@@ -16,6 +16,22 @@ bestStatisticsWeights = []
 bestStatisticMetrics = [0,0]
 bestEnsambleStatistic = pd.DataFrame({})
 
+def clearDefault():
+    global bestRegressionMetrics
+    global bestEnsambleRegression
+    global bestClassificationMetrics
+    global bestEnsambleClassification
+    global bestStatisticMetrics
+    global bestEnsambleStatistic
+
+    bestRegressionMetrics = [0,0]
+    bestEnsambleRegression = pd.DataFrame({})
+
+    bestClassificationMetrics = [0,0]
+    bestEnsambleClassification = pd.DataFrame({})
+
+    bestStatisticMetrics = [0,0]
+    bestEnsambleStatistic = pd.DataFrame({})
 
 
 def calculateHits(values, weights):
@@ -66,12 +82,13 @@ def getBestWeights(data, weights, name, output):
        
     
 
-def GetEnsambles(dataName, size = 0.2):
-    regressions     = pd.read_csv(f'../Results/test/regression/{dataName}_predictions_class.csv', sep=';')
-    classifications = pd.read_csv(f'../Results/test/classification/{dataName}_predictions.csv', sep=';')
-    statistics      = pd.read_csv(f'../Results/test/statistic/{dataName}_predictions_class.csv', sep=';')
-    outputs         = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{size}{dataName}.csv', sep=";")['OutPut_class |T+1|']
+def GetEnsambles(dataName, testSize = 0.2, trainSize = 0.7):
+    regressions     = pd.read_csv(f'../Results/train/regression/{dataName}_predictions_class.csv', sep=';')
+    classifications = pd.read_csv(f'../Results/train/classification/{dataName}_predictions.csv', sep=';')
+    statistics      = pd.read_csv(f'../Results/train/statistic/{dataName}_predictions_class.csv', sep=';')
+    outputs         = pd.read_csv(f'../Data/Cut/dataset1/Y/Train_{trainSize}{dataName}.csv', sep=";")['OutPut_class |T+1|']
 
+    print("****************************** Obtendo os melhores Ensambles ******************************")
     print("Regressions Shape:     ", regressions.shape)
     print("Classifications Shape: ", classifications.shape)
     print("Statistics Shape:      ", statistics.shape)
@@ -80,7 +97,7 @@ def GetEnsambles(dataName, size = 0.2):
     datas = [regressions, classifications, statistics]
     
 
-    weights = np.arange(0.05, 1.05, 0.05)
+    weights = np.arange(0.01, 1.05, 0.2)
     for idx in range(len(datas)):
         data = datas[idx]
         name = names[idx]
@@ -89,9 +106,9 @@ def GetEnsambles(dataName, size = 0.2):
                 for m3 in weights:
                     getBestWeights(data, [m1, m2, m3], name, outputs.ravel())
 
-    bestEnsambleRegression.to_csv(f'../Results/test/regression/{dataName}_ensamble.csv', sep=';', index=False)
-    bestEnsambleClassification.to_csv(f'../Results/test/classification/{dataName}_ensamble.csv', sep=';', index=False)
-    bestEnsambleStatistic.to_csv(f'../Results/test/statistic/{dataName}_ensamble.csv', sep=';', index=False)
+    bestEnsambleRegression.to_csv(f'../Results/train/regression/{dataName}_ensamble.csv', sep=';', index=False)
+    bestEnsambleClassification.to_csv(f'../Results/train/classification/{dataName}_ensamble.csv', sep=';', index=False)
+    bestEnsambleStatistic.to_csv(f'../Results/train/statistic/{dataName}_ensamble.csv', sep=';', index=False)
 
     print("------------------------- Esamble de Regrssão -----------------------")
     print(f'Melhores Pesos de Regressão: {bestRegressionsWeights}')
@@ -104,3 +121,38 @@ def GetEnsambles(dataName, size = 0.2):
     print("------------------------- Esamble de Estatística -----------------------")
     print(f'Melhores Pesos de Estatística: {bestStatisticsWeights}')
     print(f'Acurácia: {bestStatisticMetrics[0]}, F1: {bestStatisticMetrics[1]}')
+
+    regressions     = pd.read_csv(f'../Results/test/regression/{dataName}_predictions_class.csv', sep=';')
+    classifications = pd.read_csv(f'../Results/test/classification/{dataName}_predictions.csv', sep=';')
+    statistics      = pd.read_csv(f'../Results/test/statistic/{dataName}_predictions_class.csv', sep=';')
+    outputs         = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{testSize}{dataName}.csv', sep=";")['OutPut_class |T+1|']
+
+    print("****************************** Testando os Ensambles ******************************")
+    print("Regressions Shape:     ", regressions.shape)
+    print("Classifications Shape: ", classifications.shape)
+    print("Statistics Shape:      ", statistics.shape)
+    print("Outputs Shape:         ", outputs.shape)
+
+    clearDefault()
+
+    getBestWeights(regressions, bestRegressionsWeights, names[0], outputs.ravel())
+    getBestWeights(classifications, bestClassificationsWeights, names[1], outputs.ravel())
+    getBestWeights(statistics, bestStatisticsWeights, names[2], outputs.ravel())
+
+    bestEnsambleRegression.to_csv(f'../Results/test/regression/{dataName}_ensamble.csv', sep=';', index=False)
+    bestEnsambleClassification.to_csv(f'../Results/test/classification/{dataName}_ensamble.csv', sep=';', index=False)
+    bestEnsambleStatistic.to_csv(f'../Results/test/statistic/{dataName}_ensamble.csv', sep=';', index=False)
+
+
+    print("------------------------- Esamble de Regrssão -----------------------")
+    print(f'Melhores Pesos de Regressão: {bestRegressionsWeights}')
+    print(f'Acurácia: {bestRegressionMetrics[0]}, F1: {bestRegressionMetrics[1]}')
+
+    print("------------------------- Esamble de Classificação -----------------------")
+    print(f'Melhores Pesos de Classificação: {bestClassificationsWeights}')
+    print(f'Acurácia: {bestClassificationMetrics[0]}, F1: {bestClassificationMetrics[1]}')
+
+    print("------------------------- Esamble de Estatística -----------------------")
+    print(f'Melhores Pesos de Estatística: {bestStatisticsWeights}')
+    print(f'Acurácia: {bestStatisticMetrics[0]}, F1: {bestStatisticMetrics[1]}')
+
