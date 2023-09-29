@@ -7,13 +7,14 @@ import keras
 
 input_dim = 6
 output_dim = 2
-max_trials = 1
+max_trials = 100
 dataName = 'dataset1'
 
 def build_model(hp):
     model = Sequential()
     model.add(Dense(units=6, input_dim=input_dim, activation='relu'))
     model.add(Dense(units=hp.Int('units_1', min_value=16, max_value=64, step=16), activation='relu'))
+    model.add(Dense(units=hp.Int('units_2', min_value=16, max_value=64, step=16), activation='relu'))
     model.add(Dense(units=hp.Int('units_2', min_value=16, max_value=64, step=16), activation='relu'))
     model.add(Dense(units=hp.Int('units_3', min_value=16, max_value=64, step=16), activation='relu'))
     model.add(Dense(output_dim, activation='softmax'))

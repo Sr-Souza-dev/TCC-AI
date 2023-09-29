@@ -16,9 +16,9 @@ def MakeClassificationsLogs(dataName, size):
     buying2         = pd.read_csv(f'../Results/test/model_buying2/{dataName}.csv', sep=';')['class']
     buying2.name    = 'buying2'
 
-    ensambleReg.name    = 'ensambleReg'
-    ensambleClass.name  = 'ensambleClass'
-    ensambleStat.name   = 'ensambleStat'
+    ensambleReg.name    = 'Ensamble Regression'
+    ensambleClass.name  = 'Ensamble Classification'
+    ensambleStat.name   = 'Ensamble Statistics'
 
     outputs         = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{size}{dataName}.csv', sep=";")['OutPut_class |T+1|']
 

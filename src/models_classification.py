@@ -3,6 +3,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
 import sklearn.model_selection as ms
+import numpy as np
 import pickle
 
 import pandas as pd
@@ -23,9 +24,10 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     print('------------------------------------ SVM ------------------------------------------')
     SVM_grid = {
         'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
-        'C': [0.1, 1, 10, 100, 1000],
+        'C': np.arange(0.01, 50, 10),
         'gamma': ['scale', 'auto'],
-        'degree': [1, 2, 3, 4, 5, 6]
+        'degree': [1, 2, 3, 4],
+        'coef0': np.arange(1, 5, 2),
     }
     svm_grid_search = GridSearchCV(estimator = SVC(), param_grid = SVM_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
     svm_grid_search.fit(X, Y)
@@ -38,7 +40,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     # ----------------------------- Otimizando KNN ----------------------------------
     print('------------------------------------ KNN -----------------------------------------')
     KNN_grid = {
-        'n_neighbors': [3, 5, 7, 9, 11, 13, 15],
+        'n_neighbors': [3, 5, 7, 9, 11, 13, 15, 17, 19, 22, 25, 28, 31, 34],
         'weights': ['uniform', 'distance'],
         'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
         'distance': ['euclidean', 'manhattan', 'chebyshev', 'minkowski']

@@ -12,7 +12,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import warnings
 warnings.filterwarnings("ignore")
 
-optz_size = 1
+optz_size = 60
 data_name = 'dataset1'
 
 input_shape_lstm = (1, 1, 4)
@@ -22,7 +22,9 @@ input_shape_rnn  = (1, 1, 6)
 # Função para criar o modelo LSTM
 def build_lstm_model(hp):
     model = Sequential()
-    model.add(LSTM(units=hp.Int('units', min_value=50, max_value=200, step=10),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_1', min_value=50, max_value=200, step=10),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_2', min_value=50, max_value=200, step=10),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_3', min_value=50, max_value=200, step=10),input_shape=input_shape_lstm, return_sequences=True))
     model.add(Dense(1))
     model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mae')
     return model
@@ -30,10 +32,11 @@ def build_lstm_model(hp):
 # Função para criar o modelo mlp
 def build_mlp_model(hp):
     model = Sequential()
-    model.add(Dense(units=hp.Int('units_1', min_value=16, max_value=64, step=16), input_shape=input_shape_rnn, activation='relu'))
-    model.add(Dense(units=hp.Int('units_1', min_value=16, max_value=64, step=16), activation='relu'))
-    model.add(Dense(units=hp.Int('units_2', min_value=16, max_value=64, step=16), activation='relu'))
-    model.add(Dense(units=hp.Int('units_3', min_value=16, max_value=64, step=16), activation='relu'))
+    model.add(Dense(units=hp.Int('units_1', min_value=12, max_value=64, step=16), input_shape=input_shape_rnn, activation='relu'))
+    model.add(Dense(units=hp.Int('units_1', min_value=12, max_value=64, step=16), activation='relu'))
+    model.add(Dense(units=hp.Int('units_2', min_value=12, max_value=64, step=16), activation='relu'))
+    model.add(Dense(units=hp.Int('units_3', min_value=12, max_value=64, step=16), activation='relu'))
+    model.add(Dense(units=hp.Int('units_4', min_value=12, max_value=64, step=16), activation='relu'))
     model.add(Dense(1, activation='relu'))
 
     model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']), loss='mae')
@@ -42,8 +45,10 @@ def build_mlp_model(hp):
 
 def build_rnn_model(hp):
     model = Sequential()
-    model.add(SimpleRNN(units=hp.Int('rnn_units', min_value=32, max_value=128, step=16), return_sequences=True, input_shape=input_shape_rnn))
-    model.add(SimpleRNN(units=hp.Int('rnn_units', min_value=32, max_value=128, step=16)))
+    model.add(SimpleRNN(units=hp.Int('rnn_units_1', min_value=32, max_value=128, step=16), return_sequences=True, input_shape=input_shape_rnn))
+    model.add(SimpleRNN(units=hp.Int('rnn_units_2', min_value=32, max_value=128, step=16)))
+    model.add(SimpleRNN(units=hp.Int('rnn_units_3', min_value=32, max_value=128, step=16)))
+    model.add(SimpleRNN(units=hp.Int('rnn_units_4', min_value=32, max_value=128, step=16)))
     model.add(Dense(1))
     model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mae')
     return model
