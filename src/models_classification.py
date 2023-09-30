@@ -18,7 +18,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     Y = pd.read_csv(f'../Data/Cut/dataset1/Y/Train_{trainSize}{dataName}.csv', sep=";")['OutPut_class |T+1|']
 
     print("******************** Inicio da otimização dos modelos de Classificação ********************")
-    print(f'X_train: {X.shape} | X_test: {X.shape} | Y_train: {Y.shape} | Y_test: {Y.shape}')
+    print(f'X_train: {X.shape} | Y_train: {Y.shape}')
 
     # ----------------------------- Otimizando SVM ----------------------------------
     print('------------------------------------ SVM ------------------------------------------')
@@ -43,7 +43,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
         'n_neighbors': [3, 5, 7, 9, 11, 13, 15, 17, 19, 22, 25, 28, 31, 34],
         'weights': ['uniform', 'distance'],
         'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
-        'distance': ['euclidean', 'manhattan', 'chebyshev', 'minkowski']
+        'p': [1, 2, 3]
     }
     knn_grid_search = GridSearchCV(estimator = KNeighborsClassifier(), param_grid = KNN_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
     knn_grid_search.fit(X, Y)
@@ -58,7 +58,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
         'penalty': ['l1', 'l2', 'elasticnet', 'none'],
         'solver': ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'],
         'C': [0.1, 1, 10, 100, 1000],
-        'max_iter': [100, 1000, 10000],
+        'max_iter': [50, 100, 500],
         'fit_intercept': [True, False],
         'class_weight': ['balanced', None],
         'warm_start': [True, False]
