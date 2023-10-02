@@ -55,7 +55,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     # ----------------------------- Otimizando LR ----------------------------------
     print('------------------------------------- LR --------------------------------------------')
     LR_grid = {
-        'penalty': ['l1', 'l2', 'elasticnet', 'none'],
+        'penalty': ['l1', 'l2', 'elasticnet', 'None'],
         'solver': ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'],
         'C': [0.1, 1, 10, 100, 1000],
         'max_iter': [50, 100, 500],

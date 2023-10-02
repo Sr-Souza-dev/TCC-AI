@@ -15,9 +15,9 @@ warnings.filterwarnings("ignore")
 optz_size = 60
 data_name = 'dataset1'
 
-input_shape_lstm = (1, 1, 4)
-input_shape_mlp  = (1, 1, 6)
-input_shape_rnn  = (1, 1, 6)
+input_shape_lstm = (1, 4)
+input_shape_mlp  = (1, 4)
+input_shape_rnn  = (1, 4)
 
 # Função para criar o modelo LSTM
 def build_lstm_model(hp):
@@ -50,7 +50,7 @@ def build_rnn_model(hp):
     model.add(SimpleRNN(units=hp.Int('rnn_units_3', min_value=32, max_value=128, step=16), return_sequences=True,))
     model.add(SimpleRNN(units=hp.Int('rnn_units_4', min_value=32, max_value=128, step=16)))
     model.add(Dense(1))
-    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mae')
+    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']), loss='mae')
     return model
 
               
@@ -73,7 +73,8 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
 
     input_shape_lstm = (shape[1], shape[2])
     input_shape_rnn  = (shape[1], shape[2])
-    input_shape_mlp  = (shape[1], shape[2], 1)
+    input_shape_mlp  = (shape[1], shape[2])
+    print("Input Shape: ", input_shape_rnn)
 
     lstmTuner = RandomSearch(
         build_lstm_model,
@@ -109,7 +110,7 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
     bestRNN.save(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
 
     print("LSTM: ", bestLSTM.summary())
-    print("mlp:  ", bestMLP.summary())
+    print("MLP:  ", bestMLP.summary())
     print("RNN:  ", bestRNN.summary())
 
     return bestLSTM, bestMLP, bestRNN
