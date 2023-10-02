@@ -1,13 +1,10 @@
 import numpy as np
-import tensorflow as tf
-import numpy as np
 import pandas as pd
 import sklearn.model_selection as ms
 from kerastuner.tuners import RandomSearch
 from keras import Sequential
 from keras.models import load_model
-from keras.layers import LSTM, Dense, Conv2D, MaxPooling2D, Flatten, SimpleRNN
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from keras.layers import LSTM, Dense, SimpleRNN
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -74,7 +71,6 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
     input_shape_lstm = (shape[1], shape[2])
     input_shape_rnn  = (shape[1], shape[2])
     input_shape_mlp  = (shape[1], shape[2])
-    print("Input Shape: ", input_shape_rnn)
 
     lstmTuner = RandomSearch(
         build_lstm_model,
