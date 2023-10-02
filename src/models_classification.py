@@ -18,7 +18,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     Y = pd.read_csv(f'../Data/Cut/dataset1/Y/Train_{trainSize}{dataName}.csv', sep=";")['OutPut_class |T+1|']
 
     print("******************** Inicio da otimização dos modelos de Classificação ********************")
-    print(f'X_train: {X.shape} | Y_train: {Y.shape}')
+    print(f'X_train: {X.shape} | X_test: {X.shape} | Y_train: {Y.shape} | Y_test: {Y.shape}')
 
     # ----------------------------- Otimizando SVM ----------------------------------
     print('------------------------------------ SVM ------------------------------------------')
