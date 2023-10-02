@@ -15,9 +15,9 @@ warnings.filterwarnings("ignore")
 optz_size = 60
 data_name = 'dataset1'
 
-input_shape_lstm = (1, 1, 4)
-input_shape_mlp  = (1, 1, 6)
-input_shape_rnn  = (1, 1, 6)
+input_shape_lstm = (1, 4)
+input_shape_mlp  = (1, 4)
+input_shape_rnn  = (1, 4)
 
 # Função para criar o modelo LSTM
 def build_lstm_model(hp):
@@ -32,7 +32,7 @@ def build_lstm_model(hp):
 # Função para criar o modelo mlp
 def build_mlp_model(hp):
     model = Sequential()
-    model.add(Dense(units=hp.Int('units_1', min_value=12, max_value=64, step=16), input_shape=input_shape_rnn, activation='relu'))
+    model.add(Dense(units=hp.Int('units_1', min_value=12, max_value=64, step=16), input_shape=input_shape_mlp, activation='relu'))
     model.add(Dense(units=hp.Int('units_1', min_value=12, max_value=64, step=16), activation='relu'))
     model.add(Dense(units=hp.Int('units_2', min_value=12, max_value=64, step=16), activation='relu'))
     model.add(Dense(units=hp.Int('units_3', min_value=12, max_value=64, step=16), activation='relu'))
@@ -46,11 +46,11 @@ def build_mlp_model(hp):
 def build_rnn_model(hp):
     model = Sequential()
     model.add(SimpleRNN(units=hp.Int('rnn_units_1', min_value=32, max_value=128, step=16), return_sequences=True, input_shape=input_shape_rnn))
-    model.add(SimpleRNN(units=hp.Int('rnn_units_2', min_value=32, max_value=128, step=16)))
-    model.add(SimpleRNN(units=hp.Int('rnn_units_3', min_value=32, max_value=128, step=16)))
+    model.add(SimpleRNN(units=hp.Int('rnn_units_2', min_value=32, max_value=128, step=16), return_sequences=True))
+    model.add(SimpleRNN(units=hp.Int('rnn_units_3', min_value=32, max_value=128, step=16), return_sequences=True))
     model.add(SimpleRNN(units=hp.Int('rnn_units_4', min_value=32, max_value=128, step=16)))
     model.add(Dense(1))
-    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mae')
+    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']), loss='mae')
     return model
 
               
@@ -73,7 +73,8 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
 
     input_shape_lstm = (shape[1], shape[2])
     input_shape_rnn  = (shape[1], shape[2])
-    input_shape_mlp  = (shape[1], shape[2], 1)
+    input_shape_mlp  = (shape[1], shape[2])
+    print("Input Shape: ", input_shape_rnn)
 
     lstmTuner = RandomSearch(
         build_lstm_model,
@@ -109,7 +110,7 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
     bestRNN.save(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
 
     print("LSTM: ", bestLSTM.summary())
-    print("mlp:  ", bestMLP.summary())
+    print("MLP:  ", bestMLP.summary())
     print("RNN:  ", bestRNN.summary())
 
     return bestLSTM, bestMLP, bestRNN
@@ -120,7 +121,7 @@ def GetModelsRegression(dataName):
     RNN = load_model(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
     return LSTM, MLP, RNN
 
-def GetRegressionPredictions(dataName, Names, Models, Epochs, Batchs, X_test, Y_test, X_train, Y_train):
+def GetRegressionPredictions(dataName, Names, Models, X_test, Y_test, X_train, Y_train):
     X_train = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1]))
     X_test = X_test.values.reshape((X_test.shape[0], 1, X_test.shape[1]))
 
@@ -128,7 +129,7 @@ def GetRegressionPredictions(dataName, Names, Models, Epochs, Batchs, X_test, Y_
     results = pd.DataFrame()
     results_Class = pd.DataFrame()
 
-    for name, model, epoch, batch in zip(Names, Models, Epochs, Batchs):
+    for name, model in zip(Names, Models):
         series = pd.Series(name=name, data=(model.predict(X_test)).ravel())
         serie_last = Y_test.shift(1)
         series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
