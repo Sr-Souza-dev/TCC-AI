@@ -26,53 +26,56 @@ garchLogs = pd.DataFrame(columns=['dist','p', 'q', 'MAE', 'MSE', 'RMSE'])
 bestGarch = {'dist':'normal', 'p': 0, 'q': 0, 'MAE': 100000, 'MSE': 100000, 'RMSE': 100000, 'model': None}
 
 def saveModelsChanges(model, modelName, values, dataTrain, dataTest):
+    try:
+        Y_pred = []
+        if(modelName == 'ARIMA'):
+            Y_pred, model = arimaPredict(dataTrain, dataTest, values)
+        elif(modelName == 'SARIMA'):
+            Y_pred, model = sarimaPredict(dataTrain, dataTest, values)
+        elif(modelName == 'GARCH'):
+            Y_pred, model = garchPredict(dataTrain, dataTest, values)
+        
+        mae = mean_absolute_error(dataTest, Y_pred)
+        mse = mean_squared_error(dataTest, Y_pred)
+        rmse = np.sqrt(mse)
 
-    Y_pred = []
-    if(modelName == 'ARIMA'):
-        Y_pred, model = arimaPredict(dataTrain, dataTest, values)
-    elif(modelName == 'SARIMA'):
-        Y_pred, model = sarimaPredict(dataTrain, dataTest, values)
-    elif(modelName == 'GARCH'):
-        Y_pred, model = garchPredict(dataTrain, dataTest, values)
+        if(modelName == 'ARIMA'):
+            arimaLogs.loc[len(arimaLogs)] = [values[0], values[1], values[2], mae, mse, rmse]
+            if(bestArima['MAE'] > mae and bestArima['MSE'] > mse and bestArima['RMSE'] > rmse):
+                bestArima['autoregressive(p)'] = values[0]
+                bestArima['diferencial(d)'] = values[1]
+                bestArima['media(q)'] = values[2]
+                bestArima['MAE'] = mae
+                bestArima['MSE'] = mse
+                bestArima['RMSE'] = rmse
+                bestArima['model'] = model
+        elif(modelName == 'SARIMA'):
+            sarimaLogs.loc[len(sarimaLogs)] = [values[0], values[1], values[2], values[3], values[4], values[5], values[6], mae, mse, rmse]
+            if(bestSarima['MAE'] > mae and bestSarima['MSE'] > mse and bestSarima['RMSE'] > rmse):
+                bestSarima['autoregressive(p)'] = values[0]
+                bestSarima['diferencial(d)'] = values[1]
+                bestSarima['media(q)'] = values[2]
+                bestSarima['sazonalidade(P)'] = values[3]
+                bestSarima['diferencial(D)'] = values[4]
+                bestSarima['media(Q)'] = values[5]
+                bestSarima['periodo(S)'] = values[6]
+                bestSarima['MAE'] = mae
+                bestSarima['MSE'] = mse
+                bestSarima['RMSE'] = rmse
+                bestSarima['model'] = model
+        elif(modelName == 'GARCH'):
+            garchLogs.loc[len(garchLogs)] = [values[0], values[1], values[2], mae, mse, rmse]
+            if(bestGarch['MAE'] > mae and bestGarch['MSE'] > mse and bestGarch['RMSE'] > rmse):
+                bestGarch['dist'] = values[0]
+                bestGarch['p'] = values[1]
+                bestGarch['q'] = values[2]
+                bestGarch['MAE'] = mae
+                bestGarch['MSE'] = mse
+                bestGarch['RMSE'] = rmse
+                bestGarch['model'] = model
+    except Exception as e:
+        print(e)
     
-    mae = mean_absolute_error(dataTest, Y_pred)
-    mse = mean_squared_error(dataTest, Y_pred)
-    rmse = np.sqrt(mse)
-
-    if(modelName == 'ARIMA'):
-        arimaLogs.loc[len(arimaLogs)] = [values[0], values[1], values[2], mae, mse, rmse]
-        if(bestArima['MAE'] > mae and bestArima['MSE'] > mse and bestArima['RMSE'] > rmse):
-            bestArima['autoregressive(p)'] = values[0]
-            bestArima['diferencial(d)'] = values[1]
-            bestArima['media(q)'] = values[2]
-            bestArima['MAE'] = mae
-            bestArima['MSE'] = mse
-            bestArima['RMSE'] = rmse
-            bestArima['model'] = model
-    elif(modelName == 'SARIMA'):
-        sarimaLogs.loc[len(sarimaLogs)] = [values[0], values[1], values[2], values[3], values[4], values[5], values[6], mae, mse, rmse]
-        if(bestSarima['MAE'] > mae and bestSarima['MSE'] > mse and bestSarima['RMSE'] > rmse):
-            bestSarima['autoregressive(p)'] = values[0]
-            bestSarima['diferencial(d)'] = values[1]
-            bestSarima['media(q)'] = values[2]
-            bestSarima['sazonalidade(P)'] = values[3]
-            bestSarima['diferencial(D)'] = values[4]
-            bestSarima['media(Q)'] = values[5]
-            bestSarima['periodo(S)'] = values[6]
-            bestSarima['MAE'] = mae
-            bestSarima['MSE'] = mse
-            bestSarima['RMSE'] = rmse
-            bestSarima['model'] = model
-    elif(modelName == 'GARCH'):
-        garchLogs.loc[len(garchLogs)] = [values[0], values[1], values[2], mae, mse, rmse]
-        if(bestGarch['MAE'] > mae and bestGarch['MSE'] > mse and bestGarch['RMSE'] > rmse):
-            bestGarch['dist'] = values[0]
-            bestGarch['p'] = values[1]
-            bestGarch['q'] = values[2]
-            bestGarch['MAE'] = mae
-            bestGarch['MSE'] = mse
-            bestGarch['RMSE'] = rmse
-            bestGarch['model'] = model
     
 
 def arimaPredict(dataTrain, dataTest, values):
