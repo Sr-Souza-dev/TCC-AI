@@ -10,31 +10,31 @@ def MakeClassificationsLogs(dataName, size):
     ensambleClass   = pd.read_csv(f'../Results/test/classification/{dataName}_ensamble.csv', sep=';')['class']
     ensambleStat    = pd.read_csv(f'../Results/test/statistic/{dataName}_ensamble.csv', sep=';')['class']
 
-    buying          = pd.read_csv(f'../Results/test/model_buying/{dataName}.csv', sep=';')['class']
+    buying          = pd.read_csv(f'../Results/test/ensamble1/{dataName}.csv', sep=';')['class']
     buying.name     = 'buying'
 
-    buying2         = pd.read_csv(f'../Results/test/model_buying2/{dataName}.csv', sep=';')['class']
+    buying2         = pd.read_csv(f'../Results/test/ensamble2/{dataName}.csv', sep=';')['class']
     buying2.name    = 'buying2'
 
     ensambleReg.name    = 'Ensamble Regression'
     ensambleClass.name  = 'Ensamble Classification'
     ensambleStat.name   = 'Ensamble Statistics'
 
-    outputs         = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{size}{dataName}.csv', sep=";")['OutPut_class |T+1|']
+    outputs         = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{dataName}.csv', sep=";")['OutPut_class |T+1|']
 
     datas = pd.concat([regressions, classifications, statistics, ensambleReg, ensambleClass, ensambleStat, buying, buying2], axis=1)
     #datas = pd.concat([regressions, classifications, statistics], axis=1)
 
-    # printando o shape de cada dataframe importado
-    print("regressions.shape:    ", regressions.shape)
-    print("classifications.shape:", classifications.shape)
-    print("statistics.shape:     ", statistics.shape)
-    print("ensambleReg.shape:    ", ensambleReg.shape)
-    print("ensambleClass.shape:  ", ensambleClass.shape)
-    print("ensambleStat.shape:   ", ensambleStat.shape)
-    print("buying.shape:         ", buying.shape)
-    print("buying2.shape:        ", buying2.shape)
-    print("outputs.shape:        ", outputs.shape)
+    # # printando o shape de cada dataframe importado
+    # print("regressions.shape:    ", regressions.shape)
+    # print("classifications.shape:", classifications.shape)
+    # print("statistics.shape:     ", statistics.shape)
+    # print("ensambleReg.shape:    ", ensambleReg.shape)
+    # print("ensambleClass.shape:  ", ensambleClass.shape)
+    # print("ensambleStat.shape:   ", ensambleStat.shape)
+    # print("buying.shape:         ", buying.shape)
+    # print("buying2.shape:        ", buying2.shape)
+    # print("outputs.shape:        ", outputs.shape)
 
 
 
@@ -48,5 +48,5 @@ def MakeClassificationsLogs(dataName, size):
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
 
-    print(logs.to_string(index=False))
+    # print(logs.to_string(index=False))
     logs.to_csv(f'../Results/test/logs/class/{dataName}_logs.csv', sep=';', index=False)

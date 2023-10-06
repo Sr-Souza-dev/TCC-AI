@@ -12,7 +12,7 @@ from models_statistic import GetStatisticPredictions
 from models_classification import GetClassificationPredictions
 from models_regression import GetRegressionPredictions
 import pandas as pd
-from strategy import GetEnsambles
+from ensambles import GetEnsambles
 from models_buying import GetModelPrediction
 from analyze import MakeClassificationsLogs
 from analyze_economy import GetEconomyAnalyze
@@ -45,12 +45,12 @@ def RunSolution(dataName, outputName, setDivision):
         # --------------------------- Treina os modelos ---------------------------
         train_time = time.time()
         Y_Train_statistic = pd.read_csv(f'../Data/Cut/statistic/Y/Train_{setDivision[1]}{dataName}.csv', sep=";")['OutPut |T+1|']   # Obtém os dados de treino para os modelos de estatística
-        Y_Test_statistic  = pd.read_csv(f'../Data/Cut/statistic/Y/Test_{setDivision[2]}{dataName}.csv', sep=";")['OutPut |T+1|']    # Obtém os dados de teste para os modelos de estatística
-        X_Test_dataset1  = pd.read_csv(f'../Data/Cut/dataset1/X/Test_{setDivision[2]}{dataName}.csv', sep=";")                      # Obtém os dados de teste para os modelos de classificação
+        Y_Test_statistic  = pd.read_csv(f'../Data/Cut/statistic/Y/Test_{dataName}.csv', sep=";")['OutPut |T+1|']    # Obtém os dados de teste para os modelos de estatística
+        X_Test_dataset1  = pd.read_csv(f'../Data/Cut/dataset1/X/Test_{dataName}.csv', sep=";")                      # Obtém os dados de teste para os modelos de classificação
         X_Train_dataset2 = pd.read_csv(f'../Data/Cut/dataset2/X/Train_{setDivision[1]}{dataName}.csv', sep=";")                     # Obtém os dados de treino para os modelos de regressão
         Y_Train_dataset2 = pd.read_csv(f'../Data/Cut/dataset2/Y/Train_{setDivision[1]}{dataName}.csv', sep=";")['OutPut |T+1|']     # Obtém os dados de treino para os modelos de regressão
-        X_Test_dataset2  = pd.read_csv(f'../Data/Cut/dataset2/X/Test_{setDivision[2]}{dataName}.csv', sep=";")                      # Obtém os dados de teste para os modelos de regressão
-        Y_Test_dataset2  = pd.read_csv(f'../Data/Cut/dataset2/Y/Test_{setDivision[2]}{dataName}.csv', sep=";")['OutPut |T+1|']      # Obtém os dados de teste para os modelos de regressão
+        X_Test_dataset2  = pd.read_csv(f'../Data/Cut/dataset2/X/Test_{dataName}.csv', sep=";")                      # Obtém os dados de teste para os modelos de regressão
+        Y_Test_dataset2  = pd.read_csv(f'../Data/Cut/dataset2/Y/Test_{dataName}.csv', sep=";")['OutPut |T+1|']      # Obtém os dados de teste para os modelos de regressão
 
         ClassificationModels = [SVM, KNN, LR]           # Lista de modelos de classificação
         ClassificationNames  = ['SVM', 'KNN', 'LR']     # Lista de nomes dos modelos de classificação

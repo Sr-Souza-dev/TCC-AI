@@ -1,4 +1,4 @@
-\providecommand{\abntreprintinfo}[1]{%
+\providecommand{\abntre# printinfo}[1]{%
  \citeonline{#1}}
 \setlength{\labelsep}{0pt}\begin{thebibliography}{}
 \providecommand{\abntrefinfo}[3]{}
@@ -447,7 +447,7 @@ ISBN 978-0071461542.}
 \abntrefinfo{Pabu{\c{c}}cu, Ongan e Ongan}{PABU{\c{C}}CU; ONGAN; ONGAN}{2023}
 {PABU{\c{C}}CU, H.; ONGAN, S.; ONGAN, A. Forecasting the movements of bitcoin
   prices: an application of machine learning algorithms.
-\emph{arXiv preprint arXiv:2303.04642}, 2023.}
+\emph{arXiv pre# print arXiv:2303.04642}, 2023.}
 
 \bibitem[Pearson 1900]{pearson1900x}
 \abntrefinfo{Pearson}{PEARSON}{1900}

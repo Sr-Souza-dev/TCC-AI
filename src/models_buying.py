@@ -44,12 +44,12 @@ def GetModelPrediction(dN, sizeTrain):
 
     X_train, X_validation, Y_train, Y_validation = train_test_split(input_data, output_data, test_size=0.15, random_state=None, shuffle=False)
 
-    print("Ensamble_Classification.shape: ", ensamble_classification.shape)
-    print("Ensamble_Regression.shape:     ", ensamble_regression.shape)
-    print("Ensamble_Statistic.shape:      ", ensamble_statistic.shape)
-    print("Outputs.shape:                 ", outputs.shape)
-    print("Input_data.shape:              ", input_data.shape)
-    print("Output_data.shape:             ", output_data.shape)
+    # print("Ensamble_Classification.shape: ", ensamble_classification.shape)
+    # print("Ensamble_Regression.shape:     ", ensamble_regression.shape)
+    # print("Ensamble_Statistic.shape:      ", ensamble_statistic.shape)
+    # print("Outputs.shape:                 ", outputs.shape)
+    # print("Input_data.shape:              ", input_data.shape)
+    # print("Output_data.shape:             ", output_data.shape)
 
     input_dim = input_data.shape[1]
     output_dim = output_data.shape[1]
@@ -81,7 +81,7 @@ def GetModelPrediction(dN, sizeTrain):
     predict = model.predict(input_data_test)
     predict = pd.DataFrame(predict, columns=['up', 'down'])
     predict = pd.concat([predict['up'], predict['down'], pd.Series(name='class', data=(predict['up'] > predict['down']).astype(int))], axis=1)
-    predict.to_csv(f'../Results/test/model_buying/{dataName}.csv', sep=';', index=False)
+    predict.to_csv(f'../Results/test/ensamble1/{dataName}.csv', sep=';', index=False)
 
     # **************** Gerando modelo que recebe diretamente a previsão de cada modelo *********************
     regressions     = pd.read_csv(f'../Results/train/regression/{dataName}_predictions_class.csv', sep=';')
@@ -115,6 +115,6 @@ def GetModelPrediction(dN, sizeTrain):
     predict = model.predict(datas)
     predict = pd.DataFrame(predict, columns=['up', 'down'])
     predict = pd.concat([predict['up'], predict['down'], pd.Series(name='class', data=(predict['up'] > predict['down']).astype(int))], axis=1)
-    predict.to_csv(f'../Results/test/model_buying2/{dataName}.csv', sep=';', index=False)
+    predict.to_csv(f'../Results/test/ensamble2/{dataName}.csv', sep=';', index=False)
 
     

@@ -197,18 +197,18 @@ def calculate(data, Y, opt1, qtd1, opt2, qtd2):
     dataset1 = pd.DataFrame({})
     dataset2 = pd.DataFrame({})
     
-    print("Gerando dataset1...")
+    # print("Gerando dataset1...")
     for i in range(len(opt1)):
-        print("        ->",opt1[i])
+        # print("        ->",opt1[i])
         dataset1 = dataset1.combine_first(select(data, Y, qtd1[i], opt1[i]))
     
-    print("done.")
-    print("Gerando dataset2...")
+    # print("done.")
+    # print("Gerando dataset2...")
     for i in range(len(opt2)):
-        print("        ->",opt2[i])
+        # print("        ->",opt2[i])
         dataset2 = dataset2.combine_first(select(data, Y, qtd2[i], opt2[i]))
     
-    print("done.")
+    # print("done.")
     
     dataset1 = select(dataset1, Y, dataset1_2[0], usedMethodsDB1)
     dataset2 = select(dataset2, Y, dataset1_2[1], usedMethodsDB2)

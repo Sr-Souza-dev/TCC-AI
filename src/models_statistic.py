@@ -113,8 +113,8 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     Y = pd.read_csv(f'../Data/Cut/statistic/Y/Optmz_{size}{dataName}.csv', sep=";")
     X_train, X_test, Y_train, Y_test = ms.train_test_split(X, Y, test_size = test_size, random_state = None, shuffle = False)
 
-    print("******************** Inicio da otimização dos modelos Estatisticos ********************")
-    print(f'X_train: {X_train.shape} | X_test: {X_test.shape} | Y_train: {Y_train.shape} | Y_test: {Y_test.shape}')
+    # print("******************** Inicio da otimização dos modelos Estatisticos ********************")
+    # print(f'X_train: {X_train.shape} | X_test: {X_test.shape} | Y_train: {Y_train.shape} | Y_test: {Y_test.shape}')
 
 
     # Modelo ARIMA
@@ -122,17 +122,17 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     d = np.arange(0, 2, 1)
     q = np.arange(0, 3, 1)
 
-    print("-------------------- ARIMA --------------------")
+    # print("-------------------- ARIMA --------------------")
     for i in p:
         for j in d:
             for k in q:
                 try:
-                    print(f'------ p: {i} | d: {j} | q: {k}')
+                    # print(f'------ p: {i} | d: {j} | q: {k}')
                     saveModelsChanges(None, 'ARIMA', [i, j, k], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
                 except:
-                    print("Erro ao tentar Gerar modelo ARIMA com os parametros informados")
+                    # print("Erro ao tentar Gerar modelo ARIMA com os parametros informados")
                     continue
-    print(bestArima)
+    # print(bestArima)
     arimaLogs.loc[0] = [bestArima['autoregressive(p)'], bestArima['diferencial(d)'], bestArima['media(q)'], bestArima['MAE'], bestArima['MSE'], bestArima['RMSE']]
     arimaLogs.to_csv(f'../Results/optimization/statistics/ARIMA/{dataName}_Logs.csv', sep=';', index=False)
     with open(f'../Results/optimization/statistics/ARIMA/{dataName}_model.pkl', 'wb') as f:
@@ -150,7 +150,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     S = np.arange(5, 20, 5)
 
 
-    print("-------------------- SARIMA --------------------")
+    # print("-------------------- SARIMA --------------------")
     for i in p:
         for j in d:
             for k in q:
@@ -159,12 +159,12 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
                         for n in Q:
                             for o in S:
                                 try:
-                                    print(f'------ p: {i} | d: {j} | q: {k} | P: {l} | D: {m} | Q: {n} | S: {o}')
+                                    # print(f'------ p: {i} | d: {j} | q: {k} | P: {l} | D: {m} | Q: {n} | S: {o}')
                                     saveModelsChanges(None, 'SARIMA', [i, j, k, l, m, n, o], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
                                 except:
-                                    print("Erro ao tentar Gerar modelo SARIMA com os parametros informados")
+                                    # print("Erro ao tentar Gerar modelo SARIMA com os parametros informados")
                                     continue
-    print(bestSarima)
+    # print(bestSarima)
     sarimaLogs.loc[0] = [bestSarima['autoregressive(p)'], bestSarima['diferencial(d)'], bestSarima['media(q)'], bestSarima['sazonalidade(P)'], bestSarima['diferencial(D)'], bestSarima['media(Q)'], bestSarima['periodo(S)'], bestSarima['MAE'], bestSarima['MSE'], bestSarima['RMSE']]
     sarimaLogs.to_csv(f'../Results/optimization/statistics/SARIMA/{dataName}_Logs.csv', sep=';', index=False)
     with open(f'../Results/optimization/statistics/SARIMA/{dataName}_model.pkl', 'wb') as f:
@@ -176,17 +176,17 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     q = np.arange(1, 5, 1)
     dists = ['normal', 't', 'studentst', 'ged', 'gaussian']
 
-    print("-------------------- GARCH --------------------")
+    # print("-------------------- GARCH --------------------")
     for d in dists:
         for i in p:
             for j in q:
                 try:
-                    print(f'------ dist: {d} | p: {i} | q: {j}')
+                    # print(f'------ dist: {d} | p: {i} | q: {j}')
                     saveModelsChanges(None, 'GARCH', [d, i, j], Y_train['OutPut |T+1|'].ravel(), Y_test['OutPut |T+1|'].ravel())
                 except:
-                    print("Erro ao tentar Gerar modelo GARCH com os parametros informados")
+                    # print("Erro ao tentar Gerar modelo GARCH com os parametros informados")
                     continue
-    print(bestGarch)
+    # print(bestGarch)
     garchLogs.loc[0] = [bestGarch['dist'],bestGarch['p'], bestGarch['q'], bestGarch['MAE'], bestGarch['MSE'], bestGarch['RMSE']]
     garchLogs.to_csv(f'../Results/optimization/statistics/GARCH/{dataName}_Logs.csv', sep=';', index=False)
     with open(f'../Results/optimization/statistics/GARCH/{dataName}_model.pkl', 'wb') as f:

@@ -66,7 +66,7 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
     X_validation_reshape = X_validation.values.reshape((X_validation.shape[0], 1, X_validation.shape[1]))
 
     shape = X_train_reshape.shape
-    print("Shape: ", shape)
+    # print("Shape: ", shape)
 
     input_shape_lstm = (shape[1], shape[2])
     input_shape_rnn  = (shape[1], shape[2])
@@ -105,9 +105,9 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
     bestMLP.save(f'../Results/optimization/regression/MLP/{dataName}_model.h5')
     bestRNN.save(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
 
-    print("LSTM: ", bestLSTM.summary())
-    print("MLP:  ", bestMLP.summary())
-    print("RNN:  ", bestRNN.summary())
+    # print("LSTM: ", bestLSTM.summary())
+    # print("MLP:  ", bestMLP.summary())
+    # print("RNN:  ", bestRNN.summary())
 
     return bestLSTM, bestMLP, bestRNN
 

@@ -16,25 +16,25 @@ def GetEconomyAnalyze(dataName, testSize):
     ensamble_regression.name        = "Ensamble Regression"
     ensamble_statistics.name        = "Ensamble Statistics"
 
-    buying          = pd.read_csv(f'../Results/test/model_buying/{dataName}.csv', sep=";")['class']
-    buying2         = pd.read_csv(f'../Results/test/model_buying2/{dataName}.csv', sep=";")['class']
+    buying          = pd.read_csv(f'../Results/test/ensamble1/{dataName}.csv', sep=";")['class']
+    buying2         = pd.read_csv(f'../Results/test/ensamble2/{dataName}.csv', sep=";")['class']
     buying.name     = "buying"
     buying2.name    = "buying2"
 
     datas  = pd.concat([classifications, regressions, statistics, ensamble_classification, ensamble_regression, ensamble_statistics, buying, buying2], axis=1)
-    output = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{testSize}{dataName}.csv', sep=";")['OutPut |T+1|']
+    output = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{dataName}.csv', sep=";")['OutPut |T+1|']
 
-    print("Shapes dos dados importados:")
-    print("Classifications:             ", classifications.shape)
-    print("Regressions:                 ", regressions.shape)
-    print("Statistics:                  ", statistics.shape)
-    print("Ensamble Classification:     ", ensamble_classification.shape)
-    print("Ensamble Regression:         ", ensamble_regression.shape)
-    print("Ensamble Statistics:         ", ensamble_statistics.shape)
-    print("Buying:                      ", buying.shape)
-    print("Buying2:                     ", buying2.shape)
-    print("Datas:                       ", datas.shape)
-    print("Output:                      ", output.shape)
+    # print("Shapes dos dados importados:")
+    # print("Classifications:             ", classifications.shape)
+    # print("Regressions:                 ", regressions.shape)
+    # print("Statistics:                  ", statistics.shape)
+    # print("Ensamble Classification:     ", ensamble_classification.shape)
+    # print("Ensamble Regression:         ", ensamble_regression.shape)
+    # print("Ensamble Statistics:         ", ensamble_statistics.shape)
+    # print("Buying:                      ", buying.shape)
+    # print("Buying2:                     ", buying2.shape)
+    # print("Datas:                       ", datas.shape)
+    # print("Output:                      ", output.shape)
 
     # faz a operação de compra e venda em todos os modelos
     modelsHistory = pd.DataFrame()
@@ -54,7 +54,11 @@ def GetEconomyAnalyze(dataName, testSize):
                 isPurchased = False
                 currentValue = (currentValue / purchasedValue) * value
             
-            purchasedHistory.append(currentValue)
+            if(isPurchased):
+                purchasedHistory.append((currentValue / purchasedValue) * value)
+            else:
+                purchasedHistory.append(currentValue)
+                
         if(isPurchased):
             currentValue = (currentValue / purchasedValue) * value
             purchasedHistory[len(purchasedHistory) - 1] = currentValue
@@ -83,6 +87,7 @@ def GetEconomyAnalyze(dataName, testSize):
         "finalValue": currentValue,
         "percentual": ((currentValue - initialValue) / initialValue) * 100
     }
+    pd.DataFrame(log, index=[0]).to_csv(f'../Results/test/buyAndHold/{dataName}_logs.csv', sep=';', index=False)
     operationsHistory = pd.concat([operationsHistory, pd.DataFrame(log, index=[0])], ignore_index=True)
     modelsHistory = pd.concat([modelsHistory, pd.Series(buyAndHoldHistory, name="Buy and Hold")], axis=1)
 
@@ -93,10 +98,11 @@ def GetEconomyAnalyze(dataName, testSize):
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
 
-    print("Models History:              ", modelsHistory.shape)
-    print("Operations History:        \n", operationsHistory.to_string(index=False))
+    # print("Models History:              ", modelsHistory.shape)
+    # print("Operations History:        \n", operationsHistory.to_string(index=False))
 
     by = modelsHistory["Buy and Hold"]
+    by.to_csv(f'../Results/test/buyAndHold/{dataName}.csv', sep=';', index=False)
     modelsHistory = modelsHistory.drop(columns=["Buy and Hold"])
 
     # plota o gráfico de comparação entre os modelos
