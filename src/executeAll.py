@@ -18,11 +18,8 @@ from analyze import MakeClassificationsLogs
 from analyze_economy import GetEconomyAnalyze
 import warnings
 
-def RunSolution(dataName, outputName, setDivision):
-    warnings.filterwarnings("ignore")
+def getDatabase(dataName, outputName, setDivision):
     try:
-        total_time = time.time()
-
         # --------------------------- Gera a base de Dados ---------------------------
         print(f"    | Etapa 1 {dataName} - Gerando base de dados")
         generate_Time = time.time()
@@ -30,7 +27,13 @@ def RunSolution(dataName, outputName, setDivision):
         d1Shape, d2Shape, outShape = Selection(dataName)        # Seleciona os dados gerando o dataset1 e dataset2
         Cut(dataName, setDivision)                              # divide a base de dados em otimização, treino e teste
         generate_Time = time.time() - generate_Time
+        print(f"    | Etapa 1 {dataName} - Time: {generate_Time}")
+    except Exception as e:
+        print(f"    | ERRO - Etapa 1 {dataName} (gerando base de dados)")
+        print(f"        - {e}")
 
+def getOptmizedModels(dataName, setDivision):
+    try:
         # --------------------------- Obtém os modelos Otimizados ---------------------------
         print(f"    | Etapa 2 {dataName} - Obtendo modelos otimizados!")
         optmized_time = time.time()
@@ -40,13 +43,18 @@ def RunSolution(dataName, outputName, setDivision):
         ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
         print(f"        - Etapa 2.3 {dataName} - Obtendo modelos de regressão otimizados")
         LSTM, MLP, RNN = GetModelsRegressionOptimized(dataName, setDivision[1])             # Obtém os modelos de regressão otimizados
+        optmized_time = time.time() - optmized_time
+        print(f"    | Etapa 2 {dataName} - Time: {optmized_time}")
+    except Exception as e:
+        print(f"    | ERRO - Etapa 2 {dataName} (Obtendo modelos otimizados)")
+        print(f"        - {e}")
 
+def trainModels(dataName, setDivision):
+    try:
         # ------------------------ Recupera os modelos já otimizados --------------------------
         print(f"    | Etapa 3 {dataName} - Obtendo modelos já otimizados!")
         SVM, KNN, LR = GetModelsClassification(dataName)        # Obtém os modelos de classificação
-        ARIMA, SARIMA, GARCH = GetModelsStatistics(dataName)    # Obtém os modelos de estatística
         LSTM, MLP, RNN = GetModelsRegression(dataName)          # Obtém os modelos de regressão
-        optmized_time = time.time() - optmized_time
 
         # --------------------------- Treina os modelos ---------------------------
         print(f"    | Etapa 4 {dataName} - Treinando modelos!")
@@ -71,26 +79,68 @@ def RunSolution(dataName, outputName, setDivision):
         print(f"        - Etapa 4.3 {dataName} - Treinando modelos de estatística")
         GetStatisticPredictions(dataName, Y_Train_statistic.ravel(), Y_Test_statistic.ravel(), window=100)                                              # Obtém as predições dos modelos de estatística
         train_time = time.time() - train_time
+        print(f"    | Etapa 4 {dataName} - Time: {train_time}")
+    except Exception as e:
+        print(f"    | ERRO - Etapa 4 {dataName} (Treinando modelos)")
+        print(f"        - {e}")
 
+    
+def getEnsambles(dataName, setDivision):
+    try:
         # --------------------------- Obtendo ensambles ---------------------------
         print(f"    | Etapa 5 {dataName} - Obtendo ensambles!")
         ensamble_time = time.time()
         GetEnsambles(dataName, setDivision[2], setDivision[1])      # Obtém os ensambles
         GetModelPrediction(dataName, setDivision[1])                # Obtém as predições do modelo de compra
         ensamble_time = time.time() - ensamble_time
+        print(f"    | Etapa 5 {dataName} - Time: {ensamble_time}")
+    except Exception as e:
+        print(f"    | ERRO - Etapa 5 {dataName} (Obtendo ensambles)")
+        print(f"        - {e}")
 
+def getResults(dataName, setDivision):
+    try:
         # --------------------------- Obtendo resultados ---------------------------
         print(f"    | Etapa 6 {dataName} - Obtendo resultados!")
         MakeClassificationsLogs(dataName, setDivision[2])           # Obtém os logs de classificação
         GetEconomyAnalyze(dataName, setDivision[2])                 # Obtém os logs de economia
+    except Exception as e:
+        print(f"    | ERRO - Etapa 6 {dataName} (Obtendo resultados)")
+        print(f"        - {e}")
+
+
+
+def RunSolution(dataName, outputName, setDivision):
+    warnings.filterwarnings("ignore")
+    try:
+        total_time = time.time()
+
+        # --------------------------- Gera a base de Dados ---------------------------
+        generate_Time = time.time()
+        getDatabase(dataName, outputName, setDivision)                        # divide a base de dados em otimização, treino e teste
+        generate_Time = time.time() - generate_Time
+
+        # --------------------------- Obtém os modelos Otimizados ---------------------------
+        optmized_time = time.time()
+        getOptmizedModels(dataName, setDivision)
+        optmized_time = time.time() - optmized_time
+
+        # --------------------------- Treina os modelos ---------------------------
+        train_time = time.time()
+        trainModels(dataName, setDivision)                                             # Obtém as predições dos modelos de estatística
+        train_time = time.time() - train_time
+
+        # --------------------------- Obtendo ensambles ---------------------------
+        ensamble_time = time.time()
+        getEnsambles(dataName, setDivision)
+        ensamble_time = time.time() - ensamble_time
+
+        # --------------------------- Obtendo resultados ---------------------------
+        getResults(dataName, setDivision)
 
         # Gera uma string com todas informações de tempo e tamanho do dataset utilizado para a entrada dataName
         total_time = time.time() - total_time
         info = f""" -------------------- {dataName} -------------------- 
-                | Data Shape: {dataShape} 
-                | Output Shape: {outShape} 
-                | Dataset1 Shape: {d1Shape} 
-                | Dataset2 Shape: {d2Shape} 
                 | Generate Time: {generate_Time} 
                 | Optmized Time: {optmized_time} 
                 | Train Time: {train_time} 
