@@ -288,8 +288,10 @@ def importExternalData(inputDataName, outputName):
 
     # Convert a base de dados de string para float
     def converter_para_float(valor):
-        value = valor.replace(".", "")
-        return float(value.replace(",", "."))
+        if(type(valor) == str):
+            value = valor.replace(".", "")
+            return float(value.replace(",", "."))
+        return valor
     
     data = data.applymap(converter_para_float)
 

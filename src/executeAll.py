@@ -24,6 +24,7 @@ def RunSolution(dataName, outputName, setDivision):
         total_time = time.time()
 
         # --------------------------- Gera a base de Dados ---------------------------
+        print(f"    | Etapa 1 {dataName} - Gerando base de dados")
         generate_Time = time.time()
         dataShape, outShape = Generate(dataName, outputName)    # Gera a base de dados
         d1Shape, d2Shape, outShape = Selection(dataName)        # Seleciona os dados gerando o dataset1 e dataset2
@@ -31,18 +32,24 @@ def RunSolution(dataName, outputName, setDivision):
         generate_Time = time.time() - generate_Time
 
         # --------------------------- Obtém os modelos Otimizados ---------------------------
+        print(f"    | Etapa 2 {dataName} - Obtendo modelos otimizados!")
         optmized_time = time.time()
+        print(f"        - Etapa 2.1 {dataName} - Obtendo modelos de classificação otimizados")
         SVM, KNN, LR = GetModelsClassificationOptimized(dataName, setDivision[1])           # Obtém os modelos de classificação otimizados
+        print(f"        - Etapa 2.2 {dataName} - Obtendo modelos estatisticos otimizados")
         ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
+        print(f"        - Etapa 2.3 {dataName} - Obtendo modelos de regressão otimizados")
         LSTM, MLP, RNN = GetModelsRegressionOptimized(dataName, setDivision[1])             # Obtém os modelos de regressão otimizados
 
         # ------------------------ Recupera os modelos já otimizados --------------------------
+        print(f"    | Etapa 3 {dataName} - Obtendo modelos já otimizados!")
         SVM, KNN, LR = GetModelsClassification(dataName)        # Obtém os modelos de classificação
         ARIMA, SARIMA, GARCH = GetModelsStatistics(dataName)    # Obtém os modelos de estatística
         LSTM, MLP, RNN = GetModelsRegression(dataName)          # Obtém os modelos de regressão
         optmized_time = time.time() - optmized_time
 
         # --------------------------- Treina os modelos ---------------------------
+        print(f"    | Etapa 4 {dataName} - Treinando modelos!")
         train_time = time.time()
         Y_Train_statistic = pd.read_csv(f'../Data/Cut/statistic/Y/Train_{setDivision[1]}{dataName}.csv', sep=";")['OutPut |T+1|']   # Obtém os dados de treino para os modelos de estatística
         Y_Test_statistic  = pd.read_csv(f'../Data/Cut/statistic/Y/Test_{dataName}.csv', sep=";")['OutPut |T+1|']    # Obtém os dados de teste para os modelos de estatística
@@ -57,18 +64,23 @@ def RunSolution(dataName, outputName, setDivision):
         RegressionModels = [LSTM, MLP, RNN]             # Lista de modelos de regressão
         RegressionNames  = ['LSTM', 'MLP', 'RNN']       # Lista de nomes dos modelos de regressão
 
+        print(f"        - Etapa 4.1 {dataName} - Treinando modelos de classificação")
         GetClassificationPredictions(dataName, ClassificationModels, ClassificationNames, X_Test_dataset1)                                              # Obtém as predições dos modelos de classificação
+        print(f"        - Etapa 4.2 {dataName} - Treinando modelos de regressão")
         GetRegressionPredictions(dataName, RegressionNames, RegressionModels, X_Test_dataset2, Y_Test_dataset2, X_Train_dataset2, Y_Train_dataset2)     # Obtém as predições dos modelos de regressão
+        print(f"        - Etapa 4.3 {dataName} - Treinando modelos de estatística")
         GetStatisticPredictions(dataName, Y_Train_statistic.ravel(), Y_Test_statistic.ravel(), window=100)                                              # Obtém as predições dos modelos de estatística
         train_time = time.time() - train_time
 
         # --------------------------- Obtendo ensambles ---------------------------
+        print(f"    | Etapa 5 {dataName} - Obtendo ensambles!")
         ensamble_time = time.time()
         GetEnsambles(dataName, setDivision[2], setDivision[1])      # Obtém os ensambles
         GetModelPrediction(dataName, setDivision[1])                # Obtém as predições do modelo de compra
         ensamble_time = time.time() - ensamble_time
 
         # --------------------------- Obtendo resultados ---------------------------
+        print(f"    | Etapa 6 {dataName} - Obtendo resultados!")
         MakeClassificationsLogs(dataName, setDivision[2])           # Obtém os logs de classificação
         GetEconomyAnalyze(dataName, setDivision[2])                 # Obtém os logs de economia
 
@@ -87,6 +99,8 @@ def RunSolution(dataName, outputName, setDivision):
                 ------------------------------------------------------- \n\n"""
         return info
     except Exception as e:
+        print(f"    | Erro na execução do {dataName}")
+        print(e)
         return f""" -------------------- {dataName} --------------------
                 | Erro: {e}
                 ------------------------------------------------------- \n\n"""

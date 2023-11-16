@@ -19,11 +19,11 @@ input_shape_rnn  = (1, 4)
 # Função para criar o modelo LSTM
 def build_lstm_model(hp):
     model = Sequential()
-    model.add(LSTM(units=hp.Int('units_1', min_value=50, max_value=200, step=20),input_shape=input_shape_lstm, return_sequences=True))
-    model.add(LSTM(units=hp.Int('units_2', min_value=50, max_value=200, step=20),input_shape=input_shape_lstm, return_sequences=True))
-    model.add(LSTM(units=hp.Int('units_3', min_value=50, max_value=200, step=20),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_1', min_value=20, max_value=100, step=20),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_2', min_value=20, max_value=100, step=20),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_3', min_value=20, max_value=100, step=20),input_shape=input_shape_lstm, return_sequences=True))
     model.add(Dense(1))
-    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mae')
+    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mse')
     return model
 
 # Função para criar o modelo mlp
@@ -33,10 +33,9 @@ def build_mlp_model(hp):
     model.add(Dense(units=hp.Int('units_1', min_value=12, max_value=64, step=16), activation='relu'))
     model.add(Dense(units=hp.Int('units_2', min_value=12, max_value=64, step=16), activation='relu'))
     model.add(Dense(units=hp.Int('units_3', min_value=12, max_value=64, step=16), activation='relu'))
-    model.add(Dense(units=hp.Int('units_4', min_value=12, max_value=64, step=16), activation='relu'))
     model.add(Dense(1, activation='relu'))
 
-    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']), loss='mae')
+    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']), loss='mse')
     return model
 
 
@@ -47,7 +46,7 @@ def build_rnn_model(hp):
     model.add(SimpleRNN(units=hp.Int('rnn_units_3', min_value=32, max_value=128, step=16), return_sequences=True,))
     model.add(SimpleRNN(units=hp.Int('rnn_units_4', min_value=32, max_value=128, step=16)))
     model.add(Dense(1))
-    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']), loss='mae')
+    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']), loss='mse')
     return model
 
               
@@ -97,8 +96,12 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
     mlpTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
     rnnTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
 
+    print("******************** Inicio da otimização dos modelos de Regressão ********************")
+    print("******************** LSTM ********************")
     bestLSTM = lstmTuner.get_best_models(num_models=1)[0]
+    print("******************** MLP ********************")
     bestMLP  = mlpTuner.get_best_models(num_models=1)[0]
+    print("******************** RNN ********************")
     bestRNN  = rnnTuner.get_best_models(num_models=1)[0]
 
     bestLSTM.save(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')

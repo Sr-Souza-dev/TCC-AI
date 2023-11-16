@@ -17,13 +17,13 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     X = pd.read_csv(f'../Data/Cut/dataset1/X/Train_{trainSize}{dataName}.csv', sep=";")
     Y = pd.read_csv(f'../Data/Cut/dataset1/Y/Train_{trainSize}{dataName}.csv', sep=";")['OutPut_class |T+1|']
 
-    # print("******************** Inicio da otimização dos modelos de Classificação ********************")
-    # print(f'X_train: {X.shape} | X_test: {X.shape} | Y_train: {Y.shape} | Y_test: {Y.shape}')
+    print("******************** Inicio da otimização dos modelos de Classificação ********************")
+    print(f'X_train: {X.shape} | X_test: {X.shape} | Y_train: {Y.shape} | Y_test: {Y.shape}')
 
     # ----------------------------- Otimizando SVM ----------------------------------
-    # print('------------------------------------ SVM ------------------------------------------')
+    print('------------------------------------ SVM ------------------------------------------')
     SVM_grid = {
-        'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
+        'kernel': ['linear', 'poly'],
         'C': np.arange(0.01, 50, 20),
         'gamma': ['scale', 'auto'],
         'degree': [1, 2, 3],
@@ -32,32 +32,32 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     svm_grid_search = GridSearchCV(estimator = SVC(), param_grid = SVM_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
     svm_grid_search.fit(X, Y)
     bestSVM = svm_grid_search.best_estimator_
-    # print("Melhore Acurácia: ", svm_grid_search.best_score_)
+    print("Melhore Acurácia: ", svm_grid_search.best_score_)
     with open(f'../Results/optimization/classifications/SVM/{dataName}_model.pkl', 'wb') as f:
         pickle.dump(bestSVM, f)
     
     
     # ----------------------------- Otimizando KNN ----------------------------------
-    # print('------------------------------------ KNN -----------------------------------------')
+    print('------------------------------------ KNN -----------------------------------------')
     KNN_grid = {
-        'n_neighbors': [3, 7, 9, 17, 19, 22, 34],
+        'n_neighbors': [3, 9, 17, 34],
         'weights': ['uniform', 'distance'],
-        'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
-        'p': [1, 2, 3]
+        'algorithm': ['auto', 'ball_tree', 'kd_tree'],
+        'p': [1, 2]
     }
     knn_grid_search = GridSearchCV(estimator = KNeighborsClassifier(), param_grid = KNN_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
     knn_grid_search.fit(X, Y)
     bestKNN = knn_grid_search.best_estimator_
-    # print("Melhore Acurácia: ", knn_grid_search.best_score_)
+    print("Melhore Acurácia: ", knn_grid_search.best_score_)
     with open(f'../Results/optimization/classifications/KNN/{dataName}_model.pkl', 'wb') as f:
         pickle.dump(bestKNN, f)
 
     # ----------------------------- Otimizando LR ----------------------------------
-    # print('------------------------------------- LR --------------------------------------------')
+    print('------------------------------------- LR --------------------------------------------')
     LR_grid = {
-        'penalty': ['l1', 'l2', 'elasticnet', 'None'],
-        'solver': ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'],
-        'C': [0.1, 1, 10, 100, 1000],
+        'penalty': ['l1', 'l2'],
+        'solver': ['newton-cg', 'lbfgs'],
+        'C': [10, 100, 1000],
         'max_iter': [50, 100, 500],
         'fit_intercept': [True, False],
         'class_weight': ['balanced', None],
@@ -66,7 +66,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     lr_grid_search = GridSearchCV(estimator = LogisticRegression(), param_grid = LR_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
     lr_grid_search.fit(X, Y)
     bestLR = lr_grid_search.best_estimator_
-    # print("Melhore Acurácia: ", lr_grid_search.best_score_)
+    print("Melhore Acurácia: ", lr_grid_search.best_score_)
     with open(f'../Results/optimization/classifications/LR/{dataName}_model.pkl', 'wb') as f:
         pickle.dump(bestLR, f)
 
