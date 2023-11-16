@@ -150,7 +150,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     P = np.arange(1, 2, 1)
     D = np.arange(0, 1, 1)
     Q = np.arange(1, 2, 1)
-    S = np.arange(5, 20, 5)
+    S = np.arange(5, 20, 7)
 
 
     # print("-------------------- SARIMA --------------------")

@@ -19,9 +19,9 @@ input_shape_rnn  = (1, 4)
 # Função para criar o modelo LSTM
 def build_lstm_model(hp):
     model = Sequential()
-    model.add(LSTM(units=hp.Int('units_1', min_value=50, max_value=200, step=10),input_shape=input_shape_lstm, return_sequences=True))
-    model.add(LSTM(units=hp.Int('units_2', min_value=50, max_value=200, step=10),input_shape=input_shape_lstm, return_sequences=True))
-    model.add(LSTM(units=hp.Int('units_3', min_value=50, max_value=200, step=10),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_1', min_value=50, max_value=200, step=20),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_2', min_value=50, max_value=200, step=20),input_shape=input_shape_lstm, return_sequences=True))
+    model.add(LSTM(units=hp.Int('units_3', min_value=50, max_value=200, step=20),input_shape=input_shape_lstm, return_sequences=True))
     model.add(Dense(1))
     model.compile(optimizer=hp.Choice('optimizer', ['adam', 'rmsprop']),loss='mae')
     return model

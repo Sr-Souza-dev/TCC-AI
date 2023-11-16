@@ -24,9 +24,9 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     # print('------------------------------------ SVM ------------------------------------------')
     SVM_grid = {
         'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
-        'C': np.arange(0.01, 50, 10),
+        'C': np.arange(0.01, 50, 20),
         'gamma': ['scale', 'auto'],
-        'degree': [1, 2, 3, 4],
+        'degree': [1, 2, 3],
         'coef0': np.arange(1, 5, 2),
     }
     svm_grid_search = GridSearchCV(estimator = SVC(), param_grid = SVM_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
@@ -40,7 +40,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     # ----------------------------- Otimizando KNN ----------------------------------
     # print('------------------------------------ KNN -----------------------------------------')
     KNN_grid = {
-        'n_neighbors': [3, 5, 7, 9, 11, 13, 15, 17, 19, 22, 25, 28, 31, 34],
+        'n_neighbors': [3, 7, 9, 17, 19, 22, 34],
         'weights': ['uniform', 'distance'],
         'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
         'p': [1, 2, 3]
