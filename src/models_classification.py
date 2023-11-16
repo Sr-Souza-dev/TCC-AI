@@ -10,6 +10,10 @@ import pandas as pd
 import warnings
 warnings.filterwarnings("ignore")
 
+import logging
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+
+
 namesM = ['SVM', 'KNN', 'LR']
 scoring = 'accuracy'
 
@@ -17,28 +21,27 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     X = pd.read_csv(f'../Data/Cut/dataset1/X/Train_{trainSize}{dataName}.csv', sep=";")
     Y = pd.read_csv(f'../Data/Cut/dataset1/Y/Train_{trainSize}{dataName}.csv', sep=";")['OutPut_class |T+1|']
 
-    print("             -- Inicio da otimização dos modelos de Classificação ")
-    print(f'X_train: {X.shape} | X_test: {X.shape} | Y_train: {Y.shape} | Y_test: {Y.shape}')
+    print(f"             -- {dataName} - Inicio da otimização dos modelos de Classificação ")
+    print(f'                {dataName} - X_train: {X.shape} | X_test: {X.shape} | Y_train: {Y.shape} | Y_test: {Y.shape}')
 
     # ----------------------------- Otimizando SVM ----------------------------------
-    print('                 * SVM')
+    print(f'                 * {dataName} - SVM')
     SVM_grid = {
         'kernel': ['linear', 'poly'],
-        'C': np.arange(0.01, 50, 20),
-        'gamma': ['scale', 'auto'],
+        'C': np.arange(0.01, 31, 15),
+        'gamma': ['scale'],
         'degree': [1, 2, 3],
-        'coef0': np.arange(1, 5, 2),
+        'coef0': np.arange(1, 4, 2),
     }
     svm_grid_search = GridSearchCV(estimator = SVC(), param_grid = SVM_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
     svm_grid_search.fit(X, Y)
     bestSVM = svm_grid_search.best_estimator_
-    print("                 * Melhor Acurácia: ", svm_grid_search.best_score_)
     with open(f'../Results/optimization/classifications/SVM/{dataName}_model.pkl', 'wb') as f:
         pickle.dump(bestSVM, f)
     
     
     # ----------------------------- Otimizando KNN ----------------------------------
-    print('                 * KNN ')
+    print(f'                 * {dataName} - KNN ')
     KNN_grid = {
         'n_neighbors': [3, 9, 17, 34],
         'weights': ['uniform', 'distance'],
@@ -48,12 +51,11 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     knn_grid_search = GridSearchCV(estimator = KNeighborsClassifier(), param_grid = KNN_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
     knn_grid_search.fit(X, Y)
     bestKNN = knn_grid_search.best_estimator_
-    print("                 * Melhor Acurácia: ", knn_grid_search.best_score_)
     with open(f'../Results/optimization/classifications/KNN/{dataName}_model.pkl', 'wb') as f:
         pickle.dump(bestKNN, f)
 
     # ----------------------------- Otimizando LR ----------------------------------
-    print('                 * LR')
+    print(f'                 * {dataName} - LR')
     LR_grid = {
         'penalty': ['l1', 'l2'],
         'solver': ['newton-cg', 'lbfgs'],
@@ -66,7 +68,6 @@ def GetModelsClassificationOptimized(dataName, trainSize):
     lr_grid_search = GridSearchCV(estimator = LogisticRegression(), param_grid = LR_grid, cv = 5, n_jobs = -1, verbose = 1, scoring = scoring)
     lr_grid_search.fit(X, Y)
     bestLR = lr_grid_search.best_estimator_
-    print("                 * Melhore Acurácia: ", lr_grid_search.best_score_)
     with open(f'../Results/optimization/classifications/LR/{dataName}_model.pkl', 'wb') as f:
         pickle.dump(bestLR, f)
 

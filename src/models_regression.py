@@ -9,6 +9,9 @@ from keras.layers import LSTM, Dense, SimpleRNN
 import warnings
 warnings.filterwarnings("ignore")
 
+import logging
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+
 optz_size = 60
 data_name = 'dataset1'
 
@@ -96,12 +99,12 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
     mlpTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
     rnnTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
 
-    print("                 * Inicio da otimização dos modelos de Regressão ")
-    print("                     * LSTM ")
+    print(f"                 -- {dataName} - Inicio da otimização dos modelos de Regressão ")
+    print(f"                     * {dataName} - LSTM ")
     bestLSTM = lstmTuner.get_best_models(num_models=1)[0]
-    print("                     * MLP ")
+    print(f"                     * {dataName} - MLP ")
     bestMLP  = mlpTuner.get_best_models(num_models=1)[0]
-    print("                     * RNN ")
+    print(f"                     * {dataName} - RNN ")
     bestRNN  = rnnTuner.get_best_models(num_models=1)[0]
 
     bestLSTM.save(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')

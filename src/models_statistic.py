@@ -15,6 +15,9 @@ warnings.filterwarnings("ignore", message="Maximum Likelihood optimization faile
 warnings.filterwarnings("ignore", message="Series.__getitem__ treating keys as positions is deprecated.")
 warnings.filterwarnings("ignore", message="Maximum Likelihood optimization failed to converge.")
 
+import logging
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+
 
 arimaLogs = pd.DataFrame(columns=['autoregressive(p)', 'diferencial(d)', 'media(q)', 'MAE', 'MSE', 'RMSE'])
 bestArima = {'autoregressive(p)': 0, 'diferencial(d)': 0, 'media(q)': 0, 'MAE': 100000, 'MSE': 100000, 'RMSE': 100000, 'model': None}
@@ -116,8 +119,8 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     Y = pd.read_csv(f'../Data/Cut/statistic/Y/Optmz_{size}{dataName}.csv', sep=";")
     X_train, X_test, Y_train, Y_test = ms.train_test_split(X, Y, test_size = test_size, random_state = None, shuffle = False)
 
-    print("                 * Inicio da otimização dos modelos Estatisticos ")
-    print(f'X_train: {X_train.shape} | X_test: {X_test.shape} | Y_train: {Y_train.shape} | Y_test: {Y_test.shape}')
+    print(f"                 -- {dataName} - Inicio da otimização dos modelos Estatisticos ")
+    print(f'                    {dataName} -X_train: {X_train.shape} | X_test: {X_test.shape} | Y_train: {Y_train.shape} | Y_test: {Y_test.shape}')
 
 
     # Modelo ARIMA
@@ -125,7 +128,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     d = np.arange(0, 2, 1)
     q = np.arange(0, 2, 1)
 
-    print("                 * ARIMA ")
+    print(f"                     * {dataName} - ARIMA ")
     for i in p:
         for j in d:
             for k in q:
@@ -153,7 +156,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     S = np.arange(5, 15, 7)
 
 
-    print("                 * SARIMA ")
+    print(f"                     * {dataName} - SARIMA ")
     for i in p:
         for j in d:
             for k in q:
@@ -179,7 +182,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     q = np.arange(1, 4, 1)
     dists = ['normal', 't', 'gaussian']
 
-    print("                 * GARCH ")
+    print(f"                     * {dataName} - GARCH ")
     for d in dists:
         for i in p:
             for j in q:

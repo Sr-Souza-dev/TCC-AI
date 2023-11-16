@@ -19,6 +19,15 @@ from analyze_economy import GetEconomyAnalyze
 import warnings
 import git
 
+import logging
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+
+warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", message=".*Maximum Likelihood optimization failed to converge.*")
+warnings.filterwarnings("ignore", message="Maximum Likelihood optimization failed to converge. Check mle_retvals.")
+warnings.filterwarnings("ignore", message="Series.__getitem__ treating keys as positions is deprecated.")
+warnings.filterwarnings("ignore", message="Maximum Likelihood optimization failed to converge.")
+
 def commit_and_push(commit_message="Automated commit", branch="main"):
     try:
         repo = git.Repo("../")
