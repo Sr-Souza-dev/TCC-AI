@@ -17,6 +17,20 @@ from models_buying import GetModelPrediction
 from analyze import MakeClassificationsLogs
 from analyze_economy import GetEconomyAnalyze
 import warnings
+import git
+
+def commit_and_push(commit_message="Automated commit", branch="main"):
+    try:
+        repo = git.Repo("../")
+        repo.git.add("--all")
+        repo.index.commit(commit_message)
+        origin = repo.remote(name="origin")
+        origin.push(refspec=f"{branch}:{branch}")
+        print("Commit e push bem-sucedidos.")
+    except Exception as e:
+        print(f"Erro ao realizar commit e push: {e}")
+
+
 
 def getDatabase(dataName, outputName, setDivision):
     try:
