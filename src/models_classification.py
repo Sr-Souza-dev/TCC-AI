@@ -33,7 +33,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
         'degree': [1, 2, 3],
         'coef0': np.arange(1, 4, 2),
     }
-    svm_grid_search = GridSearchCV(estimator = SVC(), param_grid = SVM_grid, cv = 2, n_jobs = -1, verbose = 0, scoring = scoring)
+    svm_grid_search = GridSearchCV(estimator = SVC(), param_grid = SVM_grid, cv = 2, n_jobs = -1, verbose = 1, scoring = scoring)
     svm_grid_search.fit(X, Y)
     bestSVM = svm_grid_search.best_estimator_
     with open(f'../Results/optimization/classifications/SVM/{dataName}_model.pkl', 'wb') as f:
@@ -48,7 +48,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
         'algorithm': ['auto', 'ball_tree', 'kd_tree'],
         'p': [1, 2]
     }
-    knn_grid_search = GridSearchCV(estimator = KNeighborsClassifier(), param_grid = KNN_grid, cv = 2, n_jobs = -1, verbose = 0, scoring = scoring)
+    knn_grid_search = GridSearchCV(estimator = KNeighborsClassifier(), param_grid = KNN_grid, cv = 2, n_jobs = -1, verbose = 1, scoring = scoring)
     knn_grid_search.fit(X, Y)
     bestKNN = knn_grid_search.best_estimator_
     with open(f'../Results/optimization/classifications/KNN/{dataName}_model.pkl', 'wb') as f:
@@ -65,7 +65,7 @@ def GetModelsClassificationOptimized(dataName, trainSize):
         'class_weight': ['balanced', None],
         'warm_start': [True, False]
     }
-    lr_grid_search = GridSearchCV(estimator = LogisticRegression(), param_grid = LR_grid, cv = 2, n_jobs = -1, verbose = 0, scoring = scoring)
+    lr_grid_search = GridSearchCV(estimator = LogisticRegression(), param_grid = LR_grid, cv = 2, n_jobs = -1, verbose = 1, scoring = scoring)
     lr_grid_search.fit(X, Y)
     bestLR = lr_grid_search.best_estimator_
     with open(f'../Results/optimization/classifications/LR/{dataName}_model.pkl', 'wb') as f:
