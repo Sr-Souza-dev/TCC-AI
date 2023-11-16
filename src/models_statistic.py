@@ -116,7 +116,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     Y = pd.read_csv(f'../Data/Cut/statistic/Y/Optmz_{size}{dataName}.csv', sep=";")
     X_train, X_test, Y_train, Y_test = ms.train_test_split(X, Y, test_size = test_size, random_state = None, shuffle = False)
 
-    print("******************** Inicio da otimização dos modelos Estatisticos ********************")
+    print("                 * Inicio da otimização dos modelos Estatisticos ")
     print(f'X_train: {X_train.shape} | X_test: {X_test.shape} | Y_train: {Y_train.shape} | Y_test: {Y_test.shape}')
 
 
@@ -125,7 +125,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     d = np.arange(0, 2, 1)
     q = np.arange(0, 2, 1)
 
-    print("-------------------- ARIMA --------------------")
+    print("                 * ARIMA ")
     for i in p:
         for j in d:
             for k in q:
@@ -153,7 +153,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     S = np.arange(5, 15, 7)
 
 
-    print("-------------------- SARIMA --------------------")
+    print("                 * SARIMA ")
     for i in p:
         for j in d:
             for k in q:
@@ -179,7 +179,7 @@ def GetModelsStatisticsOptimized(dataName, size, test_size = 0.4):
     q = np.arange(1, 4, 1)
     dists = ['normal', 't', 'gaussian']
 
-    print("-------------------- GARCH --------------------")
+    print("                 * GARCH ")
     for d in dists:
         for i in p:
             for j in q:

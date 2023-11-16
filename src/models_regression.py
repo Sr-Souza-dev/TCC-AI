@@ -96,12 +96,12 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
     mlpTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
     rnnTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
 
-    print("******************** Inicio da otimização dos modelos de Regressão ********************")
-    print("******************** LSTM ********************")
+    print("                 * Inicio da otimização dos modelos de Regressão ")
+    print("                     * LSTM ")
     bestLSTM = lstmTuner.get_best_models(num_models=1)[0]
-    print("******************** MLP ********************")
+    print("                     * MLP ")
     bestMLP  = mlpTuner.get_best_models(num_models=1)[0]
-    print("******************** RNN ********************")
+    print("                     * RNN ")
     bestRNN  = rnnTuner.get_best_models(num_models=1)[0]
 
     bestLSTM.save(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')
