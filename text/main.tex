@@ -1,36 +1,34 @@
 \documentclass[a4paper]{book}
-\input{imports}
-\input{sections/3-summary/abbr}
 
+\input{headdef/imports}
+\input{headdef/abbr}
+\input{headdef/attrib}
+
+\graphicspath{{images/}}
 
 \begin{document}
 
-    \input{sections/header}
-    \Jcapa%
-    \Jfolhaderosto%
-    
-    % Include presentations (formalidades)
+    % -------- Capas e folha de rosto ----------
+    \Jcapa
+    \Jfolhaderosto
+
+    % -------------- Apresentação --------------
+    % \include{content/presentation/dedication}
+    % \include{content/presentation/acknowledgment}
+    % \include{content/presentation/epigraph}
+    \include{content/presentation/summary}
+
+    % ---------------- Resumos -----------------
+    \include{content/presentation/resumo}
+    \include{content/presentation/abstract}
+
+    % ----------------- Conteúdo ---------------
     \let\cleardoublepage\clearpage
-    \input{sections/1-presentations/dedication}
-    \input{sections/1-presentations/acknowledgment}
-    \input{sections/1-presentations/epigraph}
-    \input{sections/3-summary/summary}
+    \include{content/1_introduction}
+    \include{content/2_related_works}
+    \include{content/3-methodology}
+    \include{content/4_experiments_results}
+    \include{content/5_conclusion}
     
-    %Include Resumo
-    \let\cleardoublepage\clearpage
-    %\input{sections/2-abstract/resumo}
-    %\input{sections/2-abstract/abstract}
-    
-    \pagenumbering{arabic}
-    
-    %Include 
-    \let\cleardoublepage\clearpage
-    \input{sections/4-content/1-Introduction} 
-    %\input{sections/4-content/2-theoretical} 
-    \input{sections/4-content/3-related_works}
-    \input{sections/4-content/4-methodology}
-    \input{sections/4-content/5-results_analysis}
-    \input{sections/4-content/6-conclusion}
-    
-    \bibliography{biblio.bib}    
+    \bibliography{bib}    
 \end{document}

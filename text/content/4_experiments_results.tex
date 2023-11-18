@@ -1,0 +1,44 @@
+\chapter{Experimentos Computacionais}
+\label{cap:experimentos}
+Com base na abordagem metodológica apresentada no Capítulo \ref{cap:abordagem_proposta}, os experimentos computacionais foram conduzidos da seguinte maneira. Inicialmente, apresenta-se o processo de construção do conjunto de dados, conforme detalhado na Seção \ref{sec:conjunto_dados_resultados}. Em seguida, na Seção \ref{sec:modelos_parametros_resultados}, são definidos os modelos empregados na tarefa de previsão, bem como os ajustes de hiperparâmetros realizados. A Seção \ref{sec:experimentos _metricas} discute como esses modelos serão avaliados e analisados. Por fim, os resultados experimentais são apresentados na Seção \ref{sec:resultados_experimentais}.
+
+
+\section{Conjunto de Dados}
+\label{sec:conjunto_dados_resultados}
+Para a condução dos experimentos computacionais, foram selecionados três ativos financeiros: PTR3, WINFUT e WDOFUT. Amostras de cada ativo foram coletadas no período de 16/06/2021 até 16/06/2023 (2 anos) com granularidades de 30 e 60 minutos, totalizando 9156 amostras para granularidade de 30 minutos e 4664 para granularidade de 60 minutos.
+Em seguida, foram geradas novas variáveis a partir dos valores de \ac{OHLC}, conforme detalhado na Seção \ref{subsec:feature_generate}, e selecionadas para cada conjunto de modelos de previsão, como explicado na Seção \ref{subsec:selecao_variaveis}.
+
+Por fim, as seis bases de dados coletadas foram classificadas em três categorias distintas. Dessa forma, 10\% da base de dados foi reservada para a otimização dos modelos de previsão, 70\% destinou-se ao treinamento desses modelos, e os restantes 20\% compuseram a classe de teste. Para as amostras com granularidade de 30 minutos, essa distribuição foi de 916 amostras para otimização, 6409 para treinamento e 1831 para teste. Já para as amostras com granularidade de 60 minutos, a distribuição foi de 466 amostras para otimização, 3265 para treinamento e 932 para teste.
+
+\subsection{PTR3 - 30 Minutos}
+\subsection{PTR3 - 60 Minutos}
+\subsection{WINFUT - 30 Minutos}
+\subsection{WINFUT - 60 Minutos}
+\subsection{WDOFUT - 30 Minutos}
+\subsection{WDOFUT - 60 Minutos}
+
+\section{Modelos e Parâmetros}
+\label{sec:modelos_parametros_resultados}
+\subsection{PTR3}
+\subsection{WINFUT}
+\subsection{WDOFUT}
+
+\section{Experimentos e Métricas}
+\label{sec:experimentos _metricas}
+
+\section{Resultados Experimentais}
+\label{sec:resultados_experimentais}
+\subsection{PTR3}´
+\subsubsection{Regressão}
+\subsubsection{Classificação}
+\subsubsection{Recomendação de Investimento}
+\subsection{WINFUT}
+\subsubsection{Regressão}
+\subsubsection{Classificação}
+\subsubsection{Recomendação de Investimento}
+\subsection{WDOFUT}
+\subsubsection{Regressão}
+\subsubsection{Classificação}
+\subsubsection{Recomendação de Investimento}
+
+

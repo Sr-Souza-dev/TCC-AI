@@ -1,0 +1,45 @@
+\chapter{Conclusão}
+\label{cap:conclusao}
+O objetivo principal deste trabalho experimental foi aplicar técnicas de inteligência artificial no contexto do mercado financeiro. Para alcançar esse objetivo, o estudo iniciou-se com a apresentação dos conceitos fundamentais do mercado financeiro, abrangendo desde a sua origem até as análises mercadológicas de investimento. Além disso, foi conduzida uma revisão da literatura, explorando as técnicas mais relevantes e contemporâneas para previsão de ativos financeiros.
+Com base nesse embasamento teórico, a proposta central do trabalho consistiu no desenvolvimento de uma máquina de previsão utilizando abordagens de \textit{Ensemble}. Essa máquina recebe como entrada diversas métricas econômicas e é capaz de fornecer a probabilidade de um determinado ativo financeiro apresentar um movimento de alta ou baixa. Em seguida, foi realizado um processo de recomendação visando maximizar os ganhos em cada operação.
+
+Foram realizados experimentos com três algoritmos de previsão pertencentes à classe de classificação, nomeadamente \ac{KNN}, \ac{SVM} e \ac{LR}, cujos resultados foram combinados por meio de uma técnica de \textit{ensemble}. Os resultados obtidos por esses algoritmos demonstraram fortemente a viabilidade de alcançar lucros significativos. Nesse contexto, o modelo \ac{KNN} obteve os melhores desempenhos nos experimentos, superando consideravelmente a estratégia de \textit{buy and hold}. O modelo de \textit{Ensemble} proposto também apresentou resultados superiores a essa estratégia, embora de forma menos expressiva em comparação com o \ac{KNN}. Por outro lado, o modelo \ac{SVM} obteve resultados equivalentes ao \textit{buy and hold}, enquanto o modelo LR ficou abaixo dessa métrica.
+
+A fim de aprimorar os resultados e concluir a abordagem apresentada no Capítulo \ref{cap:abordagem_proposta}, propõe-se as seguintes etapas de continuidade:
+
+\begin{itemize}
+    \item implementar/testar uma variedade de modelos de previsão, abrangendo as três classes de algoritmos da máquina de previsão proposta, incluindo modelos estatísticos, de classificação e de regressão, respectivamente;
+
+    \item realizar o processo de otimização dos hiperparâmetros dos modelos implementados, a fim de buscar as melhores configurações para cada um deles;
+
+    \item avaliar e selecionar os melhores modelos de previsão, levando em consideração cada classe de algoritmo utilizada;
+
+    \item implementar e avaliar diversos algoritmos de previsão como último preditor na máquina de previsão proposta;
+
+    \item implementar e aplicar a estratégia de investimento proposta, utilizando como base a saída de cada classe de algoritmos e também a saída da máquina de previsão como um todo. Essa estratégia buscou aproveitar as previsões geradas pelos modelos estatísticos, de classificação e regressão, bem como a combinação deles realizada pela máquina de previsão, para tomar decisões de compra e venda de ativos financeiros;
+
+    \item avaliar o desempenho de cada algoritmo individualmente e em conjunto com a máquina de previsão, utilizando métricas estatísticas e econométricas como base de análise.
+\end{itemize}
+
+Para garantir o cumprimento das etapas necessárias para a conclusão deste trabalho, foi elaborado um cronograma detalhado, apresentado na Tabela \ref{tab:cronoAtv}. Esse cronograma foi projetado para orientar o desenvolvimento do trabalho em termos de prazos e permitir um acompanhamento efetivo do progresso. Cada etapa do processo foi atribuída a um período específico, levando em consideração sua complexidade e duração estimada. 
+
+
+\begin{table}    
+    \centering
+    \begin{tabular}{|l|c|c|c|c|c|} \hline
+        & Julho & Agosto & Setembro & Outubro & Novembro \\ \hline
+        Implementar/testar preditores & X & & & & \\ \hline
+        Otimizar hiperparâmetros & X & X & & & \\ \hline
+        Avaliar e selecionar os melhores preditores & & X & & & \\ \hline
+        Finalizar a máquina de previsão & & & X & X & \\ \hline
+        Implementar a estratégia de investimento & & & & X &\\ \hline
+        Avaliar o desempenho individual e geral & & & & & X \\ \hline
+    \end{tabular}
+\caption{Cronograma de atividades.}
+\label{tab:cronoAtv}
+\end{table} 
+
+
+
+
+

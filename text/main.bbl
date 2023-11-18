@@ -1,4 +1,4 @@
-\providecommand{\abntre# printinfo}[1]{%
+\providecommand{\abntreprintinfo}[1]{%
  \citeonline{#1}}
 \setlength{\labelsep}{0pt}\begin{thebibliography}{}
 \providecommand{\abntrefinfo}[3]{}
@@ -24,14 +24,6 @@
 {ALTAN, A.; KARASU, S. The effect of kernel values in support vector machine to
   forecasting performance of financial time series.
 \emph{The Journal of Cognitive Systems}, v.~4, n.~1, p. 17--21, 2019.}
-
-\bibitem[Amaral 2021]{Vinicius_Sistemas}
-\abntrefinfo{Amaral}{AMARAL}{2021}
-{AMARAL, V.~L. do.
-\emph{Sistemas Fuzzy Evolutivos na Previsão e Recomendação de Investimentos
-  em Criptomoedas}.
-128~p. Disserta\c{c}\~{a}o (Mestrado) --- Centro Federal de Educação
-  Tecnológica de Minas Gerais, Belo Horizonte - MG, 2021.}
 
 \bibitem[Amini e Hu 2021]{amini2021two}
 \abntrefinfo{Amini e Hu}{AMINI; HU}{2021}
@@ -145,12 +137,6 @@ Tese (Doutorado) --- Brac University, 2019.}
   Engineering/Electronics, Computer, Telecommunications and Information
   Technology (ECTI-CON)}. [S.l.], 2020. p. 771--774.}
 
-\bibitem[Diego Nogari 2020]{Diego:2020}
-\abntrefinfo{Diego Nogari}{DIEGO NOGARI}{2020}
-{DIEGO NOGARI. \emph{Performance de Machine Learning – Matriz de Confusão}.
-  2020.
-  \url{https://diegonogare.net/2020/04/performance-de-machine-learning-matriz-de-confusao/}.}
-
 \bibitem[Dietterich et al. 2002]{dietterich2002ensemble}
 \abntrefinfo{Dietterich et al.}{DIETTERICH et al.}{2002}
 {DIETTERICH, T.~G. et al. Ensemble learning.
@@ -183,6 +169,12 @@ ISSN 0275-5319.}
 \abntrefinfo{Fama}{FAMA}{1970}
 {FAMA, E.~F. Efficient capital markets: A review of theory and empirical work.
 \emph{The journal of Finance}, JSTOR, v.~25, n.~2, p. 383--417, 1970.}
+
+\bibitem[Fei et al. 2021]{fei2021z}
+\abntrefinfo{Fei et al.}{FEI et al.}{2021}
+{FEI, N. et al. Z-score normalization, hubness, and few-shot learning. In:
+  \emph{Proceedings of the IEEE/CVF International Conference on Computer
+  Vision}. [S.l.: s.n.], 2021. p. 142--151.}
 
 \bibitem[Felizardo et al. 2019]{Leonardo_Comparative}
 \abntrefinfo{Felizardo et al.}{FELIZARDO et al.}{2019}
@@ -325,6 +317,12 @@ ISBN 9780070244962.}
 \emph{Big Data}, Mary Ann Liebert, Inc., publishers 140 Huguenot Street, 3rd
   Floor New~…, v.~8, n.~1, p. 5--24, 2020.}
 
+\bibitem[Kim 2015]{kim2015t}
+\abntrefinfo{Kim}{KIM}{2015}
+{KIM, T.~K. T test as a parametric statistic.
+\emph{Korean journal of anesthesiology}, The Korean Society of
+  Anesthesiologists, v.~68, n.~6, p. 540--546, 2015.}
+
 \bibitem[Korczak e Hemes 2017]{Jerzy_Deep}
 \abntrefinfo{Korczak e Hemes}{KORCZAK; HEMES}{2017}
 {KORCZAK, J.; HEMES, M. Deep learning for financial time series forecasting in
@@ -372,6 +370,13 @@ ISBN 9780070244962.}
 \abntrefinfo{MATSURA}{MATSURA}{2017}
 {MATSURA, E.~K. \emph{Comprar ou vender?: como investir na bolsa utilizando
   an{\'a}lise gr{\'a}fica}. [S.l.]: Saraiva Educa{\c{c}}{\~a}o SA, 2017.}
+
+\bibitem[McNemar 1947]{mcnemar1947note}
+\abntrefinfo{McNemar}{MCNEMAR}{1947}
+{MCNEMAR, Q. Note on the sampling error of the difference between correlated
+  proportions or percentages.
+\emph{Psychometrika}, Springer-Verlag New York, v.~12, n.~2, p. 153--157,
+  1947.}
 
 \bibitem[Meyer et al. 2019]{meyer2019importance}
 \abntrefinfo{Meyer et al.}{MEYER et al.}{2019}
@@ -447,7 +452,12 @@ ISBN 978-0071461542.}
 \abntrefinfo{Pabu{\c{c}}cu, Ongan e Ongan}{PABU{\c{C}}CU; ONGAN; ONGAN}{2023}
 {PABU{\c{C}}CU, H.; ONGAN, S.; ONGAN, A. Forecasting the movements of bitcoin
   prices: an application of machine learning algorithms.
-\emph{arXiv pre# print arXiv:2303.04642}, 2023.}
+\emph{arXiv preprint arXiv:2303.04642}, 2023.}
+
+\bibitem[Patro e Sahu 2015]{patro2015normalization}
+\abntrefinfo{Patro e Sahu}{PATRO; SAHU}{2015}
+{PATRO, S.; SAHU, K.~K. Normalization: A preprocessing stage.
+\emph{arXiv preprint arXiv:1503.06462}, 2015.}
 
 \bibitem[Pearson 1900]{pearson1900x}
 \abntrefinfo{Pearson}{PEARSON}{1900}
@@ -535,6 +545,14 @@ IEEE Computer Society, 2012.}
 \emph{International Journal of River Basin Management}, Taylor \& Francis,
   v.~20, n.~1, p. 67--78, 2022.}
 
+\bibitem[Sheldon, Fillyaw e Thompson 1996]{sheldon1996use}
+\abntrefinfo{Sheldon, Fillyaw e Thompson}{SHELDON; FILLYAW; THOMPSON}{1996}
+{SHELDON, M.~R.; FILLYAW, M.~J.; THOMPSON, W.~D. The use and interpretation of
+  the friedman test in the analysis of ordinal-scale data in repeated measures
+  designs.
+\emph{Physiotherapy Research International}, Wiley Online Library, v.~1, n.~4,
+  p. 221--228, 1996.}
+
 \bibitem[Shiller 2000]{Shiller2000}
 \abntrefinfo{Shiller}{SHILLER}{2000}
 {SHILLER, R.~J. \emph{Irrational Exuberance}. [S.l.]: Princeton: Princeton
@@ -550,6 +568,13 @@ IEEE Computer Society, 2012.}
 \abntrefinfo{Stillman}{STILLMAN}{1986}
 {STILLMAN, R.~J. \emph{Dow Jones industrial average : history and role in an
   investment strategy}. [S.l.]: Homewood, Ill. : Dow Jones-Irwin, 1986.}
+
+\bibitem[Strader et al. 2020]{strader2020machine}
+\abntrefinfo{Strader et al.}{STRADER et al.}{2020}
+{STRADER, T.~J. et al. Machine learning stock market prediction studies: review
+  and research directions.
+\emph{Journal of International Technology and Information Management}, v.~28,
+  n.~4, p. 63--83, 2020.}
 
 \bibitem[Ting 2015]{TING2015}
 \abntrefinfo{Ting}{TING}{2015}
