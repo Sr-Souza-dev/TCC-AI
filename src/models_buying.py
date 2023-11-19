@@ -7,7 +7,7 @@ import keras
 
 input_dim = 6
 output_dim = 2
-max_trials = 100
+max_trials = 50
 dataName = 'dataset1'
 
 def build_model(hp):
@@ -63,11 +63,11 @@ def GetModelPrediction(dN, sizeTrain):
         project_name='buying'  # Nome do projeto
     )
 
-    tuner.search(X_train, Y_train, epochs=100, validation_data=(X_validation, Y_validation))
+    tuner.search(X_train, Y_train, epochs=100, validation_data=(X_validation, Y_validation), verbose=0)
     best_hps = tuner.get_best_hyperparameters(num_trials=1)[0]
 
     model = tuner.hypermodel.build(best_hps)
-    model.fit(X_train, Y_train, epochs=100, validation_data=(X_validation, Y_validation))
+    model.fit(X_train, Y_train, epochs=70, validation_data=(X_validation, Y_validation))
 
     ensamble_classification_test = pd.read_csv(f'../Results/test/classification/{dataName}_ensamble.csv', sep=';')
     ensamble_regression_test     = pd.read_csv(f'../Results/test/regression/{dataName}_ensamble.csv', sep=';')
@@ -102,7 +102,7 @@ def GetModelPrediction(dN, sizeTrain):
         project_name='buying2'  # Nome do projeto
     )
 
-    tuner.search(X_train, Y_train, epochs=100, validation_data=(X_validation, Y_validation))
+    tuner.search(X_train, Y_train, epochs=70, validation_data=(X_validation, Y_validation), verbose=0)
     best_hps = tuner.get_best_hyperparameters(num_trials=1)[0]
     model = tuner.hypermodel.build(best_hps)
     model.fit(X_train, Y_train, epochs=100, validation_data=(X_validation, Y_validation))
