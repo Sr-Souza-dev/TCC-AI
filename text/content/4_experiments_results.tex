@@ -5,23 +5,73 @@ Com base na abordagem metodológica apresentada no Capítulo \ref{cap:abordagem_
 
 \section{Conjunto de Dados}
 \label{sec:conjunto_dados_resultados}
-Para a condução dos experimentos computacionais, foram selecionados três ativos financeiros: PTR3, WINFUT e WDOFUT. Amostras de cada ativo foram coletadas no período de 16/06/2021 até 16/06/2023 (2 anos) com granularidades de 30 e 60 minutos, totalizando 9156 amostras para granularidade de 30 minutos e 4664 para granularidade de 60 minutos.
-Em seguida, foram geradas novas variáveis a partir dos valores de \ac{OHLC}, conforme detalhado na Seção \ref{subsec:feature_generate}, e selecionadas para cada conjunto de modelos de previsão, como explicado na Seção \ref{subsec:selecao_variaveis}.
+Para a condução dos experimentos computacionais, foram selecionados três ativos financeiros: PETR3, WINFUT e WDOFUT. Amostras de cada ativo foram coletadas no período de 16/06/2021 até 16/06/2023 (2 anos) com granularidades de 30 e 60 minutos, totalizando 9156 amostras para granularidade de 30 minutos e 4664 para granularidade de 60 minutos.
+Posteriormente, foram criadas novas variáveis com base nos valores de \ac{OHLC}, como descrito em detalhes na Seção \ref{subsec:feature_generate}. Essas variáveis foram então escolhidas para cada conjunto de modelos de previsão, conforme explicado na Seção \ref{sec:selecao_variaveis}, onde os parâmetros $x$ e $k$ foram definidos como 8 e 4, respectivamente.
 
-Por fim, as seis bases de dados coletadas foram classificadas em três categorias distintas. Dessa forma, 10\% da base de dados foi reservada para a otimização dos modelos de previsão, 70\% destinou-se ao treinamento desses modelos, e os restantes 20\% compuseram a classe de teste. Para as amostras com granularidade de 30 minutos, essa distribuição foi de 916 amostras para otimização, 6409 para treinamento e 1831 para teste. Já para as amostras com granularidade de 60 minutos, a distribuição foi de 466 amostras para otimização, 3265 para treinamento e 932 para teste.
+Por fim, as seis bases de dados coletadas foram categorizadas cada uma em três segmentos distintos. Dessa forma, 10\% da base de dados foi reservada para a otimização dos modelos de previsão, 70\% destinou-se ao treinamento desses modelos, e os restantes 20\% compuseram ao segmento de teste. No caso das bases de dados com granularidade de 30 minutos, essa distribuição compreendeu 916 amostras para otimização, 6409 para treinamento e 1831 para teste. Para as bases de dados com granularidade de 60 minutos, a distribuição foi de 466 amostras para otimização, 3265 para treinamento e 932 para teste. Essas alocações podem ser visualizadas nas figuras \ref{fig:PETR3_fechamento}, \ref{fig:WINFUT_fechamento} e \ref{fig:WDOFUT_fechamento}, juntamente com a tendência de cada ativo e sua faixa de variação.
 
-\subsection{PTR3 - 30 Minutos}
-\subsection{PTR3 - 60 Minutos}
-\subsection{WINFUT - 30 Minutos}
-\subsection{WINFUT - 60 Minutos}
-\subsection{WDOFUT - 30 Minutos}
-\subsection{WDOFUT - 60 Minutos}
+\subsection{PETR3}
+No contexto do ativo financeiro PETR3, o processo de construção dos \textit{datasets} (\textit{dataset1} e \textit{dataset2}) resultou em conjuntos distintos de variáveis, influenciados pelas diferentes granularidades presentes nas bases de dados. Dessa maneira, as variáveis que compõem cada conjunto de dados são as seguintes:
+\begin{itemize}
+	\item \textbf{\textit{dataset1} (30 minutos):} \ac{ADX} com uma janela deslizante de 14, \ac{MACD} obtido a partir do valor de fechamento com janelas deslizantes de 8 e 17 amostras, além de duas variáveis relacionadas ao \ac{ROC}. Estas referem-se à derivada do valor máximo e do fechamento, ambas com janelas deslizantes de 10 amostras.
+	
+	\item \textbf{\textit{dataset2} (30 minutos):} \ac{K} com uma janela deslizante de 8 amostras, \ac{TSI} obtido a partir do valor de fechamento com janelas deslizantes de 13 e 25 amostras, e mais duas variáveis relacionadas ao \ac{R} com janelas deslizantes de 14 e 21 amostras.
+	
+	\item \textbf{\textit{dataset1} (60 minutos):} \ac{ADX} com uma janela deslizante de 14 amostras, \ac{ROC} com janela deslizante de 10 amostras, calculado a partir do valor de fechamento, e duas variáveis relacionadas ao \ac{MACD}, ambas derivadas do valor de fechamento. Uma delas com janelas deslizantes de 12 e 26 amostras, e a outra com uma janela deslizante de 8 e 17 amostras.
+	
+	\item \textbf{\textit{dataset2} (60 minutos):} \ac{ROC} derivado do valor de abertura com uma janela deslizante de 12 amostras, \ac{R} com uma janela deslizante de 5 amostras, e duas variáveis associadas a \ac{K}, uma com janelas deslizantes de 8 e 10 amostras.
+\end{itemize}
 
-\section{Modelos e Parâmetros}
-\label{sec:modelos_parametros_resultados}
-\subsection{PTR3}
+\begin{figure}[htbp]
+	\caption{Base de dados do ativo financeiro PETR3.}
+	\centering
+	\includegraphics[width=.99\linewidth]{PETR3_fechamento.png} 
+	\label{fig:PETR3_fechamento}
+\end{figure}
+
 \subsection{WINFUT}
+Já no contexto do ativo financeiro WINFUT, o processo de construção dos \textit{datasets} (\textit{dataset1} e \textit{dataset2}) também resultou em conjuntos distintos de variáveis. Dessa maneira, as variáveis que compõem cada conjunto de dados são as seguintes:
+\begin{itemize}
+	\item \textbf{\textit{dataset1} (30 minutos):} \ac{ADX} com uma janela deslizante de 14 amostras, \ac{MACD} derivado do valor máximo com janelas deslizantes de 12 e 26 amostras, \ac{K} com uma janela deslizante de 8 amostras, e \ac{CCI} com uma janela deslizante de 18 amostras.
+	
+	\item \textbf{\textit{dataset2} (30 minutos):}  \ac{R} com uma janela deslizante de 5 amostras, \ac{TSI} derivado do valor de fechamento com janelas deslizantes de 13 e 25 amostras, \ac{K} com uma janela deslizante de 8 amostras, e \ac{SMA} com janela deslizante de 3 amostras.
+	
+	\item \textbf{\textit{dataset1} (60 minutos):} \ac{ADX} com uma janela deslizante de 14 amostras, \ac{CCI} com uma janela deslizante de 18 amostras, \ac{MACD} derivado do valor máximo com janelas deslizantes de 12 e 26 amostras, e \ac{K} com uma janela deslizante de 8 amostras.
+	
+	\item \textbf{\textit{dataset2} (60 minutos):} permanecem as variáveis do \textit{dataset1} de 30 minutos, com exceção da variável \ac{K}, que neste \textit{dataset} possui uma janela deslizante de 14 amostras.
+\end{itemize}
+
+\begin{figure}[htbp]
+	\caption{Base de dados do ativo financeiro WINFUT.}
+	\centering
+	\includegraphics[width=.99\linewidth]{WINFUT_fechamento.png} 
+	\label{fig:WINFUT_fechamento}
+\end{figure}
+
 \subsection{WDOFUT}
+Por fim,  para o ativo financeiro WDOFUT, o processo de construção dos \textit{datasets} (\textit{dataset1} e \textit{dataset2}) também conduziu à formação de conjuntos únicos de variáveis. Desse modo, as variáveis que integram cada conjunto de dados são as seguintes:
+\begin{itemize}
+	\item \textbf{\textit{dataset1} (30 minutos):} \ac{ADX} com uma janela deslizante de 14 amostras, \ac{MACD} calculado a partir do valor máximo com janelas deslizantes de 12 e 26 amostras, \ac{K} com uma janela deslizante de 8 amostras, e \ac{CCI} com uma janela deslizante de 18 amostras.
+	
+	\item \textbf{\textit{dataset2} (30 minutos):} \ac{ADX} com uma janela deslizante de 14 amostras, \ac{ROC} obtida a partir do valor máximo com uma janela móvel de 10 amostras, e duas variáveis de \ac{MACD}. Ambas são derivadas do valor máximo, sendo uma com janelas deslizantes de 8 e 17 amostras, e a outra com janelas deslizantes de 12 e 26 amostras.
+	
+	\item \textbf{\textit{dataset1} (60 minutos):} \ac{ADX} com uma janela deslizante de 14 amostras, \ac{CCI} com uma janela deslizante de 18 amostras, \ac{MACD} obtido a partir do valor máximo com janelas deslizantes de 12 e 26 amostras, e \ac{K} com uma janela deslizante de 8 amostras.
+	
+	\item \textbf{\textit{dataset2} (60 minutos):} \ac{ADX} com uma janela deslizante de 14 amostras, \ac{ROC} calculada a partir do valor máximo com uma janela deslizante de 12 amostras, \ac{K} com uma janela deslizante de 10 amostras, e \ac{MACD} derivado do valor máximo com janelas deslizantes de 12 e 26 amostras.
+\end{itemize}
+
+\begin{figure}[htbp]
+	\caption{Base de dados do ativo financeiro WDOFUT.}
+	\centering
+	\includegraphics[width=.99\linewidth]{WDOFUT_fechamento.png} 
+	\label{fig:WDOFUT_fechamento}
+\end{figure}
+
+
+\section{Modelos e Hiperparâmetros}
+\label{sec:modelos_parametros_resultados}
+\LTXtable{\textwidth}{content/tabela_hyperparam}
+	
 
 \section{Experimentos e Métricas}
 \label{sec:experimentos _metricas}

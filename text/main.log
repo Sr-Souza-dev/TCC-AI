@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.16)  18 NOV 2023 12:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.16)  20 NOV 2023 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -367,6 +367,58 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen168
 \Gm@dimlist=\toks31
 )
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/ltxtable.sty
+Package: ltxtable 2021/06/13 v0.4 longtable/tabularx merge (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen169
+\TX@old@table=\dimen170
+\TX@old@col=\dimen171
+\TX@target=\dimen172
+\TX@delta=\dimen173
+\TX@cols=\count287
+\TX@ftn=\toks32
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip67
+\LTright=\skip68
+\LTpre=\skip69
+\LTpost=\skip70
+\LTchunksize=\count288
+\LTcapwidth=\dimen174
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@gbox=\box61
+\LT@cols=\count289
+\LT@rows=\count290
+\c@LT@tables=\count291
+\c@LT@chunks=\count292
+\LT@p@ftn=\toks33
+))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen175
+\lightrulewidth=\dimen176
+\cmidrulewidth=\dimen177
+\belowrulesep=\dimen178
+\belowbottomsep=\dimen179
+\aboverulesep=\dimen180
+\abovetopsep=\dimen181
+\cmidrulesep=\dimen182
+\cmidrulekern=\dimen183
+\defaultaddspace=\dimen184
+\@cmidla=\count293
+\@cmidlb=\count294
+\@aboverulesep=\dimen185
+\@belowrulesep=\dimen186
+\@thisruleclass=\count295
+\@lastruleclass=\count296
+\@thisrulewidth=\dimen187
+)
 (/usr/share/texlive/texmf-dist/tex/latex/acro/acro.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -374,17 +426,17 @@ Package: expl3 2022-01-21 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count287
-\l__pdf_internal_box=\box57
+\l__color_backend_stack_int=\count297
+\l__pdf_internal_box=\box62
 ))
 Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
 )
 Package: acro 2022/01/27 v3.7 typeset acronyms and other abbreviations (CN)
-\g__acro_version_int=\count288
-\l__acro_tmpa_int=\count289
-\l__acro_tmpb_int=\count290
-\l__acro_tmpc_int=\count291
-\l__acro_tmpd_int=\count292
+\g__acro_version_int=\count298
+\l__acro_tmpa_int=\count299
+\l__acro_tmpb_int=\count300
+\l__acro_tmpc_int=\count301
+\l__acro_tmpd_int=\count302
 Loading module `base' ...
 Loading module `interface' ...
 Loading module `aux' ...
@@ -393,15 +445,15 @@ Loading module `acronyms' ...
 Loading module `formatting' ...
 Loading module `ppfixes' ...
 Loading module `tools' ...
-\l__acro_minimal_usage_int=\count293
-\l__acro_nest_int=\count294
-\g_acro_barrier_int=\count295
-\g_acro_barrier_total_int=\count296
+\l__acro_minimal_usage_int=\count303
+\l__acro_nest_int=\count304
+\g_acro_barrier_int=\count305
+\g_acro_barrier_total_int=\count306
 Loading module `commands' ...
 Loading module `templates' ...
 Loading module `list' ...
 Loading module `pages' ...
-\l__acro_pages_seq_threshold_int=\count297
+\l__acro_pages_seq_threshold_int=\count307
 Loading module `locale' ...
 
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations.sty
@@ -410,7 +462,7 @@ Package: translations 2022/01/04 v1.11 internationalization of LaTeX2e packages
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count298
+\etb@tempcnta=\count308
 ))
 Loading module `pdfsupport' ...
 Loading module `patch' ...
@@ -419,29 +471,10 @@ Loading module `upgrade' ...
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip67
-\multirow@cntb=\count299
-\multirow@dima=\skip68
-\bigstrutjot=\dimen169
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip69
-\LTright=\skip70
-\LTpre=\skip71
-\LTpost=\skip72
-\LTchunksize=\count300
-\LTcapwidth=\dimen170
-\LT@head=\box58
-\LT@firsthead=\box59
-\LT@foot=\box60
-\LT@lastfoot=\box61
-\LT@gbox=\box62
-\LT@cols=\count301
-\LT@rows=\count302
-\c@LT@tables=\count303
-\c@LT@chunks=\count304
-\LT@p@ftn=\toks32
+\multirow@colwidth=\skip71
+\multirow@cntb=\count309
+\multirow@dima=\skip72
+\bigstrutjot=\dimen188
 )
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
@@ -451,7 +484,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
 LaTeX Info: Redefining \color on input line 711.
-\rownum=\count305
+\rownum=\count310
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
 Package xcolor Info: Model `RGB' extended on input line 1368.
@@ -470,25 +503,25 @@ Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen171
-\captionmargin@=\dimen172
-\captionwidth=\dimen173
-\caption@tempdima=\dimen174
-\caption@indent=\dimen175
-\caption@parindent=\dimen176
-\caption@hangindent=\dimen177
+\captionmargin=\dimen189
+\captionmargin@=\dimen190
+\captionwidth=\dimen191
+\caption@tempdima=\dimen192
+\caption@indent=\dimen193
+\caption@parindent=\dimen194
+\caption@hangindent=\dimen195
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count306
-\c@continuedfloat=\count307
+\c@caption@flags=\count311
+\c@continuedfloat=\count312
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 ))
-\c@subfigure=\count308
-\c@subtable=\count309
+\c@subfigure=\count313
+\c@subtable=\count314
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -504,8 +537,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen178
-\Gin@req@width=\dimen179
+\Gin@req@height=\dimen196
+\Gin@req@width=\dimen197
 )
 (./package//cefet.sty (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
@@ -523,22 +556,22 @@ Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count310
-\calc@Bcount=\count311
-\calc@Adimen=\dimen180
-\calc@Bdimen=\dimen181
+\calc@Acount=\count315
+\calc@Bcount=\count316
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
 \calc@Askip=\skip81
 \calc@Bskip=\skip82
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count312
+\calc@Ccount=\count317
 \calc@Cskip=\skip83
 )
 (/usr/share/texlive/texmf-dist/tex/latex/abntex2/abntex2abrev.sty)
 \minimumbiblabelwidth=\skip84
 \ABCIauxlen=\skip85
-\c@ABCIaux=\count313
-\c@ABCImax=\count314
+\c@ABCIaux=\count318
+\c@ABCImax=\count319
 
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
@@ -552,83 +585,83 @@ Package: relsize 2013/03/29 ver 4.1
 \biblabelsep=\skip86
 LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks33
+\ABCItoken=\toks34
 )
 (./package//cover.sty)) (./headdef/abbr.tex
-\g__acro_IA_int=\count315
-\g__acro_ETFs_int=\count316
-\g__acro_AT_int=\count317
-\g__acro_AF_int=\count318
-\g__acro_AQ_int=\count319
-\g__acro_AS_int=\count320
-\g__acro_O_int=\count321
-\g__acro_H_int=\count322
-\g__acro_L_int=\count323
-\g__acro_C_int=\count324
-\g__acro_OHLC_int=\count325
-\g__acro_SMA_int=\count326
-\g__acro_EMA_int=\count327
-\g__acro_MACD_int=\count328
-\g__acro_CCI_int=\count329
-\g__acro_ADX_int=\count330
-\g__acro_MTM_int=\count331
-\g__acro_ROC_int=\count332
-\g__acro_TSI_int=\count333
-\g__acro_RSI_int=\count334
-\g__acro_K_int=\count335
-\g__acro_D_int=\count336
-\g__acro_R²_int=\count337
-\g__acro_R_int=\count338
-\g__acro_RF_int=\count339
-\g__acro_ARIMA_int=\count340
-\g__acro_SARIMA_int=\count341
-\g__acro_GARCH_int=\count342
-\g__acro_MLP_int=\count343
-\g__acro_EGNN_int=\count344
-\g__acro_LR_int=\count345
-\g__acro_SVM_int=\count346
-\g__acro_ELM_int=\count347
-\g__acro_IHS_int=\count348
-\g__acro_SVR_int=\count349
-\g__acro_RBF_int=\count350
-\g__acro_EMG_int=\count351
-\g__acro_EOGS_int=\count352
-\g__acro_FMCDM_int=\count353
-\g__acro_DBN_int=\count354
-\g__acro_TCN_int=\count355
-\g__acro_CNN_int=\count356
-\g__acro_RNN_int=\count357
-\g__acro_DCFS_int=\count358
-\g__acro_LSTM_int=\count359
-\g__acro_DCDNN_int=\count360
-\g__acro_ME_int=\count361
-\g__acro_MAE_int=\count362
-\g__acro_MSE_int=\count363
-\g__acro_MAPE_int=\count364
-\g__acro_R2_int=\count365
-\g__acro_RMSE_int=\count366
-\g__acro_P&L_int=\count367
-\g__acro_EAR_int=\count368
-\g__acro_ADC_int=\count369
-\g__acro_MDC_int=\count370
-\g__acro_AMC_int=\count371
-\g__acro_DJIA_int=\count372
-\g__acro_NLP_int=\count373
-\g__acro_VP_int=\count374
-\g__acro_RIM_int=\count375
-\g__acro_KNN_int=\count376
-\g__acro_NOC_int=\count377
-\g__acro_TA_int=\count378
-\g__acro_AC_int=\count379
-\g__acro_PP_int=\count380
-\g__acro_PN_int=\count381
-\g__acro_F1_int=\count382
-\g__acro_TP_int=\count383
-\g__acro_TN_int=\count384
-\g__acro_FP_int=\count385
-\g__acro_FN_int=\count386
-\g__acro_DT_int=\count387
-\g__acro_ANFIS_int=\count388
+\g__acro_IA_int=\count320
+\g__acro_ETFs_int=\count321
+\g__acro_AT_int=\count322
+\g__acro_AF_int=\count323
+\g__acro_AQ_int=\count324
+\g__acro_AS_int=\count325
+\g__acro_O_int=\count326
+\g__acro_H_int=\count327
+\g__acro_L_int=\count328
+\g__acro_C_int=\count329
+\g__acro_OHLC_int=\count330
+\g__acro_SMA_int=\count331
+\g__acro_EMA_int=\count332
+\g__acro_MACD_int=\count333
+\g__acro_CCI_int=\count334
+\g__acro_ADX_int=\count335
+\g__acro_MTM_int=\count336
+\g__acro_ROC_int=\count337
+\g__acro_TSI_int=\count338
+\g__acro_RSI_int=\count339
+\g__acro_K_int=\count340
+\g__acro_D_int=\count341
+\g__acro_R²_int=\count342
+\g__acro_R_int=\count343
+\g__acro_RF_int=\count344
+\g__acro_ARIMA_int=\count345
+\g__acro_SARIMA_int=\count346
+\g__acro_GARCH_int=\count347
+\g__acro_MLP_int=\count348
+\g__acro_EGNN_int=\count349
+\g__acro_LR_int=\count350
+\g__acro_SVM_int=\count351
+\g__acro_ELM_int=\count352
+\g__acro_IHS_int=\count353
+\g__acro_SVR_int=\count354
+\g__acro_RBF_int=\count355
+\g__acro_EMG_int=\count356
+\g__acro_EOGS_int=\count357
+\g__acro_FMCDM_int=\count358
+\g__acro_DBN_int=\count359
+\g__acro_TCN_int=\count360
+\g__acro_CNN_int=\count361
+\g__acro_RNN_int=\count362
+\g__acro_DCFS_int=\count363
+\g__acro_LSTM_int=\count364
+\g__acro_DCDNN_int=\count365
+\g__acro_ME_int=\count366
+\g__acro_MAE_int=\count367
+\g__acro_MSE_int=\count368
+\g__acro_MAPE_int=\count369
+\g__acro_R2_int=\count370
+\g__acro_RMSE_int=\count371
+\g__acro_P&L_int=\count372
+\g__acro_EAR_int=\count373
+\g__acro_ADC_int=\count374
+\g__acro_MDC_int=\count375
+\g__acro_AMC_int=\count376
+\g__acro_DJIA_int=\count377
+\g__acro_NLP_int=\count378
+\g__acro_VP_int=\count379
+\g__acro_RIM_int=\count380
+\g__acro_KNN_int=\count381
+\g__acro_NOC_int=\count382
+\g__acro_TA_int=\count383
+\g__acro_AC_int=\count384
+\g__acro_PP_int=\count385
+\g__acro_PN_int=\count386
+\g__acro_F1_int=\count387
+\g__acro_TP_int=\count388
+\g__acro_TN_int=\count389
+\g__acro_FP_int=\count390
+\g__acro_FN_int=\count391
+\g__acro_DT_int=\count392
+\g__acro_ANFIS_int=\count393
 ) (./headdef/attrib.tex) (./main.aux (./content/presentation/summary.aux) (./co
 ntent/presentation/resumo.aux)
 (./content/presentation/abstract.aux) (./content/1_introduction.aux)
@@ -665,7 +698,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count389
+\c@section@level=\count394
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
@@ -678,17 +711,17 @@ LaTeX Info: Redefining \nameref on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count390
-\scratchdimen=\dimen182
+\scratchcounter=\count395
+\scratchdimen=\dimen256
 \scratchbox=\box63
-\nofMPsegments=\count391
-\nofMParguments=\count392
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count393
-\MPscratchDim=\dimen183
-\MPnumerator=\count394
-\makeMPintoPDFobject=\count395
-\everyMPtoPDFconversion=\toks35
+\nofMPsegments=\count396
+\nofMParguments=\count397
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count398
+\MPscratchDim=\dimen257
+\MPnumerator=\count399
+\makeMPintoPDFobject=\count400
+\everyMPtoPDFconversion=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -773,7 +806,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images//cefet.png, id=176, 285.7074pt x 181.6386pt>
+<images//cefet.png, id=164, 285.7074pt x 181.6386pt>
 File: images//cefet.png Graphic file (type png)
 <use images//cefet.png>
 Package pdftex.def Info: images//cefet.png  used on input line 12.
@@ -886,17 +919,17 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              for symbol `textbullet' on input line 24.
 
 [17]
-<images//InvestingActionXP.png, id=499, 843.15pt x 492.84125pt>
+<images//InvestingActionXP.png, id=492, 843.15pt x 492.84125pt>
 File: images//InvestingActionXP.png Graphic file (type png)
 <use images//InvestingActionXP.png>
 Package pdftex.def Info: images//InvestingActionXP.png  used on input line 39.
 (pdftex.def)             Requested size: 386.95897pt x 226.19083pt.
-<images//PessoasActionsXP.png, id=509, 719.68875pt x 496.85625pt>
+<images//PessoasActionsXP.png, id=502, 719.68875pt x 496.85625pt>
 File: images//PessoasActionsXP.png Graphic file (type png)
 <use images//PessoasActionsXP.png>
 Package pdftex.def Info: images//PessoasActionsXP.png  used on input line 52.
 (pdftex.def)             Requested size: 232.17242pt x 160.28607pt.
-<images//ValorActionXP.png, id=510, 538.01pt x 408.52625pt>
+<images//ValorActionXP.png, id=503, 538.01pt x 408.52625pt>
 File: images//ValorActionXP.png Graphic file (type png)
 <use images//ValorActionXP.png>
 Package pdftex.def Info: images//ValorActionXP.png  used on input line 59.
@@ -917,7 +950,7 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
-<images//tendencias.png, id=567, 1047.915pt x 333.245pt>
+<images//tendencias.png, id=560, 1047.915pt x 333.245pt>
 File: images//tendencias.png Graphic file (type png)
 <use images//tendencias.png>
 Package pdftex.def Info: images//tendencias.png  used on input line 13.
@@ -928,28 +961,28 @@ Package pdftex.def Info: images//tendencias.png  used on input line 13.
 
 
  <./images//tendencias.png>]
-<images//ciclos.jpg, id=581, 248.42813pt x 133.24782pt>
+<images//ciclos.jpg, id=573, 248.42813pt x 133.24782pt>
 File: images//ciclos.jpg Graphic file (type jpg)
 <use images//ciclos.jpg>
 Package pdftex.def Info: images//ciclos.jpg  used on input line 27.
 (pdftex.def)             Requested size: 220.28154pt x 99.58792pt.
-<images//sazonais.jpg, id=582, 331.2375pt x 167.12437pt>
+<images//sazonais.jpg, id=574, 331.2375pt x 167.12437pt>
 File: images//sazonais.jpg Graphic file (type jpg)
 <use images//sazonais.jpg>
 Package pdftex.def Info: images//sazonais.jpg  used on input line 34.
 (pdftex.def)             Requested size: 237.03517pt x 99.58685pt.
-<images//grafico_velas.png, id=593, 369.38pt x 363.3575pt>
+<images//grafico_velas.png, id=585, 369.38pt x 363.3575pt>
 File: images//grafico_velas.png Graphic file (type png)
 <use images//grafico_velas.png>
 Package pdftex.def Info: images//grafico_velas.png  used on input line 55.
 (pdftex.def)             Requested size: 232.16954pt x 108.12099pt.
-<images//candlestick.png, id=594, 503.8825pt x 241.90375pt>
+<images//candlestick.png, id=586, 503.8825pt x 241.90375pt>
 File: images//candlestick.png Graphic file (type png)
 <use images//candlestick.png>
 Package pdftex.def Info: images//candlestick.png  used on input line 62.
 (pdftex.def)             Requested size: 232.17319pt x 108.12114pt.
  [21 <./images//ciclos.jpg> <./images//sazonais.jpg>]
-<images//fluxo_abordagem.png, id=620, 523.9575pt x 197.83913pt>
+<images//fluxo_abordagem.png, id=613, 523.9575pt x 197.83913pt>
 File: images//fluxo_abordagem.png Graphic file (type png)
 <use images//fluxo_abordagem.png>
 Package pdftex.def Info: images//fluxo_abordagem.png  used on input line 78.
@@ -982,7 +1015,7 @@ LaTeX Warning: Citation `Vin�cius_Sistemas' on page 26 undefined on input line
 210.
 
 [26] [27]
-<images//matriz_confusão.png, id=944, 374.39874pt x 221.82875pt>
+<images//matriz_confusão.png, id=937, 374.39874pt x 221.82875pt>
 File: images//matriz_confusão.png Graphic file (type png)
 <use images//matriz_confusão.png>
 Package pdftex.def Info: images//matriz_confusão.png  used on input line 253.
@@ -1030,7 +1063,7 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
-<images//base_dados.png, id=1109, 1130.2225pt x 327.2225pt>
+<images//base_dados.png, id=1102, 1130.2225pt x 327.2225pt>
 File: images//base_dados.png Graphic file (type png)
 <use images//base_dados.png>
 Package pdftex.def Info: images//base_dados.png  used on input line 13.
@@ -1045,7 +1078,7 @@ Package pdftex.def Info: images//base_dados.png  used on input line 13.
 LaTeX Warning: Citation `Vin�cius_Sistemas' on page 33 undefined on input line 
 26.
 
-<images//feature_selection.png, id=1197, 965.6075pt x 490.83376pt>
+<images//feature_selection.png, id=1190, 965.6075pt x 490.83376pt>
 File: images//feature_selection.png Graphic file (type png)
 <use images//feature_selection.png>
 Package pdftex.def Info: images//feature_selection.png  used on input line 60.
@@ -1057,13 +1090,13 @@ LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 64.
 [33]
-<images//model_prediction.png, id=1229, 748.7975pt x 508.90125pt>
+<images//model_prediction.png, id=1222, 748.7975pt x 508.90125pt>
 File: images//model_prediction.png Graphic file (type png)
 <use images//model_prediction.png>
 Package pdftex.def Info: images//model_prediction.png  used on input line 81.
 (pdftex.def)             Requested size: 478.86255pt x 325.4472pt.
  [34 <./images//feature_selection.png>]
-<images//strategy.png, id=1252, 740.7675pt x 377.41pt>
+<images//strategy.png, id=1245, 740.7675pt x 377.41pt>
 File: images//strategy.png Graphic file (type png)
 <use images//strategy.png>
 Package pdftex.def Info: images//strategy.png  used on input line 98.
@@ -1083,15 +1116,106 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
+LaTeX Font Info:    Font shape `T1/aer/b/it' in size <10> not available
+(Font)              Font shape `T1/aer/bx/it' tried instead on input line 16.
+<images//PETR3_fechamento.png, id=1279, 858.20625pt x 418.56375pt>
+File: images//PETR3_fechamento.png Graphic file (type png)
+<use images//PETR3_fechamento.png>
+Package pdftex.def Info: images//PETR3_fechamento.png  used on input line 28.
+(pdftex.def)             Requested size: 478.86255pt x 233.55104pt.
+[37
+
+
+
+
+]
+<images//WINFUT_fechamento.png, id=1299, 850.17625pt x 414.54875pt>
+File: images//WINFUT_fechamento.png Graphic file (type png)
+<use images//WINFUT_fechamento.png>
+Package pdftex.def Info: images//WINFUT_fechamento.png  used on input line 47.
+(pdftex.def)             Requested size: 478.86255pt x 233.49936pt.
+ [38 <./images//PETR3_fechamento.png>]
+<images//WDOFUT_fechamento.png, id=1320, 857.2025pt x 415.5525pt>
+File: images//WDOFUT_fechamento.png Graphic file (type png)
+<use images//WDOFUT_fechamento.png>
+Package pdftex.def Info: images//WDOFUT_fechamento.png  used on input line 66.
+(pdftex.def)             Requested size: 478.86255pt x 232.14348pt.
+ (./content/tabela_hyperparam.tex)
+(./content/tabela_hyperparam.tex) (./content/tabela_hyperparam.tex
+Overfull \hbox (3.27058pt too wide) in paragraph at lines 5--5
+ []|\T1/aer/m/n/10 WINFUT- 
+ []
+
+
+Overfull \hbox (3.27058pt too wide) in paragraph at lines 5--5
+ []|\T1/aer/m/n/10 WINFUT- 
+ []
+
+
+Overfull \hbox (7.56036pt too wide) in paragraph at lines 5--5
+ []|\T1/aer/m/n/10 WDOFUT- 
+ []
+
+
+Overfull \hbox (7.56036pt too wide) in paragraph at lines 5--6
+ []\T1/aer/m/n/10 WDOFUT- 
+ []
+
+
+Overfull \hbox (16.95116pt too wide) in alignment at lines 2--7
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (16.95116pt too wide) in alignment at lines 7--12
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (16.95116pt too wide) in alignment at lines 12--15
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (16.95116pt too wide) in alignment at lines 15--17
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (4.3137pt too wide) in paragraph at lines 45--45
+ []|\T1/aer/m/n/10 autoregressive 
+ []
+
+
+Overfull \hbox (3.69113pt too wide) in paragraph at lines 48--48
+ []|\T1/aer/m/n/10 SARIMA| 
+ []
+
+
+Overfull \hbox (4.3137pt too wide) in paragraph at lines 48--48
+ []|\T1/aer/m/n/10 autoregressive 
+ []
+
+
+Overfull \hbox (4.3137pt too wide) in paragraph at lines 56--56
+ []|\T1/aer/m/n/10 autoregressive 
+ []
+
+
+Overfull \hbox (16.95116pt too wide) in alignment at lines 17--59
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[39 <./images//WINFUT_fechamento.png> <./images//WDOFUT_fechamento.png>]
+[40] [41])
 LaTeX Info: Symbol \textasciiacute not provided by
             font family aer in TS1 encoding.
-            Default family used instead on input line 31.
-) [37
+            Default family used instead on input line 81.
+)
+Underfull \vbox (badness 4531) has occurred while \output is active []
 
-
-
-
-] [38]
+ [42]
+[43]
 \openout2 = `content/5_conclusion.aux'.
 
  (./content/5_conclusion.tex
@@ -1106,12 +1230,12 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
-) [39
+) [44
 
 
 
 
-] [40] (./main.bbl [41
+] [45] (./main.bbl [46
 
 
 
@@ -1127,7 +1251,7 @@ Underfull \hbox (badness 1147) in paragraph at lines 164--167
 / conteudos . xpi . com . br / acoes / relatorios / 
  []
 
-[42] [43] [44]) [45] [46] (./main.aux (./content/presentation/summary.aux)
+[47] [48] [49]) [50] [51] (./main.aux (./content/presentation/summary.aux)
 (./content/presentation/resumo.aux) (./content/presentation/abstract.aux)
 (./content/1_introduction.aux) (./content/2_related_works.aux)
 (./content/3-methodology.aux) (./content/4_experiments_results.aux)
@@ -1144,40 +1268,49 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 8DAC3334AF4905955DD500A995145887;6451
-(rerunfilecheck)             After:  E87F1D556886E577E1E7CF85AB3BC16A;6451.
+(rerunfilecheck)             Before: 5AB7DCEEC7E25072A4A2AD7E2F9813C2;5771
+(rerunfilecheck)             After:  0C9165F6CD1AA0C0BD2497BC6D37AC45;5505.
  ) 
 Here is how much of TeX's memory you used:
- 27308 strings out of 478287
- 667490 string characters out of 5849288
- 859548 words of memory out of 5000000
- 44771 multiletter control sequences out of 15000+600000
- 567924 words of font info for 232 fonts, out of 8000000 for 9000
+ 27508 strings out of 478287
+ 671857 string characters out of 5849288
+ 917626 words of memory out of 5000000
+ 44942 multiletter control sequences out of 15000+600000
+ 570443 words of font info for 235 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,12n,80p,1817b,620s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrb1000.p
-fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (46 pages, 968805 bytes).
+pdfTeX warning (dest): name{subsection.4.2.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrb1000.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (51 pages, 1089327 bytes).
 PDF statistics:
- 1495 PDF objects out of 1728 (max. 8388607)
- 1367 compressed objects within 14 object streams
- 309 named destinations out of 1000 (max. 500000)
- 420 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1560 PDF objects out of 1728 (max. 8388607)
+ 1420 compressed objects within 15 object streams
+ 315 named destinations out of 1000 (max. 500000)
+ 411 words of extra memory for PDF output out of 10000 (max. 10000000)
 
