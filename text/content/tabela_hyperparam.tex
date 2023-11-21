@@ -1,6 +1,5 @@
-\label{tab:hyperparam_otmz}
 \begin{longtable}{>{\centering\arraybackslash}m{1.3cm} >{\centering\arraybackslash}m{2cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\vfill\centering\arraybackslash}m{1.5cm}<{\vfill}}
-	\caption{Hiperparâmetros dos Modelos} \\
+	\caption{Hiperparâmetros dos Modelos}  \label{tab:hyperparam_otmz}\\
 	\toprule
 	Modelo & \textit{Hyperparam} & Variação & PETR3 - 30m & PETR3 - 60m & WINFUT-30m & WINFUT-60m & WDOFUT-30m & WDOFUT-60m \\
 	\midrule
@@ -54,7 +53,11 @@
 	& periodo (S) & 5 e 12 & 12 & 5 & 5 & 5 & 5 & 5 \\ \cmidrule(lr){1-9}
 	GARCH & dists & normal, r e gaussian & t & normal & t & normal & normal & normal \\
 	& autoregressive (p) & 1, 2, 3 e 4 & 3 & 1 & 1 & 3 & 3 & 1 \\
-	& media (q) & 1, 2, 3 e 4 & 1 & 1 & 1 & 3 & 2 & 3 \\
+	& media (q) & 1, 2, 3 e 4 & 1 & 1 & 1 & 3 & 2 & 3 \\\cmidrule(lr){1-9}
+	MLP Out & qtd neuron 1º\_layer & 12 a 64; step = 16 & 44 & 28 & 60 & 60 & 44 & 28 \\
+	& qtd neuron 2º\_layer & 12 a 64; step = 16 & 44 & 60 & 60 & 44 & 60 & 60 \\
+	& qtd neuron 3º\_layer & 12 a 64; step = 16 & 60 & 44 & 44 & 60 & 60 & 44 \\
+	& qtd neuron 4º\_layer & 12 a 64; step = 16 & 28 & 12 & 28 & 28 & 12 & 12 \\ 
 	\bottomrule
 \end{longtable}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.16)  20 NOV 2023 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.16)  21 NOV 2023 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -806,7 +806,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images//cefet.png, id=164, 285.7074pt x 181.6386pt>
+<images//cefet.png, id=152, 285.7074pt x 181.6386pt>
 File: images//cefet.png Graphic file (type png)
 <use images//cefet.png>
 Package pdftex.def Info: images//cefet.png  used on input line 12.
@@ -858,22 +858,22 @@ LaTeX Info: Symbol \texttwosuperior not provided by
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 9.
- [9] [10] (./main.toc [11
-
-])
+ [9] [10] (./main.toc)
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
-) [12]
-\openout2 = `content/presentation/resumo.aux'.
-
- (./content/presentation/resumo.tex)
-[13
-
-
-
+) [11
 
 ]
+\openout2 = `content/presentation/resumo.aux'.
+
+ (./content/presentation/resumo.tex [12
+
+
+
+
+])
+[13]
 \openout2 = `content/presentation/abstract.aux'.
 
  (./content/presentation/abstract.tex [14
@@ -919,17 +919,17 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              for symbol `textbullet' on input line 24.
 
 [17]
-<images//InvestingActionXP.png, id=492, 843.15pt x 492.84125pt>
+<images//InvestingActionXP.png, id=477, 843.15pt x 492.84125pt>
 File: images//InvestingActionXP.png Graphic file (type png)
 <use images//InvestingActionXP.png>
 Package pdftex.def Info: images//InvestingActionXP.png  used on input line 39.
 (pdftex.def)             Requested size: 386.95897pt x 226.19083pt.
-<images//PessoasActionsXP.png, id=502, 719.68875pt x 496.85625pt>
+<images//PessoasActionsXP.png, id=487, 719.68875pt x 496.85625pt>
 File: images//PessoasActionsXP.png Graphic file (type png)
 <use images//PessoasActionsXP.png>
 Package pdftex.def Info: images//PessoasActionsXP.png  used on input line 52.
 (pdftex.def)             Requested size: 232.17242pt x 160.28607pt.
-<images//ValorActionXP.png, id=503, 538.01pt x 408.52625pt>
+<images//ValorActionXP.png, id=488, 538.01pt x 408.52625pt>
 File: images//ValorActionXP.png Graphic file (type png)
 <use images//ValorActionXP.png>
 Package pdftex.def Info: images//ValorActionXP.png  used on input line 59.
@@ -950,7 +950,7 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
-<images//tendencias.png, id=560, 1047.915pt x 333.245pt>
+<images//tendencias.png, id=545, 1047.915pt x 333.245pt>
 File: images//tendencias.png Graphic file (type png)
 <use images//tendencias.png>
 Package pdftex.def Info: images//tendencias.png  used on input line 13.
@@ -961,28 +961,28 @@ Package pdftex.def Info: images//tendencias.png  used on input line 13.
 
 
  <./images//tendencias.png>]
-<images//ciclos.jpg, id=573, 248.42813pt x 133.24782pt>
+<images//ciclos.jpg, id=558, 248.42813pt x 133.24782pt>
 File: images//ciclos.jpg Graphic file (type jpg)
 <use images//ciclos.jpg>
 Package pdftex.def Info: images//ciclos.jpg  used on input line 27.
 (pdftex.def)             Requested size: 220.28154pt x 99.58792pt.
-<images//sazonais.jpg, id=574, 331.2375pt x 167.12437pt>
+<images//sazonais.jpg, id=559, 331.2375pt x 167.12437pt>
 File: images//sazonais.jpg Graphic file (type jpg)
 <use images//sazonais.jpg>
 Package pdftex.def Info: images//sazonais.jpg  used on input line 34.
 (pdftex.def)             Requested size: 237.03517pt x 99.58685pt.
-<images//grafico_velas.png, id=585, 369.38pt x 363.3575pt>
+<images//grafico_velas.png, id=570, 369.38pt x 363.3575pt>
 File: images//grafico_velas.png Graphic file (type png)
 <use images//grafico_velas.png>
 Package pdftex.def Info: images//grafico_velas.png  used on input line 55.
 (pdftex.def)             Requested size: 232.16954pt x 108.12099pt.
-<images//candlestick.png, id=586, 503.8825pt x 241.90375pt>
+<images//candlestick.png, id=571, 503.8825pt x 241.90375pt>
 File: images//candlestick.png Graphic file (type png)
 <use images//candlestick.png>
 Package pdftex.def Info: images//candlestick.png  used on input line 62.
 (pdftex.def)             Requested size: 232.17319pt x 108.12114pt.
  [21 <./images//ciclos.jpg> <./images//sazonais.jpg>]
-<images//fluxo_abordagem.png, id=613, 523.9575pt x 197.83913pt>
+<images//fluxo_abordagem.png, id=598, 523.9575pt x 197.83913pt>
 File: images//fluxo_abordagem.png Graphic file (type png)
 <use images//fluxo_abordagem.png>
 Package pdftex.def Info: images//fluxo_abordagem.png  used on input line 78.
@@ -1015,7 +1015,7 @@ LaTeX Warning: Citation `Vin�cius_Sistemas' on page 26 undefined on input line
 210.
 
 [26] [27]
-<images//matriz_confusão.png, id=937, 374.39874pt x 221.82875pt>
+<images//matriz_confusão.png, id=922, 374.39874pt x 221.82875pt>
 File: images//matriz_confusão.png Graphic file (type png)
 <use images//matriz_confusão.png>
 Package pdftex.def Info: images//matriz_confusão.png  used on input line 253.
@@ -1063,7 +1063,7 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
-<images//base_dados.png, id=1102, 1130.2225pt x 327.2225pt>
+<images//base_dados.png, id=1087, 1130.2225pt x 327.2225pt>
 File: images//base_dados.png Graphic file (type png)
 <use images//base_dados.png>
 Package pdftex.def Info: images//base_dados.png  used on input line 13.
@@ -1078,7 +1078,7 @@ Package pdftex.def Info: images//base_dados.png  used on input line 13.
 LaTeX Warning: Citation `Vin�cius_Sistemas' on page 33 undefined on input line 
 26.
 
-<images//feature_selection.png, id=1190, 965.6075pt x 490.83376pt>
+<images//feature_selection.png, id=1175, 965.6075pt x 490.83376pt>
 File: images//feature_selection.png Graphic file (type png)
 <use images//feature_selection.png>
 Package pdftex.def Info: images//feature_selection.png  used on input line 60.
@@ -1090,13 +1090,13 @@ LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 64.
 [33]
-<images//model_prediction.png, id=1222, 748.7975pt x 508.90125pt>
+<images//model_prediction.png, id=1207, 748.7975pt x 508.90125pt>
 File: images//model_prediction.png Graphic file (type png)
 <use images//model_prediction.png>
 Package pdftex.def Info: images//model_prediction.png  used on input line 81.
 (pdftex.def)             Requested size: 478.86255pt x 325.4472pt.
  [34 <./images//feature_selection.png>]
-<images//strategy.png, id=1245, 740.7675pt x 377.41pt>
+<images//strategy.png, id=1230, 740.7675pt x 377.41pt>
 File: images//strategy.png Graphic file (type png)
 <use images//strategy.png>
 Package pdftex.def Info: images//strategy.png  used on input line 98.
@@ -1118,7 +1118,7 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 
 LaTeX Font Info:    Font shape `T1/aer/b/it' in size <10> not available
 (Font)              Font shape `T1/aer/bx/it' tried instead on input line 16.
-<images//PETR3_fechamento.png, id=1279, 858.20625pt x 418.56375pt>
+<images//PETR3_fechamento.png, id=1264, 858.20625pt x 418.56375pt>
 File: images//PETR3_fechamento.png Graphic file (type png)
 <use images//PETR3_fechamento.png>
 Package pdftex.def Info: images//PETR3_fechamento.png  used on input line 28.
@@ -1129,93 +1129,89 @@ Package pdftex.def Info: images//PETR3_fechamento.png  used on input line 28.
 
 
 ]
-<images//WINFUT_fechamento.png, id=1299, 850.17625pt x 414.54875pt>
+<images//WINFUT_fechamento.png, id=1284, 850.17625pt x 414.54875pt>
 File: images//WINFUT_fechamento.png Graphic file (type png)
 <use images//WINFUT_fechamento.png>
 Package pdftex.def Info: images//WINFUT_fechamento.png  used on input line 47.
 (pdftex.def)             Requested size: 478.86255pt x 233.49936pt.
  [38 <./images//PETR3_fechamento.png>]
-<images//WDOFUT_fechamento.png, id=1320, 857.2025pt x 415.5525pt>
+<images//WDOFUT_fechamento.png, id=1305, 857.2025pt x 415.5525pt>
 File: images//WDOFUT_fechamento.png Graphic file (type png)
 <use images//WDOFUT_fechamento.png>
 Package pdftex.def Info: images//WDOFUT_fechamento.png  used on input line 66.
 (pdftex.def)             Requested size: 478.86255pt x 232.14348pt.
- (./content/tabela_hyperparam.tex)
+ [39 <./images//WINFUT_fechamento.png> <./images//WDOFUT_fechamento.png>] (./co
+ntent/tabela_hyperparam.tex)
 (./content/tabela_hyperparam.tex) (./content/tabela_hyperparam.tex
-Overfull \hbox (3.27058pt too wide) in paragraph at lines 5--5
+Overfull \hbox (3.27058pt too wide) in paragraph at lines 4--4
  []|\T1/aer/m/n/10 WINFUT- 
  []
 
 
-Overfull \hbox (3.27058pt too wide) in paragraph at lines 5--5
+Overfull \hbox (3.27058pt too wide) in paragraph at lines 4--4
  []|\T1/aer/m/n/10 WINFUT- 
  []
 
 
-Overfull \hbox (7.56036pt too wide) in paragraph at lines 5--5
+Overfull \hbox (7.56036pt too wide) in paragraph at lines 4--4
  []|\T1/aer/m/n/10 WDOFUT- 
  []
 
 
-Overfull \hbox (7.56036pt too wide) in paragraph at lines 5--6
+Overfull \hbox (7.56036pt too wide) in paragraph at lines 4--5
  []\T1/aer/m/n/10 WDOFUT- 
  []
 
 
-Overfull \hbox (16.95116pt too wide) in alignment at lines 2--7
+Overfull \hbox (16.95116pt too wide) in alignment at lines 1--6
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (16.95116pt too wide) in alignment at lines 7--12
+Overfull \hbox (16.95116pt too wide) in alignment at lines 6--11
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (16.95116pt too wide) in alignment at lines 12--15
+Overfull \hbox (16.95116pt too wide) in alignment at lines 11--14
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (16.95116pt too wide) in alignment at lines 15--17
+Overfull \hbox (16.95116pt too wide) in alignment at lines 14--16
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (4.3137pt too wide) in paragraph at lines 45--45
+Overfull \hbox (4.3137pt too wide) in paragraph at lines 44--44
  []|\T1/aer/m/n/10 autoregressive 
  []
 
 
-Overfull \hbox (3.69113pt too wide) in paragraph at lines 48--48
+Overfull \hbox (3.69113pt too wide) in paragraph at lines 47--47
  []|\T1/aer/m/n/10 SARIMA| 
  []
 
 
-Overfull \hbox (4.3137pt too wide) in paragraph at lines 48--48
+Overfull \hbox (4.3137pt too wide) in paragraph at lines 47--47
  []|\T1/aer/m/n/10 autoregressive 
  []
 
 
-Overfull \hbox (4.3137pt too wide) in paragraph at lines 56--56
+Overfull \hbox (4.3137pt too wide) in paragraph at lines 55--55
  []|\T1/aer/m/n/10 autoregressive 
  []
 
 
-Overfull \hbox (16.95116pt too wide) in alignment at lines 17--59
+Overfull \hbox (16.95116pt too wide) in alignment at lines 16--62
  [] [] [] [] [] [] [] [] [] 
  []
 
-[39 <./images//WINFUT_fechamento.png> <./images//WDOFUT_fechamento.png>]
-[40] [41])
+[40] [41] [42])
 LaTeX Info: Symbol \textasciiacute not provided by
             font family aer in TS1 encoding.
-            Default family used instead on input line 81.
-)
-Underfull \vbox (badness 4531) has occurred while \output is active []
-
- [42]
-[43]
+            Default family used instead on input line 89.
+) [43]
 \openout2 = `content/5_conclusion.aux'.
 
  (./content/5_conclusion.tex
@@ -1262,55 +1258,40 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 5AB7DCEEC7E25072A4A2AD7E2F9813C2;5771
-(rerunfilecheck)             After:  0C9165F6CD1AA0C0BD2497BC6D37AC45;5505.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 0C9165F6CD1AA0C0BD2497BC6D37AC45;5505.
  ) 
 Here is how much of TeX's memory you used:
- 27508 strings out of 478287
- 671857 string characters out of 5849288
- 917626 words of memory out of 5000000
- 44942 multiletter control sequences out of 15000+600000
+ 27504 strings out of 478287
+ 671931 string characters out of 5849288
+ 925090 words of memory out of 5000000
+ 44941 multiletter control sequences out of 15000+600000
  570443 words of font info for 235 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,12n,80p,1817b,620s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.4.2.3} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.2.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.2.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrb1000.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (51 pages, 1089327 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrb1000.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (51 pages, 1092908 bytes).
 PDF statistics:
- 1560 PDF objects out of 1728 (max. 8388607)
- 1420 compressed objects within 15 object streams
- 315 named destinations out of 1000 (max. 500000)
- 411 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1568 PDF objects out of 1728 (max. 8388607)
+ 1428 compressed objects within 15 object streams
+ 312 named destinations out of 1000 (max. 500000)
+ 387 words of extra memory for PDF output out of 10000 (max. 10000000)
 

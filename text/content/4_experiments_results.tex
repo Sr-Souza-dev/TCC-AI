@@ -70,11 +70,19 @@ Por fim,  para o ativo financeiro WDOFUT, o processo de construção dos \textit
 
 \section{Modelos e Hiperparâmetros}
 \label{sec:modelos_parametros_resultados}
+Para efetivar a proposta delineada na Seção \ref{sec:previsao}, foram empregados 10 modelos distintos de previsão. No grupo de modelos estatísticos, destacam-se três escolhas específicas: \ac{ARIMA}, \ac{SARIMA}, e \ac{GARCH}. O conjunto de modelos de classificação compreende outros três: \ac{SVM}, \ac{KNN}, e \ac{LR}, enquanto o conjunto de modelos de regressão é representado por \ac{LSTM}, \ac{MLP}, e \ac{RNN}. Além disso, concebeu-se um modelo final, uma \ac{MLP} denominada "MLP out", cuja função é consolidar os resultados provenientes de cada ensemble dos três conjuntos mencionados anteriormente.
+A Tabela \ref{tab:hyperparam_otmz} detalha a estrutura de cada modelo de previsão, juntamente com o processo de otimização implementado e as escolhas otimizadas para cada conjunto de dados coletado. 
+
 \LTXtable{\textwidth}{content/tabela_hyperparam}
 	
-
 \section{Experimentos e Métricas}
 \label{sec:experimentos _metricas}
+As métricas de avaliação desempenham um papel crucial na análise meticulosa dos modelos propostos, sendo aplicadas em três categorias distintas: modelos de classificação, modelos de regressão e estratégia de compra e venda.
+Na avaliação dos modelos de regressão:  \ac{GARCH}, \ac{ARIMA}, \ac{SARIMA}, \ac{LSTM}, \ac{MLP}, \ac{RNN} e \ac{MLP} Out . A escolha recaiu sobre as métricas de \ac{MAE} e \ac{RMSE}. Essas métricas foram selecionadas devido à sua capacidade de proporcionar uma representação direta dos erros, conferindo maior relevância aos erros mais impactantes. Essa abordagem busca proporcionar uma compreensão clara e detalhada do desempenho de cada modelo, permitindo uma análise aprofundada das discrepâncias entre as previsões e os valores reais.
+
+Já na fase de avaliação dos modelos de classificação, todos os modelos definidos serão considerados, uma vez que a função de transformação que converte resultados de regressão em classificação é aplicada uniformemente a todos os modelos de regressão. Para a avaliação desses modelos, serão utilizadas métricas como Acurácia, \ac{F1} e Matriz de Confusão. A Acurácia proporciona uma visão global da precisão do modelo, enquanto a métrica \ac{F1} equilibra precisão e recall. A Matriz de Confusão oferece uma análise mais detalhada do desempenho do modelo em diferentes categorias, possibilitando uma compreensão mais completa de seu comportamento em situações de classificação. 
+
+Por fim, todos os modelos e ensembles definidos durante o experimento serão avaliados com base na estratégia delineada na Seção \ref{sec:estrategia}, permitindo a comparação do percentual de retorno de cada modelo ao final da execução, juntamente com a quantidade de operações de compra realizadas. Essa análise final busca fornecer \textit{insights} valiosos sobre a eficácia prática de cada abordagem na execução da estratégia proposta.
 
 \section{Resultados Experimentais}
 \label{sec:resultados_experimentais}
