@@ -95,7 +95,7 @@ def GetModelsRegressionOptimized(dataName, sizeTrain):
         directory=f'optmz/model{data_name}/regression',  # Diretório para salvar os resultados
         project_name='rnn')
 
-    lstmTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation), verbose=0)
+    lstmTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation))
     mlpTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation), verbose=0)
     rnnTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation), verbose=0)
 
