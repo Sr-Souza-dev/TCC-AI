@@ -60,12 +60,12 @@ def getOptmizedModels(dataName, setDivision):
         # --------------------------- Obtém os modelos Otimizados ---------------------------
         print(f"    | Etapa 2 {dataName} - Obtendo modelos otimizados!")
         optmized_time = time.time()
-        print(f"        - Etapa 2.1 {dataName} - Obtendo modelos de classificação otimizados")
-        SVM, KNN, LR = GetModelsClassificationOptimized(dataName, setDivision[1])           # Obtém os modelos de classificação otimizados
-        print(f"        - Etapa 2.2 {dataName} - Obtendo modelos estatisticos otimizados")
-        ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
+        # print(f"        - Etapa 2.1 {dataName} - Obtendo modelos de classificação otimizados")
+        # SVM, KNN, LR = GetModelsClassificationOptimized(dataName, setDivision[1])           # Obtém os modelos de classificação otimizados
+        # print(f"        - Etapa 2.2 {dataName} - Obtendo modelos estatisticos otimizados")
+        # ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
         print(f"        - Etapa 2.3 {dataName} - Obtendo modelos de regressão otimizados")
-        LSTM, MLP, RNN = GetModelsRegressionOptimized(dataName, setDivision[1])             # Obtém os modelos de regressão otimizados
+        MLP, SVR, RF = GetModelsRegressionOptimized(dataName, setDivision[1])             # Obtém os modelos de regressão otimizados
         optmized_time = time.time() - optmized_time
         print(f"    | Etapa 2 {dataName} - Time: {optmized_time}")
     except Exception as e:
@@ -77,7 +77,7 @@ def trainModels(dataName, setDivision):
         # ------------------------ Recupera os modelos já otimizados --------------------------
         print(f"    | Etapa 3 {dataName} - Obtendo modelos já otimizados!")
         # SVM, KNN, LR = GetModelsClassification(dataName)        # Obtém os modelos de classificação
-        LSTM, MLP, RNN = GetModelsRegression(dataName)          # Obtém os modelos de regressão
+        MLP, SVR, RF  = GetModelsRegression(dataName)          # Obtém os modelos de regressão
 
         # --------------------------- Treina os modelos ---------------------------
         print(f"    | Etapa 4 {dataName} - Treinando modelos!")
@@ -92,8 +92,8 @@ def trainModels(dataName, setDivision):
 
         # ClassificationModels = [SVM, KNN, LR]           # Lista de modelos de classificação
         # ClassificationNames  = ['SVM', 'KNN', 'LR']     # Lista de nomes dos modelos de classificação
-        RegressionModels = [LSTM, MLP, RNN]             # Lista de modelos de regressão
-        RegressionNames  = ['LSTM', 'MLP', 'RNN']       # Lista de nomes dos modelos de regressão
+        RegressionModels = [MLP, SVR, RF ]             # Lista de modelos de regressão
+        RegressionNames  = ['MLP', 'SVR', 'RF']       # Lista de nomes dos modelos de regressão
 
         # print(f"        - Etapa 4.1 {dataName} - Treinando modelos de classificação")
         # GetClassificationPredictions(dataName, ClassificationModels, ClassificationNames, X_Test_dataset1)                                              # Obtém as predições dos modelos de classificação
