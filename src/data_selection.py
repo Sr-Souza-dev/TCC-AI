@@ -1,6 +1,7 @@
 from sklearn.feature_selection import SelectKBest, chi2, f_regression, mutual_info_regression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import ElasticNet, Lasso
+from sklearn.preprocessing import MinMaxScaler
 from scipy.stats import kruskal
 from enum import Enum 
 
@@ -224,9 +225,16 @@ def Selection(inputDataName):
 
     dataset1, dataset2 = calculate(X, Y, usedMethodsD1, filterEachD1, usedMethodsD2, filterEachD2)
 
-    dataset1.to_csv(f'../Data/Selected/dataset1/{inputDataName}_IN_class.csv', index=False, sep = ';')
-    dataset2.to_csv(f'../Data/Selected/dataset2/{inputDataName}_IN_regre.csv', index=False, sep = ';')
+    scalerdt1 = MinMaxScaler()
+    scalerdt2 = MinMaxScaler()
+
+    dataset1Normalized = pd.DataFrame(scalerdt1.fit_transform(dataset1), columns=dataset1.columns)
+    dataset2Normalized = pd.DataFrame(scalerdt2.fit_transform(dataset2), columns=dataset2.columns)
+
+
+    dataset1Normalized.to_csv(f'../Data/Selected/dataset1/{inputDataName}_IN_class.csv', index=False, sep = ';')
+    dataset2Normalized.to_csv(f'../Data/Selected/dataset2/{inputDataName}_IN_regre.csv', index=False, sep = ';')
 
     Y.to_csv(f'../Data/Selected/{inputDataName}_Out.csv', index=False, sep = ';')
 
-    return dataset1.shape, dataset2.shape, Y.shape
+    return dataset1Normalized.shape, dataset2Normalized.shape, Y.shape
