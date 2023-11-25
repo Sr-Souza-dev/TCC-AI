@@ -1,202 +1,132 @@
-import numpy as np
-import pandas as pd
+from sklearn.neural_network import MLPRegressor
+from sklearn import svm
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import GridSearchCV
 import sklearn.model_selection as ms
-from kerastuner.tuners import RandomSearch
-from keras import Sequential
-from keras.models import load_model
-from keras.layers import LSTM, Dense, SimpleRNN, Dropout
-from keras.preprocessing.sequence import TimeseriesGenerator
+import numpy as np
+import pickle
+import os
 
+import pandas as pd
 import warnings
 warnings.filterwarnings("ignore")
 
 import logging
 logging.getLogger('tensorflow').setLevel(logging.ERROR)
 
-optz_size = 40
-data_name = 'dataset2'
 
-input_shape_lstm = (1, 4)
-input_shape_mlp  = (1, 4)
-input_shape_rnn  = (4, 1)
+namesM = ['MLP', 'SVR', 'RF']
+scoring = 'neg_mean_absolute_error'
 
-# Função para criar o modelo LSTM
-def build_lstm_model(hp):
-    model = Sequential()
-    model.add(LSTM(units=hp.Int('unitsLSTM_1', min_value=20, max_value=100, step=20),
-                   input_shape=input_shape_lstm,
-                   return_sequences=True,
-                   activation=hp.Choice('lstm_activation_1', ['relu', 'tanh', 'sigmoid'])))
-    model.add(LSTM(units=hp.Int('unitsLSTM_2', min_value=20, max_value=100, step=20),
-                   return_sequences=True,
-                   activation=hp.Choice('lstm_activation_2', ['relu', 'tanh', 'sigmoid'])))
-    model.add(LSTM(units=hp.Int('unitsLSTM_3', min_value=20, max_value=100, step=20),
-                   return_sequences=False,  # A última camada pode ter return_sequences=False
-                   activation=hp.Choice('lstm_activation_3', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dense(1, activation=hp.Choice('dense_activation_4', ['relu', 'tanh', 'sigmoid'])))
-    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'Adamax', 'SGD', 'Ftrl', 'RMSprop']), loss='mae')
-    return model
+def GetModelsRegressionOptimized(dataName, trainSize):
+    X = pd.read_csv(f'../Data/Cut/dataset2/X/Train_{trainSize}{dataName}.csv', sep=";")
+    Y = pd.read_csv(f'../Data/Cut/dataset2/Y/Train_{trainSize}{dataName}.csv', sep=";")['OutPut |T+1|']
 
+    print(f"             -- {dataName} - Inicio da otimização dos modelos de Classificação ")
+    print(f'                {dataName} - X_train: {X.shape} | X_test: {X.shape} | Y_train: {Y.shape} | Y_test: {Y.shape}')
 
-
-
-def build_mlp_model(hp):
-    model = Sequential()
-    model.add(Dense(units=hp.Int('unitsMLP_1', min_value=12, max_value=64, step=16),
-                    input_shape=input_shape_mlp,
-                    activation=hp.Choice('dense_activation_1', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dense(units=hp.Int('unitsMLP_2', min_value=12, max_value=64, step=16),
-                    activation=hp.Choice('dense_activation_2', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dense(units=hp.Int('unitsMLP_3', min_value=12, max_value=64, step=16),
-                    activation=hp.Choice('dense_activation_3', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dense(units=hp.Int('unitsMLP_4', min_value=12, max_value=64, step=16),
-                    activation=hp.Choice('dense_activation_4', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dense(1, activation=hp.Choice('dense_activation_4', ['relu', 'tanh', 'sigmoid'])))
-
-    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'Adamax', 'SGD', 'Ftrl', 'RMSprop']), loss='mae')
-    return model
-
-
-
-def build_rnn_model(hp):
-    model = Sequential()
-    model.add(SimpleRNN(units=hp.Int('rnn_units_1', min_value=32, max_value=128, step=16),
-                        return_sequences=True,
-                        input_shape=input_shape_rnn,
-                        activation=hp.Choice('rnn_activation_1', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dropout(0.2))
-    model.add(SimpleRNN(units=hp.Int('rnn_units_2', min_value=32, max_value=128, step=16),
-                        return_sequences=True,
-                        activation=hp.Choice('rnn_activation_2', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dropout(0.2))
-    model.add(SimpleRNN(units=hp.Int('rnn_units_3', min_value=32, max_value=128, step=16),
-                        return_sequences=True,
-                        activation=hp.Choice('rnn_activation_3', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dropout(0.2))
-    model.add(SimpleRNN(units=hp.Int('rnn_units_4', min_value=32, max_value=128, step=16),
-                        return_sequences=True,
-                        activation=hp.Choice('rnn_activation_4', ['relu', 'tanh', 'sigmoid'])))
-    model.add(Dropout(0.2))
-    model.add(Dense(1, activation=hp.Choice('dense_activation_4', ['relu', 'tanh', 'sigmoid'])))
-    model.compile(optimizer=hp.Choice('optimizer', ['adam', 'Adamax', 'SGD', 'Ftrl', 'RMSprop']), loss='mae')
-    return model
-
-def create_dataset(dataset, look_back=1):
-    dataX, dataY = [], []
-    for i in range(len(dataset)-look_back-1):
-        a = dataset[i:(i+look_back), 0]
-        dataX.append(a)
-        dataY.append(dataset[i + look_back, 0])
-    return np.array(dataX), np.array(dataY)
-              
-def GetModelsRegressionOptimized(dataName, sizeTrain):
-    global input_shape_lstm, input_shape_mlp, input_shape_rnn, lstmTuner, mlpTuner, rnnTuner, data_name
-    data_name = dataName
-
-    X = pd.read_csv(f'../Data/Cut/dataset2/X/Train_{sizeTrain}{dataName}.csv', sep=";")
-    Y = pd.read_csv(f'../Data/Cut/dataset2/Y/Train_{sizeTrain}{dataName}.csv', sep=";")['OutPut |T+1|']
-
-    X = X.values.astype('float32')
-    Y = Y.values.astype('float32')
-
-    X_train, X_validation, Y_train, Y_validation = ms.train_test_split(X, Y, test_size = 0.15, random_state = None, shuffle = False)
-
-    Y_train              = Y_train.ravel()
-    Y_validation         = Y_validation.ravel()
-
-    X_train_reshape      = np.reshape(X_train, (X_train.shape[0], 1, X_train.shape[1]))
-    X_validation_reshape = np.reshape(X_validation, (X_validation.shape[0], 1, X_validation.shape[1]))
-
-    shape = X_train_reshape.shape
-    print(f"{dataName} Shape: ", shape)
-
-    # ----------------------------------- Otimiza o LSTM -------------------------------------------
-    try:
-        input_shape_lstm = (1, 4)
-        lstmTuner = RandomSearch(
-            build_lstm_model,
-            objective='val_loss',
-            max_trials=optz_size,  # Escolha o número desejado de tentativas
-            directory=f'optmz/model{data_name}/regression',  # Diretório para salvar os resultados
-            project_name='lstm')
-
-        lstmTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation), verbose=0)
-        print(f"                     * {dataName} - LSTM ")
-        bestLSTM = lstmTuner.get_best_models(num_models=1)[0]
-        print(f"                     * {dataName} - LSTM ")
-        bestLSTM = lstmTuner.get_best_models(num_models=1)[0]
-        bestLSTM.save(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')
-        print("LSTM: ", bestLSTM.summary())
-    except:
-        print(f"[Erro] ao otimizar LSTM - {dataName}")
+    # ----------------------------- Otimizando MLP ----------------------------------
+    print(f'                 * {dataName} - MLP')
+    MLP_grid = {
+        'hidden_layer_sizes': [(50,50,50), (50,100,50), (30,80,50,20), (100,)],
+        'activation': ['tanh', 'relu', 'logistic'],
+        'solver': ['sgd', 'adam', 'lbfgs'],
+        'alpha': [0.0001, 0.05],
+        'learning_rate': ['constant','adaptive'],
+    }
+    mlp_grid_search = GridSearchCV(estimator = MLPRegressor(), param_grid = MLP_grid, cv = 3, n_jobs = -1, verbose = 1, scoring = scoring)
+    mlp_grid_search.fit(X, Y)
+    bestMLP = mlp_grid_search.best_estimator_
+    dir_name = f'../Results/optimization/regression/MLPR'
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+    with open(f'{dir_name}/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestMLP, f)
     
-    # ------------------------------------ Otimiza o MLP -------------------------------------------
-    try:
-        input_shape_mlp  = (1, 4)
-        mlpTuner = RandomSearch(
-            build_mlp_model,
-            objective='val_loss',
-            max_trials=optz_size,  # Escolha o número desejado de tentativas
-            directory=f'optmz/model{data_name}/regression',  # Diretório para salvar os resultados
-            project_name='mlp')
-        mlpTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation), verbose=0)
-        print(f"                     * {dataName} - MLP ")
-        bestMLP  = mlpTuner.get_best_models(num_models=1)[0]
-        bestMLP.save(f'../Results/optimization/regression/MLP/{dataName}_model.h5')
-        print("MLP:  ", bestMLP.summary())
-    except:
-        print(f"[Erro] ao otimizar MLP - {dataName}")
-
-    # ----------------------------------- Otimiza o RNN -------------------------------------------
-    try:
-        X_train_reshape      = np.reshape(X_train, (X_train.shape[0], X_train.shape[1], 1))
-        X_validation_reshape = np.reshape(X_validation, (X_validation.shape[0], X_validation.shape[1], 1))
-        input_shape_rnn = (1, 4)
-        X_train_reshape = np.swapaxes(X_train_reshape, 1, 2)
-        X_validation_reshape = np.swapaxes(X_validation_reshape, 1, 2)
-
-        rnnTuner = RandomSearch(
-            build_rnn_model,
-            objective='val_loss',
-            max_trials=optz_size,  # Escolha o número desejado de tentativas
-            directory=f'optmz/model{data_name}/regression',  # Diretório para salvar os resultados
-            project_name='rnn')
-        rnnTuner.search(x=X_train_reshape, y=Y_train, epochs=100, validation_data=(X_validation_reshape, Y_validation), verbose=0)
-        print(f"                     * {dataName} - RNN ")
-        bestRNN  = rnnTuner.get_best_models(num_models=1)[0]
-        bestRNN.save(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
-        print("RNN:  ", bestRNN.summary())
-    except:
-        print(f"[Erro] ao otimizar RNN - {dataName}")
-
     
+    # ----------------------------- Otimizando SVR ----------------------------------
+    print(f'                 * {dataName} - SVR ')
+    SVR_grid = {
+        'kernel': ['linear', 'poly'],
+        'C': np.arange(0.01, 40, 15),
+        'gamma': ['scale'],
+        'degree': [1, 2, 3],
+        'coef0': np.arange(1, 4, 2),
+    }
+    SVR_grid_search = GridSearchCV(estimator = svm.SVR(), param_grid = SVR_grid, cv = 3, n_jobs = -1, verbose = 1, scoring = scoring)
+    SVR_grid_search.fit(X, Y)
+    bestSVR = SVR_grid_search.best_estimator_
+    dir_name = f'../Results/optimization/regression/SVR'
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+    with open(f'{dir_name}/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestSVR, f)
 
-    return bestLSTM, bestMLP, bestRNN
+    # ----------------------------- Otimizando RF ----------------------------------
+    print(f'                 * {dataName} - RF')
+    RForest_grid = {
+        'n_estimators': [100, 200, 300, 1000],
+        'max_features': ['auto', 'sqrt'],
+        'max_depth': [10, 20, 30, 40, 50],
+        'min_samples_split': [2, 5, 10],
+        'min_samples_leaf': [1, 2, 4],
+        'bootstrap': [True, False]
+    }
+    rforest_search = GridSearchCV(estimator = RandomForestRegressor(), param_grid = RForest_grid, cv = 3, n_jobs = -1, verbose = 1, scoring = scoring)
+    rforest_search.fit(X, Y)
+    bestRF = rforest_search.best_estimator_
+    dir_name = f'../Results/optimization/regression/RF'
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
+    with open(f'{dir_name}/{dataName}_model.pkl', 'wb') as f:
+        pickle.dump(bestRF, f)
+
+    trainData = pd.concat([
+        pd.Series(bestMLP.predict(X), name='MLP'),
+        pd.Series(bestSVR.predict(X), name='SVR'),
+        pd.Series(bestRF.predict(X), name='RF')
+    ], axis=1)
+    trainData.to_csv(f'../Results/train/classification/{dataName}_predictions.csv', sep=';', index=False)
+    return bestMLP, bestSVR, bestRF
+
 
 def GetModelsRegression(dataName):
-    LSTM = load_model(f'../Results/optimization/regression/LSTM/{dataName}_model.h5')
-    MLP = load_model(f'../Results/optimization/regression/MLP/{dataName}_model.h5')
-    RNN = load_model(f'../Results/optimization/regression/RNN/{dataName}_model.h5')
-    return LSTM, MLP, RNN
+    with open(f'../Results/optimization/regression/MLPR/{dataName}_model.pkl', 'rb') as f:
+        MLP = pickle.load(f)
+    with open(f'../Results/optimization/regression/SVR/{dataName}_model.pkl', 'rb') as f:
+        SVR = pickle.load(f)
+    with open(f'../Results/optimization/regression/RF/{dataName}_model.pkl', 'rb') as f:
+        RF = pickle.load(f)
+
+    return MLP, SVR, RF
+
+def GetClassificationPredictions(dataName, Models, Names, X_test):
+    results = pd.DataFrame()
+    for model, name in zip(Models, Names):
+        # print(type(model).__name__)
+        series = pd.Series(name=name, data=model.predict(X_test.values))
+        results = pd.concat([results, series], axis=1)
+
+
+    results.to_csv(f'../Results/test/classification/{dataName}_predictions.csv', sep=';', index=False)
 
 def GetRegressionPredictions(dataName, Names, Models, X_test, Y_test, X_train, Y_train):
-    X_train = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1]))
-    X_test = X_test.values.reshape((X_test.shape[0], 1, X_test.shape[1]))
 
     # Calcula o resultado no conjunto de treinameito
     results_ClassTrain = pd.DataFrame()
     for name, model in zip(Names, Models):
-        series = pd.Series(name=name, data=(model.predict(X_train)).ravel())
+        series = pd.Series(name=name, data=(model.predict(X_train.values)).ravel())
         serie_last = series.shift(1)
         series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
         results_ClassTrain = pd.concat([results_ClassTrain, series_class], axis=1)
+
 
     # Calcula o resultado no conjunto de teste
     results = pd.DataFrame()
     results_Class = pd.DataFrame()
 
     for name, model in zip(Names, Models):
-        series = pd.Series(name=name, data=(model.predict(X_test)).ravel())
+        series = pd.Series(name=name, data=(model.predict(X_test.values)).ravel())
         serie_last = series.shift(1)
         series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
         results_Class = pd.concat([results_Class, series_class], axis=1)

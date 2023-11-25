@@ -243,7 +243,7 @@ def GetStatisticPredictions(dataName, dataTrain, dataTest, window = 10):
     arimaReg = []
     sarimaReg = []
     garchReg = []
-
+    j = 0
     for i in range(0, len(dataTrain)):
         i = i + 40
         arimaPredic  = arimaPredictOne(ARIMA, dataTrain2[0:i])
@@ -254,9 +254,10 @@ def GetStatisticPredictions(dataName, dataTrain, dataTest, window = 10):
         sarimaReg.append(sarimaPredic)
         garchReg.append(garchPredic)
 
-        Y_arimaTrain[(len(Y_arimaTrain))]   = 1 if len(arimaReg)  > 1 and  arimaPredic  > arimaReg[i-1] else 0
-        Y_sarimaTrain[(len(Y_sarimaTrain))] = 1 if len(sarimaReg) > 1 and  sarimaPredic > sarimaReg[i-1] else 0
-        Y_garchTrain[(len(Y_garchTrain))]   = 1 if len(garchReg)  > 1 and  garchPredic  > garchReg[i-1] else 0
+        Y_arimaTrain[(len(Y_arimaTrain))]   = 1 if len(arimaReg)  > 1 and  arimaPredic  > arimaReg[j-1] else 0
+        Y_sarimaTrain[(len(Y_sarimaTrain))] = 1 if len(sarimaReg) > 1 and  sarimaPredic > sarimaReg[j-1] else 0
+        Y_garchTrain[(len(Y_garchTrain))]   = 1 if len(garchReg)  > 1 and  garchPredic  > garchReg[j-1] else 0
+        j = j + 1
 
     res = pd.concat([Y_arimaTrain, Y_sarimaTrain, Y_garchTrain], axis=1)
     res.to_csv(f'../Results/train/statistic/{dataName}_predictions_class.csv', sep=';', index=False)
