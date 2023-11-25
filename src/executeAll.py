@@ -62,8 +62,8 @@ def getOptmizedModels(dataName, setDivision):
         optmized_time = time.time()
         # print(f"        - Etapa 2.1 {dataName} - Obtendo modelos de classificação otimizados")
         # SVM, KNN, LR = GetModelsClassificationOptimized(dataName, setDivision[1])           # Obtém os modelos de classificação otimizados
-        # print(f"        - Etapa 2.2 {dataName} - Obtendo modelos estatisticos otimizados")
-        # ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
+        print(f"        - Etapa 2.2 {dataName} - Obtendo modelos estatisticos otimizados")
+        ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
         print(f"        - Etapa 2.3 {dataName} - Obtendo modelos de regressão otimizados")
         MLP, SVR, RF = GetModelsRegressionOptimized(dataName, setDivision[1])             # Obtém os modelos de regressão otimizados
         optmized_time = time.time() - optmized_time
