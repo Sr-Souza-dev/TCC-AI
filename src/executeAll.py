@@ -28,7 +28,7 @@ warnings.filterwarnings("ignore", message="Maximum Likelihood optimization faile
 warnings.filterwarnings("ignore", message="Series.__getitem__ treating keys as positions is deprecated.")
 warnings.filterwarnings("ignore", message="Maximum Likelihood optimization failed to converge.")
 
-def commit_and_push(commit_message="Automated commit", branch="main"):
+def commit_and_push(commit_message="Automated commit", branch="notebook"):
     try:
         repo = git.Repo("../")
         repo.git.add("--all")
