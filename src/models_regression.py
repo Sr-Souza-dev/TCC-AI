@@ -183,24 +183,24 @@ def GetRegressionPredictions(dataName, Names, Models, X_test, Y_test, X_train, Y
     X_train = X_train.values.reshape((X_train.shape[0], 1, X_train.shape[1]))
     X_test = X_test.values.reshape((X_test.shape[0], 1, X_test.shape[1]))
 
+    # Calcula o resultado no conjunto de treinameito
+    results_ClassTrain = pd.DataFrame()
+    for name, model in zip(Names, Models):
+        series = pd.Series(name=name, data=(model.predict(X_train)).ravel())
+        serie_last = series.shift(1)
+        series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
+        results_ClassTrain = pd.concat([results_ClassTrain, series_class], axis=1)
+
     # Calcula o resultado no conjunto de teste
     results = pd.DataFrame()
     results_Class = pd.DataFrame()
 
     for name, model in zip(Names, Models):
         series = pd.Series(name=name, data=(model.predict(X_test)).ravel())
-        serie_last = Y_test.shift(1)
+        serie_last = series.shift(1)
         series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
         results_Class = pd.concat([results_Class, series_class], axis=1)
         results = pd.concat([results, series], axis=1)
-
-    # Calcula o resultado no conjunto de treinameito
-    results_ClassTrain = pd.DataFrame()
-    for name, model in zip(Names, Models):
-        series = pd.Series(name=name, data=(model.predict(X_train)).ravel())
-        serie_last = Y_train.shift(1)
-        series_class = pd.Series(name=name, data = (series > serie_last).astype(int))
-        results_ClassTrain = pd.concat([results_ClassTrain, series_class], axis=1)
 
     results_ClassTrain.to_csv(f'../Results/train/regression/{dataName}_predictions_class.csv', sep=';', index=False)
     results_Class.to_csv(f'../Results/test/regression/{dataName}_predictions_class.csv', sep=';', index=False)

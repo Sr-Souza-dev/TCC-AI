@@ -307,6 +307,7 @@ def importExternalData(inputDataName, outputName):
         dataOut = pd.DataFrame({'OutPut |T+1|' : (data.loc[1:rowq-daysQtd-2, outputName])})
         data = data.iloc[:rowq-daysQtd-2, :]
 
+    
     return data, dataOut
 
 # -----------------------------------------------------------------------------------------------------------------------------------

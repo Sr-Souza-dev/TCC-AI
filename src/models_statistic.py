@@ -239,15 +239,24 @@ def GetStatisticPredictions(dataName, dataTrain, dataTest, window = 10):
     # Realiza as previsões dos modelos no conjunto de treinamento
     testFilter = dataTest[len(dataTest)-40:len(dataTest)]
     dataTrain2 = np.concatenate((np.array(testFilter), np.array(dataTrain)))
+
+    arimaReg = []
+    sarimaReg = []
+    garchReg = []
+
     for i in range(0, len(dataTrain)):
         i = i + 40
         arimaPredic  = arimaPredictOne(ARIMA, dataTrain2[0:i])
         sarimaPredic = sarimaPredictOne(SARIMA, dataTrain2[0:i])
         garchPredic  = garchPredictOne(GARCH, dataTrain2[0:i])
 
-        Y_arimaTrain[(len(Y_arimaTrain))] = 1 if arimaPredic > dataTrain2[i-1] else 0
-        Y_sarimaTrain[(len(Y_sarimaTrain))] = 1 if sarimaPredic > dataTrain2[i-1] else 0
-        Y_garchTrain[(len(Y_garchTrain))] = 1 if garchPredic > dataTrain2[i-1] else 0
+        arimaReg.append(arimaPredic)
+        sarimaReg.append(sarimaPredic)
+        garchReg.append(garchPredic)
+
+        Y_arimaTrain[(len(Y_arimaTrain))]   = 1 if len(arimaReg)  > 0 and arimaPredic   > arimaReg[i-1] else 0
+        Y_sarimaTrain[(len(Y_sarimaTrain))] = 1 if len(sarimaReg) > 0 and  sarimaPredic > sarimaReg[i-1] else 0
+        Y_garchTrain[(len(Y_garchTrain))]   = 1 if len(garchReg)  > 0 and  garchPredic  > garchReg[i-1] else 0
 
     res = pd.concat([Y_arimaTrain, Y_sarimaTrain, Y_garchTrain], axis=1)
     res.to_csv(f'../Results/train/statistic/{dataName}_predictions_class.csv', sep=';', index=False)
