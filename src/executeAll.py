@@ -60,8 +60,8 @@ def getOptmizedModels(dataName, setDivision):
         # --------------------------- Obtém os modelos Otimizados ---------------------------
         print(f"    | Etapa 2 {dataName} - Obtendo modelos otimizados!")
         optmized_time = time.time()
-        # print(f"        - Etapa 2.1 {dataName} - Obtendo modelos de classificação otimizados")
-        # SVM, KNN, LR = GetModelsClassificationOptimized(dataName, setDivision[1])           # Obtém os modelos de classificação otimizados
+        print(f"        - Etapa 2.1 {dataName} - Obtendo modelos de classificação otimizados")
+        SVM, KNN, LR = GetModelsClassificationOptimized(dataName, setDivision[1])           # Obtém os modelos de classificação otimizados
         print(f"        - Etapa 2.2 {dataName} - Obtendo modelos estatisticos otimizados")
         ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
         print(f"        - Etapa 2.3 {dataName} - Obtendo modelos de regressão otimizados")
@@ -84,19 +84,19 @@ def trainModels(dataName, setDivision):
         train_time = time.time()
         Y_Train_statistic = pd.read_csv(f'../Data/Cut/statistic/Y/Train_{setDivision[1]}{dataName}.csv', sep=";")['OutPut |T+1|']   # Obtém os dados de treino para os modelos de estatística
         Y_Test_statistic  = pd.read_csv(f'../Data/Cut/statistic/Y/Test_{dataName}.csv', sep=";")['OutPut |T+1|']    # Obtém os dados de teste para os modelos de estatística
-        # X_Test_dataset1  = pd.read_csv(f'../Data/Cut/dataset1/X/Test_{dataName}.csv', sep=";")                      # Obtém os dados de teste para os modelos de classificação
+        X_Test_dataset1  = pd.read_csv(f'../Data/Cut/dataset1/X/Test_{dataName}.csv', sep=";")                      # Obtém os dados de teste para os modelos de classificação
         X_Train_dataset2 = pd.read_csv(f'../Data/Cut/dataset2/X/Train_{setDivision[1]}{dataName}.csv', sep=";")                     # Obtém os dados de treino para os modelos de regressão
         Y_Train_dataset2 = pd.read_csv(f'../Data/Cut/dataset2/Y/Train_{setDivision[1]}{dataName}.csv', sep=";")['OutPut |T+1|']     # Obtém os dados de treino para os modelos de regressão
         X_Test_dataset2  = pd.read_csv(f'../Data/Cut/dataset2/X/Test_{dataName}.csv', sep=";")                      # Obtém os dados de teste para os modelos de regressão
         Y_Test_dataset2  = pd.read_csv(f'../Data/Cut/dataset2/Y/Test_{dataName}.csv', sep=";")['OutPut |T+1|']      # Obtém os dados de teste para os modelos de regressão
 
-        # ClassificationModels = [SVM, KNN, LR]           # Lista de modelos de classificação
-        # ClassificationNames  = ['SVM', 'KNN', 'LR']     # Lista de nomes dos modelos de classificação
+        ClassificationModels = [SVM, KNN, LR]           # Lista de modelos de classificação
+        ClassificationNames  = ['SVM', 'KNN', 'LR']     # Lista de nomes dos modelos de classificação
         RegressionModels = [MLP, SVR, RF ]             # Lista de modelos de regressão
         RegressionNames  = ['MLP', 'SVR', 'RF']       # Lista de nomes dos modelos de regressão
 
-        # print(f"        - Etapa 4.1 {dataName} - Treinando modelos de classificação")
-        # GetClassificationPredictions(dataName, ClassificationModels, ClassificationNames, X_Test_dataset1)                                              # Obtém as predições dos modelos de classificação
+        print(f"        - Etapa 4.1 {dataName} - Treinando modelos de classificação")
+        GetClassificationPredictions(dataName, ClassificationModels, ClassificationNames, X_Test_dataset1)                                              # Obtém as predições dos modelos de classificação
         print(f"        - Etapa 4.2 {dataName} - Treinando modelos de regressão")
         GetRegressionPredictions(dataName, RegressionNames, RegressionModels, X_Test_dataset2, Y_Test_dataset2, X_Train_dataset2, Y_Train_dataset2)     # Obtém as predições dos modelos de regressão
         print(f"        - Etapa 4.3 {dataName} - Treinando modelos de estatística")
