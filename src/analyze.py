@@ -12,9 +12,13 @@ def MakeClassificationsLogs(dataName, size):
 
     buying          = pd.read_csv(f'../Results/test/ensamble1/{dataName}.csv', sep=';')['class']
     buying.name     = 'buying'
-
     buying2         = pd.read_csv(f'../Results/test/ensamble2/{dataName}.csv', sep=';')['class']
     buying2.name    = 'buying2'
+
+    buyingSVR       = pd.read_csv(f'../Results/test/ensamble1/{dataName}_SVR.csv', sep=';')['class']
+    buyingSVR.name  = 'buying_SVR'
+    buying2SVR      = pd.read_csv(f'../Results/test/ensamble2/{dataName}_SVR.csv', sep=';')['class']
+    buying2SVR.name = 'buying2SVR'
 
     ensambleReg.name    = 'Ensamble Regression'
     ensambleClass.name  = 'Ensamble Classification'
@@ -22,10 +26,10 @@ def MakeClassificationsLogs(dataName, size):
 
     outputs         = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{dataName}.csv', sep=";")['OutPut_class |T+1|']
 
-    datas = pd.concat([regressions, classifications, statistics, ensambleReg, ensambleClass, ensambleStat, buying, buying2], axis=1)
+    datas = pd.concat([regressions, classifications, statistics, ensambleReg, ensambleClass, ensambleStat, buying, buying2, buyingSVR, buying2SVR], axis=1)
     #datas = pd.concat([regressions, classifications, statistics], axis=1)
 
-    # # printando o shape de cada dataframe importado
+    # printando o shape de cada dataframe importado
     # print("regressions.shape:    ", regressions.shape)
     # print("classifications.shape:", classifications.shape)
     # print("statistics.shape:     ", statistics.shape)
@@ -35,6 +39,9 @@ def MakeClassificationsLogs(dataName, size):
     # print("buying.shape:         ", buying.shape)
     # print("buying2.shape:        ", buying2.shape)
     # print("outputs.shape:        ", outputs.shape)
+    # print("buyingSVR.shape:      ", buyingSVR.shape)
+    # print("buying2SVR.shape:     ", buying2SVR.shape)
+    # print("datas.shape:          ", datas.shape)
 
 
 

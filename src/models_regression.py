@@ -86,7 +86,7 @@ def GetModelsRegressionOptimized(dataName, trainSize):
         pd.Series(bestSVR.predict(X), name='SVR'),
         pd.Series(bestRF.predict(X), name='RF')
     ], axis=1)
-    trainData.to_csv(f'../Results/train/classification/{dataName}_predictions.csv', sep=';', index=False)
+    trainData.to_csv(f'../Results/train/regression/{dataName}_predictions.csv', sep=';', index=False)
     return bestMLP, bestSVR, bestRF
 
 
@@ -100,15 +100,6 @@ def GetModelsRegression(dataName):
 
     return MLP, SVR, RF
 
-def GetClassificationPredictions(dataName, Models, Names, X_test):
-    results = pd.DataFrame()
-    for model, name in zip(Models, Names):
-        # print(type(model).__name__)
-        series = pd.Series(name=name, data=model.predict(X_test.values))
-        results = pd.concat([results, series], axis=1)
-
-
-    results.to_csv(f'../Results/test/classification/{dataName}_predictions.csv', sep=';', index=False)
 
 def GetRegressionPredictions(dataName, Names, Models, X_test, Y_test, X_train, Y_train):
 

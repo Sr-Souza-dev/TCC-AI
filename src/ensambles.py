@@ -97,7 +97,7 @@ def GetEnsambles(dataName, testSize = 0.2, trainSize = 0.7):
     datas = [regressions, classifications, statistics]
     
 
-    weights = np.arange(0.01, 1.05, 0.2)
+    weights = np.arange(0.0, 1.01, 0.25)
     for idx in range(len(datas)):
         data = datas[idx]
         name = names[idx]

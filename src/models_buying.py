@@ -1,14 +1,27 @@
-from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.multioutput import MultiOutputClassifier
+from sklearn.model_selection import GridSearchCV, train_test_split
 from keras.models import Sequential
 from kerastuner.tuners import RandomSearch
 from keras.layers import Dense
 import pandas as pd
 import keras
+import numpy as np
 
 input_dim = 6
 output_dim = 2
 max_trials = 50
 dataName = 'dataset1'
+scoring = 'neg_mean_absolute_error'
+
+
+Mult_grid = {
+    'estimator__kernel': ['linear', 'poly'],
+    'estimator__C': np.arange(0.01, 40, 15),
+    'estimator__gamma': ['scale'],
+    'estimator__degree': [1, 2, 3],
+    'estimator__coef0': np.arange(1, 4, 2),
+}
 
 def build_model(hp):
     model = Sequential()
@@ -26,7 +39,7 @@ def build_model(hp):
     return model
 
 def GetModelPrediction(dN, sizeTrain):
-    global input_dim, output_dim, dataName
+    global input_dim, output_dim, dataName, Mult_grid, scoring
     dataName = dN
 
     ensamble_classification = pd.read_csv(f'../Results/train/classification/{dataName}_ensamble.csv', sep=';')
@@ -83,7 +96,19 @@ def GetModelPrediction(dN, sizeTrain):
     predict = pd.concat([predict['up'], predict['down'], pd.Series(name='class', data=(predict['up'] > predict['down']).astype(int))], axis=1)
     predict.to_csv(f'../Results/test/ensamble1/{dataName}.csv', sep=';', index=False)
 
-    # **************** Gerando modelo que recebe diretamente a previsão de cada modelo *********************
+    # ----------------------------- Otimizando SVR ----------------------------------
+    print(f'                 * {dataName} - SVR ')
+    Mult_grid_search = GridSearchCV(estimator = MultiOutputClassifier(SVC()), param_grid = Mult_grid, cv = 3, n_jobs = -1, verbose = 1, scoring = scoring, error_score='raise')
+    Mult_grid_search.fit(input_data, output_data)
+    bestSVR = Mult_grid_search.best_estimator_
+
+    predict = bestSVR.predict(input_data_test)
+    predict = pd.DataFrame(predict, columns=['up', 'down'])
+    predict = pd.concat([predict['up'], predict['down'], pd.Series(name='class', data=(predict['up'] > predict['down']).astype(int))], axis=1)
+    predict.to_csv(f'../Results/test/ensamble1/{dataName}_SVR.csv', sep=';', index=False)
+
+
+    # **************** Gerando modelos que recebe diretamente a previsão de cada modelo *********************
     regressions     = pd.read_csv(f'../Results/train/regression/{dataName}_predictions_class.csv', sep=';')
     classifications = pd.read_csv(f'../Results/train/classification/{dataName}_predictions.csv', sep=';')
     statistics      = pd.read_csv(f'../Results/train/statistic/{dataName}_predictions_class.csv', sep=';')
@@ -105,16 +130,29 @@ def GetModelPrediction(dN, sizeTrain):
     tuner.search(X_train, Y_train, epochs=70, validation_data=(X_validation, Y_validation), verbose=0)
     best_hps = tuner.get_best_hyperparameters(num_trials=1)[0]
     model = tuner.hypermodel.build(best_hps)
-    model.fit(X_train, Y_train, epochs=100, validation_data=(X_validation, Y_validation))
+    model.fit(X_train, Y_train, epochs=70, validation_data=(X_validation, Y_validation), verbose=0)
 
     regressions     = pd.read_csv(f'../Results/test/regression/{dataName}_predictions_class.csv', sep=';')
     classifications = pd.read_csv(f'../Results/test/classification/{dataName}_predictions.csv', sep=';')
     statistics      = pd.read_csv(f'../Results/test/statistic/{dataName}_predictions_class.csv', sep=';')
-    datas           = pd.concat([regressions, classifications, statistics], axis=1)
+    datas_out       = pd.concat([regressions, classifications, statistics], axis=1)
 
     predict = model.predict(datas)
     predict = pd.DataFrame(predict, columns=['up', 'down'])
     predict = pd.concat([predict['up'], predict['down'], pd.Series(name='class', data=(predict['up'] > predict['down']).astype(int))], axis=1)
     predict.to_csv(f'../Results/test/ensamble2/{dataName}.csv', sep=';', index=False)
+
+    # ----------------------------- Otimizando SVR ----------------------------------
+    print(f'                 * {dataName} - SVR ')
+    
+    Mult_grid_search = GridSearchCV(estimator = MultiOutputClassifier(SVC()), param_grid = Mult_grid, cv = 3, n_jobs = -1, verbose = 1, scoring = scoring, error_score='raise')
+    Mult_grid_search.fit(datas, output_data)
+    bestSVR = Mult_grid_search.best_estimator_
+
+    predict = bestSVR.predict(datas_out)
+    predict = pd.DataFrame(predict, columns=['up', 'down'])
+    predict = pd.concat([predict['up'], predict['down'], pd.Series(name='class', data=(predict['up'] > predict['down']).astype(int))], axis=1)
+    predict.to_csv(f'../Results/test/ensamble2/{dataName}_SVR.csv', sep=';', index=False)
+
 
     

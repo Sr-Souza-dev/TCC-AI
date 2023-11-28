@@ -21,7 +21,12 @@ def GetEconomyAnalyze(dataName, testSize):
     buying.name     = "buying"
     buying2.name    = "buying2"
 
-    datas  = pd.concat([classifications, regressions, statistics, ensamble_classification, ensamble_regression, ensamble_statistics, buying, buying2], axis=1)
+    buyingSVR       = pd.read_csv(f'../Results/test/ensamble1/{dataName}_SVR.csv', sep=';')['class']
+    buying2SVR      = pd.read_csv(f'../Results/test/ensamble2/{dataName}_SVR.csv', sep=';')['class']
+    buyingSVR.name  = 'buying_SVR'
+    buying2SVR.name = 'buying2SVR'
+
+    datas  = pd.concat([classifications, regressions, statistics, ensamble_classification, ensamble_regression, ensamble_statistics, buying, buying2, buyingSVR, buying2SVR], axis=1)
     output = pd.read_csv(f'../Data/Cut/dataset1/Y/Test_{dataName}.csv', sep=";")['OutPut |T+1|']
 
     # print("Shapes dos dados importados:")

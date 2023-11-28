@@ -60,10 +60,10 @@ def getOptmizedModels(dataName, setDivision):
         # --------------------------- Obtém os modelos Otimizados ---------------------------
         print(f"    | Etapa 2 {dataName} - Obtendo modelos otimizados!")
         optmized_time = time.time()
-        print(f"        - Etapa 2.1 {dataName} - Obtendo modelos de classificação otimizados")
-        SVM, KNN, LR = GetModelsClassificationOptimized(dataName, setDivision[1])           # Obtém os modelos de classificação otimizados
-        print(f"        - Etapa 2.2 {dataName} - Obtendo modelos estatisticos otimizados")
-        ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
+        # print(f"        - Etapa 2.1 {dataName} - Obtendo modelos de classificação otimizados")
+        # SVM, KNN, LR = GetModelsClassificationOptimized(dataName, setDivision[1])           # Obtém os modelos de classificação otimizados
+        # print(f"        - Etapa 2.2 {dataName} - Obtendo modelos estatisticos otimizados")
+        # ARIMA, SARIMA, GARCH = GetModelsStatisticsOptimized(dataName, setDivision[0])       # Obtém os modelos de estatística otimizados
         print(f"        - Etapa 2.3 {dataName} - Obtendo modelos de regressão otimizados")
         MLP, SVR, RF = GetModelsRegressionOptimized(dataName, setDivision[1])             # Obtém os modelos de regressão otimizados
         optmized_time = time.time() - optmized_time
@@ -90,17 +90,17 @@ def trainModels(dataName, setDivision):
         X_Test_dataset2  = pd.read_csv(f'../Data/Cut/dataset2/X/Test_{dataName}.csv', sep=";")                      # Obtém os dados de teste para os modelos de regressão
         Y_Test_dataset2  = pd.read_csv(f'../Data/Cut/dataset2/Y/Test_{dataName}.csv', sep=";")['OutPut |T+1|']      # Obtém os dados de teste para os modelos de regressão
 
-        ClassificationModels = [SVM, KNN, LR]           # Lista de modelos de classificação
-        ClassificationNames  = ['SVM', 'KNN', 'LR']     # Lista de nomes dos modelos de classificação
+        #ClassificationModels = [SVM, KNN, LR]           # Lista de modelos de classificação
+        #ClassificationNames  = ['SVM', 'KNN', 'LR']     # Lista de nomes dos modelos de classificação
         RegressionModels = [MLP, SVR, RF ]             # Lista de modelos de regressão
         RegressionNames  = ['MLP', 'SVR', 'RF']       # Lista de nomes dos modelos de regressão
 
-        print(f"        - Etapa 4.1 {dataName} - Treinando modelos de classificação")
-        GetClassificationPredictions(dataName, ClassificationModels, ClassificationNames, X_Test_dataset1)                                              # Obtém as predições dos modelos de classificação
+        # print(f"        - Etapa 4.1 {dataName} - Treinando modelos de classificação")
+        # GetClassificationPredictions(dataName, ClassificationModels, ClassificationNames, X_Test_dataset1)                                              # Obtém as predições dos modelos de classificação
         print(f"        - Etapa 4.2 {dataName} - Treinando modelos de regressão")
         GetRegressionPredictions(dataName, RegressionNames, RegressionModels, X_Test_dataset2, Y_Test_dataset2, X_Train_dataset2, Y_Train_dataset2)     # Obtém as predições dos modelos de regressão
-        print(f"        - Etapa 4.3 {dataName} - Treinando modelos de estatística")
-        GetStatisticPredictions(dataName, Y_Train_statistic.ravel(), Y_Test_statistic.ravel(), window=100)                                              # Obtém as predições dos modelos de estatística
+        # print(f"        - Etapa 4.3 {dataName} - Treinando modelos de estatística")
+        # GetStatisticPredictions(dataName, Y_Train_statistic.ravel(), Y_Test_statistic.ravel(), window=100)                                              # Obtém as predições dos modelos de estatística
         train_time = time.time() - train_time
         print(f"    | Etapa 4 {dataName} - Time: {train_time}")
     except Exception as e:
