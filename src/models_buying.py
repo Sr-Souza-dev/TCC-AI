@@ -137,7 +137,7 @@ def GetModelPrediction(dN, sizeTrain):
     statistics      = pd.read_csv(f'../Results/test/statistic/{dataName}_predictions_class.csv', sep=';')
     datas_out       = pd.concat([regressions, classifications, statistics], axis=1)
 
-    predict = model.predict(datas)
+    predict = model.predict(datas_out)
     predict = pd.DataFrame(predict, columns=['up', 'down'])
     predict = pd.concat([predict['up'], predict['down'], pd.Series(name='class', data=(predict['up'] > predict['down']).astype(int))], axis=1)
     predict.to_csv(f'../Results/test/ensamble2/{dataName}.csv', sep=';', index=False)
