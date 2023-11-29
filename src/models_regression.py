@@ -28,7 +28,7 @@ def GetModelsRegressionOptimized(dataName, trainSize):
     # ----------------------------- Otimizando MLP ----------------------------------
     print(f'                 * {dataName} - MLP')
     MLP_grid = {
-        'hidden_layer_sizes': [(50,50,50), (50,100,50), (30,80,50,20), (100,)],
+        'hidden_layer_sizes': [(50,50,50), (30,80,50,20), (100,)],
         'activation': ['tanh', 'relu', 'logistic'],
         'solver': ['sgd', 'adam', 'lbfgs'],
         'alpha': [0.0001, 0.05],
