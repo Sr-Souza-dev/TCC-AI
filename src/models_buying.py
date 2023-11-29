@@ -80,7 +80,7 @@ def GetModelPrediction(dN, sizeTrain):
     best_hps = tuner.get_best_hyperparameters(num_trials=1)[0]
 
     model = tuner.hypermodel.build(best_hps)
-    model.fit(X_train, Y_train, epochs=70, validation_data=(X_validation, Y_validation))
+    model.fit(X_train, Y_train, epochs=70, validation_data=(X_validation, Y_validation), verbose=0)
 
     ensamble_classification_test = pd.read_csv(f'../Results/test/classification/{dataName}_ensamble.csv', sep=';')
     ensamble_regression_test     = pd.read_csv(f'../Results/test/regression/{dataName}_ensamble.csv', sep=';')

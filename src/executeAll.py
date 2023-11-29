@@ -114,7 +114,7 @@ def getEnsambles(dataName, setDivision):
         print(f"    | Etapa 5 {dataName} - Obtendo ensambles!")
         ensamble_time = time.time()
         GetEnsambles(dataName, setDivision[2], setDivision[1])      # Obtém os ensambles
-        GetModelPrediction(dataName, setDivision[1])                # Obtém as predições do modelo de compra
+        #GetModelPrediction(dataName, setDivision[1])                # Obtém as predições do modelo de compra
         ensamble_time = time.time() - ensamble_time
         print(f"    | Etapa 5 {dataName} - Time: {ensamble_time}")
     except Exception as e:
