@@ -15,6 +15,7 @@ def GetEconomyAnalyze(dataName, testSize):
     ensamble_classification.name    = "Ensamble Classification"
     ensamble_regression.name        = "Ensamble Regression"
     ensamble_statistics.name        = "Ensamble Statistics"
+    print(regressions.head(3))
 
     buying          = pd.read_csv(f'../Results/test/ensamble1/{dataName}.csv', sep=";")['class']
     buying2         = pd.read_csv(f'../Results/test/ensamble2/{dataName}.csv', sep=";")['class']

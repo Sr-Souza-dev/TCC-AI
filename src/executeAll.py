@@ -125,8 +125,8 @@ def getResults(dataName, setDivision):
     try:
         # --------------------------- Obtendo resultados ---------------------------
         print(f"    | Etapa 6 {dataName} - Obtendo resultados!")
-        MakeClassificationsLogs(dataName, setDivision[2])           # Obtém os logs de classificação
-        #GetEconomyAnalyze(dataName, setDivision[2])                 # Obtém os logs de economia
+        #MakeClassificationsLogs(dataName, setDivision[2])           # Obtém os logs de classificação
+        GetEconomyAnalyze(dataName, setDivision[2])                 # Obtém os logs de economia
     except Exception as e:
         print(f"    | ERRO - Etapa 6 {dataName} (Obtendo resultados)")
         print(f"        - {e}")
