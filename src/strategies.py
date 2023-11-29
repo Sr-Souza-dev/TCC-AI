@@ -47,13 +47,13 @@ def for_each_type_of_file(files, path, outputsPath, validation):
     logsBuying  = pd.DataFrame(columns = ["model", "qtdBuying", "inirialValue", "finalValue", "percentual"])
 
     for file in files:
-        valid, fileName = validation(file)
+        valid, fileName, outName = validation(file)
         try:
             if valid:
                 inputData  = pd.read_csv(path + "/" + file, sep=";")
-                outputData = pd.read_csv(outputsPath + "/Test_" + fileName + ".csv", sep=";")['OutPut |T+1|']
-                buyAndHold = pd.read_csv("../Results/test/buyAndHold/" + fileName + ".csv", sep=";")
-                buyAndHolsLogs = pd.read_csv("../Results/test/buyAndHold/" + fileName + "_logs.csv", sep=";")
+                outputData = pd.read_csv(outputsPath + "/Test_" + outName + ".csv", sep=";")['OutPut |T+1|']
+                buyAndHold = pd.read_csv("../Results/test/buyAndHold/" + outName + ".csv", sep=";")
+                buyAndHolsLogs = pd.read_csv("../Results/test/buyAndHold/" + outName + "_logs.csv", sep=";")
 
                 for strategy, strategyName in zip(strategies, strategiesNames):
                     qtdBuying = 0
@@ -124,15 +124,30 @@ def GetStrategies():
     ensamble2files       = os.listdir(ensamble2Path)
 
     def ensambles_validation(file):
-        fileName = ""
-        if (file.endswith("ensamble.csv")):
-            fileName = file.replace("_ensamble.csv", "")
-            return True, fileName.strip()
-        return False, fileName
+        fileName = file
+        outName = file
+        value = False
+
+        if (fileName.endswith("_ensamble.csv")):
+            fileName = file.replace("_ensamble.csv", "").strip()
+            outName = fileName
+            value = True
+
+        # if (outName.endswith("_SVR.csv")):
+        #     print("[FILE AQUI] - passou por arquivo SVR")
+        #     outName = file.replace("_SVR.csv", "")
+
+        return False, fileName, outName
     
     def model_validation(file):
         fileName = file.replace(".csv", "")
-        return True, fileName.strip()
+        outName = fileName
+
+        if (outName.endswith("_SVR")):
+            print("[FILE AQUI] - passou por arquivo SVR")
+            outName = file.replace("_SVR.csv", "")
+
+        return True, fileName.strip(), outName
     
     files       = [classificationsfiles, regressionsfiles, statisticsfiles, ensamble1files, ensamble2files]
     paths       = [classificationsPath, regressionsPath, statisticsPath, ensamble1Path, ensamble2Path]
