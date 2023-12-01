@@ -1,7 +1,7 @@
-\begin{longtable}{>{\centering\arraybackslash}m{1.3cm} >{\centering\arraybackslash}m{2cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\vfill\centering\arraybackslash}m{1.5cm}<{\vfill}}
+\begin{longtable}{>{\centering\arraybackslash}m{1.3cm} >{\centering\arraybackslash}m{2.3cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.2cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\vfill\centering\arraybackslash}m{1.5cm}<{\vfill}}
 	\caption{Hiperparâmetros dos Modelos}  \label{tab:hyperparam_otmz}\\
 	\toprule
-	Modelo & \textit{Hyperparam} & Variação & PETR3 - 30m & PETR3 - 60m & WINFUT-30m & WINFUT-60m & WDOFUT-30m & WDOFUT-60m \\
+	Modelo & \textit{Hiperparâmetro} & Variação & PETR3 30m & PETR3 60m & WINFUT 30m & WINFUT 60m & WDOFUT 30m & WDOFUT 60m \\
 	\midrule
 	\endfirsthead
 	\endhead
@@ -46,13 +46,16 @@
 	& media (q) & 0, 1 e 2 & 0 & 0 & 0 & 1 & 0 & 0 \\ \cmidrule(lr){1-9}
 	SARIMA & autoregressive (p) & 0, 1 e 2 & 0 & 0 & 0 & 0 & 0 & 1 \\
 	& diferencial (d) & 0, 1 e 2 & 1 & 1 & 1 & 1 & 1 & 0 \\
-	& media (q) & 0, 1 e 2 & 0 & 0 & 0 & 1 & 0 & 0 \\
+	& media (q)& 0, 1 e 2 & 0 & 0 & 0 & 1 & 0 & 0 \\
 	& sazonalidade (P) & 1 e 2 & 1 & 1 & 1 & 1 & 1 & 1 \\
 	& diferencial (D) & 0 e 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
 	& media (Q) & 1 e 2 & 1 & 1 & 1 & 1 & 1 & 1 \\
 	& periodo (S) & 5 e 12 & 12 & 5 & 5 & 5 & 5 & 5 \\ \cmidrule(lr){1-9}
 	GARCH & dists & normal, r e gaussian & t & normal & t & normal & normal & normal \\
 	& autoregressive (p) & 1, 2, 3 e 4 & 3 & 1 & 1 & 3 & 3 & 1 \\
-	& media (q) & 1, 2, 3 e 4 & 1 & 1 & 1 & 3 & 2 & 3 \\
+	& media (q) & 1, 2, 3 e 4 & 1 & 1 & 1 & 3 & 2 & 3 \\ \cmidrule(lr){1-9}
+	MLP OUT& layer 1 & 16, 32, 48 e 64& 16 & 16 & 32 & 16 & 32 & 32 \\
+	& layer 2 & 16, 32, 48 e 64 & 32 & 32 & 48 & 32 & 64 & 32 \\
+	& layer 3 & 16, 32, 48 e 64 & 32 & 48 & 48 & 64 & 32 & 64 \\
+	& layer 4 & 16, 32, 48 e 64 & 16 & 32 & 32 & 16 & 16 & 32 \\
 \end{longtable}
-

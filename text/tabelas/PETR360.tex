@@ -1,0 +1,24 @@
+\begin{longtable}{>{\arraybackslash}m{4.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm}}
+	\caption{Resultados da Classificação (PETR3 60 minutos)} \label{tab:PETR360} \\
+	\toprule
+	Modelo & Acurácia & F1-score & True Positives & True Negatives & False Positives & False Negatives \\
+	\midrule
+	\endfirsthead
+	\multicolumn{7}{r}{\footnotesize Continua na próxima página} \\
+	\endfoot
+	\bottomrule
+	\endlastfoot
+	SVM & 0,485 & 0,261 & 269 & 62 & 67 & 285 \\
+	KNN & 0,511 & 0,510 & 175 & 174 & 161 & 173 \\
+	LR & 0,474 & 0,426 & 191 & 133 & 145 & 214 \\
+	MLP & 0,534 & 0,531 & 185 & 180 & 151 & 167 \\
+	SVR & 0,499 & 0,500 & 170 & 171 & 166 & 176 \\
+	RF & 0,524 & 0,519 & 183 & 175 & 153 & 172 \\
+	ARIMA & 0,489 & 0,558 & 114 & 220 & 222 & 127 \\
+	SARIMA & 0,476 & 0,475 & 163 & 162 & 173 & 185 \\
+	GARCH & 0,502 & 0,558 & 128 & 215 & 208 & 132 \\
+	Ensamble Classificação & 0,511 & 0,510 & 175 & 174 & 161 & 173 \\
+	Ensamble Regressão & 0,531 & 0,452 & 231 & 132 & 105 & 215 \\
+	Ensamble Estatístico & 0,476 & 0,475 & 163 & 162 & 173 & 185 \\
+	MLP OUT & 0,511 & 0,510 & 175 & 174 & 161 & 173 \\
+\end{longtable}

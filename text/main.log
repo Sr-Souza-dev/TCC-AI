@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.16)  21 NOV 2023 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.16)  30 NOV 2023 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -806,7 +806,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images//cefet.png, id=152, 285.7074pt x 181.6386pt>
+<images//cefet.png, id=164, 285.7074pt x 181.6386pt>
 File: images//cefet.png Graphic file (type png)
 <use images//cefet.png>
 Package pdftex.def Info: images//cefet.png  used on input line 12.
@@ -858,22 +858,22 @@ LaTeX Info: Symbol \texttwosuperior not provided by
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 9.
- [9] [10] (./main.toc)
+ [9] [10] (./main.toc [11
+
+])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
-) [11
-
-]
+) [12]
 \openout2 = `content/presentation/resumo.aux'.
 
- (./content/presentation/resumo.tex [12
+ (./content/presentation/resumo.tex)
+[13
 
 
 
 
-])
-[13]
+]
 \openout2 = `content/presentation/abstract.aux'.
 
  (./content/presentation/abstract.tex [14
@@ -919,17 +919,17 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              for symbol `textbullet' on input line 24.
 
 [17]
-<images//InvestingActionXP.png, id=477, 843.15pt x 492.84125pt>
+<images//InvestingActionXP.png, id=516, 843.15pt x 492.84125pt>
 File: images//InvestingActionXP.png Graphic file (type png)
 <use images//InvestingActionXP.png>
 Package pdftex.def Info: images//InvestingActionXP.png  used on input line 39.
 (pdftex.def)             Requested size: 386.95897pt x 226.19083pt.
-<images//PessoasActionsXP.png, id=487, 719.68875pt x 496.85625pt>
+<images//PessoasActionsXP.png, id=526, 719.68875pt x 496.85625pt>
 File: images//PessoasActionsXP.png Graphic file (type png)
 <use images//PessoasActionsXP.png>
 Package pdftex.def Info: images//PessoasActionsXP.png  used on input line 52.
 (pdftex.def)             Requested size: 232.17242pt x 160.28607pt.
-<images//ValorActionXP.png, id=488, 538.01pt x 408.52625pt>
+<images//ValorActionXP.png, id=527, 538.01pt x 408.52625pt>
 File: images//ValorActionXP.png Graphic file (type png)
 <use images//ValorActionXP.png>
 Package pdftex.def Info: images//ValorActionXP.png  used on input line 59.
@@ -950,7 +950,7 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
-<images//tendencias.png, id=545, 1047.915pt x 333.245pt>
+<images//tendencias.png, id=584, 1047.915pt x 333.245pt>
 File: images//tendencias.png Graphic file (type png)
 <use images//tendencias.png>
 Package pdftex.def Info: images//tendencias.png  used on input line 13.
@@ -961,70 +961,47 @@ Package pdftex.def Info: images//tendencias.png  used on input line 13.
 
 
  <./images//tendencias.png>]
-<images//ciclos.jpg, id=558, 248.42813pt x 133.24782pt>
+<images//ciclos.jpg, id=598, 248.42813pt x 133.24782pt>
 File: images//ciclos.jpg Graphic file (type jpg)
 <use images//ciclos.jpg>
 Package pdftex.def Info: images//ciclos.jpg  used on input line 27.
 (pdftex.def)             Requested size: 220.28154pt x 99.58792pt.
-<images//sazonais.jpg, id=559, 331.2375pt x 167.12437pt>
+<images//sazonais.jpg, id=599, 331.2375pt x 167.12437pt>
 File: images//sazonais.jpg Graphic file (type jpg)
 <use images//sazonais.jpg>
 Package pdftex.def Info: images//sazonais.jpg  used on input line 34.
 (pdftex.def)             Requested size: 237.03517pt x 99.58685pt.
-<images//grafico_velas.png, id=570, 369.38pt x 363.3575pt>
+<images//grafico_velas.png, id=610, 369.38pt x 363.3575pt>
 File: images//grafico_velas.png Graphic file (type png)
 <use images//grafico_velas.png>
 Package pdftex.def Info: images//grafico_velas.png  used on input line 55.
 (pdftex.def)             Requested size: 232.16954pt x 108.12099pt.
-<images//candlestick.png, id=571, 503.8825pt x 241.90375pt>
+<images//candlestick.png, id=611, 503.8825pt x 241.90375pt>
 File: images//candlestick.png Graphic file (type png)
 <use images//candlestick.png>
 Package pdftex.def Info: images//candlestick.png  used on input line 62.
 (pdftex.def)             Requested size: 232.17319pt x 108.12114pt.
  [21 <./images//ciclos.jpg> <./images//sazonais.jpg>]
-<images//fluxo_abordagem.png, id=598, 523.9575pt x 197.83913pt>
+<images//fluxo_abordagem.png, id=640, 523.9575pt x 197.83913pt>
 File: images//fluxo_abordagem.png Graphic file (type png)
 <use images//fluxo_abordagem.png>
 Package pdftex.def Info: images//fluxo_abordagem.png  used on input line 78.
 (pdftex.def)             Requested size: 435.32422pt x 164.37547pt.
  [22 <./images//grafico_velas.png> <./images//candlestick.png> <./images//fluxo
-_abordagem.png>]
-
-LaTeX Warning: Citation `Vinícius_Sistemas' on page 23 undefined on input line 
-105.
-
-[23]
-
-LaTeX Warning: Citation `Vinícius_Sistemas' on page 24 undefined on input line 
-107.
-
-[24]
+_abordagem.png>] [23] [24]
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 192.
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 192.
- [25]
-
-LaTeX Warning: Citation `Vinícius_Sistemas' on page 26 undefined on input line 
-202.
-
-
-LaTeX Warning: Citation `Vinícius_Sistemas' on page 26 undefined on input line 
-210.
-
-[26] [27]
-<images//matriz_confusÃ£o.png, id=922, 374.39874pt x 221.82875pt>
+ [25] [26] [27]
+<images//matriz_confusÃ£o.png, id=983, 374.39874pt x 221.82875pt>
 File: images//matriz_confusÃ£o.png Graphic file (type png)
 <use images//matriz_confusÃ£o.png>
 Package pdftex.def Info: images//matriz_confusÃ£o.png  used on input line 253.
 (pdftex.def)             Requested size: 290.22107pt x 171.96288pt.
  [28 <./images//matriz_confusÃ£o.png>]
-
-LaTeX Warning: Citation `Vinícius_Sistemas' on page 29 undefined on input line 
-276.
-
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 292.
@@ -1034,17 +1011,13 @@ LaTeX Info: Symbol \texttwosuperior not provided by
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 292.
-[29]
+ [29]
 Underfull \hbox (badness 10000) in paragraph at lines 350--351
 []|\T1/aer/m/n/10 Prever as ta-xas de câm-bio USD/TRY e
  []
 
 
-LaTeX Warning: Citation `Vinícius_Sistemas' on page 30 undefined on input line 
-362.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 []|\T1/aer/m/n/10 Propor uma nova abor-da-gem de se-le-
  []
 
@@ -1063,7 +1036,7 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
-<images//base_dados.png, id=1087, 1130.2225pt x 327.2225pt>
+<images//base_dados.png, id=1146, 1130.2225pt x 327.2225pt>
 File: images//base_dados.png Graphic file (type png)
 <use images//base_dados.png>
 Package pdftex.def Info: images//base_dados.png  used on input line 13.
@@ -1074,11 +1047,7 @@ Package pdftex.def Info: images//base_dados.png  used on input line 13.
 
 
  <./images//base_dados.png>]
-
-LaTeX Warning: Citation `Vinícius_Sistemas' on page 33 undefined on input line 
-26.
-
-<images//feature_selection.png, id=1175, 965.6075pt x 490.83376pt>
+<images//feature_selection.png, id=1235, 965.6075pt x 490.83376pt>
 File: images//feature_selection.png Graphic file (type png)
 <use images//feature_selection.png>
 Package pdftex.def Info: images//feature_selection.png  used on input line 60.
@@ -1089,22 +1058,24 @@ LaTeX Info: Symbol \texttwosuperior not provided by
 LaTeX Info: Symbol \texttwosuperior not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 64.
-[33]
-<images//model_prediction.png, id=1207, 748.7975pt x 508.90125pt>
+ [33]
+<images//model_prediction.png, id=1266, 748.7975pt x 508.90125pt>
 File: images//model_prediction.png Graphic file (type png)
 <use images//model_prediction.png>
 Package pdftex.def Info: images//model_prediction.png  used on input line 81.
 (pdftex.def)             Requested size: 478.86255pt x 325.4472pt.
  [34 <./images//feature_selection.png>]
-<images//strategy.png, id=1230, 740.7675pt x 377.41pt>
+<images//strategy.png, id=1290, 740.7675pt x 377.41pt>
 File: images//strategy.png Graphic file (type png)
 <use images//strategy.png>
 Package pdftex.def Info: images//strategy.png  used on input line 98.
 (pdftex.def)             Requested size: 435.32422pt x 221.79463pt.
- [35 <./images//model_prediction.png>]) [36 <./images//strategy.png>]
+
+[35 <./images//model_prediction.png>]) [36 <./images//strategy.png>]
 \openout2 = `content/4_experiments_results.aux'.
 
- (./content/4_experiments_results.tex
+
+(./content/4_experiments_results.tex
 Cap\'{\i }tulo 4.
 
 Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
@@ -1118,73 +1089,93 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 
 LaTeX Font Info:    Font shape `T1/aer/b/it' in size <10> not available
 (Font)              Font shape `T1/aer/bx/it' tried instead on input line 16.
-<images//PETR3_fechamento.png, id=1264, 858.20625pt x 418.56375pt>
-File: images//PETR3_fechamento.png Graphic file (type png)
-<use images//PETR3_fechamento.png>
-Package pdftex.def Info: images//PETR3_fechamento.png  used on input line 28.
-(pdftex.def)             Requested size: 478.86255pt x 233.55104pt.
 [37
 
 
 
 
 ]
-<images//WINFUT_fechamento.png, id=1284, 850.17625pt x 414.54875pt>
+<images//PETR3_fechamento.png, id=1329, 858.20625pt x 418.56375pt>
+File: images//PETR3_fechamento.png Graphic file (type png)
+<use images//PETR3_fechamento.png>
+Package pdftex.def Info: images//PETR3_fechamento.png  used on input line 28.
+(pdftex.def)             Requested size: 478.86255pt x 233.55104pt.
+<images//WINFUT_fechamento.png, id=1343, 850.17625pt x 414.54875pt>
 File: images//WINFUT_fechamento.png Graphic file (type png)
 <use images//WINFUT_fechamento.png>
 Package pdftex.def Info: images//WINFUT_fechamento.png  used on input line 47.
 (pdftex.def)             Requested size: 478.86255pt x 233.49936pt.
  [38 <./images//PETR3_fechamento.png>]
-<images//WDOFUT_fechamento.png, id=1305, 857.2025pt x 415.5525pt>
+<images//WDOFUT_fechamento.png, id=1364, 857.2025pt x 415.5525pt>
 File: images//WDOFUT_fechamento.png Graphic file (type png)
 <use images//WDOFUT_fechamento.png>
 Package pdftex.def Info: images//WDOFUT_fechamento.png  used on input line 66.
 (pdftex.def)             Requested size: 478.86255pt x 232.14348pt.
- [39 <./images//WINFUT_fechamento.png> <./images//WDOFUT_fechamento.png>] (./co
-ntent/tabela_hyperparam.tex)
-(./content/tabela_hyperparam.tex) (./content/tabela_hyperparam.tex
-Overfull \hbox (3.27058pt too wide) in paragraph at lines 4--4
- []|\T1/aer/m/n/10 WINFUT- 
+ [39 <./images//WINFUT_fechamento.png> <./images//WDOFUT_fechamento.png>] (./ta
+belas/hyperparam.tex)
+(./tabelas/hyperparam.tex) (./tabelas/hyperparam.tex
+Overfull \hbox (2.99817pt too wide) in paragraph at lines 4--4
+ []|\T1/aer/m/it/10 Hiperparâmetro| 
  []
 
 
-Overfull \hbox (3.27058pt too wide) in paragraph at lines 4--4
- []|\T1/aer/m/n/10 WINFUT- 
+Overfull \hbox (4.23041pt too wide) in paragraph at lines 4--4
+ []|\T1/aer/m/n/10 WDOFUT 
  []
 
 
-Overfull \hbox (7.56036pt too wide) in paragraph at lines 4--4
- []|\T1/aer/m/n/10 WDOFUT- 
+Overfull \hbox (4.23041pt too wide) in paragraph at lines 4--5
+ []\T1/aer/m/n/10 WDOFUT 
  []
 
 
-Overfull \hbox (7.56036pt too wide) in paragraph at lines 4--5
- []\T1/aer/m/n/10 WDOFUT- 
- []
-
-
-Overfull \hbox (16.95116pt too wide) in alignment at lines 1--6
+Overfull \hbox (16.95117pt too wide) in alignment at lines 1--6
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (16.95116pt too wide) in alignment at lines 6--11
+Overfull \hbox (16.95117pt too wide) in alignment at lines 6--7
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (16.95116pt too wide) in alignment at lines 11--14
+Overfull \hbox (16.95117pt too wide) in alignment at lines 7--9
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (16.95116pt too wide) in alignment at lines 14--16
+Overfull \hbox (16.95117pt too wide) in alignment at lines 9--11
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (4.3137pt too wide) in paragraph at lines 44--44
- []|\T1/aer/m/n/10 autoregressive 
+Overfull \hbox (1.42622pt too wide) in paragraph at lines 18--18
+ []|\T1/aer/m/n/10 distance| 
+ []
+
+
+Overfull \hbox (0.82637pt too wide) in paragraph at lines 22--22
+ []|\T1/aer/m/n/10 newton- 
+ []
+
+
+Overfull \hbox (4.15634pt too wide) in paragraph at lines 26--26
+ []|\T1/aer/m/n/10 balanced| 
+ []
+
+
+Overfull \hbox (3.3903pt too wide) in paragraph at lines 28--28
+ []|\T1/aer/m/n/10 (50,50,50), 
+ []
+
+
+Overfull \hbox (13.3903pt too wide) in paragraph at lines 28--28
+ \T1/aer/m/n/10 (30,80,50,20) 
+ []
+
+
+Overfull \hbox (3.04633pt too wide) in paragraph at lines 32--32
+ []|\T1/aer/m/n/10 adaptive| 
  []
 
 
@@ -1193,17 +1184,7 @@ Overfull \hbox (3.69113pt too wide) in paragraph at lines 47--47
  []
 
 
-Overfull \hbox (4.3137pt too wide) in paragraph at lines 47--47
- []|\T1/aer/m/n/10 autoregressive 
- []
-
-
-Overfull \hbox (4.3137pt too wide) in paragraph at lines 55--55
- []|\T1/aer/m/n/10 autoregressive 
- []
-
-
-Overfull \hbox (16.95116pt too wide) in alignment at lines 16--62
+Overfull \hbox (16.95117pt too wide) in alignment at lines 11--61
  [] [] [] [] [] [] [] [] [] 
  []
 
@@ -1211,7 +1192,19 @@ Overfull \hbox (16.95116pt too wide) in alignment at lines 16--62
 LaTeX Info: Symbol \textasciiacute not provided by
             font family aer in TS1 encoding.
             Default family used instead on input line 89.
-) [43]
+ [43] (./tabelas/PETR330.tex) (./tabelas/PETR330.tex)
+(./tabelas/EPETR330.tex) (./tabelas/EPETR330.tex)
+LaTeX Info: Symbol \textasciiacute not provided by
+            font family aer in TS1 encoding.
+            Default family used instead on input line 95.
+ (./tabelas/PETR360.tex)
+(./tabelas/PETR360.tex [44]) (./tabelas/EPETR360.tex) (./tabelas/EPETR360.tex)
+(./tabelas/WIN30.tex) (./tabelas/WIN30.tex [45]) (./tabelas/EWIN30.tex)
+(./tabelas/EWIN30.tex) (./tabelas/WIN60.tex) (./tabelas/WIN60.tex [46])
+(./tabelas/EWIN60.tex) (./tabelas/EWIN60.tex) (./tabelas/WDO30.tex)
+(./tabelas/WDO30.tex [47]) (./tabelas/EWDO30.tex) (./tabelas/EWDO30.tex)
+(./tabelas/WDO60.tex) (./tabelas/WDO60.tex [48]) (./tabelas/EWDO60.tex)
+(./tabelas/EWDO60.tex)) [49]
 \openout2 = `content/5_conclusion.aux'.
 
  (./content/5_conclusion.tex
@@ -1226,28 +1219,28 @@ Overfull \hbox (12.79999pt too wide) in paragraph at lines 1--1
 []  
  []
 
-) [44
+) [50
 
 
 
 
-] [45] (./main.bbl [46
+] [51] (./main.bbl [52
 
 
 
 ]
-Underfull \hbox (badness 1694) in paragraph at lines 164--167
+Underfull \hbox (badness 1694) in paragraph at lines 172--175
 []\T1/aer/m/n/10 EXPERT XP. \T1/aer/m/it/10 Pes-soas fí-si-cas na Bolsa: Mer-ca
 do de ações bra-si-leiro 
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 164--167
+Underfull \hbox (badness 1147) in paragraph at lines 172--175
 \T1/aer/m/it/10 em con-tí-nua evo-lu-ção\T1/aer/m/n/10 . 2023. []$<[]https : / 
 / conteudos . xpi . com . br / acoes / relatorios / 
  []
 
-[47] [48] [49]) [50] [51] (./main.aux (./content/presentation/summary.aux)
+[53] [54] [55] [56]) [57] (./main.aux (./content/presentation/summary.aux)
 (./content/presentation/resumo.aux) (./content/presentation/abstract.aux)
 (./content/1_introduction.aux) (./content/2_related_works.aux)
 (./content/3-methodology.aux) (./content/4_experiments_results.aux)
@@ -1255,18 +1248,15 @@ Underfull \hbox (badness 1147) in paragraph at lines 164--167
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0C9165F6CD1AA0C0BD2497BC6D37AC45;5505.
+(rerunfilecheck)             Checksum: 57096DAC193927AB335A3CCBBA04C6C3;6243.
  ) 
 Here is how much of TeX's memory you used:
- 27504 strings out of 478287
- 671931 string characters out of 5849288
- 925090 words of memory out of 5000000
- 44941 multiletter control sequences out of 15000+600000
- 570443 words of font info for 235 fonts, out of 8000000 for 9000
+ 27655 strings out of 478287
+ 674385 string characters out of 5849288
+ 938617 words of memory out of 5000000
+ 45004 multiletter control sequences out of 15000+600000
+ 570449 words of font info for 235 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,12n,80p,1817b,620s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
@@ -1288,10 +1278,10 @@ type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrb1000.p
 fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (51 pages, 1092908 bytes).
+Output written on main.pdf (57 pages, 1111215 bytes).
 PDF statistics:
- 1568 PDF objects out of 1728 (max. 8388607)
- 1428 compressed objects within 15 object streams
- 312 named destinations out of 1000 (max. 500000)
- 387 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1662 PDF objects out of 1728 (max. 8388607)
+ 1515 compressed objects within 16 object streams
+ 339 named destinations out of 1000 (max. 500000)
+ 411 words of extra memory for PDF output out of 10000 (max. 10000000)
 

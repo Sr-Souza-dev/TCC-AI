@@ -1,0 +1,24 @@
+\begin{longtable}{>{\arraybackslash}m{4.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm}}
+	\caption{Resultados da Classificação (WDOFUT 60 minutos)} \label{tab:WDO60} \\
+	\toprule
+	Modelo & Acurácia & F1-score & True Positives & True Negatives & False Positives & False Negatives \\
+	\midrule
+	\endfirsthead
+	\multicolumn{7}{r}{\footnotesize Continua na próxima página} \\
+	\endfoot
+	\bottomrule
+	\endlastfoot
+	SVM & 0,551 & 0,644 & 116 & 326 & 276 & 84 \\
+	KNN & 0,520 & 0,529 & 201 & 216 & 191 & 194 \\
+	LR & 0,559 & 0,547 & 234 & 214 & 158 & 196 \\
+	MLP & 0,509 & 0,511 & 202 & 206 & 190 & 204 \\
+	SVR & 0,475 & 0,468 & 196 & 185 & 196 & 225 \\
+	RF & 0,483 & 0,478 & 197 & 190 & 195 & 220 \\
+	ARIMA & 0,489 & 0,000 & 392 & 0 & 0 & 410 \\
+	SARIMA & 0,484 & 0,485 & 193 & 195 & 199 & 215 \\
+	GARCH & 0,491 & 0,400 & 258 & 136 & 134 & 274 \\
+	Ensamble Classificação & 0,520 & 0,529 & 201 & 216 & 191 & 194 \\
+	Ensamble Regressão & 0,483 & 0,478 & 197 & 190 & 195 & 220 \\
+	Ensamble Estatístico & 0,491 & 0,400 & 258 & 136 & 134 & 274 \\
+	MLP OUT & 0,520 & 0,529 & 201 & 216 & 191 & 194 \\
+\end{longtable}

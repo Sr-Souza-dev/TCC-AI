@@ -5,7 +5,7 @@ Com base na abordagem metodológica apresentada no Capítulo \ref{cap:abordagem_
 
 \section{Conjunto de Dados}
 \label{sec:conjunto_dados_resultados}
-Para a condução dos experimentos computacionais, foram selecionados três ativos financeiros: PETR3, WINFUT e WDOFUT. Amostras de cada ativo foram coletadas no período de 16/06/2021 até 16/06/2023 (2 anos) com granularidades de 30 e 60 minutos, totalizando 9156 amostras para granularidade de 30 minutos e 4664 para granularidade de 60 minutos.
+Para a realização dos experimentos computacionais, foram escolhidos três instrumentos financeiros: PETR3, WINFUT e WDOFUT. Amostras de cada ativo foram coletadas no período de 16/06/2021 até 16/06/2023 (2 anos), com frequências de 30 e 60 minutos. No entanto, vale ressaltar que, para o ativo WDOFUT com granularidade de 60 minutos, o intervalo considerado foi de 01/09/2021 até 01/09/2023, devido a limitações na plataforma utilizada para coleta. Essa abordagem resultou em um conjunto de dados consistente, totalizando 9156 amostras para a granularidade de 30 minutos e 4664 para a granularidade de 60 minutos. 
 Posteriormente, foram criadas novas variáveis com base nos valores de \ac{OHLC}, como descrito em detalhes na Seção \ref{subsec:feature_generate}. Essas variáveis foram então escolhidas para cada conjunto de modelos de previsão, conforme explicado na Seção \ref{sec:selecao_variaveis}, onde os parâmetros $x$ e $k$ foram definidos como 8 e 4, respectivamente.
 
 Por fim, as seis bases de dados coletadas foram categorizadas cada uma em três segmentos distintos. Dessa forma, 10\% da base de dados foi reservada para a otimização dos modelos de previsão, 70\% destinou-se ao treinamento desses modelos, e os restantes 20\% compuseram ao segmento de teste. No caso das bases de dados com granularidade de 30 minutos, essa distribuição compreendeu 916 amostras para otimização, 6409 para treinamento e 1831 para teste. Para as bases de dados com granularidade de 60 minutos, a distribuição foi de 466 amostras para otimização, 3265 para treinamento e 932 para teste. Essas alocações podem ser visualizadas nas figuras \ref{fig:PETR3_fechamento}, \ref{fig:WINFUT_fechamento} e \ref{fig:WDOFUT_fechamento}, juntamente com a tendência de cada ativo e sua faixa de variação.
@@ -70,10 +70,10 @@ Por fim,  para o ativo financeiro WDOFUT, o processo de construção dos \textit
 
 \section{Modelos e Hiperparâmetros}
 \label{sec:modelos_parametros_resultados}
-Para efetivar a proposta delineada na Seção \ref{sec:previsao}, foram empregados 10 modelos distintos de previsão. No grupo de modelos estatísticos, destacam-se três escolhas específicas: \ac{ARIMA}, \ac{SARIMA}, e \ac{GARCH}. O conjunto de modelos de classificação compreende outros três: \ac{SVM}, \ac{KNN}, e \ac{LR}, enquanto o conjunto de modelos de regressão é representado por \ac{LSTM}, \ac{MLP}, e \ac{RNN}. Além disso, concebeu-se um modelo final, uma \ac{MLP} denominada "MLP out", cuja função é consolidar os resultados provenientes de cada ensemble dos três conjuntos mencionados anteriormente.
+Para efetivar a proposta delineada na Seção \ref{sec:previsao}, foram empregados 10 modelos distintos de previsão. No grupo de modelos estatísticos, destacam-se três escolhas específicas: \ac{ARIMA}, \ac{SARIMA}, e \ac{GARCH}. O conjunto de modelos de classificação compreende outros três: \ac{SVM}, \ac{KNN}, e \ac{LR}, enquanto o conjunto de modelos de regressão é representado por \ac{LSTM}, \ac{MLP}, e \ac{RNN}. Além disso, concebeu-se um modelo final, uma \ac{MLP} denominada "MLP OUT", cuja função é consolidar os resultados provenientes de cada ensemble dos três conjuntos mencionados anteriormente.
 A Tabela \ref{tab:hyperparam_otmz} detalha a estrutura de cada modelo de previsão, juntamente com o processo de otimização implementado e as escolhas otimizadas para cada conjunto de dados coletado. 
 
-\LTXtable{\textwidth}{content/tabela_hyperparam}
+\LTXtable{\textwidth}{tabelas/hyperparam}
 	
 \section{Experimentos e Métricas}
 \label{sec:experimentos _metricas}
@@ -86,17 +86,40 @@ Por fim, todos os modelos e ensembles definidos durante o experimento serão ava
 
 \section{Resultados Experimentais}
 \label{sec:resultados_experimentais}
-\subsection{PTR3}´
-\subsubsection{Regressão}
+\subsection{PETR3 (30 Minutos)}´
 \subsubsection{Classificação}
+\LTXtable{\textwidth}{tabelas/PETR330}
 \subsubsection{Recomendação de Investimento}
-\subsection{WINFUT}
-\subsubsection{Regressão}
+\LTXtable{\textwidth}{tabelas/EPETR330}
+
+\subsection{PETR3 (60 Minutos)}´
 \subsubsection{Classificação}
+\LTXtable{\textwidth}{tabelas/PETR360}
 \subsubsection{Recomendação de Investimento}
-\subsection{WDOFUT}
-\subsubsection{Regressão}
+\LTXtable{\textwidth}{tabelas/EPETR360}
+
+\subsection{WINFUT (30 Minutos)}
 \subsubsection{Classificação}
+\LTXtable{\textwidth}{tabelas/WIN30}
 \subsubsection{Recomendação de Investimento}
+\LTXtable{\textwidth}{tabelas/EWIN30}
+
+\subsection{WINFUT (60 Minutos)}
+\subsubsection{Classificação}
+\LTXtable{\textwidth}{tabelas/WIN60}
+\subsubsection{Recomendação de Investimento}
+\LTXtable{\textwidth}{tabelas/EWIN60}
+
+\subsection{WDOFUT (30 Minutos)}
+\subsubsection{Classificação}
+\LTXtable{\textwidth}{tabelas/WDO30}
+\subsubsection{Recomendação de Investimento}
+\LTXtable{\textwidth}{tabelas/EWDO30}
+
+\subsection{WDOFUT (60 Minutos)}
+\subsubsection{Classificação}
+\LTXtable{\textwidth}{tabelas/WDO60}
+\subsubsection{Recomendação de Investimento}
+\LTXtable{\textwidth}{tabelas/EWDO60}
 
 

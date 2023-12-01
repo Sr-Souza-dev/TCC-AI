@@ -1,0 +1,24 @@
+\begin{longtable}{>{\arraybackslash}m{4.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm}}
+	\caption{Resultados da Classificação (WINFUT 60 minutos)} \label{tab:WIN60} \\
+	\toprule
+	Modelo & Acurácia & F1-score & True Positives & True Negatives & False Positives & False Negatives \\
+	\midrule
+	\endfirsthead
+	\multicolumn{7}{r}{\footnotesize Continua na próxima página} \\
+	\endfoot
+	\bottomrule
+	\endlastfoot
+	SVM & 0,501 & 0,599 & 103 & 299 & 277 & 123 \\
+	KNN & 0,519 & 0,558 & 172 & 244 & 208 & 178 \\
+	LR & 0,516 & 0,544 & 183 & 231 & 197 & 191 \\
+	MLP & 0,509 & 0,520 & 195 & 213 & 185 & 209 \\
+	SVR & 0,525 & 0,536 & 201 & 220 & 179 & 202 \\
+	RF & 0,480 & 0,493 & 182 & 203 & 198 & 219 \\
+	ARIMA & 0,507 & 0,517 & 196 & 211 & 184 & 211 \\
+	SARIMA & 0,512 & 0,515 & 203 & 208 & 177 & 214 \\
+	GARCH & 0,521 & 0,435 & 270 & 148 & 110 & 274 \\
+	Ensamble Classificação & 0,519 & 0,558 & 172 & 244 & 208 & 178 \\
+	Ensamble Regressão & 0,509 & 0,520 & 195 & 213 & 185 & 209 \\
+	Ensamble Estatístico & 0,507 & 0,517 & 196 & 211 & 184 & 211 \\
+	MLP OUT & 0,519 & 0,558 & 172 & 244 & 208 & 178 \\
+\end{longtable}

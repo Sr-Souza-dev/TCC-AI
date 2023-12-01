@@ -66,11 +66,11 @@ Para facilitar a análise de séries temporais no mercado financeiro, conceitos 
 
      Fonte: \citeonline{trade_mental:2022}.
 \end{figure}
-Com base no modelo de gráfico de velas e na forma que os dados são discretizados em \ac{OHLC}, surgiram diversas abordagens com o objetivo de obter melhores resultados no contexto de investimentos. Entre esses métodos, as alternativas baseadas em \ac{IA} têm despertado grande interesse, devido à sua capacidade de identificar padrões complexos \cite{dwivedi2021artificial}. Essa abordagem utiliza algoritmos de aprendizado de máquina para analisar os padrões de mercado e tomar decisões de investimento de forma mais precisa e automatizada. Esses algoritmos são capazes de aprender com os dados históricos e adaptar suas estratégias com base nas mudanças da série temporal selecionada, oferecendo assim um potencial de obtenção de retornos superiores a média \cite{strader2020machine}.
+Com base no modelo de gráfico de velas e na forma que os dados são discretizados em \ac{OHLC}, surgiram diversas abordagens com o objetivo de obter melhores resultados no contexto de investimentos. Entre esses métodos, as alternativas baseadas em \ac{IA} têm despertado grande interesse, devido à sua capacidade de identificar padrões complexos \cite{dwivedi2021artificial}. Essa abordagem utiliza algoritmos de \ac{IA} e dados históricos para analisar os padrões de mercado e tomar decisões de investimento de forma mais precisa e automatizada. Esses algoritmos são capazes de aprender com os dados históricos e adaptar suas estratégias com base nas mudanças da série temporal selecionada, oferecendo assim um potencial de obtenção de retornos superiores a média \cite{strader2020machine}.
 
 \section{Abordagens}
 \label{subsec:abordagem}
-Na tarefa de previsão da tendência ou do preço de um determinado ativo, uma variedade de técnicas podem ser empregadas. Entre elas, destacam-se a análise gráfica \cite{matsura2017comprar}, análise de sentimento \cite{igarashi2021analise} e análise fundamentada em dados numéricos, esta última sendo o foco dos trabalhos analisados. Para isso, tais estudos seguem em sua maioria uma abordagem padrão, conforme ilustrado na Figura \ref{fig:abordagemPadrao}. Nesse processo, a primeira etapa consiste na extração de dados que apresentam uma boa correlação com a saída desejada, sendo essa etapa detalhada na Seção \ref{subsec:conjunto_dados}. Em seguida, são geradas novas variáveis por meio de modelos matemáticos, visando obter representações aprimoradas do problema no domínio temporal. As formulações matemáticas utilizadas para essa geração de variáveis podem ser encontradas na Seção \ref{subsec:geracao_novas_variaveis}. Posteriormente, ocorre a seleção de variáveis, empregando métodos estatísticos determinísticos e não determinísticos, incluindo modelos de \ac{IA}, que são explorados com mais detalhes na Seção \ref{subsec:selecao_variaveis}. Considerando que os estudos mencionados podem incorporar algumas ou todas as etapas da abordagem padrão (Figura \ref{fig:abordagemPadrao}), também foi observado em alguns trabalhos a utilização da normalização dos dados, com o objetivo de padronizar todos os valores em uma mesma escala.
+Na tarefa de previsão da tendência ou do preço de um determinado ativo, uma variedade de técnicas podem ser empregadas. Entre elas, destacam-se a análise gráfica \cite{matsura2017comprar}, análise de sentimento \cite{igarashi2021analise} e análise fundamentada em dados numéricos \cite{halil2019predicting}, esta última sendo o foco dos trabalhos analisados. Para isso, tais estudos seguem em sua maioria uma abordagem padrão, conforme ilustrado na Figura \ref{fig:abordagemPadrao}. Nesse processo, a primeira etapa consiste na extração de dados que apresentam uma boa correlação com a saída desejada, sendo essa etapa detalhada na Seção \ref{subsec:conjunto_dados}. Em seguida, são geradas novas variáveis por meio de modelos matemáticos, visando obter representações aprimoradas do problema no domínio temporal. As formulações matemáticas utilizadas para essa geração de variáveis podem ser encontradas na Seção \ref{subsec:geracao_novas_variaveis}. Posteriormente, ocorre a seleção de variáveis, empregando métodos estatísticos determinísticos e não determinísticos, incluindo modelos de \ac{IA}, que são explorados com mais detalhes na Seção \ref{subsec:selecao_variaveis}. Considerando que os estudos mencionados podem incorporar algumas ou todas as etapas da abordagem padrão (Figura \ref{fig:abordagemPadrao}), também foi observado em alguns trabalhos a utilização da normalização dos dados, com o objetivo de padronizar todos os valores em uma mesma escala.
 
 \begin{figure}[htbp]
     \caption{Processo de desenvolvimento dos trabalhos analisados.}
@@ -102,9 +102,9 @@ Para melhorar o desempenho dos modelos, algumas abordagens utilizam técnicas de
 Do conjunto de modelos matemáticos existentes com a capacidade de gerar dados relevantes para a previsão de valores de ativos financeiros, destacam-se dentre os trabalhos analisados:
 
 \begin{itemize}
-    \item \ac{VP} - estabelece intervalos temporais conhecidos como janelas, abrangendo dados anteriores ao ponto de análise \cite{Vinícius_Sistemas, gabriel2023neo}, tais como $S_{t-1}, S_{t-2}, ..., S_{t-n}$, em que $S_{t-1}$ representa o valor da série temporal no instante $t-1$ e $n$ é o tamanho da janela.
+    \item \ac{VP} - estabelece intervalos temporais conhecidos como janelas, abrangendo dados anteriores ao ponto de análise \cite{vinicius_sistemas, gabriel2023neo}, tais como $S_{t-1}, S_{t-2}, ..., S_{t-n}$, em que $S_{t-1}$ representa o valor da série temporal no instante $t-1$ e $n$ é o tamanho da janela.
     
-    \item \ac{SMA} - um modelo matemático utilizado para suavizar a flutuação dos dados de preço ao longo do tempo e identificar tendências de forma mais clara \cite{Vinícius_Sistemas, Ciniro_Econometric}. A \ac{SMA} pode ser obtida por:
+    \item \ac{SMA} - um modelo matemático utilizado para suavizar a flutuação dos dados de preço ao longo do tempo e identificar tendências de forma mais clara \cite{vinicius_sistemas, Ciniro_Econometric}. A \ac{SMA} pode ser obtida por:
     \begin{equation}
     \label{eq:SMA}
         SMA = \frac{1}{n} \sum_{i=0}^{n-1} S_{t-i},
@@ -199,37 +199,37 @@ Para abranger a classe dos algoritmos de regressão, foram utilizados diversos m
     \item Lasso empregado por \citeonline{sermpinis2018modelling}, que separa as melhores variáveis com base em seus pesos na tarefa de previsão, zerando o peso das variáveis menos relevantes \cite{muthukrishnan2016lasso}; 
     \item ElasticNet adotado por \citeonline{zhang2023forecasting}, que combina as técnicas de regularização L1 (Lasso) e L2 (Ridge), gerando assim um vetor ponderado pelo nível de significância de cada variável \cite{amini2021two}.
 \end{itemize}
-É importante ressaltar que há também métodos determinísticos baseados em conceitos estatísticos para essa tarefa, como o teste de \textit{Kruskal-Wallis}, utilizado por \citeonline{Vinícius_Sistemas}, que compara as medianas de duas ou mais amostras independentes para determinar se há diferença estatisticamente significativa entre elas \cite{kruskal1952use}; e o método de \ac{RIM}, empregado por \citeonline{zhao2019maximum}, que mede a dependência mútua entre cada recurso e a variável de destino, utilizando a entropia da informação \cite{kraskov2004estimating}.
+É importante ressaltar que há também métodos determinísticos baseados em conceitos estatísticos para essa tarefa, como o teste de \textit{Kruskal-Wallis}, utilizado por \citeonline{vinicius_sistemas}, que compara as medianas de duas ou mais amostras independentes para determinar se há diferença estatisticamente significativa entre elas \cite{kruskal1952use}; e o método de \ac{RIM}, empregado por \citeonline{zhao2019maximum}, que mede a dependência mútua entre cada recurso e a variável de destino, utilizando a entropia da informação \cite{kraskov2004estimating}.
 
 \section{Técnicas de Predição}
 \label{subsec:tecnicas_predicao}
-Existem diversas abordagens para o processo de predição de valores, desde modelos lineares até modelos não lineares. Cada uma dessas abordagens possui suas próprias características e cenários de atuação, resultando em um bom desempenho de alguns em relação a outros em cenários específicos. No entanto, não é possível afirmar que uma abordagem é totalmente superior à outra, uma vez que a escolha depende do problema em questão e dos dados disponíveis. Dentre os métodos exploradas, pode-se citar as abordagens estatísticas, modelos simples de \textit{machine learning}, e até mesmo modelos mais complexos desse conjunto como os de \textit{deep learning}, destacando a ampla variedade de opções disponíveis para aplicação nesse contexto.
+Existem diversas abordagens para o processo de predição de valores, desde modelos lineares até modelos não lineares. Cada uma dessas abordagens possui suas próprias características e cenários de atuação, resultando em um bom desempenho de alguns em relação a outros em cenários específicos. No entanto, não é possível afirmar que uma abordagem é totalmente superior à outra, uma vez que a escolha depende do problema em questão e dos dados disponíveis. Dentre os métodos exploradas, pode-se citar as abordagens estatísticas, modelos baseados em \ac{IA}.
 
-Dentro da classe de modelos estatísticas, são exploradas diferentes abordagens para realizar previsões e análises. Além de ajustes lineares que buscam a linearidade local na vizinhança \cite{Charlene} e o uso de \ac{SMA} \cite{Ciniro_Econometric}, também são empregados métodos como \ac{ARIMA} \cite{Leonardo_Comparative, gao2021stock}, \ac{SARIMA} e \ac{GARCH} \cite{Ciniro_Econometric}. O modelo \ac{ARIMA} combina elementos de autoregressão (AR), média móvel (MA) e diferenciação (I) para modelar padrões temporais e sazonalidade, enquanto o \ac{SARIMA} incorpora componentes de sazonalidade em adição aos componentes de tendência e aleatoriedade. Já o modelo \ac{GARCH} é usado para modelar a volatilidade condicional em séries temporais financeiras, capturando a natureza heterocedástica dos retornos. É importante ressaltar que muitos desses modelos estatísticos são utilizados em conjunto com abordagens de aprendizado de máquina, permitindo explorar as vantagens de cada modelo e obter previsões mais precisas e confiáveis \cite{Ciniro_Econometric}.
+Dentro da classe de modelos estatísticas, são exploradas diferentes abordagens para realizar previsões e análises. Além de ajustes lineares que buscam a linearidade local na vizinhança \cite{Charlene} e o uso de \ac{SMA} \cite{Ciniro_Econometric}, também são empregados métodos como \ac{ARIMA} \cite{Leonardo_Comparative, gao2021stock}, \ac{SARIMA} e \ac{GARCH} \cite{Ciniro_Econometric}. O modelo \ac{ARIMA} combina elementos de autoregressão (AR), média móvel (MA) e diferenciação (I) para modelar padrões temporais e sazonalidade, enquanto o \ac{SARIMA} incorpora componentes de sazonalidade em adição aos componentes de tendência e aleatoriedade. Já o modelo \ac{GARCH} é usado para modelar a volatilidade condicional em séries temporais financeiras, capturando a natureza heterocedástica dos retornos. É importante ressaltar que muitos desses modelos estatísticos são utilizados em conjunto com abordagens de \ac{IA}, permitindo explorar as vantagens de cada modelo e obter previsões mais precisas e confiáveis \cite{Ciniro_Econometric}.
 
-Já a classe de \textit{machine learning} foi amplamente explorada nos trabalhos analisados, abrangendo uma variedade de modelos com diferentes naturezas. Dentre os modelos de natureza linear, destacam-se o uso do \ac{SVM} \cite{altan2019effect, Anand_Comparison} e \ac{LR} \cite{pabucccu2023forecasting}. Além disso, foram investigados modelos de natureza não linear, como \ac{MLP} \cite{Jerzy_Deep, Faramarz_Integrating}, \ac{ELM} \cite{Manrui_two-stage}, \ac{EGNN}, \ac{EMG}, \ac{EOGS} \cite{Vinícius_Sistemas}, \textit{WaveNet} \cite{Leonardo_Comparative}, \ac{SVR}, \ac{RBF}, \ac{ANFIS} \cite{Faramarz_Integrating}, \ac{DT} e \ac{KNN}\cite{halil2019predicting}. Essa diversidade de modelos mostra a abrangência das abordagens de \textit{machine learning} utilizadas nos estudos, permitindo explorar tanto a linearidade quanto a não linearidade dos dados para obter previsões mais precisas e acuradas.
+Já a classe de \textit{machine learning}\footnote{Modelos de Machine Learning são algoritmos e sistemas que aprendem padrões a partir de dados, permitindo que uma máquina tome decisões ou faça previsões sem ser explicitamente programada para uma tarefa específica. Esses modelos podem ser supervisionados, não supervisionados ou por reforço, dependendo do tipo de aprendizado envolvido.} foi amplamente explorada nos trabalhos analisados, abrangendo uma variedade de modelos com diferentes naturezas. Dentre os modelos de natureza linear, destacam-se o uso do \ac{SVM} \cite{altan2019effect, Anand_Comparison} e \ac{LR} \cite{pabucccu2023forecasting}. Além disso, foram investigados modelos de natureza não linear, como \ac{MLP} \cite{Jerzy_Deep, Faramarz_Integrating}, \ac{ELM} \cite{Manrui_two-stage}, \ac{EGNN}, \ac{EMG}, \ac{EOGS} \cite{vinicius_sistemas}, \textit{WaveNet} \cite{Leonardo_Comparative}, \ac{SVR}, \ac{RBF}, \ac{ANFIS} \cite{Faramarz_Integrating}, \ac{DT} e \ac{KNN}\cite{halil2019predicting}. Essa diversidade de modelos mostra a abrangência das abordagens de \textit{machine learning} utilizadas nos estudos, permitindo explorar tanto a linearidade quanto a não linearidade dos dados para obter previsões mais precisas e acuradas.
 
-Por fim, os modelos de \textit{deep learning} despertaram grande expectativa nos estudos analisados, devido à sua capacidade de reconhecer padrões complexos. Foram empregados diversos modelos, como \ac{LSTM} \cite{anwar2019forecasting, Xiaoci_Predicting, Jian_Forecasting, gao2021stock,  lee2021exploring, Firat}, \textit{Transformer} \cite{Chaojie_Stock}, \ac{CNN} \cite{Anand_Comparison}, \ac{RNN} \cite{Xiaoci_Predicting, gao2021stock, Anand_Comparison, Firat}, \ac{TCN} \cite{Firat}, \ac{DBN} \cite{Xiaoci_Predicting}, \ac{DCFS} \cite{Li-Xin_Fast} e \ac{DCDNN} \cite{Jian_Forecasting}. Essa variedade de modelos demonstra a ampla gama de técnicas de \textit{deep learning} aplicadas, explorando a capacidade dessas redes neurais em capturar informações de longo prazo, realizar análises sequenciais e lidar com dados de alta complexidade. 
+Por fim, os modelos de \textit{deep learning}\footnote{Deep Learning é uma subárea do Machine Learning que utiliza redes neurais artificiais profundas para realizar tarefas complexas de aprendizado e reconhecimento de padrões. Essas redes, inspiradas no funcionamento do cérebro humano, consistem em várias camadas de neurônios interconectados, permitindo a extração automática de características hierárquicas dos dados.} despertaram grande expectativa nos estudos analisados, devido à sua capacidade de reconhecer padrões complexos. Foram empregados diversos modelos, como \ac{LSTM} \cite{anwar2019forecasting, Xiaoci_Predicting, Jian_Forecasting, gao2021stock,  lee2021exploring, Firat}, \textit{Transformer} \cite{Chaojie_Stock}, \ac{CNN} \cite{Anand_Comparison}, \ac{RNN} \cite{Xiaoci_Predicting, gao2021stock, Anand_Comparison, Firat}, \ac{TCN} \cite{Firat}, \ac{DBN} \cite{Xiaoci_Predicting}, \ac{DCFS} \cite{Li-Xin_Fast} e \ac{DCDNN} \cite{Jian_Forecasting}. Essa variedade de modelos demonstra a ampla gama de técnicas de \textit{deep learning} aplicadas, explorando a capacidade dessas redes neurais em capturar informações de longo prazo, realizar análises sequenciais e lidar com dados de alta complexidade. 
 
 \section{Estratégias}
 \label{subsec:estrategias}
 
 Após a previsão do valor de um ativo específico, torna-se possível tomar uma decisão embasada, e para isso, os estudos analisados apresentam diversas estratégias distintas com o objetivo de maximizar o retorno durante as operações. 
 
-Uma pesquisa conduzida por \citeonline{SALMAN2012regression} demonstrou a possibilidade de transformar modelos de regressão em modelos de classificação com base em regras similares apresentadas na Tabela \ref{tab:RegraTransf}. Nesta abordagem, a classe -1 indica uma tendência de queda, 0 indica ausência de tendência, e 1 representa uma tendência de alta para a interação em questão. 
+Uma pesquisa conduzida por \citeonline{SALMAN2012regression} demonstrou a possibilidade de transformar modelos de regressão em modelos de classificação com base em três regras similares apresentadas na Tabela \ref{tab:RegraTransf}. Nesta abordagem, a classe -1 indica uma tendência de queda, 0 indica ausência de tendência, e 1 representa uma tendência de alta para a interação em questão. 
 
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{ccc}
 \hline
 Exemplo            & Regra                   & Classe \\ \hline
-\multirow{2}{*}{A} & Yt > Yt-1    & 1      \\
-             & Yt == Yt-1              & 0      \\
-             & Yt < Yt-1       & -1     \\ \hline
-\multirow{2}{*}{B} & Yt >= Yt-1 & 1      \\
-             & Yt < Yt-1       & -1     \\ \hline
-\multirow{2}{*}{C} & Yt > Yt-1    & 1      \\
-             & Yt <= Yt-1    & -1     \\ \hline
+\multirow{2}{*}{A} & $Y_{t} > Y_{t-1}$    & 1      \\
+             & $Y_{t} =Y_{t-1}$              & 0      \\
+             & $Y_{t} < Y_{t-1}$       & -1     \\ \hline
+\multirow{2}{*}{B} & $Y_t \geq Y_{t-1}$ & 1      \\
+             & $Y_t < Y_{t-1}$       & -1     \\ \hline
+\multirow{2}{*}{C} & $Y_t > Y_{t-1}$    & 1      \\
+             & $Y_t \leq Y_{t-1}$    & -1     \\ \hline
 \end{tabular}
 \end{center}
 \caption{Transformação da saídas no domínio contínuo para o domínio discreto.}
@@ -267,13 +267,13 @@ Para avaliar a efetividade dos modelos de classificação, é comum utilizar mé
         PN = \frac{TN}{TN + FN}.
     \end{equation}
 
-    \item \textit{Recall} - é uma métrica que mede a proporção de amostras positivas corretamente identificadas pelo modelo em relação ao total de amostras positivas presentes nos dados reais. Em outras palavras, o recall indica a capacidade do modelo de "lembrar" corretamente das amostras positivas \cite{ampomah2020evaluation}. Tal método pode ser calculado por: 
+    \item \textit{Recall} - é uma métrica que mede a proporção de amostras positivas corretamente identificadas pelo modelo em relação ao total de amostras positivas presentes nos dados reais. Em outras palavras, o \textit{recall} indica a capacidade do modelo de "lembrar"  corretamente das amostras positivas \cite{ampomah2020evaluation}. Tal método pode ser calculado por: 
     \begin{equation}
         \label{eq:recall}
         Recall = \frac{TP}{TP + FN}.
     \end{equation}
     
-    \item \ac{AC} - mede a proporção de amostras classificadas corretamente em relação ao total de amostras \cite{ampomah2020evaluation, Vinícius_Sistemas, lee2021exploring}. A formula para o cálculo da \ac{AC} é dada por:
+    \item \ac{AC} - mede a proporção de amostras classificadas corretamente em relação ao total de amostras \cite{ampomah2020evaluation, vinicius_sistemas, lee2021exploring}. A fórmula para o cálculo da \ac{AC} é dada por:
     \begin{equation}
         \label{AC}
         AC = \frac{TP + TN}{TP + TN + FP + FN}.
@@ -351,15 +351,11 @@ Os estudos analisados demonstraram uma diversidade de abordagens, utilizando uma
 \hline
 \citeonline{halil2019predicting} & SVM, \textit{Variant Decision Trees}, KNN e ANN. & Prever os movimentos futuros de preços do índice BIST 30 da bolsa de valores turca. \\
 \hline
-\citeonline{anwar2019forecasting} & ANN, RNN, DNN, LSTM, RF, LR e SVM. & Construir um modelo de previsão utilizando algoritmos de \ac{IA}. \\
-\hline
-\citeonline{Li-Xin_Fast} & DCFS. & Propor e avaliar algoritmos de treinamento rápido. \\
-\hline
 \citeonline{ampomah2020evaluation} & RF, \textit{Boosting} e \textit{XGBoost}. & Aplicar técnicas de \textit{ensemble} a fim de obter melhores resultados na predição de valores de ativos financeiros. \\
 \hline
 \citeonline{jiang2020improved} & \textit{Decision Tree}, SVM e ANN. & Desenvolver um \textit{framework} de \textit{Stacking} aprimorado para prever a direção do índice de preços das ações. \\
 \hline
-\citeonline{Vinícius_Sistemas} & eGNN, eMG e eOGS. & Realizar sugestões de compra e venda de criptoativos. \\
+\citeonline{vinicius_sistemas} & eGNN, eMG e eOGS. & Realizar sugestões de compra e venda de criptoativos. \\
 \hline
 \citeonline{Charlene} & Ajuste Linear & Realizar a previsão de tendência de ativos financeiros. \\
 \hline

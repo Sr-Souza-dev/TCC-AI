@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.16)  20 NOV 2023 17:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.16)  30 NOV 2023 20:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,6 +6,42 @@ entering extended mode
 (./tabela_hyperparam.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count185
+\l__pdf_internal_box=\box50
+)
+No file tabela_hyperparam.aux.
+\openout1 = `tabela_hyperparam.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 1.
+LaTeX Font Info:    ... okay on input line 1.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 1.
+LaTeX Font Info:    ... okay on input line 1.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 1.
+LaTeX Font Info:    ... okay on input line 1.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 1.
+LaTeX Font Info:    ... okay on input line 1.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 1.
+LaTeX Font Info:    ... okay on input line 1.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 1.
+LaTeX Font Info:    ... okay on input line 1.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 1.
+LaTeX Font Info:    ... okay on input line 1.
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: Environment longtable undefined.
 
@@ -13,34 +49,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1 \begin{longtable}
-                     {>{\vfill\centering\arraybackslash}m{1.3cm} >{\centerin...
+l.2 	\begin{longtable}
+                      {>{\centering\arraybackslash}m{1.3cm} >{\centering\arr...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \begin{longtable}{>
-                       {\vfill\centering\arraybackslash}m{1.3cm} >{\centerin...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Missing character: There is no > in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 1--1
-[] 
- []
-
 ! Undefined control sequence.
-l.1 ...ongtable}{>{\vfill\centering\arraybackslash
+l.2 	\begin{longtable}{>{\centering\arraybackslash
                                                   }m{1.3cm} >{\centering\arr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -48,28 +65,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 ...gtable}{>{\vfill\centering\arraybackslash}m
-                                                  {1.3cm} >{\centering\array...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Missing character: There is no m in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.1 ...kslash}m{1.3cm} >{\centering\arraybackslash
+l.2 ...kslash}m{1.3cm} >{\centering\arraybackslash
                                                   }m{2cm} >{\centering\array...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -77,13 +74,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no m in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.1 ...ackslash}m{2cm} >{\centering\arraybackslash
+l.2 ...ackslash}m{2cm} >{\centering\arraybackslash
                                                   }m{1.5cm} >{\centering\arr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -91,15 +83,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no m in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.1 ...kslash}m{1.5cm} >{\centering\arraybackslash
+l.2 ...kslash}m{1.5cm} >{\centering\arraybackslash
                                                   }m{1.5cm} >{\centering\arr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -107,15 +92,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no m in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.1 ...kslash}m{1.5cm} >{\centering\arraybackslash
+l.2 ...kslash}m{1.5cm} >{\centering\arraybackslash
                                                   }m{1.5cm} >{\centering\arr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -123,15 +101,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no m in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.1 ...kslash}m{1.5cm} >{\centering\arraybackslash
+l.2 ...kslash}m{1.5cm} >{\centering\arraybackslash
                                                   }m{1.5cm} >{\centering\arr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -139,15 +110,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no m in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.1 ...kslash}m{1.5cm} >{\centering\arraybackslash
+l.2 ...kslash}m{1.5cm} >{\centering\arraybackslash
                                                   }m{1.5cm} >{\centering\arr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -155,44 +119,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no m in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.1 ...kslash}m{1.5cm} >{\centering\arraybackslash
-                                                  }m{1.5cm} >{\centering\arr...
+l.2 ...kslash}m{1.5cm} >{\centering\arraybackslash
+                                                  }m{1.5cm} >{\vfill\centeri...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no m in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no > in font nullfont!
 ! Undefined control sequence.
-l.1 ...kslash}m{1.5cm} >{\centering\arraybackslash
-                                                  }m{1.5cm}}
+l.2 ...}m{1.5cm} >{\vfill\centering\arraybackslash
+                                                  }m{1.5cm}<{\vfill}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no m in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
 
 ! LaTeX Error: \caption outside float.
 
@@ -200,73 +144,25 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2 	\caption
-             {Hiperparâmetros dos Modelos} \\
+l.3 		\caption
+              {Hiperparâmetros dos Modelos}  \label{tab:hyperparam_otmz}\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-Missing character: There is no H in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-LaTeX Font Info:    Trying to load font information for +cmr on input line 2.
-LaTeX Font Info:    No file cmr.fd. on input line 2.
-
-LaTeX Font Warning: Font shape `/cmr/m/n' undefined
-(Font)              using `/cmr/m/n' instead on input line 2.
-
-! Corrupted NFSS tables.
-wrong@fontshape ...message {Corrupted NFSS tables}
-                                                  error@fontshape else let f...
-l.2 	\caption{Hiperparâ
-                        metros dos Modelos} \\
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
-
-LaTeX Font Warning: Font shape `/cmr/m/n' undefined
-(Font)              using `OT1/cmr/m/n' instead on input line 2.
-
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.4 	\toprule
-             
+<recently read> \toprule 
+                         
+l.4 		\toprule
+              
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no M in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
 ! Misplaced alignment tab character &.
-l.5 	Modelo &
-              Hyperparam & Variações & PETR3 - 30m & PETR3 - 60m & WINFUT-...
+l.5 		Modelo &
+               \textit{Hyperparam} & Variação & PETR3 - 30m & PETR3 - 60m ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -274,19 +170,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no H in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
 ! Misplaced alignment tab character &.
-l.5 	Modelo & Hyperparam &
-                           Variações & PETR3 - 30m & PETR3 - 60m & WINFUT-...
+l.5 		Modelo & \textit{Hyperparam} &
+                                     Variação & PETR3 - 30m & PETR3 - 60m ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -294,16 +180,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no V in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
 ! Misplaced alignment tab character &.
-l.5 	Modelo & Hyperparam & Variações &
-                                         PETR3 - 30m & PETR3 - 60m & WINFUT-...
+l.5 		Modelo & \textit{Hyperparam} & Variação &
+                                                  PETR3 - 30m & PETR3 - 60m ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -311,17 +190,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no P in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
 ! Misplaced alignment tab character &.
-l.5 ... & Hyperparam & Variações & PETR3 - 30m &
+l.5 ...it{Hyperparam} & Variação & PETR3 - 30m &
                                                    PETR3 - 60m & WINFUT-30m ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -330,17 +200,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no P in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
 ! Misplaced alignment tab character &.
-l.5 ...& Variações & PETR3 - 30m & PETR3 - 60m &
+l.5 ... & Variação & PETR3 - 30m & PETR3 - 60m &
                                                    WINFUT-30m & WINFUT-60m &...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -349,16 +210,6 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no W in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
 ! Misplaced alignment tab character &.
 l.5 ... & PETR3 - 30m & PETR3 - 60m & WINFUT-30m &
                                                    WINFUT-60m & WDOFUT-30m &...
@@ -369,16 +220,6 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no W in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
 ! Misplaced alignment tab character &.
 l.5 ...m & PETR3 - 60m & WINFUT-30m & WINFUT-60m &
                                                    WDOFUT-30m & WDOFUT-60m \\
@@ -389,16 +230,6 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no W in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
 ! Misplaced alignment tab character &.
 l.5 ...0m & WINFUT-30m & WINFUT-60m & WDOFUT-30m &
                                                    WDOFUT-60m \\
@@ -409,249 +240,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no W in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
 ! Undefined control sequence.
 <recently read> \midrule 
                          
-l.6 	\midrule
-             
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.7 	\endfirsthead
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: \caption outside float.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 	\caption
-             *{Continuação da página anterior} \\
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Missing character: There is no * in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-! Undefined control sequence.
-<recently read> \toprule 
-                         
-l.9 	\toprule
-             
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no M in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-! Misplaced alignment tab character &.
-l.10 	Modelo &
-               Hyperparam & Variações & PETR3 - 30m & PETR3 - 60m & WINFUT...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Missing character: There is no H in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-! Misplaced alignment tab character &.
-l.10 	Modelo & Hyperparam &
-                            Variações & PETR3 - 30m & PETR3 - 60m & WINFUT...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Missing character: There is no V in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-! Misplaced alignment tab character &.
-l.10 	Modelo & Hyperparam & Variações &
-                                          PETR3 - 30m & PETR3 - 60m & WINFUT...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Missing character: There is no P in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
-! Misplaced alignment tab character &.
-l.10 ...& Hyperparam & Variações & PETR3 - 30m &
-                                                   PETR3 - 60m & WINFUT-30m ...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Missing character: There is no P in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
-! Misplaced alignment tab character &.
-l.10 ... Variações & PETR3 - 30m & PETR3 - 60m &
-                                                   WINFUT-30m & WINFUT-60m &...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Missing character: There is no W in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
-! Misplaced alignment tab character &.
-l.10 ...& PETR3 - 30m & PETR3 - 60m & WINFUT-30m &
-                                                   WINFUT-60m & WDOFUT-30m &...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Missing character: There is no W in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
-! Misplaced alignment tab character &.
-l.10 ... & PETR3 - 60m & WINFUT-30m & WINFUT-60m &
-                                                   WDOFUT-30m & WDOFUT-60m \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Missing character: There is no W in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
-! Misplaced alignment tab character &.
-l.10 ...m & WINFUT-30m & WINFUT-60m & WDOFUT-30m &
-                                                   WDOFUT-60m \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Missing character: There is no W in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no m in font nullfont!
-! Undefined control sequence.
-<recently read> \midrule 
-                         
-l.11 	\midrule
+l.6 		\midrule
               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -660,8 +252,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.12 	\endhead
-              
+l.7 		\endfirsthead
+                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -669,7 +261,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.13 	\midrule
+l.8 		\endhead
               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -680,7 +272,7 @@ and I'll forget about whatever was undefined.
 ! Misplaced \omit.
 \multispan ->\omit 
                    \@multispan 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -688,7 +280,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -699,7 +291,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -707,7 +299,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -718,7 +310,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -726,7 +318,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -737,7 +329,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -745,7 +337,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -756,7 +348,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -764,7 +356,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -775,7 +367,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -783,7 +375,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -794,7 +386,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -802,7 +394,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -813,7 +405,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -821,7 +413,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
@@ -832,7 +424,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
@@ -840,7 +432,7 @@ an alignment. Proceed, and I'll ignore this case.
 ! Undefined control sequence.
 <argument> ...nextchar \ifcase \@chclass \@classz 
                                                   \or \@classi \or \@classii...
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -851,7 +443,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@mkpream ...hclass }\ifcase \@lastchclass \@acol 
                                                   \or \or \@preamerr \@ne \o...
-l.14 ...footnotesize Continua na próxima página}
+l.9 ...\footnotesize Continua na próxima página}
                                                    \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -862,8 +454,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \endfoot 
                          
-l.15 	\endfoot
-              
+l.10 		\endfoot
+               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -871,16 +463,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.16 	\bottomrule
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.17 	\endlastfoot
+l.11 		\bottomrule
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -888,12 +471,18 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no S in font nullfont!
-Missing character: There is no V in font nullfont!
-Missing character: There is no M in font nullfont!
+! Undefined control sequence.
+l.12 		\endlastfoot
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ! Misplaced alignment tab character &.
-l.18 	SVM &
-            kernel & linear e poly & poly & poly & poly & poly & poly & poly \\
+l.13 		SVM &
+             kernel & linear e poly & poly & poly & poly & poly & poly & pol...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -901,15 +490,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no k in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
 ! Misplaced alignment tab character &.
-l.18 	SVM & kernel &
-                     linear e poly & poly & poly & poly & poly & poly & poly \\
+l.13 		SVM & kernel &
+                      linear e poly & poly & poly & poly & poly & poly & pol...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -917,20 +500,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no y in font nullfont!
 ! Misplaced alignment tab character &.
-l.18 	SVM & kernel & linear e poly &
-                                     poly & poly & poly & poly & poly & poly \\
+l.13 		SVM & kernel & linear e poly &
+                                      poly & poly & poly & poly & poly & pol...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -938,13 +510,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no y in font nullfont!
 ! Misplaced alignment tab character &.
-l.18 	SVM & kernel & linear e poly & poly &
-                                            poly & poly & poly & poly & poly \\
+l.13 		SVM & kernel & linear e poly & poly &
+                                             poly & poly & poly & poly & pol...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -952,12 +520,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no y in font nullfont!
 ! Misplaced alignment tab character &.
-l.18 	SVM & kernel & linear e poly & poly & poly &
+l.13 ...M & kernel & linear e poly & poly & poly &
                                                    poly & poly & poly & poly \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -966,12 +530,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no y in font nullfont!
 ! Misplaced alignment tab character &.
-l.18 ...nel & linear e poly & poly & poly & poly &
+l.13 ...nel & linear e poly & poly & poly & poly &
                                                    poly & poly & poly \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -980,12 +540,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no y in font nullfont!
 ! Misplaced alignment tab character &.
-l.18 ...inear e poly & poly & poly & poly & poly &
+l.13 ...inear e poly & poly & poly & poly & poly &
                                                    poly & poly \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -994,12 +550,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no y in font nullfont!
 ! Misplaced alignment tab character &.
-l.18 ... poly & poly & poly & poly & poly & poly &
+l.13 ... poly & poly & poly & poly & poly & poly &
                                                    poly \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1008,15 +560,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no y in font nullfont!
 ! Misplaced alignment tab character &.
 <recently read> &
                  
-l.19 	&
-        C & 0 a 40; step = 15 & 15 & 15 & 15 & 15 & 30 & 30 \\
+l.14 		&
+         C & 0 a 40; step = 15 & 15 & 15 & 15 & 15 & 30 & 30 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1024,10 +572,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no C in font nullfont!
 ! Misplaced alignment tab character &.
-l.19 	& C &
-            0 a 40; step = 15 & 15 & 15 & 15 & 15 & 30 & 30 \\
+l.14 		& C &
+             0 a 40; step = 15 & 15 & 15 & 15 & 15 & 30 & 30 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1035,21 +582,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 5 in font nullfont!
 ! Misplaced alignment tab character &.
-l.19 	& C & 0 a 40; step = 15 &
-                                15 & 15 & 15 & 15 & 30 & 30 \\
+l.14 		& C & 0 a 40; step = 15 &
+                                 15 & 15 & 15 & 15 & 30 & 30 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1057,11 +592,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 5 in font nullfont!
 ! Misplaced alignment tab character &.
-l.19 	& C & 0 a 40; step = 15 & 15 &
-                                     15 & 15 & 15 & 30 & 30 \\
+l.14 		& C & 0 a 40; step = 15 & 15 &
+                                      15 & 15 & 15 & 30 & 30 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1069,11 +602,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 5 in font nullfont!
 ! Misplaced alignment tab character &.
-l.19 	& C & 0 a 40; step = 15 & 15 & 15 &
-                                          15 & 15 & 30 & 30 \\
+l.14 		& C & 0 a 40; step = 15 & 15 & 15 &
+                                           15 & 15 & 30 & 30 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1081,11 +612,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 5 in font nullfont!
 ! Misplaced alignment tab character &.
-l.19 	& C & 0 a 40; step = 15 & 15 & 15 & 15 &
-                                               15 & 30 & 30 \\
+l.14 		& C & 0 a 40; step = 15 & 15 & 15 & 15 &
+                                                15 & 30 & 30 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1093,10 +622,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 5 in font nullfont!
 ! Misplaced alignment tab character &.
-l.19 ... & 0 a 40; step = 15 & 15 & 15 & 15 & 15 &
+l.14 ... & 0 a 40; step = 15 & 15 & 15 & 15 & 15 &
                                                    30 & 30 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1105,10 +632,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 0 in font nullfont!
 ! Misplaced alignment tab character &.
-l.19 ...a 40; step = 15 & 15 & 15 & 15 & 15 & 30 &
+l.14 ...a 40; step = 15 & 15 & 15 & 15 & 15 & 30 &
                                                    30 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1117,13 +642,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 0 in font nullfont!
 ! Misplaced alignment tab character &.
 <recently read> &
                  
-l.20 	&
-        gamma & scale e auto & scale & scale & scale & scale & scale & scale \\
+l.15 		&
+         gamma & scale e auto & scale & scale & scale & scale & scale & scal...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1131,14 +654,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no g in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
 ! Misplaced alignment tab character &.
-l.20 	& gamma &
-                scale e auto & scale & scale & scale & scale & scale & scale \\
+l.15 		& gamma &
+                 scale e auto & scale & scale & scale & scale & scale & scal...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1146,19 +664,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
 ! Misplaced alignment tab character &.
-l.20 	& gamma & scale e auto &
-                               scale & scale & scale & scale & scale & scale \\
+l.15 		& gamma & scale e auto &
+                                scale & scale & scale & scale & scale & scal...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1166,14 +674,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
 ! Misplaced alignment tab character &.
-l.20 	& gamma & scale e auto & scale &
-                                       scale & scale & scale & scale & scale \\
+l.15 		& gamma & scale e auto & scale &
+                                        scale & scale & scale & scale & scal...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1181,14 +684,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
 ! Misplaced alignment tab character &.
-l.20 	& gamma & scale e auto & scale & scale &
-                                               scale & scale & scale & scale \\
+l.15 		& gamma & scale e auto & scale & scale &
+                                                scale & scale & scale & scal...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1196,13 +694,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
 ! Misplaced alignment tab character &.
-l.20 ...a & scale e auto & scale & scale & scale &
+l.15 ...a & scale e auto & scale & scale & scale &
                                                    scale & scale & scale \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1211,13 +704,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
 ! Misplaced alignment tab character &.
-l.20 ...e e auto & scale & scale & scale & scale &
+l.15 ...e e auto & scale & scale & scale & scale &
                                                    scale & scale \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1226,13 +714,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
 ! Misplaced alignment tab character &.
-l.20 ... & scale & scale & scale & scale & scale &
+l.15 ... & scale & scale & scale & scale & scale &
                                                    scale \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1241,16 +724,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
 ! Misplaced alignment tab character &.
 <recently read> &
                  
-l.21 	&
-        degree & 1, 2, 3 e 4 & 2 & 2 & 3 & 3 & 3 & 2 \\
+l.16 		&
+         degree & 1, 2, 3 e 4 & 2 & 2 & 3 & 3 & 3 & 2 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1258,15 +736,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no e in font nullfont!
 ! Misplaced alignment tab character &.
-l.21 	& degree &
-                 1, 2, 3 e 4 & 2 & 2 & 3 & 3 & 3 & 2 \\
+l.16 		& degree &
+                  1, 2, 3 e 4 & 2 & 2 & 3 & 3 & 3 & 2 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1274,16 +746,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no 4 in font nullfont!
 ! Misplaced alignment tab character &.
-l.21 	& degree & 1, 2, 3 e 4 &
-                               2 & 2 & 3 & 3 & 3 & 2 \\
+l.16 		& degree & 1, 2, 3 e 4 &
+                                2 & 2 & 3 & 3 & 3 & 2 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1291,10 +756,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 2 in font nullfont!
 ! Misplaced alignment tab character &.
-l.21 	& degree & 1, 2, 3 e 4 & 2 &
-                                   2 & 3 & 3 & 3 & 2 \\
+l.16 		& degree & 1, 2, 3 e 4 & 2 &
+                                    2 & 3 & 3 & 3 & 2 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1302,10 +766,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 2 in font nullfont!
 ! Misplaced alignment tab character &.
-l.21 	& degree & 1, 2, 3 e 4 & 2 & 2 &
-                                       3 & 3 & 3 & 2 \\
+l.16 		& degree & 1, 2, 3 e 4 & 2 & 2 &
+                                        3 & 3 & 3 & 2 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1313,10 +776,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 3 in font nullfont!
 ! Misplaced alignment tab character &.
-l.21 	& degree & 1, 2, 3 e 4 & 2 & 2 & 3 &
-                                           3 & 3 & 2 \\
+l.16 		& degree & 1, 2, 3 e 4 & 2 & 2 & 3 &
+                                            3 & 3 & 2 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1324,10 +786,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 3 in font nullfont!
 ! Misplaced alignment tab character &.
-l.21 	& degree & 1, 2, 3 e 4 & 2 & 2 & 3 & 3 &
-                                               3 & 2 \\
+l.16 		& degree & 1, 2, 3 e 4 & 2 & 2 & 3 & 3 &
+                                                3 & 2 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1335,9 +796,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 3 in font nullfont!
 ! Misplaced alignment tab character &.
-l.21 	& degree & 1, 2, 3 e 4 & 2 & 2 & 3 & 3 & 3 &
+l.16 ...degree & 1, 2, 3 e 4 & 2 & 2 & 3 & 3 & 3 &
                                                    2 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1346,12 +806,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 2 in font nullfont!
 ! Misplaced alignment tab character &.
 <recently read> &
                  
-l.22 	&
-        coef0 & 1, 3 e 5 & 1 & 3 & 1 & 1 & 3 & 1 \\
+l.17 		&
+         coef0 & 1, 3 e 5 & 1 & 3 & 1 & 1 & 3 & 1 \\ \cmidrule(lr){1-9}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1359,14 +818,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no 0 in font nullfont!
 ! Misplaced alignment tab character &.
-l.22 	& coef0 &
-                1, 3 e 5 & 1 & 3 & 1 & 1 & 3 & 1 \\
+l.17 		& coef0 &
+                 1, 3 e 5 & 1 & 3 & 1 & 1 & 3 & 1 \\ \cmidrule(lr){1-9}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1374,14 +828,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no 5 in font nullfont!
 ! Misplaced alignment tab character &.
-l.22 	& coef0 & 1, 3 e 5 &
-                           1 & 3 & 1 & 1 & 3 & 1 \\
+l.17 		& coef0 & 1, 3 e 5 &
+                            1 & 3 & 1 & 1 & 3 & 1 \\ \cmidrule(lr){1-9}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1389,10 +838,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
 ! Misplaced alignment tab character &.
-l.22 	& coef0 & 1, 3 e 5 & 1 &
-                               3 & 1 & 1 & 3 & 1 \\
+l.17 		& coef0 & 1, 3 e 5 & 1 &
+                                3 & 1 & 1 & 3 & 1 \\ \cmidrule(lr){1-9}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1400,10 +848,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 3 in font nullfont!
 ! Misplaced alignment tab character &.
-l.22 	& coef0 & 1, 3 e 5 & 1 & 3 &
-                                   1 & 1 & 3 & 1 \\
+l.17 		& coef0 & 1, 3 e 5 & 1 & 3 &
+                                    1 & 1 & 3 & 1 \\ \cmidrule(lr){1-9}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1411,10 +858,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
 ! Misplaced alignment tab character &.
-l.22 	& coef0 & 1, 3 e 5 & 1 & 3 & 1 &
-                                       1 & 3 & 1 \\
+l.17 		& coef0 & 1, 3 e 5 & 1 & 3 & 1 &
+                                        1 & 3 & 1 \\ \cmidrule(lr){1-9}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1422,10 +868,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
 ! Misplaced alignment tab character &.
-l.22 	& coef0 & 1, 3 e 5 & 1 & 3 & 1 & 1 &
-                                           3 & 1 \\
+l.17 		& coef0 & 1, 3 e 5 & 1 & 3 & 1 & 1 &
+                                            3 & 1 \\ \cmidrule(lr){1-9}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1433,10 +878,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 3 in font nullfont!
 ! Misplaced alignment tab character &.
-l.22 	& coef0 & 1, 3 e 5 & 1 & 3 & 1 & 1 & 3 &
-                                               1 \\
+l.17 		& coef0 & 1, 3 e 5 & 1 & 3 & 1 & 1 & 3 &
+                                                1 \\ \cmidrule(lr){1-9}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1444,24 +888,20 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no 1 in font nullfont!
 ! Undefined control sequence.
-<recently read> \midrule 
-                         
-l.23 	\midrule
-              
+<recently read> \cmidrule 
+                          
+l.17 ...3 e 5 & 1 & 3 & 1 & 1 & 3 & 1 \\ \cmidrule
+                                                  (lr){1-9}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no K in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no N in font nullfont!
 ! Misplaced alignment tab character &.
-l.24 	KNN &
-            n\_neighbors & 3, 9, 17 e 34 & 34 & 17 & 34 & 34 & 17 & 9 \\
+l.18 		KNN &
+             n neighbors & 3, 9, 17 e 34 & 34 & 17 & 34 & 34 & 17 & 9 \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1469,27 +909,253 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Missing character: There is no n in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
 ! Misplaced alignment tab character &.
-l.24 	KNN & n\_neighbors &
+l.18 		KNN & n neighbors &
                            3, 9, 17 e 34 & 34 & 17 & 34 & 34 & 17 & 9 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.18 		KNN & n neighbors & 3, 9, 17 e 34 &
+                                           34 & 17 & 34 & 34 & 17 & 9 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.18 		KNN & n neighbors & 3, 9, 17 e 34 & 34 &
+                                                17 & 34 & 34 & 17 & 9 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.18 ... & n neighbors & 3, 9, 17 e 34 & 34 & 17 &
+                                                   34 & 34 & 17 & 9 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.18 ...neighbors & 3, 9, 17 e 34 & 34 & 17 & 34 &
+                                                   34 & 17 & 9 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.18 ...bors & 3, 9, 17 e 34 & 34 & 17 & 34 & 34 &
+                                                   17 & 9 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.18 ...& 3, 9, 17 e 34 & 34 & 17 & 34 & 34 & 17 &
+                                                   9 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.19 		&
+         weights & uniform e distance & uniform & distance & distance & unif...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.19 		& weights &
+                   uniform e distance & uniform & distance & distance & unif...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.19 		& weights & uniform e distance &
+                                        uniform & distance & distance & unif...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.19 		& weights & uniform e distance & uniform &
+                                                  distance & distance & unif...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.19 ... uniform e distance & uniform & distance &
+                                                   distance & uniform & unif...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.19 ...distance & uniform & distance & distance &
+                                                   uniform & uniform & unifo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.19 ... uniform & distance & distance & uniform &
+                                                   uniform & uniform \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.19 ... distance & distance & uniform & uniform &
+                                                   uniform \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.20 		&
+         algorithm & auto, ball\_tree e kd\_tree & auto & auto & auto & auto...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.20 		& algorithm &
+                     auto, ball\_tree e kd\_tree & auto & auto & auto & auto...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.20 		& algorithm & auto, ball\_tree e kd\_tree &
+                                                   auto & auto & auto & auto...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.20 ...thm & auto, ball\_tree e kd\_tree & auto &
+                                                   auto & auto & auto & auto...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.20 ...uto, ball\_tree e kd\_tree & auto & auto &
+                                                   auto & auto & auto & auto \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.20 ...ll\_tree e kd\_tree & auto & auto & auto &
+                                                   auto & auto & auto \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.20 ...e e kd\_tree & auto & auto & auto & auto &
+                                                   auto & auto \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.20 ..._tree & auto & auto & auto & auto & auto &
+                                                   auto \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.21 		&
+         p & 1 e 2 & 1 & 1 & 1 & 1 & 1 & 1 \\ \cmidrule(lr){1-9}
 (That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 36 strings out of 478287
- 618 string characters out of 5849288
- 290007 words of memory out of 5000000
- 18332 multiletter control sequences out of 15000+600000
- 469259 words of font info for 28 fonts, out of 8000000 for 9000
+ 193 strings out of 478287
+ 5017 string characters out of 5849288
+ 294811 words of memory out of 5000000
+ 18485 multiletter control sequences out of 15000+600000
+ 469605 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,1n,32p,409b,93s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 24i,1n,34p,417b,78s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 !  ==> Fatal error occurred, no output PDF file produced!
