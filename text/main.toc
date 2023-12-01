@@ -31,24 +31,24 @@
 \contentsline {subsection}{\numberline {4.1.2}WINFUT}{38}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}WDOFUT}{38}{subsection.4.1.3}%
 \contentsline {section}{\numberline {4.2}Modelos e Hiperparâmetros}{40}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Experimentos e Métricas}{43}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Resultados Experimentais}{44}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}PETR3 (30 Minutos)}{44}{subsection.4.4.1}%
-\contentsline {subsubsection}{Classificação}{44}{subsubsection*.22}%
-\contentsline {subsubsection}{Recomendação de Investimento}{44}{subsubsection*.23}%
-\contentsline {subsection}{\numberline {4.4.2}PETR3 (60 Minutos)}{44}{subsection.4.4.2}%
-\contentsline {subsubsection}{Classificação}{45}{subsubsection*.24}%
-\contentsline {subsubsection}{Recomendação de Investimento}{45}{subsubsection*.25}%
-\contentsline {subsection}{\numberline {4.4.3}WINFUT (30 Minutos)}{45}{subsection.4.4.3}%
-\contentsline {subsubsection}{Classificação}{45}{subsubsection*.26}%
-\contentsline {subsubsection}{Recomendação de Investimento}{46}{subsubsection*.27}%
-\contentsline {subsection}{\numberline {4.4.4}WINFUT (60 Minutos)}{46}{subsection.4.4.4}%
-\contentsline {subsubsection}{Classificação}{46}{subsubsection*.28}%
-\contentsline {subsubsection}{Recomendação de Investimento}{47}{subsubsection*.29}%
-\contentsline {subsection}{\numberline {4.4.5}WDOFUT (30 Minutos)}{47}{subsection.4.4.5}%
-\contentsline {subsubsection}{Classificação}{47}{subsubsection*.30}%
-\contentsline {subsubsection}{Recomendação de Investimento}{48}{subsubsection*.31}%
-\contentsline {subsection}{\numberline {4.4.6}WDOFUT (60 Minutos)}{48}{subsection.4.4.6}%
-\contentsline {subsubsection}{Classificação}{48}{subsubsection*.32}%
-\contentsline {subsubsection}{Recomendação de Investimento}{49}{subsubsection*.33}%
-\contentsline {chapter}{\numberline {5}Conclusão}{50}{chapter.5}%
+\contentsline {section}{\numberline {4.3}Experimentos e Métricas}{40}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Resultados Experimentais}{40}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}PETR3 (30 Minutos)}{40}{subsection.4.4.1}%
+\contentsline {subsubsection}{Classificação}{40}{subsubsection*.22}%
+\contentsline {subsubsection}{Recomendação de Investimento}{41}{subsubsection*.23}%
+\contentsline {subsection}{\numberline {4.4.2}PETR3 (60 Minutos)}{41}{subsection.4.4.2}%
+\contentsline {subsubsection}{Classificação}{42}{subsubsection*.24}%
+\contentsline {subsubsection}{Recomendação de Investimento}{42}{subsubsection*.25}%
+\contentsline {subsection}{\numberline {4.4.3}WINFUT (30 Minutos)}{43}{subsection.4.4.3}%
+\contentsline {subsubsection}{Classificação}{43}{subsubsection*.26}%
+\contentsline {subsubsection}{Recomendação de Investimento}{43}{subsubsection*.27}%
+\contentsline {subsection}{\numberline {4.4.4}WINFUT (60 Minutos)}{44}{subsection.4.4.4}%
+\contentsline {subsubsection}{Classificação}{44}{subsubsection*.28}%
+\contentsline {subsubsection}{Recomendação de Investimento}{44}{subsubsection*.29}%
+\contentsline {subsection}{\numberline {4.4.5}WDOFUT (30 Minutos)}{45}{subsection.4.4.5}%
+\contentsline {subsubsection}{Classificação}{45}{subsubsection*.30}%
+\contentsline {subsubsection}{Recomendação de Investimento}{46}{subsubsection*.31}%
+\contentsline {subsection}{\numberline {4.4.6}WDOFUT (60 Minutos)}{46}{subsection.4.4.6}%
+\contentsline {subsubsection}{Classificação}{46}{subsubsection*.32}%
+\contentsline {subsubsection}{Recomendação de Investimento}{47}{subsubsection*.33}%
+\contentsline {chapter}{\numberline {5}Conclusão}{48}{chapter.5}%

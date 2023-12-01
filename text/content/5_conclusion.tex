@@ -1,45 +1,19 @@
 \chapter{Conclusão}
 \label{cap:conclusao}
-O objetivo principal deste trabalho experimental foi aplicar técnicas de inteligência artificial no contexto do mercado financeiro. Para alcançar esse objetivo, o estudo iniciou-se com a apresentação dos conceitos fundamentais do mercado financeiro, abrangendo desde a sua origem até as análises mercadológicas de investimento. Além disso, foi conduzida uma revisão da literatura, explorando as técnicas mais relevantes e contemporâneas para previsão de ativos financeiros.
-Com base nesse embasamento teórico, a proposta central do trabalho consistiu no desenvolvimento de uma máquina de previsão utilizando abordagens de \textit{Ensemble}. Essa máquina recebe como entrada diversas métricas econômicas e é capaz de fornecer a probabilidade de um determinado ativo financeiro apresentar um movimento de alta ou baixa. Em seguida, foi realizado um processo de recomendação visando maximizar os ganhos em cada operação.
+O cerne deste trabalho consistiu na aplicação de técnicas de inteligência artificial no contexto do mercado financeiro. Para alcançar esse objetivo, a pesquisa teve início com a apresentação dos conceitos fundamentais do mercado financeiro, percorrendo desde sua origem até análises mercadológicas de investimento. Além disso, uma revisão detalhada da literatura foi realizada, explorando as técnicas mais relevantes e contemporâneas para a previsão de ativos financeiros.
+Com base nesse embasamento teórico robusto, a proposta central do trabalho envolveu o desenvolvimento de uma máquina de previsão utilizando abordagens de \textit{ensemble}. Essa máquina é alimentada com diversas métricas econômicas e tem a capacidade de fornecer a probabilidade de um determinado ativo financeiro apresentar movimento de alta ou baixa. Posteriormente, conduziu-se um processo de recomendação, visando maximizar os ganhos em cada operação, integrando assim efetivamente a análise preditiva com a tomada de decisões estratégicas.
 
-Foram realizados experimentos com três algoritmos de previsão pertencentes à classe de classificação, nomeadamente \ac{KNN}, \ac{SVM} e \ac{LR}, cujos resultados foram combinados por meio de uma técnica de \textit{ensemble}. Os resultados obtidos por esses algoritmos demonstraram fortemente a viabilidade de alcançar lucros significativos. Nesse contexto, o modelo \ac{KNN} obteve os melhores desempenhos nos experimentos, superando consideravelmente a estratégia de \textit{buy and hold}. O modelo de \textit{Ensemble} proposto também apresentou resultados superiores a essa estratégia, embora de forma menos expressiva em comparação com o \ac{KNN}. Por outro lado, o modelo \ac{SVM} obteve resultados equivalentes ao \textit{buy and hold}, enquanto o modelo LR ficou abaixo dessa métrica.
+Foram conduzidos experimentos com uma variedade de dez algoritmos de previsão, distribuídos em três categorias principais: classificação, representada pelos modelos \ac{KNN}, \ac{SVM} e \ac{LR}; modelos estatísticos, incluindo \ac{ARIMA}, \ac{SARIMA} e \ac{GARCH}; e modelos de regressão, como \ac{MLP}, \ac{SVR} e \ac{RF}. Os resultados de cada categoria foram combinados usando uma abordagem de \textit{ensemble}, e, por fim, um modelo de \ac{MLP} foi empregado na saída da máquina de previsão.
+Os resultados desses algoritmos indicaram claramente a viabilidade de alcançar lucros substanciais. No entanto, é notável que a máquina de previsão proposta não se destacou como a melhor em todos os testes; no entanto, obteve resultados significativos que superaram a estratégia de \textit{buy and hold} em 83,33\% das instâncias. Um achado interessante é que os modelos que alcançaram a melhor acurácia e \ac{F1} não necessariamente alcançaram os melhores resultados na fase de recomendação de investimento, sugerindo que essas métricas podem não ser as mais apropriadas para o cenário específico de investimentos. Essa observação destaca a necessidade de considerar métricas mais alinhadas com os objetivos práticos de maximização de ganhos durante a tomada de decisões de investimento.
 
-A fim de aprimorar os resultados e concluir a abordagem apresentada no Capítulo \ref{cap:abordagem_proposta}, propõe-se as seguintes etapas de continuidade:
+Para futuras melhorias deste trabalho, recomenda-se refinamentos no cálculo do erro no modelo de saída (\ac{MLP} OUT), atribuindo maior peso às classificações corretas mais impactantes, especialmente aquelas associadas a maiores variações. Outra abordagem a ser considerada seria a substituição de modelos que não alcançaram resultados satisfatórios durante os experimentos, visando aprimorar a eficácia da máquina de previsão.
+Além disso, uma extensão interessante seria a exploração de uma classe de modelos evolutivos para avaliar o impacto do aprendizado contínuo nesse contexto específico. A incorporação de abordagens evolutivas poderia proporcionar insights valiosos sobre a adaptabilidade da máquina de previsão em face de mudanças dinâmicas no mercado financeiro.
 
-\begin{itemize}
-    \item implementar/testar uma variedade de modelos de previsão, abrangendo as três classes de algoritmos da máquina de previsão proposta, incluindo modelos estatísticos, de classificação e de regressão, respectivamente;
+Todo o código utilizado para realizar esses experimentos está disponível no Github\footnote{https://github.com/Sr-Souza-dev} em um repositório denominado "TCC-AI". Essa disponibilidade facilita a replicação dos experimentos, permitindo a análise detalhada e a validação dos resultados por outros pesquisadores e profissionais interessados no campo da previsão financeira utilizando técnicas de inteligência artificial.
 
-    \item realizar o processo de otimização dos hiperparâmetros dos modelos implementados, a fim de buscar as melhores configurações para cada um deles;
-
-    \item avaliar e selecionar os melhores modelos de previsão, levando em consideração cada classe de algoritmo utilizada;
-
-    \item implementar e avaliar diversos algoritmos de previsão como último preditor na máquina de previsão proposta;
-
-    \item implementar e aplicar a estratégia de investimento proposta, utilizando como base a saída de cada classe de algoritmos e também a saída da máquina de previsão como um todo. Essa estratégia buscou aproveitar as previsões geradas pelos modelos estatísticos, de classificação e regressão, bem como a combinação deles realizada pela máquina de previsão, para tomar decisões de compra e venda de ativos financeiros;
-
-    \item avaliar o desempenho de cada algoritmo individualmente e em conjunto com a máquina de previsão, utilizando métricas estatísticas e econométricas como base de análise.
-\end{itemize}
-
-Para garantir o cumprimento das etapas necessárias para a conclusão deste trabalho, foi elaborado um cronograma detalhado, apresentado na Tabela \ref{tab:cronoAtv}. Esse cronograma foi projetado para orientar o desenvolvimento do trabalho em termos de prazos e permitir um acompanhamento efetivo do progresso. Cada etapa do processo foi atribuída a um período específico, levando em consideração sua complexidade e duração estimada. 
-
-
-\begin{table}    
-    \centering
-    \begin{tabular}{|l|c|c|c|c|c|} \hline
-        & Julho & Agosto & Setembro & Outubro & Novembro \\ \hline
-        Implementar/testar preditores & X & & & & \\ \hline
-        Otimizar hiperparâmetros & X & X & & & \\ \hline
-        Avaliar e selecionar os melhores preditores & & X & & & \\ \hline
-        Finalizar a máquina de previsão & & & X & X & \\ \hline
-        Implementar a estratégia de investimento & & & & X &\\ \hline
-        Avaliar o desempenho individual e geral & & & & & X \\ \hline
-    \end{tabular}
-\caption{Cronograma de atividades.}
-\label{tab:cronoAtv}
-\end{table} 
-
-
+\section*{Apêndice A - Tabela de Otimização}
+\label{ap:tabelas}
+\LTXtable{\textwidth}{tabelas/hyperparam}
 
 
 

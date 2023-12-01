@@ -70,56 +70,74 @@ Por fim,  para o ativo financeiro WDOFUT, o processo de construção dos \textit
 
 \section{Modelos e Hiperparâmetros}
 \label{sec:modelos_parametros_resultados}
-Para efetivar a proposta delineada na Seção \ref{sec:previsao}, foram empregados 10 modelos distintos de previsão. No grupo de modelos estatísticos, destacam-se três escolhas específicas: \ac{ARIMA}, \ac{SARIMA}, e \ac{GARCH}. O conjunto de modelos de classificação compreende outros três: \ac{SVM}, \ac{KNN}, e \ac{LR}, enquanto o conjunto de modelos de regressão é representado por \ac{LSTM}, \ac{MLP}, e \ac{RNN}. Além disso, concebeu-se um modelo final, uma \ac{MLP} denominada "MLP OUT", cuja função é consolidar os resultados provenientes de cada ensemble dos três conjuntos mencionados anteriormente.
-A Tabela \ref{tab:hyperparam_otmz} detalha a estrutura de cada modelo de previsão, juntamente com o processo de otimização implementado e as escolhas otimizadas para cada conjunto de dados coletado. 
+Para efetivar a proposta delineada na Seção \ref{sec:previsao}, foram empregados 10 modelos distintos de previsão. No grupo de modelos estatísticos, destacam-se três escolhas específicas: \ac{ARIMA}, \ac{SARIMA}, e \ac{GARCH}. O conjunto de modelos de classificação compreende outros três: \ac{SVM}, \ac{KNN}, e \ac{LR}, enquanto o conjunto de modelos de regressão é representado por \ac{MLP}, \ac{SVR}, e \ac{RF}. Além disso, concebeu-se um modelo final, uma \ac{MLP} denominada "MLP OUT", cuja função é consolidar os resultados provenientes de cada ensemble dos três conjuntos mencionados anteriormente.
+A Tabela \ref{tab:hyperparam_otmz} no Apêndice A detalha a estrutura de cada modelo de previsão, juntamente com o processo de otimização implementado e as escolhas otimizadas para cada conjunto de dados coletado. 
 
-\LTXtable{\textwidth}{tabelas/hyperparam}
 	
 \section{Experimentos e Métricas}
 \label{sec:experimentos _metricas}
-As métricas de avaliação desempenham um papel crucial na análise meticulosa dos modelos propostos, sendo aplicadas em três categorias distintas: modelos de classificação, modelos de regressão e estratégia de compra e venda.
-Na avaliação dos modelos de regressão:  \ac{GARCH}, \ac{ARIMA}, \ac{SARIMA}, \ac{LSTM}, \ac{MLP}, \ac{RNN} e \ac{MLP} Out . A escolha recaiu sobre as métricas de \ac{MAE} e \ac{RMSE}. Essas métricas foram selecionadas devido à sua capacidade de proporcionar uma representação direta dos erros, conferindo maior relevância aos erros mais impactantes. Essa abordagem busca proporcionar uma compreensão clara e detalhada do desempenho de cada modelo, permitindo uma análise aprofundada das discrepâncias entre as previsões e os valores reais.
+As métricas de avaliação desempenham um papel crucial na análise meticulosa dos modelos propostos, sendo aplicadas a duas categorias distintas: análise de classificação e análise de recomendação de investimento.
+Na fase de análise de classificação, todos os modelos definidos são considerados, uma vez que a função de transformação, que converte resultados de regressão em classificação, é aplicada uniformemente a todos os modelos de regressão. Para a avaliação desses modelos, serão utilizadas métricas essenciais, como Acurácia, \ac{F1}, e Matriz de Confusão. A Acurácia proporciona uma visão abrangente da precisão do modelo, enquanto a métrica \ac{F1} equilibra precisão e \textit{recall}, garantindo uma avaliação robusta. A Matriz de Confusão oferece uma análise mais detalhada do desempenho do modelo em diferentes categorias, proporcionando uma compreensão completa de seu comportamento em situações de classificação.
 
-Já na fase de avaliação dos modelos de classificação, todos os modelos definidos serão considerados, uma vez que a função de transformação que converte resultados de regressão em classificação é aplicada uniformemente a todos os modelos de regressão. Para a avaliação desses modelos, serão utilizadas métricas como Acurácia, \ac{F1} e Matriz de Confusão. A Acurácia proporciona uma visão global da precisão do modelo, enquanto a métrica \ac{F1} equilibra precisão e recall. A Matriz de Confusão oferece uma análise mais detalhada do desempenho do modelo em diferentes categorias, possibilitando uma compreensão mais completa de seu comportamento em situações de classificação. 
-
-Por fim, todos os modelos e ensembles definidos durante o experimento serão avaliados com base na estratégia delineada na Seção \ref{sec:estrategia}, permitindo a comparação do percentual de retorno de cada modelo ao final da execução, juntamente com a quantidade de operações de compra realizadas. Essa análise final busca fornecer \textit{insights} valiosos sobre a eficácia prática de cada abordagem na execução da estratégia proposta.
+Já na análise de recomendação de investimento, todos os modelos e ensembles definidos durante o experimento são avaliados com base na estratégia delineada na Seção \ref{sec:estrategia}. Isso permite a comparação do percentual de retorno de cada modelo ao final da execução, juntamente com a quantidade de operações de compra realizadas. Importante destacar que, nessa fase, foram incorporados resultados da estratégia \textit{buy and hold} para efeitos de comparação. Essa análise final visa proporcionar \textit{insights} valiosos sobre a eficácia prática de cada abordagem na execução da estratégia proposta.
 
 \section{Resultados Experimentais}
 \label{sec:resultados_experimentais}
-\subsection{PETR3 (30 Minutos)}´
+Nesta seção, serão detalhados os resultados provenientes dos experimentos computacionais realizados para cada conjunto de dados, acompanhados de uma análise específica destinada a cada conjunto. Essa abordagem visa oferecer uma compreensão aprofundada das conclusões derivadas da aplicação prática dos modelos em cada cenário, contribuindo para uma interpretação robusta e informada dos resultados alcançados.
+
+\subsection{PETR3 (30 Minutos)}
+Os resultados derivados da análise da base de dados PETR3, com uma granularidade de 30 minutos, são apresentados nas seções subsequentes. Inicialmente, examina-se o desempenho individual de cada modelo no contexto de classificação, seguido por uma análise detalhada no cenário de recomendação de investimento.
 \subsubsection{Classificação}
+Através da Tabela \ref{tab:PETR330}, observa-se que, para esta base de dados, os modelos de classificação alcançaram os melhores resultados, destacando-se em termos de acurácia e \ac{F1}, com o modelo \ac{LR} liderando. Uma consideração importante surge ao analisar a matriz de confusão do modelo \ac{ARIMA}, revelando um viés em suas classificações, comprometendo sua capacidade de identificar quedas futuras nos preços. Em síntese, o modelo de saída (\ac{MLP} OUT) da abordagem descrita na Seção \ref{sec:previsao} demonstrou um desempenho notável, assemelhando-se ao conjunto de classificação.
 \LTXtable{\textwidth}{tabelas/PETR330}
 \subsubsection{Recomendação de Investimento}
+No âmbito da recomendação de investimento, a análise da Tabela \ref{tab:EPETR330} revela que uma elevada acurácia nem sempre se traduz em resultados financeiros vantajosos. Destaca-se que o \ac{ARIMA} alcançou o melhor desempenho, proporcionando uma variação percentual de 19,087\% a mais em relação à estratégia \textit{buy and hold}. Um resultado adicional de interesse é que a máquina de previsão proposta alcançou uma margem de 8,094\% superior à estratégia \textit{buy and hold}.
 \LTXtable{\textwidth}{tabelas/EPETR330}
 
-\subsection{PETR3 (60 Minutos)}´
+\subsection{PETR3 (60 Minutos)}
+Os resultados provenientes da avaliação da base de dados PETR3, considerando uma granularidade de 60 minutos, estão expostos nas seções seguintes. Primeiramente, é realizada uma análise do desempenho singular de cada modelo no âmbito da classificação, seguida por uma exploração minuciosa no contexto da recomendação de investimento.
 \subsubsection{Classificação}
+Ao analisar a Tabela \ref{tab:PETR360}, observa-se que os modelos baseados em técnicas de regressão alcançaram o melhor resultado médio em termos de acurácia na tarefa de classificação. Como consequência, o \textit{ensemble} desse conjunto obteve os melhores resultados quando comparado com os outros \textit{ensambles}.
 \LTXtable{\textwidth}{tabelas/PETR360}
 \subsubsection{Recomendação de Investimento}
+Quanto à recomendação de investimento, ao analisar a Tabela \ref{tab:EPETR360}, destaca-se que o \ac{KNN} apresentou os resultados mais promissores, registrando uma variação percentual de 40,508 pontos superior à estratégia \textit{buy and hold}. Esse desempenho positivo é compartilhado pelos resultados do \textit{ensemble} de classificação e do \ac{MLP} OUT, que seguem os mesmos padrões de variação.
 \LTXtable{\textwidth}{tabelas/EPETR360}
 
 \subsection{WINFUT (30 Minutos)}
+Os resultados decorrentes da análise da base de dados WINFUT, considerando uma granularidade de 30 minutos, são apresentados nas seções subsequentes. Inicialmente, efetua-se uma análise do desempenho individual de cada modelo no contexto de classificação, seguida por uma exploração minuciosa na esfera da recomendação de investimento.
 \subsubsection{Classificação}
+Ao examinar a Tabela \ref{tab:WIN30}, percebe-se que a maioria dos resultados de classificação assume características de modelos aleatórios, com muitos deles apresentando acurácia inferior a 50\%. Nesse cenário, destaca-se que os modelos de classificação foram os que alcançaram os melhores resultados, tanto em termos de acurácia quanto de \ac{F1}. Um aspecto relevante revelado pela matriz de confusão é o viés presente no modelo ARIMA, que demonstra uma limitação em prever variações negativas.
 \LTXtable{\textwidth}{tabelas/WIN30}
 \subsubsection{Recomendação de Investimento}
+
+Do ponto de vista da recomendação de investimento, ao analisar a Tabela \ref{tab:EWIN30}, destaca-se que o modelo \ac{SVR} apresentou o melhor desempenho, registrando uma variação de 9,205\% a mais no valor investido em comparação com a estratégia \textit{buy and hold}. Esse fato contribuiu para que a saída da máquina de previsão (\ac{MLP} OUT) alcançasse um resultado de 0,167\% a mais na variação do valor investido em relação à estratégia \textit{buy and hold}.
 \LTXtable{\textwidth}{tabelas/EWIN30}
 
 \subsection{WINFUT (60 Minutos)}
+Os resultados provenientes da avaliação da base de dados WINFUT, com uma granularidade de 60 minutos, estão delineados nas seções que se seguem. Inicialmente, procede-se à análise do desempenho específico de cada modelo no domínio da classificação, seguida por uma exploração meticulosa no contexto da recomendação de investimento.
 \subsubsection{Classificação}
+Mediante a análise da Tabela \ref{tab:WIN60}, torna-se factível observar os resultados obtidos na fase de classificação, revelando desempenhos similares entre os modelos nas métricas analisadas.
 \LTXtable{\textwidth}{tabelas/WIN60}
 \subsubsection{Recomendação de Investimento}
+Na análise do desempenho dos modelos no contexto da recomendação de investimento, a Tabela \ref{tab:EWIN60} apresenta os resultados dessa tarefa. Destaca-se que o modelo \ac{KNN} alcançou os resultados mais expressivos, superando o \textit{buy and hold} em 5.079 pontos percentuais na variação do investimento. Essa tendência positiva é compartilhada pelo \textit{ensemble} de classificação e pelo \ac{MLP} OUT, que atingem padrões semelhantes de variação.
 \LTXtable{\textwidth}{tabelas/EWIN60}
 
 \subsection{WDOFUT (30 Minutos)}
+Os resultados originados da análise da base de dados WDOFUT, considerando uma granularidade de 30 minutos, estão expostos nas seções seguintes. Primeiramente, realiza-se a avaliação do desempenho particular de cada modelo no âmbito da classificação, seguida por uma exploração minuciosa no contexto da recomendação de investimento.
 \subsubsection{Classificação}
+Na análise apresentada na Tabela \ref{tab:WDO30}, os resultados da fase de classificação são revelados. Estes resultados sugerem características aleatórias no sistema de previsão, uma vez que todos os modelos atingiram acurácias próximas a 50\%. Um ponto adicional a ser considerado é o viés potencial no modelo \ac{ARIMA}, o que impede sua capacidade de antecipar quedas nos valores.
 \LTXtable{\textwidth}{tabelas/WDO30}
 \subsubsection{Recomendação de Investimento}
+No âmbito da recomendação de investimento, a Tabela \ref{tab:EWDO30} destaca os resultados pertinentes a essa etapa. Observa-se que o modelo \ac{SVR} obteve os melhores resultados, superando o \textit{buy and hold} em 7,108\% na variação percentual. Outro destaque relevante é o desempenho da saída da máquina de previsão (\ac{MLP} OUT), que registrou uma diferença de 4,233\% em relação aos resultados do \textit{buy and hold} na variação percentual do valor investido.
 \LTXtable{\textwidth}{tabelas/EWDO30}
 
 \subsection{WDOFUT (60 Minutos)}
+Os resultados da análise da base de dados WDOFUT, com um intervalo de 60 minutos, estão apresentados nas seções a seguir. Primeiramente, é feita uma análise do desempenho de cada modelo no contexto da classificação, seguida por uma exploração cuidadosa no contexto da recomendação de investimento.
 \subsubsection{Classificação}
+Os resultados da fase de classificação são apresentados na Tabela \ref{tab:WDO60}, evidenciando os melhores desempenhos em acurácia e \ac{F1} para o conjunto de modelos de classificação. Por outro lado, ao analisar a matriz de confusão, é possível identificar que o modelo \ac{ARIMA} está enviesado, perdendo, assim, a capacidade de antecipar possíveis quedas nos preços.
 \LTXtable{\textwidth}{tabelas/WDO60}
 \subsubsection{Recomendação de Investimento}
+Na etapa de recomendação de investimentos, os resultados são apresentados na Tabela \ref{tab:EWDO60}. O modelo \ac{GARCH} apresentou o melhor desempenho na variação percentual dentre os modelos explorados, com uma diferença de -0,887\% em relação à estratégia \textit{buy and hold}. Outro resultado notável foi o da máquina de previsão (\ac{MLP} OUT), que apresentou uma diferença de -3,065\% na variação percentual em relação à estratégia \textit{buy and hold}.
 \LTXtable{\textwidth}{tabelas/EWDO60}
 
 
